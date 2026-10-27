@@ -1,0 +1,15 @@
+# ---> Python / venv
+.venv/
+__pycache__/
+*.pyc
+
+# ---> Upstream skill library (separate repo, re-clone on demand)
+blender-skills/
+
+# ---> Debug / bisect renders (keep only curated verification shots)
+dbg_*.png
+
+# ---> OS / editor noise
+.DS_Store
+Thumbs.db
+*.blend1
