@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Blender MCP",
+    "description": "Connects Blender Lab official MCP server (blender-mcp -> localhost:9876) to make Blender tools available to the agent."
+  }
+}

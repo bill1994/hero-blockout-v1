@@ -1,0 +1,13 @@
+- insert:
+    - id: blender-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: blender
+        transport: stdio
+        command: G:/DSHProject/BlenderMcp/.venv/Scripts/blender-mcp.exe
+        args: []
+        cwd: G:/DSHProject/BlenderMcp
+        env:
+          BLENDER_MCP_HOST: localhost
+          BLENDER_MCP_PORT: '9876'
+        failOnStartupError: true
