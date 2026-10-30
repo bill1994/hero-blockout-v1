@@ -205,3 +205,175 @@ answer: yes, Child Of -> baked. file stays hero_animation_v6_retime.blend + .glb
 - end-state: sampled constrained C(f) 28..155, replaced location keys in [28,155] with baked
   (BEZIER, 128f), REMOVED constraint + influence FC. no live constraint left; export bakes plain keys.
 - baked dist: 28-147 rigid 0.17-0.24, 150+ free fall 0.37->0.75. renders v8_043 (hold) / v8_096 (mid-swing in hand).
+
+---
+
+## v9 grip reattach — Idea rebuilt from the gripper (2026-10-30)
+
+input v6 file (327f) -> output hero_animation_v9_grip.blend + .glb, 327f@60fps unchanged.
+user: after the constraint the Idea moves even more bizarrely and no longer rotates with the claw.
+Is it the constraint? Rebuild the Idea animation from the claw.
+
+### diagnosis (measured, before)
+1. f148 release excursion: Idea swings 2.74 m BACKWARD (to x=-1.77, z=1.44) then returns by f151.
+   Root cause: the v8 bake sampled the Child Of result ACROSS the influence ramp 147:1 -> 150:0
+   while the raw keys for 148-156 were never flattened (only 31<f<147 was). The influence blend
+   interpolated between the flattened grab pose and the stale old fall keys -> a 2.74 m lash got
+   baked in as real keys. A constraint blend artifact was frozen into the animation. Not a bad
+   constraint setting: a bad bake window.
+2. carry drift: Idea-to-gripper distance grew monotonically 0.006 (f31) -> 0.152 (f70), i.e. the
+   held ball slid 15 cm out of a stationary gripper. The "breath/wobble" keys are in WORLD space,
+   so they were never relative to the gripper.
+3. rotation: Idea had NO rotation fcurve at all (5 fcurves = location x3 + hide x2). The wrist yaws
+   161 deg across the whip (Z -161.06 -> -0.14) and the ball never turned.
+
+### rebuild (deterministic, no live constraint)
+- grabbed f31, released f147 (fingers open @148.75). offset I = W_gp(31)^-1 @ W_idea(31), 6 mm.
+- carry f31-147: W_idea(f) = W_gp(f) @ I  -> translation AND rotation, baked per frame (117f).
+  euler taken with to_euler('XYZ', prev) so no branch flips; max step 4.5 deg/frame.
+- drop f148-156: straight vertical, accelerating (t^2), from (-0.013, 0.002, 3.496) to (0, 0, 2.600).
+  Landing moved down from 2.7457 to 2.600 because the hopper is an open cone z 2.0..2.9 (r 0.3->0.45)
+  and the ball is r=0.25: at 2.7457 its top (2.996) stuck 10 cm above the rim before the hide.
+- hold 156-311 at the landing pose, hidden; teleport at 311.5 to the parked loop pose (unchanged).
+- interpolation: LINEAR inside 31-156 (per-frame keys, exact, no bezier overshoot);
+  the 311.4 hold key is CONSTANT so the 311.5 teleport is a 0.1f step inside the hide boundary.
+- keys 1-30 and 312-327 untouched (parked/approach front kept as authored).
+
+### verify (measured, after)
+- carry dist to gripper constant 0.00602 over all 117 carried frames (was up to 0.152).
+- rotation carried: f70 (-12.2, 31.5, 15.0) / f96 (-46.6, 64.7, 59.8) / f147 (-27.2, 53.1, 147.2) deg.
+- drop speed ramps 0.56 -> 9.44 m/s, monotonic, no return excursion.
+- loop f327 vs f1: distance 0.000000, rotation 0.000000.
+- visible-frame peak speeds: f022 11.77 (pre-grab descent, pre-existing), f156 11.28 (sinking into
+  the hopper), f077 11.00 (whip). The 213 m/s peak is the 311.5 teleport, hidden -> exempt.
+- renders validation/v9_before_* vs v9_after_* at 043/096/147/148/149/150/155.
+- GLB re-exported (577,004 bytes), verified by GLB JSON parse: Idea node carries BOTH animation
+  channels, translation + rotation, 327 samples each, 0.017 -> 5.45 s.
+
+### open / notes
+- The Idea mesh is a perfect featureless sphere (482 verts, radius 0.25, no texture, plain white
+  emission). Rotation is therefore INVISIBLE in render today. The rotation channel is now correct
+  and will "just work" the moment a logo/decal/material break is added.
+- f156 sinks at 11.3 m/s (0.9 m in 9f, ~3x gravity) — matches the piece's snappy whip energy and
+  is occluded by the hopper; soften by lengthening the drop if it reads too fast.
+
+---
+
+## v10 white-model art pass (2026-10-30)
+
+input v9 (327f) -> output hero_animation_v10_art.blend + .glb, 327f unchanged.
+user: animation is close enough; next is model refinement. Chosen direction: white-model art pass
+FIRST, materials in a later round. Product stays a 1 m cube, but its exit becomes a blast-out
+instead of a shrink-away.
+
+### measured starting state (before)
+- 3,368 faces total; 22 of 29 meshes were 8-vert / 6-face axis-aligned boxes.
+- `use_smooth` = 0 on EVERY polygon in the file, including the 512-face spheres and the 34-face
+  hopper cone -> hard facets everywhere.
+- Product: 1.0 x 1.0 x 0.985 (spec still said 0.4), sliding to x=3.8 while the chute ended at
+  x=3.0, then deflating 308->326.5 in plain view.
+- Earlier claim "product floats 18 cm above the chute" was WRONG: f267 is mid-hop (z 1.55->1.32).
+  At rest z=1.2, mesh bottom 0.7 vs chute floor 0.705 -> seated. Corrected here so nobody chases it.
+
+### changes
+1. shading: all polys smooth + Shade Auto Smooth (30 deg) on all visible meshes -> curved surfaces
+   smooth, box edges stay sharp.
+2. bevels: Bevel_Art modifier (width 0.007-0.02, 2 segments, angle 30) on 12 box parts.
+3. gripper: fingers were 0.3x0.07x0.1 paddles at y=+-0.09 whose tips sat 9 mm inside the 0.25 ball.
+   Rebuilt as tapered jaws at y=+-0.175, length 0.17, 0.025/0.0425 half-section -> nearest vertex
+   0.2497 closed (0.3 mm inside = contact) and 0.267 open (clears on release). Object origins,
+   scale=1, and ALL finger rotation keys untouched, so the open/close beats are bit-identical.
+   Palm reshaped (Arm_Gripper relocated to 1.54, 0.16 x 0.34 x 0.26). New Arm_WristCollar r=0.088.
+   GOTCHA: wrist children carry their own matrix_parent_inverse, so "local (1.45,0,1.5)" does NOT
+   mean 1.45 m from the wrist. Place new wrist attachments with
+   matrix_world = gripper.matrix_world @ Translation(offset) after parenting.
+4. chute: bottom extended x 1.20->3.40 (was 3.00), thicker (0.125), side walls raised to 0.245
+   (was 0.15), 2 mounting ribs under the body end.
+5. machine details merged into one object `Machine_Detail` (parent Machine_Root): window frame
+   4 bars, 4 foot pads (cylinders), 3 light bezels, hopper rim torus (major 0.45 / minor 0.028).
+6. product exit rebuilt: slow creep 3.0 -> 3.8 -> 4.4 and the 308->326.5 shrink are GONE.
+   Now: hold x=3.0 at f280, accelerate x = 3.0 + 4.2*t^2 over f280-300 -> x=7.2, then scale to
+   0.001 at f302. Verified: fully out of frame by f299 (frame right edge ~x=6.1 at z=1.2),
+   so the vanish is never seen. End speed ~25 m/s.
+   ZERO-KEY TRAP: the scale fcurves had keys only at 238 and 308, so removing the shrink made them
+   deflate across the whole blast (f280 scale was 0.27). Needed an explicit 1.0 key at f300.
+
+### verify
+- faces 3,368 -> 7,242 (evaluated, modifiers applied). objects 41 -> 43.
+- finger/ball contact numbers above; product bbox at f280 = x[2.5,3.5] z[0.701,1.699] (seated).
+- loop f327 vs f1 unchanged (Product 1.35/0.001 at f1, 7.2/0.001 at f327).
+- renders validation/audit_model_*, art1_*, art2_*, art3_*, art4_* (043 / 147 / 267 / 280).
+- GLB: **must export with export_apply=True** or the bevels/auto-smooth never leave Blender
+  (348 KB flat-shaded boxes instead of 520 KB). Final: 520,736 bytes, 38 nodes, 19 actions,
+  Idea translation+rotation 327 samples each, Product translation+scale 326, Machine_Detail present.
+
+### still blockout (next round)
+- no panel seams, screws, vents; body is one rounded box.
+- arm joints are still spheres on straight beams: no flanges, linkage, or cable.
+- `Machine_Window` is a flat plate in a frame - no glass, no inner cavity.
+- `Product` is still a 1 m cube (user deferred the form).
+- materials: 9 flat greys, no textures; MAT_Hero_Light still does not wire Object Info.Color to
+  emission, so the "brightness" light keys are still invisible.
+
+---
+
+## v12 hard-surface style pass (2026-10-30)
+
+input v10_art (+unsaved) -> output hero_animation_v12_style.blend + .glb, 327f@60fps unchanged.
+Per ART_DIRECTION_PLAN.md (reference-image style pass, proportions and rig untouched).
+
+### P1 panels & bevels
+- shell narrowed to x +-1.16; mint caps: full left plate, right plate split into 3 segments
+  framing the outlet mouth (no boolean slots per plan), top plate z 1.96-2.00; 4 mm seams
+  between shell/plates; all plates parented to Machine_Body so seams cannot breathe during
+  the keyed +-7 cm wobble (f159-199).
+- bottom: 10 cm plinth reveal + 4 tapered feet instead of a 4 mm bottom seam (the wobble
+  would pierce a 4 mm gap; ruled in ledger).
+- 16 screws (12-gon + slot) as one merged mesh; bevels unified 12/6/3 mm tiers.
+
+### P2 window
+- vertical superellipse 1.0 x 1.15 r0.18 cut via EXACT boolean (Cutter_Window, normals out —
+  the v11 winding bug avoided); 3 layers: charcoal frame proud 0.06, cyan glow ring straddling
+  the hole edge, glass alpha 0.08; open black cavity to y-0.50 + 2 static noise emission planes.
+- Machine_Window rebuilt as the glass, reparented to Machine_Body, its hand-synced follower
+  location keys stripped (identical values to Body's own); f165 mid-wobble verified aligned.
+- lights 01-03 locZ fcurves offset +0.15 (bezel verts moved too) to clear the frame top.
+
+### P3 bowl & chute
+- hopper: revolved wide bowl, mouth ID 1.25 @z2.90, rolled lip, floor z2.35 seats the ball
+  exactly, collar lands on the top plate; object kept, mesh swapped (wobble keys intact).
+- chute: single U-channel prism x[1.2,3.4], floor top z0.705 preserved (product seating),
+  capped+beveled end as the lip, 2 mount ribs; old 3-box set + rim torus + foot pads removed.
+
+### P4 arm & claws
+- 2 dark torus rings per joint sphere; seam rings on upper/forearm tubes.
+- fingers rebuilt as HOOKED capsule claws (cross-section 0.022-0.028 x 0.036-0.046, quad-bend
+  centerline): L=0.214, bend=0.025 solved by ternary search — closed contact d31=d43=0.25009
+  (spec 0.2497), open d147=0.27014 (>= 0.267; v10 baseline 0.26955). Straight/flat claws
+  cannot satisfy both numbers simultaneously (measured: straight 0.2443 closed / 0.2626 open).
+  Finger objects/origins/rotation keys untouched.
+
+### P5 palette
+- four-color set in linear space: cream h40 s.10 v.86 (shell/hopper/arm tubes), mint h160
+  s.42 v.62 (5 plates), amber h27 s.85 v.55 (chute/flap/claws/Idea emission), charcoal h240
+  s.06 v.18 (base/feet/screws/rings/seams/dark hardware); MAT_Hero_Mid split+removed.
+- MAT_Hero_Light rebuilt: Object Info.Color -> Emission -> Output. The object.color
+  brightness keys now render (f200 strip 1.327 glows). Render-only: Object Info does not
+  survive glTF; GLB lights bake at base color.
+
+### verify (all green)
+- contact 0.25009/0.25009/0.27014/0.66335 @f31/43/147/155; Idea lands (0,0,2.600) @f156.
+- envelope: shell x+-1.16 z[0.10,1.90], panels to x+-1.20/top 2.00; chute x[1.16,3.4]
+  floor 0.705; hopper rim 2.905; Cam_Hero 32mm (3.6,-12,4.6) untouched.
+- loop f327 vs f1: Idea/Product delta 0.000000.
+- poly 9,059 visible evaluated (cap 60,000; leaner than the 30-60k estimate).
+- GLB 581,744 bytes, export_apply=True (baking warnings are the usual per-key-count notices).
+- renders validation/style_p1..p5_*.png, each phase visually QA'd (front/side/top, window
+  closeups incl. wobble frame, bowl+chute sequence, claw grab/release, four-color hero).
+
+### known limits / next
+- window noise glow breathes (strength 4.0-6.2, period 109f, 3 cycles over 327f, phase-opposed
+  layers, f327==f1 within 0.002) — render-only, glTF does not carry node animation.
+- end lip is a beveled cap, not a protruding roll (2.2-length iron rule).
+- GLB loses the Object Info light wiring (render-only fix).
+- run ledger + rulings: .superpowers/sdd/ART_DIRECTION_PLAN/progress.md

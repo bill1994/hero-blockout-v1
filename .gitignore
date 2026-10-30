@@ -13,3 +13,6 @@ dbg_*.png
 .DS_Store
 Thumbs.db
 *.blend1
+
+# ---> Superpowers run ledger (art passes)
+.superpowers/
