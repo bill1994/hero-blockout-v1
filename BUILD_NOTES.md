@@ -104,3 +104,104 @@ GLB 导出：`hero_animation_v3_coherent.glb`，569,900 bytes。
 3. **anticipation 幅度偏弱**，如需加强见第 3 节遗留观察。
 
 4. **P4 手臂稀疏化实际收益有限**：P2 的 `prune_flat` 已删除绝大部分烘焙键，RDP 只额外处理了 2 个通道。若后续需要更彻底的手臂重做，建议单独一轮。
+
+---
+
+## v5 ease (2026-10-30)
+
+input v4 -> output hero_animation_v5_ease.blend + .glb, 301f@60fps unchanged.
+retime: f<=31 keep; 31<f<=129 +10f dwell; 129<f<=225 compress 139+(f-129)*86/96; >225 keep.
+grab hold 31-43: Yaw -2.811 / Sh -1.1768 / El 1.9487 / Idea -3.2961,-0.6181,1.7219; Idea Z breathe 35 +0.02 / 39 -0.015; squeeze 0.985->0.90 + rebound 34:1.04/38:1.0.
+ease: Yaw 1-105 LINEAR(26)->BEZIER EASE_IN_OUT; whip 67.3->65.5 / 70->72 (2.7f->6.5f).
+transit stretch 1.35x (43-88, dead k=0.885): peak Yaw 19.4->11.4, Idea 16.6->11.0.
+coda: WristY 194:0/205:0.4/218:-0.3/232:0.18/248:0, WristZ comp, LightStrip 200:1.0/215:1.8/230:1.0, Sh 205:-0.50/218:-0.64.
+verify: 31-43 Yaw 0 / Idea 0.2-0.5m/s; contact validation/v5_031/039/070/141/218.png (031=039 hold, 218 coda distinct); 248-258 teleport hidden exempt.
+
+---
+
+## v6 retime (2026-10-30)
+
+input v5 (301f) -> output hero_animation_v6_retime.blend + .glb, 327f@60fps (~5.45s).
+user brief: hold at 30f invisible -> make it obvious + bigger wobble; whip at 64/65 too fast;
+cut tail at ~275 (pose == 300 loop point, beyond-track content cropped by camera) and
+re-extend to 300+, retime everything with front-weighted budget. Approved: freeze-frame
+hold + big wobble, total duration may grow.
+
+### retime map (old -> new, piecewise linear, all keys incl. handles)
+1->1, 31->31, 43->55 (hold 12f->24f), 72->100 (whip zone 1.55x), 129->170,
+186->225, 225->270, 258->305, 275->320. Then follower-sync warp +6.5f tail -> end 327.
+
+### changes
+1. grab hold 31-55 (24f): Yaw/Sh/El frozen at grab values; Idea XY nailed, Z breathe
+   +3/+4.5/0/-4.5/-3/0cm (was +-2cm); squeeze 0.85@31 + rebound 1.05@37 (was 0.90/1.04).
+2. whip: Yaw Z 10 keys redistributed by constant-angular-velocity (~3.5rad/s avg,
+   41f span 76->117, all BEZIER EASE_IN_OUT). Peak 19.4 -> 3.7 rad/s.
+   Lesson: even time spacing does NOT fix uneven value jumps; allocate time proportional
+   to delta. Follower-sync warp applied to all non-Yaw keys (offset curve through whip,
+   +6.5f constant tail) after spotting ball-out-of-gripper at f96 (6f desync).
+   Verified gripper-ball distance 0.22-0.31 vs hold baseline 0.237.
+3. tail: keys >275 deleted (95 keys); Sh/El eased 270->320 into loop-start values
+   (-0.62/1.95); Idea loop-clean at start pose from 305; Product CONSTANT hide+shrink
+   at 320 (off-camera); frame 327 == frame 1 (fingers/ball verified identical).
+4. Idea transit peak 16.6 -> 8.4 m/s (translation, kept; rotation complaint resolved).
+
+### verify
+- numeric: hold 31-55 Yaw 0.0, Idea XY locked; whip peak 3.7 <= 6 target.
+- contact validation/v6_031/043/096b/267/327 (031==043 hold, 096b ball-in-gripper
+  mid-swing, 267 coda out-feed, 327 loop point).
+- GLB exported (baking warnings expected, same as v3-v5).
+
+---
+
+## v7 product-out + global de-linear (2026-10-30, in v6 file)
+
+user: front ok; product-out stage wrong; remove LINEAR feel across ALL stages.
+file stays hero_animation_v6_retime.blend + .glb (re-exported), 327f.
+
+### product-out diagnosis (pre-fix path sample)
+- 231.67 pop-in (scale 0.001->1.0 in 0.8f) at x=1.4 inside machine
+- 231->253 shuffle to x=2.72, hop z 0.9->1.55->1.2 by 273
+- 253->313 x FROZEN 60f at 2.72 (v6 tail-cut deleted slide keys -> gap; the ugly freeze)
+- 313->323 lazy slide 2.72->3.8, pop-hide at 326.5
+
+### product-out fix
+- grow-in: scale xy 1.0 key 231.67->238 (6f form-up, unhide stays 231.67)
+- slide rebuilt: del X keys 313.26/318.56/323.85; add 280:3.00 / 296:3.55 / 308:3.80 (ease-out arrival)
+- eject: 308->322 x 3.8->4.4 (conveyor eject off tray) + shrink 308->326.5 (scale plateau
+  nails added @308 xyz=1.0; previously shrink spanned 238->326, deflating mid-slide)
+- hide+shrink pop stays 326.5 (off-camera per user). z-hop untouched.
+- post-fix path: 238 (1.43, full) -> 273 (2.85, landed) -> 308 (3.8, full) -> 322 (4.4, small) -> 326 hide. No freeze.
+
+### global de-linear
+- audit found 237 LINEAR keys: arm pivots X/Z statics (~0, invisible) + El/Sh Y @137-156
+  (return dwell) + Idea X/Y @147/153/156. All -> BEZIER EASE_IN_OUT. Remaining LINEAR: 0.
+- front (1-130) had no visible LINEAR -> hold/whip feel preserved; verified v7_043 == hold.
+
+### verify
+- contact validation/v7_043 (hold ok) / v7_240 (forming) / v7_262 (on tray) / v7_300 (sliding right).
+- GLB re-exported (only key-count baking warnings; interp warnings gone except CONSTANT mixes).
+
+---
+
+## v8 idea constraint-bake (2026-10-30, in v6 file, 327f)
+
+user: Idea scale jitters after grab (should stay constant); Idea transform lags gripper -> use constraint?
+answer: yes, Child Of -> baked. file stays hero_animation_v6_retime.blend + .glb.
+
+### scale autopsy
+- Idea scale had zombie keys @310.44 (0.35) -> @316.79 (1.0): ball visibly GREW after loop point.
+  plus old squeeze 0.85@31 + rebound 1.05@37 with BEZIER overshoot.
+- fix: deleted ALL Idea scale keys, scale locked (1,1,1). user asked constant size -> no squeeze at all.
+
+### follow autopsy
+- release frame found by sampling: dist 0.24 @147, 0.34 @150 -> release ~147-148 (fingers stay shut, ball free-falls).
+- Child Of (Idea -> Arm_Wrist, no scale) + inverse + influence envelope 28:0/31:1/147:1/150:0.
+- gotchas hit (keep for next time):
+  1. compute inverse with influence 0 (else polluted W); formula I = T^-1 @ W @ L^-1 because
+     this Blender evaluates C = T @ I @ L (local multiplied, not replaced).
+  2. with influence 1 the underlying keys must be STATIC or motion doubles -> flattened
+     Idea location 31<f<147 to grab pose (fresh channelbag per pass; stale bags show zombie keys).
+  3. BEZIER overshoot on a 0.5f step (145 grab -> 145.49 fall, z to 5.18) gets amplified by T-delta.
+- end-state: sampled constrained C(f) 28..155, replaced location keys in [28,155] with baked
+  (BEZIER, 128f), REMOVED constraint + influence FC. no live constraint left; export bakes plain keys.
+- baked dist: 28-147 rigid 0.17-0.24, 150+ free fall 0.37->0.75. renders v8_043 (hold) / v8_096 (mid-swing in hand).
