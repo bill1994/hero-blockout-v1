@@ -970,3 +970,75 @@ Comparison sheet: `review/v13/p2_contact.png`.
 - the window frame is not yet the thick charcoal band of the reference; the band is 0.072
 - the machine still has a thin grey open-cone hopper and a thin pipe arm (P3)
 - the chute is still the 2.24 m brown plank (P3)
+
+## v13 P3a: grab criterion pinned, chute split, hopper rebuilt (2026-10-31)
+
+### grab criterion, fixed before any claw change
+
+Section 6 P3 requires the contact criterion to be executable before the claw is touched,
+because the old record's numbers (0.25009 / 0.27014) cannot be reproduced by any current
+method. `qa_v2/v13_grab_gate.py` pins it as finger-vertex -> Idea-vertex (the same
+quantity `v13_baseline_audit.py` reports), with bands taken from the P0 baseline:
+
+| frame | meaning | L | R | band | verdict |
+|---|---|---|---|---|---|
+| f31 | closed | 0.01799 | 0.00614 | 0.002..0.060 | ok |
+| f43 | closed | 0.01799 | 0.00614 | 0.002..0.060 | ok |
+| f147 | open | 0.02555 | 0.02348 | 0.005..0.080 | ok |
+| f155 | released | 0.41537 | 0.47581 | >= 0.300 | ok |
+
+It also counts face overlap between each finger and the orb, so a chunky pad that grips
+by interpenetrating fails even if the distance number looks healthy. Passes unchanged
+after the chute and hopper work, which is the point: those did not touch the claw.
+
+### chute: support frozen, read halved
+
+x 1.16..2.10 is now a cream scoop with an orange trough (cream outside, `MAT_Color_Amber`
+on the floor's top faces only), and x 2.10..3.40 is a low narrow dark rail. The channel
+floor stays at **z 0.705**, so all 38 seated contact keys remain valid - confirmed by the
+product-path gate (43 RESTING, 0 negative gaps). Support length is unchanged at 3.40,
+which section 4.5 froze so the product is not left in the air.
+
+### hopper: cream bowl instead of a grey open cone
+
+Lathe-built: solid pedestal (r 0.28, top **z 2.35**), flaring bowl to r 0.62 inner,
+0.07 wall, thick rolled rim to r 0.745, in `MAT_Body` cream. The orb's rest plane is
+verified by a downward axis ray: first hit is still **2.35 Machine_Hopper**, then 2.0
+(pedestal bottom), 1.96 (top plate), 1.9 (body) - identical to before the rebuild.
+
+The hopper carries its own 26 z-keys from Q4, so the mesh is built in local space about
+its origin at z 2.45. Writing world coordinates into a translated object is exactly the
+mistake that silently moved the window cutter in P2.
+
+### two of my own bugs, both measured
+
+1. A material-index sentinel of -1 was assigned straight to `face.material_index`
+   ("outside usable range"). Fixed to fall back to the box's default.
+2. The rebuilt chute reported **7 frames of interpenetration** while the two objects
+   measured **0.306 apart** at f236 with zero vertices inside each other's bbox. Cause:
+   the three boxes were welded with `remove_doubles` at their coplanar seams, and the
+   existing `Bevel_Art` modifier then built self-intersecting geometry on the
+   zero-thickness joint, which makes any overlap test on that object lie. Fixed by not
+   welding the boxes and starting the walls 5 mm inside the floor. Penetration went to
+   **0 / 96**.
+   Note for later: triangulating the BVH made the tool worse, not better - a known-clean
+   file went from 0 to 27 flagged frames - so the gate was reverted and the geometry was
+   fixed instead of the instrument.
+
+### P3a gates
+
+| gate | result |
+|---|---|
+| grab | PASS, all four frames in band, zero finger/orb face overlap |
+| product path | PASS, 43 RESTING, 0 negative gaps |
+| intersection | 0 / 96 |
+| actions / fcurves / keys | 39 / 149 / 3,345 |
+| triangles | 20,646 (budget 25,000) |
+
+### still open
+
+- **claw**: still a thin pipe with oversized hoops; needs the rounded pad rebuild plus the
+  fixed third finger. The criterion is now pinned, so this can be judged.
+- the hopper's neck is a straight cylinder; the reference has a short cream neck with the
+  mint collar under it
+- GLB has not been re-exported since P2
