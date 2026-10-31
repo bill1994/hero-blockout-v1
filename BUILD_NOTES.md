@@ -610,3 +610,81 @@ old 18,314 was an undercount and should not be quoted as a baseline.
 
 - `gate_f0*.png` = before, `gatefix_f0*.png` = after, same camera, same frames.
 
+## v13 P1 preflight (2026-10-31) - what P1 may not move, and the hopper ruling
+
+Scripts: `qa_v2/v13_p1_preflight.py`, `qa_v2/v13_p1_shell_inventory.py`.
+Data: `qa_v2/v13_p1_preflight.json`, `qa_v2/v13_p1_shell_inventory.json`.
+
+### the hopper does not need shrinking. Section 12 Q1's pre-check was based on a shape this asset does not have.
+
+Section 12 asks whether the ball "still passes the hopper mouth" after the shell narrows,
+which assumes a through-hole. Measured: the hopper is a **closed shell** (0 boundary
+edges), the funnel is solid below its floor, and the orb does not pass through anything -
+it **rests on the pedestal top**.
+
+Axis column at f156, straight down: orb top 2.8487 -> orb bottom 2.3513 -> **hopper 2.35**
+-> hopper 2.0 -> Machine_Panel_Top 1.96 -> body 1.9. So the pedestal is a solid cylinder
+(r = 0.28, z 2.0 - 2.35) and the orb (r = 0.25) sits on its top face with 1.3 mm of
+clearance. Above 2.35 the funnel flares from r 0.28 to a thick rim (inner 0.62 / outer
+0.68, wall 0.07) at z 2.89.
+
+| quantity | measured | at body width 1.80 | reference |
+|---|---|---|---|
+| rim diameter | 1.3524 | 0.7513 of body | 0.7778 (section 4.3) - off by 3.4%, inside the doc's own +-8% |
+| neck / pedestal inner r | 0.28 | - | orb needs >= 0.25 |
+| orb rest | centre (0,0,2.6), bottom 2.35 | pedestal top 2.35 | - |
+
+**Ruling: keep the hopper. Do not shrink it in P1.** Narrowing the shell to 1.80 moves
+the rim to 0.751 of body width, which is the reference silhouette within tolerance. The
+"0.45" figure in section 12 is a throat ratio that belongs to the reference machine, which
+has a through-hole; this one has a pedestal. Comparing the two was apples to oranges, and
+section 9's risk "ball jams after the mouth is narrowed" is void because no mouth is being
+narrowed.
+
+Frozen by this measurement for all later stages: **hopper pedestal top face stays at
+z = 2.35**, and the funnel's inner radius at that height stays >= 0.25.
+
+The orb occupies the hopper axis for 189 frames of 327 (first near-axis frame f117, exact
+centre (0,0,2.6) at f156), so this is load-bearing, not a momentary pose.
+
+### window: the P1 change is much smaller than the ratio suggests
+
+Window 1.0583 x 1.2085. Ratio to body width is 0.4562 now, but 1.80 shell width already
+brings it to 0.5879; the 0.64 target needs 1.1520, i.e. **+8.9% width**, not the ~40% the
+raw 0.456 -> 0.64 leap suggests. P2 still owns the real rebuild (vertical superellipse);
+P1 only has to stop the window from looking cramped on the narrower body.
+
+### shell inventory (what detaches when both x faces move in by 0.26)
+
+`Machine_Body`: 448 verts, local +-1.16 x +-0.80 x +-0.90, world z 0.1 - 1.9. Its shape is
+produced by **two Boolean cutters** (`OutletCut`, `WindowCut`) plus `EdgeBevel` and a
+`Smooth by Angle` nodes modifier, so a naive X scale of the body is not safe: the cutters
+live in world space and would cut the wrong place.
+
+Mounted parts that touch a moving face: left 8, right 10, top 10, front 17, back 5,
+bottom 7 (overlapping sets). The ones that matter at the seam:
+
+- arm reaches 0.704 past the left face (to x = -1.864); narrowing leaves a **0.26 gap**
+  the shoulder bay has to bridge
+- `Machine_Chute` starts at exactly x = 1.16, i.e. **zero overlap** with the body - the
+  chute seat has no margin to hide behind, it has to span the full 0.26
+- side panels (`Machine_Panel_L`, `Machine_Panel_R_SideF/SideB`), `Machine_Screws`,
+  `Machine_Detail`, the window assembly (frame / glow / cavity) all sit on faces that move
+
+### P1a plan (next): shell 2.32 -> 1.80
+
+Working on a scratch copy, gates at each step, deliverable untouched until it passes:
+
+1. rebuild the shell profile (superellipse section + big corner radii) in place of the
+   box, keeping the two boolean cut volumes re-targeted to the new face planes
+2. three junction pieces: shoulder bay (x -0.90..-1.16 at the arm's section), chute seat
+   (x 0.90..1.16, full mouth height), hopper seat (body top 1.9 -> pedestal 2.0, which is
+   currently a 0.1 gap in the existing asset)
+3. re-seat the face-mounted parts onto the new planes; verify with this inventory diffed
+   before/after - a part that stops touching is a part that fell off
+4. then palette (section 5.1), then window width (+8.9%)
+
+Gate for P1: four-view against the reference, palette sampling, `arm_root_min_x` and
+`chute_mouth_min_x` unchanged, hopper pedestal top still 2.35, product-path gate still
+PASS, and animation integrity (39 actions / 149 fcurves / loop deltas 0).
+
