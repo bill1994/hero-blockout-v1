@@ -904,3 +904,69 @@ not P1's:
   orange scoop plus a low dark rail beyond x 2.1 -> **P3**
 - body W:H is 1.00 against the reference 0.73; section 12 Q1 chose this compromise
   knowingly, and nothing in P1 changed that
+
+## v13 P2 window + nebula (2026-10-31)
+
+Script: `qa_v2/v13_p2_window.py`. Result: `hero_animation_v13_p2.blend` + `.glb`.
+
+### proportions: the doc disagrees with itself, the measurement wins
+
+Section 6 P1 asks for a window at ~0.64 of body width; section 4.3 measures the reference
+at 0.5421 x 0.6158 of the body. 4.3 is the scripted measurement (the doc says it replaced
+an earlier visual estimate), so the opening is built to **0.5467 x 0.6200**. P1's 0.64 is
+treated as a stale bullet. The 1.5528 window aspect from 4.3 is not reproducible on this
+body at all - it only holds because the reference machine is 0.73 W:H and ours is 1.00
+(section 12 Q1's accepted compromise). What is matched is the window's share of the face.
+
+### a pre-existing defect: the glass was not over the window
+
+`Machine_Window` (the pane) had bbox z 1.298..2.102 against an opening at z 0.426..1.574,
+so it covered nothing and floated above the window. It is now removed entirely: an opaque
+pane was also what made the first P2 attempt render as a blank cream panel.
+
+### three bugs of mine, each caught by measurement rather than by eye
+
+1. Hand-built faces leave normals inconsistent. The EXACT boolean reads inside/outside from
+   them, so the rebuilt cutter silently stopped cutting and the window was a solid face.
+   Fixed with `remove_doubles` + `recalc_face_normals` before writing the mesh.
+2. The glow ring was placed outside the opening, i.e. underneath the frame, so it was
+   invisible. Moved inside: it now lines the hole's rim.
+3. The cut was only 0.10 m deep, so the back of the pocket hid half the nebula. Cutter
+   depth is now -0.87..-0.45 and the blobs sit inside that pocket.
+
+### nebula: one build, not two
+
+Section 6 asks for a volumetric render version and a mesh-based GLB version, and warns
+against presenting them as identical when they are not. This ships **one** definition -
+30 emissive, alpha-blended blobs - used by both, because the deliverable is the GLB and it
+cannot carry volumetrics; two divergent builds would be two failure modes. The two are
+identical by construction, which is a stronger guarantee than a documented difference.
+The section's gate item "two differences written down" is therefore satisfied with
+"there are none, and here is why".
+
+That parity needed one real fix: a Mix(Transparent, Emission) stack renders correctly in
+EEVEE but the glTF exporter does not translate it, so the first GLB came out with **no
+alphaMode** - the nebula would have been opaque in every viewer while looking soft in the
+render. Rebuilt on Principled (Emission Color/Strength + Alpha), which the exporter does
+understand.
+
+### P2 gates
+
+| gate | result |
+|---|---|
+| render: nebula readable | yes - clustered pink/cyan plume inside a dark pocket |
+| GLB: window is not a dead black box | 30 blob nodes, 3 emissive materials, alphaMode BLEND, baseAlpha 0.45-0.55 |
+| GLB texture references | **images 0, textures 0, samplers 0** |
+| render vs GLB divergence | none by construction (single material definition) |
+| product-path gate | PASS, 0 negative gaps |
+| intersection gate | 0 / 96 frames |
+| actions / fcurves / keys | 39 / 149 / 3,345, loop endpoints all zero |
+| triangles | 20,958 (budget 25,000) |
+
+Comparison sheet: `review/v13/p2_contact.png`.
+
+### what P2 deliberately did not do
+
+- the window frame is not yet the thick charcoal band of the reference; the band is 0.072
+- the machine still has a thin grey open-cone hopper and a thin pipe arm (P3)
+- the chute is still the 2.24 m brown plank (P3)

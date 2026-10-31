@@ -1,0 +1,54 @@
+{
+  "opening": {
+    "w": 0.984,
+    "h": 1.116,
+    "w_to_body": 0.5467,
+    "h_to_body": 0.62,
+    "target": [
+      0.5421,
+      0.6158
+    ],
+    "corner_r": 0.42
+  },
+  "applied": true,
+  "blobs": [
+    "P2_Nebula_00",
+    "P2_Nebula_01",
+    "P2_Nebula_02",
+    "P2_Nebula_03",
+    "P2_Nebula_04",
+    "P2_Nebula_05",
+    "P2_Nebula_06",
+    "P2_Nebula_07",
+    "P2_Nebula_08",
+    "P2_Nebula_09",
+    "P2_Nebula_10",
+    "P2_Nebula_11",
+    "P2_Nebula_12",
+    "P2_Nebula_13",
+    "P2_Nebula_14",
+    "P2_Nebula_15",
+    "P2_Nebula_16",
+    "P2_Nebula_17",
+    "P2_Nebula_18",
+    "P2_Nebula_19",
+    "P2_Nebula_20",
+    "P2_Nebula_21",
+    "P2_Nebula_22",
+    "P2_Nebula_23",
+    "P2_Nebula_24",
+    "P2_Nebula_25",
+    "P2_Nebula_26",
+    "P2_Nebula_27",
+    "P2_Nebula_28",
+    "P2_Nebula_29"
+  ],
+  "layers": {
+    "frame": [
+      -0.858,
+      -0.788
+    ],
+    "glow_y": -0.7955,
+    "glass_y": -0.792
+  }
+}
