@@ -470,3 +470,73 @@ chute len/body 0.6768 vs 0.9655; base H/body 0.1576 vs 0.0444.
   off to the upper left of the machine and flies into the claw by f31. Scripted and loop-safe,
   but it is not in the reference; a design call is owed for the hero shot.
 
+## v13 gate: product path (2026-10-31, added before P1)
+
+The plan's gate frames were f31/f43/f147/f155, all of which fall while `Product` is
+hidden (it becomes visible at f232). Section 4.5 named this as a hole in the plan and
+section 7 listed f232-f300 as the product-path gate, but no script existed. This adds
+one, before P1 changes any geometry.
+
+- Script: `qa_v2/v13_product_path_gate.py` (read-only, criteria pinned in its docstring)
+- Visual evidence: `qa_v2/v13_product_path_shots.py`
+- Baselines: `qa_v2/v13_product_path_v12.json`, `qa_v2/v13_product_path_v13p0.json`
+
+Run:
+
+```
+G:\Blender\blender-5.4.0-alpha\blender.exe --background <blend> \
+  --python qa_v2/v13_product_path_gate.py -- --out <json> --tag <tag>
+```
+
+Exits 3 on FAIL, so a stage cannot be accepted by accident.
+
+### how it measures
+
+Per frame, a 3x3 grid over the product's footprint; for each column a downward ray
+finds the highest surface in a 0.080 sink band below the product's bottom (the band
+keeps a sunk product measuring against the surface it sank into instead of finding
+the chute's underside). `Machine_Chute`'s world bbox decides which columns still
+count as "over the chute".
+
+States: RESTING (centre supported, gap within [-0.015, +0.030]), PENETRATING
+(gap < -0.015), HOVERING (centre over the chute with nothing under it), ARC
+(everything over the chute is above +0.030 and z is moving), EXITED (no column
+over the chute any more), COLLAPSED (scale < 0.01). FAIL on PENETRATING, HOVERING,
+and FLAT_FLIGHT (constant z for 3+ consecutive EXITED frames).
+
+The centre column is the criterion, not every column: the chute mouth is an opening,
+so while the product emerges at f232-f242 its shoulder legitimately overhangs by a
+few cm with the machine's side below. A first version required support under all
+nine columns and failed f234/f239 on exactly that overhang; support ratio is now
+reported and warned below 0.5 instead.
+
+### verdict: FAIL, on both v12 and v13-P0
+
+`v12` and `v13-P0` give the same verdict and differ on 2 of 96 frames (P0's -5 mm
+baseline shift moved f254 and f275 across the penetration threshold by a hair).
+The defect therefore pre-dates P0. Both runs, measured:
+
+| finding | frames | numbers |
+|---|---|---|
+| **FLAT_FLIGHT** | f289-f300 (12 f) | product is off the chute at f289 and holds `bottom_z = 0.698` for 12 frames, `dz = 0.000`, nothing underneath, then jumps to 0.95 at f301 as it collapses |
+| **PENETRATING (bounce squash)** | f255, f256 | `bottom_z` 0.695 -> 0.648, i.e. 52 mm below the chute floor top (0.705), then snaps to 0.774 at f257 (+126 mm in one frame) |
+| **PENETRATING (landing dip)** | f273, f274 | -17 mm on touchdown, settling to the -5 mm rest value by f275 |
+
+Context that the gate says is fine: the f258-f270 bounce arc peaks at +379 mm over
+the chute (f263) and returns -38 mm by f270 — authored trajectory, not a defect.
+Rest contact has always been a 5 mm sink (product bottom 0.700 vs chute floor 0.705);
+that is the baseline, not a regression. f285-f288 still has only 6/9 and 3/9 columns
+over the chute and stays RESTING because the centre of mass is still supported, which
+is correct for a product sliding off a lip.
+
+### open, needs a ruling before P1 signs off
+
+1. `FLAT_FLIGHT` f289-f300. Either the launch is meant to be a flat shot (then raise
+   `--tol-flat` / narrow the gate range and say so) or the product needs to arc down
+   after leaving the lip. 12 frames at 60 fps is 0.2 s on screen; `review/v13/gate_f0294.png`
+   shows it hanging in mid-air past the chute end with nothing under it.
+2. Bounce squash f255/f256, 52 mm into the chute floor. If squash-into-the-floor is
+   intended, raise `--tol-pen` to 0.06 and record why; otherwise the dip needs
+   animation surgery, which collides with the "do not touch the animation" constraint
+   and has to be decided, not drifted into.
+
