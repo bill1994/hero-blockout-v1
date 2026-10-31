@@ -1,0 +1,591 @@
+{
+  "blend": "G:\\DSHProject\\BlenderMcp\\hero_animation_v13_soft.blend",
+  "frame_start": 1,
+  "frame_end": 327,
+  "fps": 60,
+  "actions": [
+    {
+      "name": "Arm_Elbow_PivotAction",
+      "fcurves": 3,
+      "keys": 165,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "users": 1
+    },
+    {
+      "name": "Arm_Elbow_PivotAction_V2",
+      "fcurves": 3,
+      "keys": 118,
+      "range": [
+        1.0,
+        326.5
+      ],
+      "users": 2
+    },
+    {
+      "name": "Arm_Finger_LAction",
+      "fcurves": 3,
+      "keys": 24,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "users": 1
+    },
+    {
+      "name": "Arm_Finger_LAction_V2",
+      "fcurves": 3,
+      "keys": 21,
+      "range": [
+        1.0,
+        291.348
+      ],
+      "users": 2
+    },
+    {
+      "name": "Arm_Finger_RAction",
+      "fcurves": 3,
+      "keys": 24,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "users": 1
+    },
+    {
+      "name": "Arm_Finger_RAction_V2",
+      "fcurves": 3,
+      "keys": 21,
+      "range": [
+        1.0,
+        291.348
+      ],
+      "users": 2
+    },
+    {
+      "name": "Arm_MountAction",
+      "fcurves": 2,
+      "keys": 22,
+      "range": [
+        127.646,
+        179.015
+      ],
+      "users": 1
+    },
+    {
+      "name": "Arm_MountAction_V2",
+      "fcurves": 3,
+      "keys": 52,
+      "range": [
+        1.0,
+        242.652
+      ],
+      "users": 2
+    },
+    {
+      "name": "Arm_Shoulder_PivotAction",
+      "fcurves": 3,
+      "keys": 165,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "users": 1
+    },
+    {
+      "name": "Arm_Shoulder_PivotAction_V2",
+      "fcurves": 3,
+      "keys": 116,
+      "range": [
+        1.0,
+        326.5
+      ],
+      "users": 2
+    },
+    {
+      "name": "Arm_WristAction",
+      "fcurves": 3,
+      "keys": 162,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "users": 1
+    },
+    {
+      "name": "Arm_WristAction_V2",
+      "fcurves": 3,
+      "keys": 126,
+      "range": [
+        1.0,
+        300.894
+      ],
+      "users": 2
+    },
+    {
+      "name": "Arm_Yaw_PivotAction",
+      "fcurves": 3,
+      "keys": 165,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "users": 1
+    },
+    {
+      "name": "Arm_Yaw_PivotAction_V2",
+      "fcurves": 3,
+      "keys": 111,
+      "range": [
+        1.0,
+        270.0
+      ],
+      "users": 2
+    },
+    {
+      "name": "IdeaAction",
+      "fcurves": 9,
+      "keys": 290,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "users": 1
+    },
+    {
+      "name": "IdeaAction_V2",
+      "fcurves": 8,
+      "keys": 811,
+      "range": [
+        1.0,
+        327.0
+      ],
+      "users": 2
+    },
+    {
+      "name": "MAT_Window_Noise1Action",
+      "fcurves": 1,
+      "keys": 7,
+      "range": [
+        1.0,
+        328.0
+      ],
+      "users": 1
+    },
+    {
+      "name": "MAT_Window_Noise2Action",
+      "fcurves": 1,
+      "keys": 7,
+      "range": [
+        1.0,
+        328.0
+      ],
+      "users": 1
+    },
+    {
+      "name": "Machine_BodyAction",
+      "fcurves": 2,
+      "keys": 22,
+      "range": [
+        127.646,
+        179.015
+      ],
+      "users": 1
+    },
+    {
+      "name": "Machine_BodyAction_V2",
+      "fcurves": 3,
+      "keys": 55,
+      "range": [
+        1.0,
+        242.652
+      ],
+      "users": 2
+    },
+    {
+      "name": "Machine_HopperAction",
+      "fcurves": 2,
+      "keys": 28,
+      "range": [
+        1.0,
+        179.015
+      ],
+      "users": 1
+    },
+    {
+      "name": "Machine_HopperAction_V2",
+      "fcurves": 3,
+      "keys": 55,
+      "range": [
+        1.0,
+        242.652
+      ],
+      "users": 2
+    },
+    {
+      "name": "Machine_LightStripAction",
+      "fcurves": 6,
+      "keys": 34,
+      "range": [
+        127.646,
+        179.015
+      ],
+      "users": 1
+    },
+    {
+      "name": "Machine_LightStripAction_V2",
+      "fcurves": 7,
+      "keys": 73,
+      "range": [
+        1.0,
+        281.803
+      ],
+      "users": 2
+    },
+    {
+      "name": "Machine_Light_01Action",
+      "fcurves": 6,
+      "keys": 42,
+      "range": [
+        127.646,
+        179.015
+      ],
+      "users": 1
+    },
+    {
+      "name": "Machine_Light_01Action_V2",
+      "fcurves": 7,
+      "keys": 69,
+      "range": [
+        1.0,
+        242.652
+      ],
+      "users": 2
+    },
+    {
+      "name": "Machine_Light_02Action",
+      "fcurves": 6,
+      "keys": 42,
+      "range": [
+        127.646,
+        179.015
+      ],
+      "users": 1
+    },
+    {
+      "name": "Machine_Light_02Action_V2",
+      "fcurves": 7,
+      "keys": 69,
+      "range": [
+        1.0,
+        242.652
+      ],
+      "users": 2
+    },
+    {
+      "name": "Machine_Light_03Action",
+      "fcurves": 6,
+      "keys": 42,
+      "range": [
+        127.646,
+        179.015
+      ],
+      "users": 1
+    },
+    {
+      "name": "Machine_Light_03Action_V2",
+      "fcurves": 7,
+      "keys": 69,
+      "range": [
+        1.0,
+        242.652
+      ],
+      "users": 2
+    },
+    {
+      "name": "Machine_OutputChuteAction",
+      "fcurves": 2,
+      "keys": 22,
+      "range": [
+        127.646,
+        179.015
+      ],
+      "users": 1
+    },
+    {
+      "name": "Machine_OutputChuteAction_V2",
+      "fcurves": 3,
+      "keys": 52,
+      "range": [
+        1.0,
+        242.652
+      ],
+      "users": 2
+    },
+    {
+      "name": "Machine_RootAction",
+      "fcurves": 0,
+      "keys": 0,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "users": 1
+    },
+    {
+      "name": "Machine_RootAction_V2",
+      "fcurves": 3,
+      "keys": 52,
+      "range": [
+        156.36,
+        242.652
+      ],
+      "users": 2
+    },
+    {
+      "name": "Machine_WindowAction",
+      "fcurves": 2,
+      "keys": 22,
+      "range": [
+        127.646,
+        179.015
+      ],
+      "users": 1
+    },
+    {
+      "name": "Machine_WindowAction_V2",
+      "fcurves": 0,
+      "keys": 0,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "users": 2
+    },
+    {
+      "name": "Outlet_FlapAction",
+      "fcurves": 1,
+      "keys": 7,
+      "range": [
+        1.0,
+        255.459
+      ],
+      "users": 1
+    },
+    {
+      "name": "ProductAction.001",
+      "fcurves": 8,
+      "keys": 54,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "users": 1
+    },
+    {
+      "name": "ProductAction.001_V2",
+      "fcurves": 8,
+      "keys": 78,
+      "range": [
+        1.0,
+        326.5
+      ],
+      "users": 2
+    }
+  ],
+  "action_count": 39,
+  "total_fcurves": 149,
+  "total_keys": 3294,
+  "object_action_map": {
+    "Arm_Elbow_Pivot": "Arm_Elbow_PivotAction_V2",
+    "Arm_Finger_L": "Arm_Finger_LAction_V2",
+    "Arm_Finger_R": "Arm_Finger_RAction_V2",
+    "Arm_Mount": "Arm_MountAction_V2",
+    "Arm_Shoulder_Pivot": "Arm_Shoulder_PivotAction_V2",
+    "Arm_Wrist": "Arm_WristAction_V2",
+    "Arm_Yaw_Pivot": "Arm_Yaw_PivotAction_V2",
+    "Idea": "IdeaAction_V2",
+    "Machine_Body": "Machine_BodyAction_V2",
+    "Machine_Hopper": "Machine_HopperAction_V2",
+    "Machine_Light_01": "Machine_Light_01Action_V2",
+    "Machine_Light_02": "Machine_Light_02Action_V2",
+    "Machine_Light_03": "Machine_Light_03Action_V2",
+    "Machine_LightStrip": "Machine_LightStripAction_V2",
+    "Machine_OutputChute": "Machine_OutputChuteAction_V2",
+    "Machine_Root": "Machine_RootAction_V2",
+    "Machine_Window": "Machine_WindowAction_V2",
+    "Outlet_Flap": "Outlet_FlapAction",
+    "Product": "ProductAction.001_V2"
+  },
+  "loop_endpoint_max_abs_delta": {
+    "Idea": 0.0,
+    "Product": 0.0,
+    "Arm_Finger_L": 0.0,
+    "Arm_Finger_R": 0.0,
+    "Arm_Wrist": 0.0,
+    "Arm_Base": 0.0,
+    "Arm_Mount": 0.0,
+    "Machine_Root": 0.0,
+    "Machine_Body": 0.0,
+    "Machine_Hopper": 0.0,
+    "Machine_OutputChute": 0.0,
+    "Machine_Chute": 0.0,
+    "Machine_Light_01": 0.0,
+    "Machine_LightStrip": 0.0,
+    "Outlet_Flap": 0.0,
+    "Arm_Rings_Elbow": 0.0,
+    "Arm_Rings_Shoulder": 0.0,
+    "Arm_Seams_Fore": 0.0,
+    "Arm_Seams_Upper": 0.0
+  },
+  "grab_contact": {
+    "31": {
+      "Product_bbox": [
+        [
+          -0.5,
+          -0.5,
+          -0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      "Idea_bbox": [
+        [
+          -3.5449,
+          -0.8681,
+          1.4719
+        ],
+        [
+          -3.0449,
+          -0.3681,
+          1.9719
+        ]
+      ],
+      "Arm_Finger_L->Product_min": 2.90657,
+      "Arm_Finger_L->Idea_min": 0.01799,
+      "Arm_Finger_R->Product_min": 3.00322,
+      "Arm_Finger_R->Idea_min": 0.00614,
+      "tip_gap_LR": 0.31632
+    },
+    "43": {
+      "Product_bbox": [
+        [
+          -0.5,
+          -0.5,
+          -0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      "Idea_bbox": [
+        [
+          -3.5449,
+          -0.8681,
+          1.4719
+        ],
+        [
+          -3.0449,
+          -0.3681,
+          1.9719
+        ]
+      ],
+      "Arm_Finger_L->Product_min": 2.90662,
+      "Arm_Finger_L->Idea_min": 0.01799,
+      "Arm_Finger_R->Product_min": 3.00328,
+      "Arm_Finger_R->Idea_min": 0.00614,
+      "tip_gap_LR": 0.31632
+    },
+    "147": {
+      "Product_bbox": [
+        [
+          -0.5,
+          -0.5,
+          -0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      "Idea_bbox": [
+        [
+          -0.2629,
+          -0.2475,
+          3.246
+        ],
+        [
+          0.2367,
+          0.2515,
+          3.7451
+        ]
+      ],
+      "Arm_Finger_L->Product_min": 2.93938,
+      "Arm_Finger_L->Idea_min": 0.02555,
+      "Arm_Finger_R->Product_min": 2.93938,
+      "Arm_Finger_R->Idea_min": 0.02348,
+      "tip_gap_LR": 0.32185
+    },
+    "155": {
+      "Product_bbox": [
+        [
+          -0.5,
+          -0.5,
+          -0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      "Idea_bbox": [
+        [
+          -0.2525,
+          -0.2491,
+          2.5384
+        ],
+        [
+          0.247,
+          0.2499,
+          3.0375
+        ]
+      ],
+      "Arm_Finger_L->Product_min": 2.95316,
+      "Arm_Finger_L->Idea_min": 0.41537,
+      "Arm_Finger_R->Product_min": 2.92863,
+      "Arm_Finger_R->Idea_min": 0.47581,
+      "tip_gap_LR": 0.32185
+    }
+  },
+  "evaluated_triangles": 18314,
+  "mesh_objects": 46,
+  "materials": [
+    "MAT_Arm",
+    "MAT_Arm_Dark",
+    "MAT_Body",
+    "MAT_Color_Amber",
+    "MAT_Color_Mint",
+    "MAT_Hero_Light",
+    "MAT_Idea",
+    "MAT_Pedestal",
+    "MAT_Product2",
+    "MAT_Window_Cavity",
+    "MAT_Window_Frame",
+    "MAT_Window_Glass",
+    "MAT_Window_Glow",
+    "MAT_Window_Noise1",
+    "MAT_Window_Noise2"
+  ],
+  "body_material_slots": [
+    "MAT_Body"
+  ]
+}

@@ -377,3 +377,90 @@ Per ART_DIRECTION_PLAN.md (reference-image style pass, proportions and rig untou
 - end lip is a beveled cap, not a protruding roll (2.2-length iron rule).
 - GLB loses the Object Info light wiring (render-only fix).
 - run ledger + rulings: .superpowers/sdd/ART_DIRECTION_PLAN/progress.md
+
+---
+
+## v13 P0 audit pass (2026-10-31)
+
+input hero_animation_v12_style.blend -> output hero_animation_v13_soft.blend. 327f@60fps.
+Hygiene only: no geometry, no rig, no action rewrite. Plan and rulings:
+docs/superpowers/specs/2026-10-31-style-v13-reference-match-design.md (commit 566f3e0).
+
+Builder note: v12 was saved by Blender 504.3, so every step below runs on
+G:\Blender\blender-5.4.0-alpha\blender.exe. Opening with 5.3.0 warns
+"File written by newer Blender binary (504.3), expect loss of data".
+
+### fixes (qa_v2/v13_p0_fix.py)
+1. Q4 loop closure. Scanned every animated fcurve for evaluate(f1) != evaluate(f327):
+   found 10 breaks, closed 8. All 8 were the same +0.005005 offset on location[2]:
+   Arm_Mount, Machine_Body, Machine_Hopper, Machine_Light_01/02/03, Machine_LightStrip,
+   Machine_OutputChute. Repair shifts the LAST key's co[1] plus both handles by the delta;
+   key count and key times are untouched (23 or 26 keys, last key still at f242.65).
+   These eight z-curves are one shared +-7 cm wobble offset added to each object's own base,
+   so a partial fix would leave the lights and chute floating 5 mm above the body at the
+   wrap: it had to be all eight or none.
+   Deliberately NOT closed: Product location[0] (1.35 -> 7.20) and location[2] (0.90 -> 1.20).
+   Product is hidden at f1 and scaled to 0.001 (invisible) at f327, so both endpoints are
+   off-screen; rewriting them would fight the product path. Recorded in the report JSON.
+2. D1 Machine_Body had ZERO material slots, so the whole shell exported as default white.
+   New MAT_Body: albedo linear (0.723, 0.665, 0.578), roughness 0.45, metallic 0.
+   That albedo is the reference cream read off the sheet (#DDD5C8), and it is within 0.02
+   of the existing MAT_Arm — the v12 palette was never wrong, the body was simply not
+   assigned anything.
+3. D2 four ornament objects were parented correctly but never kept their transform, so they
+   sat ~3 units away from the joint they decorate and rendered as hoops lying on the floor.
+   Re-seated to the parent mesh's world bbox centre: Arm_Rings_Elbow (-0.515,-3.030,+1.769),
+   Arm_Rings_Shoulder (-0.208,-0.665,+2.003), Arm_Seams_Fore (-0.537,-3.195,+1.089),
+   Arm_Seams_Upper (-0.292,-1.311,+2.468); residual 0.000000 on all four.
+4. D3 Cutter_Outlet, Cutter_Window, Product_Proxy_FitCheck, Product_Proxy_Large forced
+   hide_render=hide_viewport=True (they had no material and were never meant to render).
+   Post-check: "meshes still rendering with no material: none".
+
+### verify
+- regression vs v12 (qa_v2/v13_p0_baseline.json): actions 39, fcurves 149, keys 3,294,
+  evaluated triangles 18,314, mesh objects 46 — all unchanged. Per-action key and fcurve
+  counts identical. Grab contact identical to four decimals:
+  f31 L 0.01799 / R 0.00614 / gap 0.31632; f147 L 0.02555 / R 0.02348 / gap 0.32185;
+  f155 L 0.41537 / R 0.47581.
+- loop closure, measured on renders with a PINNED camera (the auto-framing renderer moves
+  the camera between frames, which makes f1 and f326 incomparable — see gotcha below):
+  v12 f327 vs f1 = 7,750 px differ by >8 levels, max 132. v13-P0 f327 vs f1 = 0 px differ,
+  byte-identical. The 5 mm pop is gone.
+- shape metrics unchanged by P0 (qa_v2/v13_shape_metrics_v12.json vs _v13p0.json, all keys
+  identical) — confirms P0 is shape-neutral.
+- renders review/v13/p0_{front,right,back,top}.png, v12_* same views for comparison,
+  pin_{p0,v12}_f{1,326,327}_front.png for the loop diffs, diff_v13_f1_f326.png.
+
+### measured reference contract (reference/style_v13_ref_contract.json)
+Sheet split into 3 panels at x [85,682] [776,1198] [1268,1852] = front / three-quarter / top.
+Body rectangle 297 x 406 px, seeded by hand then refined to the strongest luminance gradient
+within +-40 px of each edge; edge strengths 0.058 / 0.114 / 0.072 / 0.376.
+Reference vs v12: body W:H 0.7315 vs 1.2889; window W/body 0.5421 vs 0.4562;
+window H/body 0.6158 vs 0.6714; window H:W 1.5528 vs 1.1419; hopper dia/body 0.7778 vs 0.5905;
+chute len/body 0.6768 vs 0.9655; base H/body 0.1576 vs 0.0444.
+
+### gotchas
+- Blender 4.4+ removed Action.fcurves for slotted actions. Read curves via
+  action.layers[].strips[].channelbags[].fcurves or you get
+  AttributeError: 'Action' object has no attribute 'fcurves'.
+- In --background mode object.matrix_world is NOT refreshed after frame_set, even with
+  view_layer.update(); it stays stale (often identity). Always read the evaluated depsgraph:
+  obj.evaluated_get(depsgraph).matrix_world. The first version of the loop probe reported
+  Product delta 0.000000 for this reason while the fcurves said 5.85.
+- Auto-framed comparison renders are worthless: the framing is derived from scene bounds,
+  which change with the animation. Pin --center and --span when diffing two frames.
+- Machine_Chute is parented to the keyed empty Machine_OutputChute, so the chute is NOT a
+  static prop and "static parts may be edited freely" does not cover it.
+
+### known limits / next
+- The P0 renders expose what P1/P2 must fix, unchanged by this pass: the body is 76% too wide
+  for the reference silhouette, the window is nearly square where the reference is a 1.55
+  tall ellipse, the hopper is a thin-walled open cone you can see through, Machine_Screws
+  spreads 672 faces of protruding screws over the front where the reference has four flush
+  bolts, and the base is 3.5x too thin. See design doc 4.3 / 5.2.
+- The arm reads as a bent pipe with oversized hoops even after D2 re-seating: the rings are
+  correctly positioned now but their radius is far larger than the tube they decorate (P3).
+- Idea sits at (-3.55,-0.85,3.55)..(-3.05,-0.35,4.05) at f1, i.e. the orb starts parked well
+  off to the upper left of the machine and flies into the claw by f31. Scripted and loop-safe,
+  but it is not in the reference; a design call is owed for the hero shot.
+

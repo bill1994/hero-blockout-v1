@@ -75,10 +75,17 @@ out["object_action_map"] = anim
 
 # ---------------- loop endpoint delta ----------------
 def wloc(name):
+    """World translation from the EVALUATED depsgraph.
+
+    Plain matrix_world is not refreshed in --background mode, so reading it
+    after frame_set returns a stale (often identity) matrix. Always go through
+    evaluated_get().
+    """
     o = bpy.data.objects.get(name)
     if o is None:
         return None
-    return o.matrix_world.translation.copy()
+    dg = bpy.context.evaluated_depsgraph_get()
+    return o.evaluated_get(dg).matrix_world.translation.copy()
 
 
 probe = [
@@ -87,9 +94,20 @@ probe = [
     "Arm_Finger_L",
     "Arm_Finger_R",
     "Arm_Wrist",
-    "Machine_Hopper",
-    "Outlet_Flap",
+    "Arm_Base",
+    "Arm_Mount",
     "Machine_Root",
+    "Machine_Body",
+    "Machine_Hopper",
+    "Machine_OutputChute",
+    "Machine_Chute",
+    "Machine_Light_01",
+    "Machine_LightStrip",
+    "Outlet_Flap",
+    "Arm_Rings_Elbow",
+    "Arm_Rings_Shoulder",
+    "Arm_Seams_Fore",
+    "Arm_Seams_Upper",
 ]
 loop = {}
 for f in (sc.frame_start, sc.frame_end):

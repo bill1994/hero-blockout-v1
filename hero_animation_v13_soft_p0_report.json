@@ -1,0 +1,114 @@
+{
+  "out": "G:\\DSHProject\\BlenderMcp\\hero_animation_v13_soft.blend",
+  "fixes": [
+    "Q4: Arm_Mount location[2]: last key f242.65 0.855005 -> 0.850000 (delta -0.005005, keys 23 unchanged) CLOSED",
+    "Q4: Machine_Body location[2]: last key f242.65 1.005005 -> 1.000000 (delta -0.005005, keys 26 unchanged) CLOSED",
+    "Q4: Machine_Hopper location[2]: last key f242.65 2.455005 -> 2.450000 (delta -0.005005, keys 26 unchanged) CLOSED",
+    "Q4: Machine_Light_01 location[2]: last key f242.65 1.755005 -> 1.750000 (delta -0.005005, keys 23 unchanged) CLOSED",
+    "Q4: Machine_Light_02 location[2]: last key f242.65 1.755005 -> 1.750000 (delta -0.005005, keys 23 unchanged) CLOSED",
+    "Q4: Machine_Light_03 location[2]: last key f242.65 1.755005 -> 1.750000 (delta -0.005005, keys 23 unchanged) CLOSED",
+    "Q4: Machine_LightStrip location[2]: last key f242.65 0.205005 -> 0.200000 (delta -0.005005, keys 23 unchanged) CLOSED",
+    "Q4: Machine_OutputChute location[2]: last key f242.65 0.705005 -> 0.700000 (delta -0.005005, keys 23 unchanged) CLOSED",
+    "Q4: loop breaks found: 10, repaired: 8, left alone: ['Product.location[0]', 'Product.location[2]']",
+    "D1: Machine_Body(0 slots) <- MAT_Body  albedo linear (0.723, 0.665, 0.578) rough 0.45",
+    "D2: Arm_Rings_Elbow <- Arm_Elbow_Joint  moved (-0.515, -3.030, +1.769)  residual 0.000000",
+    "D2: Arm_Rings_Shoulder <- Arm_Shoulder_Joint  moved (-0.208, -0.665, +2.003)  residual 0.000000",
+    "D2: Arm_Seams_Fore <- Arm_Forearm  moved (-0.537, -3.195, +1.089)  residual 0.000000",
+    "D2: Arm_Seams_Upper <- Arm_UpperArm  moved (-0.292, -1.311, +2.468)  residual 0.000000",
+    "D3: Cutter_Outlet hide_render/hide_viewport (True, True) -> (True, True)",
+    "D3: Cutter_Window hide_render/hide_viewport (True, True) -> (True, True)",
+    "D3: Product_Proxy_FitCheck hide_render/hide_viewport (True, True) -> (True, True)",
+    "D3: Product_Proxy_Large hide_render/hide_viewport (True, True) -> (True, True)",
+    "D3: meshes still rendering with no material: none"
+  ],
+  "loop_breaks_found": [
+    {
+      "object": "Arm_Mount",
+      "path": "location",
+      "index": 2,
+      "first": 0.85,
+      "last": 0.855005,
+      "keys": 23
+    },
+    {
+      "object": "Machine_Body",
+      "path": "location",
+      "index": 2,
+      "first": 1.0,
+      "last": 1.005005,
+      "keys": 26
+    },
+    {
+      "object": "Machine_Hopper",
+      "path": "location",
+      "index": 2,
+      "first": 2.45,
+      "last": 2.455005,
+      "keys": 26
+    },
+    {
+      "object": "Machine_Light_01",
+      "path": "location",
+      "index": 2,
+      "first": 1.75,
+      "last": 1.755005,
+      "keys": 23
+    },
+    {
+      "object": "Machine_Light_02",
+      "path": "location",
+      "index": 2,
+      "first": 1.75,
+      "last": 1.755005,
+      "keys": 23
+    },
+    {
+      "object": "Machine_Light_03",
+      "path": "location",
+      "index": 2,
+      "first": 1.75,
+      "last": 1.755005,
+      "keys": 23
+    },
+    {
+      "object": "Machine_LightStrip",
+      "path": "location",
+      "index": 2,
+      "first": 0.2,
+      "last": 0.205005,
+      "keys": 23
+    },
+    {
+      "object": "Machine_OutputChute",
+      "path": "location",
+      "index": 2,
+      "first": 0.7,
+      "last": 0.705005,
+      "keys": 23
+    },
+    {
+      "object": "Product",
+      "path": "location",
+      "index": 0,
+      "first": 1.35,
+      "last": 7.2,
+      "keys": 32
+    },
+    {
+      "object": "Product",
+      "path": "location",
+      "index": 2,
+      "first": 0.9,
+      "last": 1.2,
+      "keys": 7
+    }
+  ],
+  "rendering_without_material": [],
+  "scene": {
+    "frame_start": 1,
+    "frame_end": 327,
+    "fps": 60,
+    "objects": 58,
+    "actions": 39
+  }
+}

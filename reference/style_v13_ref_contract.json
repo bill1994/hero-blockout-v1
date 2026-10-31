@@ -1,0 +1,342 @@
+{
+  "ref": "G:\\DSHProject\\BlenderMcp\\reference\\style_v13_ref.png",
+  "size": [
+    1920,
+    1080
+  ],
+  "panel_count": 3,
+  "panels": [
+    {
+      "index": 0,
+      "x_range": [
+        85,
+        682
+      ],
+      "width": 598,
+      "foreground_bbox": [
+        0,
+        268,
+        597,
+        848
+      ],
+      "foreground_wh": [
+        598,
+        581
+      ],
+      "families": {
+        "cream": {
+          "pixels": 99253,
+          "bbox": [
+            0,
+            268,
+            597,
+            845
+          ],
+          "wh": [
+            598,
+            578
+          ],
+          "coverage_of_panel": 0.5127
+        },
+        "mint": {
+          "pixels": 15604,
+          "bbox": [
+            41,
+            366,
+            469,
+            847
+          ],
+          "wh": [
+            429,
+            482
+          ],
+          "coverage_of_panel": 0.0806
+        },
+        "orange": {
+          "pixels": 6000,
+          "bbox": [
+            56,
+            486,
+            581,
+            766
+          ],
+          "wh": [
+            526,
+            281
+          ],
+          "coverage_of_panel": 0.031
+        },
+        "charcoal": {
+          "pixels": 31744,
+          "bbox": [
+            8,
+            369,
+            472,
+            848
+          ],
+          "wh": [
+            465,
+            480
+          ],
+          "coverage_of_panel": 0.164
+        },
+        "glow": {
+          "pixels": 4991,
+          "bbox": [
+            208,
+            513,
+            368,
+            762
+          ],
+          "wh": [
+            161,
+            250
+          ],
+          "coverage_of_panel": 0.0258
+        }
+      }
+    },
+    {
+      "index": 1,
+      "x_range": [
+        776,
+        1198
+      ],
+      "width": 423,
+      "foreground_bbox": [
+        0,
+        268,
+        422,
+        854
+      ],
+      "foreground_wh": [
+        423,
+        587
+      ],
+      "families": {
+        "cream": {
+          "pixels": 80580,
+          "bbox": [
+            0,
+            268,
+            416,
+            840
+          ],
+          "wh": [
+            417,
+            573
+          ],
+          "coverage_of_panel": 0.4587
+        },
+        "mint": {
+          "pixels": 50595,
+          "bbox": [
+            5,
+            372,
+            358,
+            849
+          ],
+          "wh": [
+            354,
+            478
+          ],
+          "coverage_of_panel": 0.288
+        },
+        "orange": {
+          "pixels": 2823,
+          "bbox": [
+            37,
+            361,
+            234,
+            769
+          ],
+          "wh": [
+            198,
+            409
+          ],
+          "coverage_of_panel": 0.0161
+        },
+        "charcoal": {
+          "pixels": 47075,
+          "bbox": [
+            7,
+            368,
+            364,
+            854
+          ],
+          "wh": [
+            358,
+            487
+          ],
+          "coverage_of_panel": 0.268
+        },
+        "glow": {
+          "pixels": 55,
+          "bbox": [
+            242,
+            751,
+            250,
+            763
+          ],
+          "wh": [
+            9,
+            13
+          ],
+          "coverage_of_panel": 0.0003
+        }
+      }
+    },
+    {
+      "index": 2,
+      "x_range": [
+        1268,
+        1852
+      ],
+      "width": 585,
+      "foreground_bbox": [
+        0,
+        401,
+        584,
+        853
+      ],
+      "foreground_wh": [
+        585,
+        453
+      ],
+      "families": {
+        "cream": {
+          "pixels": 65787,
+          "bbox": [
+            0,
+            401,
+            584,
+            747
+          ],
+          "wh": [
+            585,
+            347
+          ],
+          "coverage_of_panel": 0.4983
+        },
+        "mint": {
+          "pixels": 37956,
+          "bbox": [
+            25,
+            444,
+            452,
+            853
+          ],
+          "wh": [
+            428,
+            410
+          ],
+          "coverage_of_panel": 0.2875
+        },
+        "orange": {
+          "pixels": 14222,
+          "bbox": [
+            14,
+            509,
+            570,
+            739
+          ],
+          "wh": [
+            557,
+            231
+          ],
+          "coverage_of_panel": 0.1077
+        },
+        "charcoal": {
+          "pixels": 8557,
+          "bbox": [
+            12,
+            468,
+            461,
+            737
+          ],
+          "wh": [
+            450,
+            270
+          ],
+          "coverage_of_panel": 0.0648
+        },
+        "glow": {
+          "pixels": 0,
+          "bbox": null,
+          "wh": [
+            0,
+            0
+          ],
+          "coverage_of_panel": 0.0
+        }
+      }
+    }
+  ],
+  "contract_ratios": {
+    "body_w_to_h": 0.7315,
+    "window_w_to_body_w": 0.5421,
+    "window_h_to_body_h": 0.6158,
+    "hopper_dia_to_body_w": 0.7778,
+    "chute_len_to_body_w": 0.6768,
+    "window_h_to_w": 1.5528,
+    "base_h_to_body_h": 0.1576,
+    "body_px": {
+      "x_range": [
+        100,
+        396
+      ],
+      "y_range": [
+        382,
+        787
+      ],
+      "w": 297,
+      "h": 406
+    },
+    "window_px": {
+      "w": 161,
+      "h": 250,
+      "bbox": [
+        208,
+        513,
+        368,
+        762
+      ]
+    },
+    "hopper_px": {
+      "w": 231,
+      "h": 114
+    },
+    "chute_px": {
+      "w": 201
+    },
+    "body_edge_calibration": {
+      "note": "body rectangle seeded by hand-read coordinates, then refined to the strongest luminance gradient within +-40 px of each seed",
+      "seed": {
+        "left": 110,
+        "right": 420,
+        "top": 355,
+        "bottom": 812
+      },
+      "refined": {
+        "x_range": [
+          100,
+          396
+        ],
+        "y_range": [
+          382,
+          787
+        ],
+        "w": 297,
+        "h": 406
+      },
+      "edge_gradient_strength": {
+        "left": 0.05831,
+        "right": 0.11396,
+        "top": 0.07243,
+        "bottom": 0.3759
+      },
+      "panel_local_x": true,
+      "y_is_absolute": true
+    }
+  }
+}

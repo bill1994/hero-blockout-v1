@@ -425,9 +425,20 @@
     "Arm_Finger_L": 0.0,
     "Arm_Finger_R": 0.0,
     "Arm_Wrist": 0.0,
+    "Arm_Base": 0.0,
+    "Arm_Mount": 0.005005,
+    "Machine_Root": 0.0,
+    "Machine_Body": 0.005005,
     "Machine_Hopper": 0.005005,
+    "Machine_OutputChute": 0.005005,
+    "Machine_Chute": 0.005005,
+    "Machine_Light_01": 0.005005,
+    "Machine_LightStrip": 0.005005,
     "Outlet_Flap": 0.005005,
-    "Machine_Root": 0.0
+    "Arm_Rings_Elbow": 0.0,
+    "Arm_Rings_Shoulder": 0.0,
+    "Arm_Seams_Fore": 0.0,
+    "Arm_Seams_Upper": 0.0
   },
   "grab_contact": {
     "31": {
