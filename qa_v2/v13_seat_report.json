@@ -1,0 +1,118 @@
+{
+  "blend": "G:\\DSHProject\\hero-blockout\\hero-blockout-v1\\hero_animation_v13_soft.blend",
+  "applied": true,
+  "clearance": 0.001,
+  "changes": [
+    {
+      "frame": 233,
+      "support": "Machine_Chute",
+      "support_z": 0.70571,
+      "bottom_was": 0.70669,
+      "bottom_to": 0.70671,
+      "delta": 2e-05,
+      "half": 0.2
+    },
+    {
+      "frame": 234,
+      "support": "Machine_Chute",
+      "support_z": 0.70703,
+      "bottom_was": 0.70796,
+      "bottom_to": 0.70803,
+      "delta": 7e-05,
+      "half": 0.2
+    },
+    {
+      "frame": 235,
+      "support": "Machine_Chute",
+      "support_z": 0.70879,
+      "bottom_was": 0.70962,
+      "bottom_to": 0.70979,
+      "delta": 0.00017,
+      "half": 0.2
+    },
+    {
+      "frame": 236,
+      "support": "Machine_Chute",
+      "support_z": 0.71072,
+      "bottom_was": 0.71143,
+      "bottom_to": 0.71172,
+      "delta": 0.00029,
+      "half": 0.2
+    },
+    {
+      "frame": 237,
+      "support": "Machine_Chute",
+      "support_z": 0.7125,
+      "bottom_was": 0.71309,
+      "bottom_to": 0.7135,
+      "delta": 0.00041,
+      "half": 0.2
+    },
+    {
+      "frame": 238,
+      "support": "Machine_Chute",
+      "support_z": 0.71375,
+      "bottom_was": 0.71425,
+      "bottom_to": 0.71475,
+      "delta": 0.0005,
+      "half": 0.2
+    },
+    {
+      "frame": 239,
+      "support": "Machine_Chute",
+      "support_z": 0.71419,
+      "bottom_was": 0.71468,
+      "bottom_to": 0.71519,
+      "delta": 0.00051,
+      "half": 0.2
+    },
+    {
+      "frame": 240,
+      "support": "Machine_Chute",
+      "support_z": 0.71248,
+      "bottom_was": 0.71306,
+      "bottom_to": 0.71348,
+      "delta": 0.00042,
+      "half": 0.2
+    },
+    {
+      "frame": 241,
+      "support": "Machine_Chute",
+      "support_z": 0.70892,
+      "bottom_was": 0.70971,
+      "bottom_to": 0.70992,
+      "delta": 0.00021,
+      "half": 0.2
+    },
+    {
+      "frame": 242,
+      "support": "Machine_Chute",
+      "support_z": 0.70577,
+      "bottom_was": 0.70673,
+      "bottom_to": 0.70677,
+      "delta": 4e-05,
+      "half": 0.2
+    },
+    {
+      "frame": 289,
+      "support": "Machine_Chute",
+      "support_z": 0.705,
+      "bottom_was": 0.70114,
+      "bottom_to": 0.706,
+      "delta": 0.00486,
+      "half": 0.50235
+    }
+  ],
+  "skipped": [
+    {
+      "frame": 276,
+      "gap": 0.00688,
+      "why": "already clear of the surface"
+    },
+    {
+      "frame": 279,
+      "gap": 0.00622,
+      "why": "already clear of the surface"
+    }
+  ]
+}

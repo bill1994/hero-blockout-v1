@@ -763,3 +763,70 @@ Corrected to full dimensions (`create_cube(size=1.0)` means scale == full size);
 - fasteners reduced (672 screw faces on the front today)
 - base height: 0.0444 of body height today, reference 0.1576
 
+
+## v13 P1 seat + dress (2026-10-31)
+
+### product seating: the rest plane is not flat
+
+Ruling: the 5 mm rest sink is interpenetration. A flat raise would have been wrong -
+the chute floor moves (0.7068 at f234, 0.7137 at f239, 0.705 from f244), because the
+chute inherits the +-5 mm wobble that Q4 repaired. So `qa_v2/v13_p1_seat_contact.py`
+measures the surface under the product per frame and seats it at surface + 1 mm, and it
+only ever raises: a frame already sitting clear of the floor is the settle read, not a
+defect, and pulling it down to make the numbers tidy would flatten the animation.
+
+Two bugs of mine, both caught by re-measuring rather than by believing the plan:
+
+1. Applying pre-computed deltas one after another is wrong - each key insert makes
+   Blender recompute the neighbouring bezier handles, so the curve the next delta was
+   computed against no longer exists. Result: 15 RESTING frames became ARC and the seat
+   sat 3-5 cm high. Fixed by re-measuring at every frame inside the apply loop.
+2. Sampling the footprint at 1/6, 1/2, 5/6 misses the trailing edge. At f289 the centre
+   is already 5 cm past the chute lip while the trailing corner is still inside the
+   channel and 4 mm under the floor; that was the one frame still intersecting. Fixed
+   with edge samples (0.02, 0.5, 0.98).
+
+Result: intersection frames 38 -> 3, and all 3 are Product vs **Machine_Body** during
+emergence (f236-f238), which is the pre-existing clip that the narrower P1a shell
+already removes (measured: 0 on the p1a scratch). The 38 seat frames agreed exactly
+with the 38 the BVH gate found - two independent methods, same answer.
+
+### palette + mint accents (`qa_v2/v13_p1b_dress.py`)
+
+Ruling: mint becomes one vertical band per side plus the top band, cream everywhere else.
+Removed the four full-face mint plates (`Machine_Panel_L`, `_R_Top`, `_R_SideF`,
+`_R_SideB`); added `P1_MintStrip_L/R` as narrow bands (y +-0.34, z 0.28..1.72,
+10 mm proud) on the flat part of each side face, kept `Machine_Panel_Top` as the
+section 5.2 arc band.
+
+Albedo set from the section 5.1 p50 midtones, sRGB -> linear:
+
+| material | target | linear set | was |
+|---|---|---|---|
+| MAT_Color_Mint | #8DA69D | 0.2664, 0.3813, 0.3372 | 0.1063, 0.3424, 0.2461 |
+| MAT_Color_Amber | #AB642E | 0.4072, 0.1274, 0.0273 | 0.2633, 0.0698, 0.0075 |
+| MAT_Arm_Dark | #424847 | 0.0545, 0.0648, 0.0630 | 0.0243, 0.0243, 0.0272 |
+
+`MAT_Body` was already exactly the reference cream (#DDD5C8 in linear), which is why
+D1 was only ever a missing assignment, not a wrong colour.
+
+### verified after both changes
+
+| check | deliverable | p1a scratch |
+|---|---|---|
+| actions / fcurves | 39 / 149 | 39 / 149 |
+| keys | 3,345 | 3,345 (geometry work touched none) |
+| loop endpoints | all zero | all zero |
+| grab contact f31/f43/f147/f155 | identical to 5 dp | identical to 5 dp |
+| evaluated triangles | 18,410 | 19,434 (budget 25,000) |
+| product-path gate | PASS, negative gaps 0 | - |
+| intersection gate | 3 frames, all the P1a-fixed body clip | 0 shell frames |
+
+### still open in P1
+
+- window +8.9% width (0.5879 -> 0.64)
+- fasteners: 672 screw faces still spread over the front
+- base band height 0.0444 of body height, reference 0.1576
+- four-view against the reference as a contact sheet, not yet assembled
+- the P1a scratch is still a scratch; the deliverable has only the animation/palette
+  changes so far

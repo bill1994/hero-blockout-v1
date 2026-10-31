@@ -1,0 +1,68 @@
+{
+  "blend": "G:\\DSHProject\\hero-blockout\\hero-blockout-v1\\hero_animation_v13_p1a.blend",
+  "applied": true,
+  "removed": [
+    "Machine_Panel_L",
+    "Machine_Panel_R_Top",
+    "Machine_Panel_R_SideF",
+    "Machine_Panel_R_SideB"
+  ],
+  "strips": [
+    "P1_MintStrip_L",
+    "P1_MintStrip_R"
+  ],
+  "strip_spec": {
+    "y_half": 0.34,
+    "z": [
+      0.28,
+      1.72
+    ],
+    "thickness": 0.01,
+    "proud_of_face": 0.008
+  },
+  "palette": {
+    "MAT_Color_Mint": {
+      "hex": "#8DA69D",
+      "linear": [
+        0.2664,
+        0.3813,
+        0.3372
+      ],
+      "before": [
+        0.1063,
+        0.3424,
+        0.2461,
+        1.0
+      ]
+    },
+    "MAT_Color_Amber": {
+      "hex": "#AB642E",
+      "linear": [
+        0.4072,
+        0.1274,
+        0.0273
+      ],
+      "before": [
+        0.2633,
+        0.0698,
+        0.0075,
+        1.0
+      ]
+    },
+    "MAT_Arm_Dark": {
+      "hex": "#424847",
+      "linear": [
+        0.0545,
+        0.0648,
+        0.063
+      ],
+      "before": [
+        0.0243,
+        0.0243,
+        0.0272,
+        1.0
+      ]
+    }
+  },
+  "kept_top_band": "Machine_Panel_Top"
+}

@@ -1,0 +1,58 @@
+{
+  "blend": "G:\\DSHProject\\hero-blockout\\hero-blockout-v1\\hero_animation_v13_soft.blend",
+  "target": "Product",
+  "against": [
+    "Machine_Body",
+    "Machine_Chute",
+    "P1_ChuteSeat",
+    "P1_ShoulderBay"
+  ],
+  "range": [
+    232,
+    327
+  ],
+  "summary": {
+    "frames_checked": 96,
+    "frames_with_overlap": 3,
+    "per_object_frames": {
+      "Machine_Body": 3
+    },
+    "first": {
+      "frame": 236,
+      "hits": {
+        "Machine_Body": 12
+      }
+    },
+    "last": {
+      "frame": 238,
+      "hits": {
+        "Machine_Body": 12
+      }
+    },
+    "missing_objects": [
+      "P1_ChuteSeat",
+      "P1_ShoulderBay"
+    ],
+    "verdict": "FAIL"
+  },
+  "rows": [
+    {
+      "frame": 236,
+      "hits": {
+        "Machine_Body": 12
+      }
+    },
+    {
+      "frame": 237,
+      "hits": {
+        "Machine_Body": 12
+      }
+    },
+    {
+      "frame": 238,
+      "hits": {
+        "Machine_Body": 12
+      }
+    }
+  ]
+}
