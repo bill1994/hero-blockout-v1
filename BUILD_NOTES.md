@@ -429,7 +429,13 @@ G:\Blender\blender-5.4.0-alpha\blender.exe. Opening with 5.3.0 warns
 - shape metrics unchanged by P0 (qa_v2/v13_shape_metrics_v12.json vs _v13p0.json, all keys
   identical) — confirms P0 is shape-neutral.
 - renders review/v13/p0_{front,right,back,top}.png, v12_* same views for comparison,
-  pin_{p0,v12}_f{1,326,327}_front.png for the loop diffs, diff_v13_f1_f326.png.
+  pin_{p0,v12}_f{1,326,327}_front.png for the loop diffs.
+- apples-to-apples four-view sheet review/v13/contact_v12_vs_p0.png, built by
+  qa_v2/v13_contact_sheet.py from pin_v12_*/pin_p0_* rendered at frame 1 with a PINNED camera
+  (--center 0.4,0,1.3 --span 5.0), so every cell shares one framing.
+- the same pixels prove D1 reaches the back: back face is #99999A in v12 (neutral grey — the
+  default diffuse of an unassigned shell) and #928D85 in v13-P0 (warm, R>G>B). MAT_Body covers
+  the whole shell, not just the front.
 
 ### measured reference contract (reference/style_v13_ref_contract.json)
 Sheet split into 3 panels at x [85,682] [776,1198] [1268,1852] = front / three-quarter / top.
