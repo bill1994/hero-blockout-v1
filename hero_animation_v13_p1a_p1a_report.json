@@ -1,0 +1,83 @@
+{
+  "blend_in": "G:\\DSHProject\\hero-blockout\\hero-blockout-v1\\hero_animation_v13_soft.blend",
+  "out": "G:\\DSHProject\\hero-blockout\\hero-blockout-v1\\hero_animation_v13_p1a.blend",
+  "params": {
+    "half_x": 0.9,
+    "r_xy": 0.2,
+    "r_z": 0.1,
+    "corner_seg": 5,
+    "fillet_steps": 3
+  },
+  "before": {
+    "half_x": 1.16,
+    "base_verts": 8,
+    "modifiers": [
+      "OutletCut",
+      "WindowCut",
+      "EdgeBevel",
+      "Smooth by Angle"
+    ]
+  },
+  "after": {
+    "base_verts": 192,
+    "eval_verts": 704,
+    "eval_tris": 1404
+  },
+  "outlet_cutter": {
+    "from": 1.25,
+    "to": 0.99,
+    "dx": -0.26
+  },
+  "pieces": [
+    "P1_ShoulderBay",
+    "P1_ChuteSeat"
+  ],
+  "reseated": {
+    "Machine_Panel_L": {
+      "from": 0.0,
+      "to": 0.26
+    },
+    "Machine_Panel_R_Top": {
+      "from": 0.0,
+      "to": -0.26
+    },
+    "Machine_Panel_R_SideF": {
+      "from": 0.0,
+      "to": -0.26
+    },
+    "Machine_Panel_R_SideB": {
+      "from": 0.0,
+      "to": -0.26
+    },
+    "Machine_Panel_Top": {
+      "scale_x": 0.78333
+    }
+  },
+  "narrowed": {
+    "Machine_Base": {
+      "mesh_x_scale": 0.75
+    },
+    "Machine_Feet": {
+      "mesh_x_scale": 0.75
+    }
+  },
+  "outsiders": [
+    {
+      "name": "Idea",
+      "x": [
+        -3.55,
+        -3.05
+      ],
+      "side": "left"
+    },
+    {
+      "name": "Outlet_Flap",
+      "x": [
+        1.038,
+        1.322
+      ],
+      "side": "right"
+    }
+  ],
+  "dry_run": false
+}

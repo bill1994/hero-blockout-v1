@@ -688,3 +688,78 @@ Gate for P1: four-view against the reference, palette sampling, `arm_root_min_x`
 `chute_mouth_min_x` unchanged, hopper pedestal top still 2.35, product-path gate still
 PASS, and animation integrity (39 actions / 149 fcurves / loop deltas 0).
 
+## v13 P1a shell rebuild, pass 1-2 (2026-10-31)
+
+Script: `qa_v2/v13_p1a_shell.py`. Works on a scratch file, never on the deliverable:
+`hero_animation_v13_p1a.blend` (regenerated from `hero_animation_v13_soft.blend` each
+run, so it is reproducible and safe to throw away).
+
+### what it does
+
+The shell is an 8-vertex box whose silhouette comes from two EXACT booleans. Scaling it
+in X would leave the cutters behind, so the base mesh is rebuilt as a rounded box
+(192 verts, ring-built: rounded-rect plan outline, radius 0.20, plus a 0.10 fillet top
+and bottom), the outlet cutter is translated -0.26 with the new right face, and three
+junction pieces are added: `P1_ShoulderBay` (bridges the 0.26 gap to the arm mount,
+which ends at x -1.18), `P1_ChuteSeat` (sleeves the outlet out to the frozen chute
+mouth at x 1.16, with an opening matching the body cut), and the existing top plate
+narrowed to the new width. Side panels re-seated by 0.26; base and feet meshes narrowed
+0.75 in local x (their locations are animated, so the mesh is scaled, not the object).
+
+### verified on the rebuilt scratch
+
+| check | result |
+|---|---|
+| body width / height | 1.8000 / 1.8000, x +-0.9000 |
+| `arm_root_min_x` | -1.864, unchanged |
+| `chute_mouth_min_x` | 1.160, unchanged |
+| hopper | untouched; pedestal top still the orb's rest plane, orb centre still (0,0,2.6) at f156 |
+| rim / body width | 0.7513 (reference 0.7778, -3.4%) |
+| window / body width | 0.5879 (target 0.64, +8.9% still to come) |
+| parts still reaching outside the shell in x | 2, both legitimate: `Idea` (parked at x -3.5) and `Outlet_Flap` (belongs to the frozen chute mouth) |
+| body evaluated | 704 verts / 1,404 tris |
+
+### new gate: hard-surface intersection (`qa_v2/v13_penetration_check.py`)
+
+The product-path gate only casts rays downward, so it could never see a box cutting
+through a wall. This one builds world-space BVHs of the product and the machine per
+frame and reports overlapping face pairs.
+
+First version used `BVHTree.FromObject`, which **ignores the parent chain** - the new
+junction pieces are parented to the body, so they were compared at the wrong place and
+reported overlap on all 96 frames including ones where the product is scaled to 0.001.
+Rebuilt from world-space polygons; the numbers below are from the fixed version.
+
+Findings on the **untouched** asset (`v13_soft`): the product interpenetrates the chute
+on **38 of 96** frames and the shell on **3**. The 38 are every frame the product is in
+contact, which means the "5 mm rest sink" recorded as a baseline tolerance is a real
+geometric intersection, not contact registration. The 3 shell frames are the emergence
+frames f232-f240, where the product is taller (1.0) than the outlet opening (0.91).
+
+After the rebuild: 38 frames against the chute (identical set, no regression) and **zero
+against the shell** - narrowing the body removed that clip as a side effect.
+
+One self-inflicted bug found and fixed on the way: the seat's opening cutter was built
+with half-size extents, so the seat clipped the product on 7 extra frames (f281-289).
+Corrected to full dimensions (`create_cube(size=1.0)` means scale == full size); those
+7 frames are gone.
+
+### open rulings
+
+1. The 5 mm rest sink now has a name and a number: 38 frames of face overlap. By the
+   standard used for the 52 mm squash (interpenetration is a defect), this is the same
+   class of defect, just 10x smaller. Fixing it means moving the contact frames up
+   5 mm to sit exactly on z 0.705; leaving it means writing a tolerance into the gate
+   and saying so.
+2. Mint composition is still wrong and is now very visible: `Machine_Panel_L`,
+   `Machine_Panel_R_Top` and `SideF/SideB` are full-face slabs, and section 5.2 wants
+   three narrow accents. Re-seating them flush (done) makes the slabs read as slabs.
+   This is the palette/detail step, next.
+
+### not yet done in P1
+
+- mint accents narrowed to the reference layout; palette values to section 5.1
+- window +8.9% width
+- fasteners reduced (672 screw faces on the front today)
+- base height: 0.0444 of body height today, reference 0.1576
+

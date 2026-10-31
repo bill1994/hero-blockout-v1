@@ -1,0 +1,265 @@
+{
+  "blend": "G:\\DSHProject\\hero-blockout\\hero-blockout-v1\\hero_animation_v13_p1a.blend",
+  "target": "Product",
+  "against": [
+    "Machine_Body",
+    "Machine_Chute",
+    "P1_ChuteSeat",
+    "P1_ShoulderBay"
+  ],
+  "range": [
+    232,
+    327
+  ],
+  "summary": {
+    "frames_checked": 96,
+    "frames_with_overlap": 38,
+    "per_object_frames": {
+      "Machine_Chute": 38
+    },
+    "first": {
+      "frame": 232,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    "last": {
+      "frame": 289,
+      "hits": {
+        "Machine_Chute": 18
+      }
+    },
+    "missing_objects": [],
+    "verdict": "FAIL"
+  },
+  "rows": [
+    {
+      "frame": 232,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 233,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 234,
+      "hits": {
+        "Machine_Chute": 16
+      }
+    },
+    {
+      "frame": 235,
+      "hits": {
+        "Machine_Chute": 18
+      }
+    },
+    {
+      "frame": 236,
+      "hits": {
+        "Machine_Chute": 18
+      }
+    },
+    {
+      "frame": 237,
+      "hits": {
+        "Machine_Chute": 18
+      }
+    },
+    {
+      "frame": 238,
+      "hits": {
+        "Machine_Chute": 18
+      }
+    },
+    {
+      "frame": 239,
+      "hits": {
+        "Machine_Chute": 18
+      }
+    },
+    {
+      "frame": 240,
+      "hits": {
+        "Machine_Chute": 18
+      }
+    },
+    {
+      "frame": 241,
+      "hits": {
+        "Machine_Chute": 14
+      }
+    },
+    {
+      "frame": 242,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 243,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 244,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 245,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 246,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 247,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 248,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 249,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 250,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 251,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 252,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 253,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 254,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 255,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 256,
+      "hits": {
+        "Machine_Chute": 12
+      }
+    },
+    {
+      "frame": 272,
+      "hits": {
+        "Machine_Chute": 10
+      }
+    },
+    {
+      "frame": 273,
+      "hits": {
+        "Machine_Chute": 10
+      }
+    },
+    {
+      "frame": 274,
+      "hits": {
+        "Machine_Chute": 10
+      }
+    },
+    {
+      "frame": 275,
+      "hits": {
+        "Machine_Chute": 10
+      }
+    },
+    {
+      "frame": 281,
+      "hits": {
+        "Machine_Chute": 10
+      }
+    },
+    {
+      "frame": 282,
+      "hits": {
+        "Machine_Chute": 10
+      }
+    },
+    {
+      "frame": 283,
+      "hits": {
+        "Machine_Chute": 10
+      }
+    },
+    {
+      "frame": 284,
+      "hits": {
+        "Machine_Chute": 10
+      }
+    },
+    {
+      "frame": 285,
+      "hits": {
+        "Machine_Chute": 16
+      }
+    },
+    {
+      "frame": 286,
+      "hits": {
+        "Machine_Chute": 18
+      }
+    },
+    {
+      "frame": 287,
+      "hits": {
+        "Machine_Chute": 18
+      }
+    },
+    {
+      "frame": 288,
+      "hits": {
+        "Machine_Chute": 18
+      }
+    },
+    {
+      "frame": 289,
+      "hits": {
+        "Machine_Chute": 18
+      }
+    }
+  ]
+}
