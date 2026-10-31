@@ -48,8 +48,24 @@ try:
     sc.eevee.taa_render_samples = 48
 except AttributeError:
     pass
-sc.view_settings.view_transform = "Standard"
 sc.view_settings.look = "None"
+
+# Colour judgement needs a tone map that does not clip. "Standard" with this rig
+# blows the cream shell to #FFF (measured: 25.8% of the front view's subject pixels
+# were at maximum), which makes every palette comparison meaningless - and makes a
+# correct material look "washed out". AgX rolls the highlights off; Filmic and
+# Standard are kept as fallbacks for older builds.
+_available = {i.identifier for i in
+              bpy.types.ColorManagedViewSettings.bl_rna
+              .properties["view_transform"].enum_items}
+_want = arg("--view-transform", "AgX")
+for candidate in (_want, "AgX", "Filmic", "Standard"):
+    if candidate in _available:
+        sc.view_settings.view_transform = candidate
+        break
+sc.view_settings.exposure = float(arg("--exposure", "0.0"))
+print("VIEW %s exposure %s" % (sc.view_settings.view_transform,
+                               sc.view_settings.exposure))
 
 # neutral studio world so silhouettes read against a flat backdrop
 world = bpy.data.worlds.new("P0_AuditWorld")

@@ -1,0 +1,128 @@
+[
+  {
+    "file": "review/v13/p1d_front.png",
+    "background": "#3D3F41",
+    "subject_pixels": 20764,
+    "clusters": [
+      {
+        "hex": "#C9C6C2",
+        "share_of_subject": 0.1816,
+        "nearest": "cream",
+        "target": "#DDD5C8",
+        "dist": 25.7
+      },
+      {
+        "hex": "#BEBCB9",
+        "share_of_subject": 0.1727,
+        "nearest": "mint",
+        "target": "#A6BAB2",
+        "dist": 25.1
+      },
+      {
+        "hex": "#8C8C89",
+        "share_of_subject": 0.1489,
+        "nearest": "mint",
+        "target": "#A6BAB2",
+        "dist": 66.9
+      },
+      {
+        "hex": "#C6C5C2",
+        "share_of_subject": 0.1191,
+        "nearest": "cream",
+        "target": "#DDD5C8",
+        "dist": 28.7
+      },
+      {
+        "hex": "#5B452D",
+        "share_of_subject": 0.1045,
+        "nearest": "charcoal",
+        "target": "#424847",
+        "dist": 36.2
+      },
+      {
+        "hex": "#B49074",
+        "share_of_subject": 0.104,
+        "nearest": "orange",
+        "target": "#C5793E",
+        "dist": 61.1
+      },
+      {
+        "hex": "#887463",
+        "share_of_subject": 0.1019,
+        "nearest": "orange",
+        "target": "#C5793E",
+        "dist": 71.5
+      },
+      {
+        "hex": "#C7D1CF",
+        "share_of_subject": 0.0674,
+        "nearest": "cream",
+        "target": "#DDD5C8",
+        "dist": 23.4
+      }
+    ]
+  },
+  {
+    "file": "review/v13/p1d_right.png",
+    "background": "#3D3F41",
+    "subject_pixels": 12944,
+    "clusters": [
+      {
+        "hex": "#B0ADA8",
+        "share_of_subject": 0.1827,
+        "nearest": "mint",
+        "target": "#A6BAB2",
+        "dist": 19.2
+      },
+      {
+        "hex": "#A7693C",
+        "share_of_subject": 0.1686,
+        "nearest": "orange",
+        "target": "#C5793E",
+        "dist": 34.1
+      },
+      {
+        "hex": "#6B6963",
+        "share_of_subject": 0.1605,
+        "nearest": "charcoal",
+        "target": "#424847",
+        "dist": 59.6
+      },
+      {
+        "hex": "#848983",
+        "share_of_subject": 0.1419,
+        "nearest": "mint",
+        "target": "#A6BAB2",
+        "dist": 75.9
+      },
+      {
+        "hex": "#1B1E1D",
+        "share_of_subject": 0.1354,
+        "nearest": "charcoal",
+        "target": "#424847",
+        "dist": 71.1
+      },
+      {
+        "hex": "#BEBAB6",
+        "share_of_subject": 0.1004,
+        "nearest": "mint",
+        "target": "#A6BAB2",
+        "dist": 24.3
+      },
+      {
+        "hex": "#A19E97",
+        "share_of_subject": 0.0821,
+        "nearest": "mint",
+        "target": "#A6BAB2",
+        "dist": 39.2
+      },
+      {
+        "hex": "#714E2A",
+        "share_of_subject": 0.0284,
+        "nearest": "charcoal",
+        "target": "#424847",
+        "dist": 55.6
+      }
+    ]
+  }
+]

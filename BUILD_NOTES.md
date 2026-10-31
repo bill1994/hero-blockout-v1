@@ -830,3 +830,77 @@ D1 was only ever a missing assignment, not a wrong colour.
 - four-view against the reference as a contact sheet, not yet assembled
 - the P1a scratch is still a scratch; the deliverable has only the animation/palette
   changes so far
+
+## v13 P1 finished (2026-10-31) - window, base band, fasteners, and a render rig that was lying
+
+Script: `qa_v2/v13_p1c_details.py`. Promoted to `hero_animation_v13_p1.blend`; P2
+continues from there. `hero_animation_v13_soft.blend` stays as the pre-P1 state so the
+stage boundary is auditable.
+
+### what changed
+
+- Window: x * 1.0886 applied to the cutter, frame, glow, cavity and both noise meshes in
+  world space about x = 0, so the hole and the frame that sits in it move together and
+  no keys or origins are touched. Measured result: **1.1520 wide = 0.6400 of body width**
+  (target 0.64; was 0.5879).
+- Base band: a dark band wrapping the shell's lower 0.184 m (P1_BaseBand, MAT_Arm_Dark).
+  Section 4.3 asks for 0.1576 of body height; measuring the reference at native
+  resolution gives about 0.10, so 0.1022 is kept and the doc's figure is flagged as
+  probably measured including the feet and the contact shadow.
+- Fasteners: Machine_Screws (672 faces) removed; 8 flush bolts generated, 4 front
+  corners + 4 back, outside the window frame's footprint. Net -500 triangles.
+
+### the render rig was clipping, and that invalidated every colour verdict made with it
+
+`qa_v2/v13_p0_render.py` used Standard view transform with a bright three-point rig.
+Sampling the subject pixels of the P1 front render showed **25.8% of them at #FFF-class
+values** - the cream shell was blown out. Two consequences, both worth writing down:
+
+1. "The front looks washed out" was a property of the QA rig, not of the asset. The
+   material was already exactly the section 5.1 cream.
+2. Any palette comparison made from those renders was measuring a clipped image.
+
+The rig now uses AgX (with Filmic/Standard fallbacks and a --exposure argument).
+After the change the clipped cluster is gone and the sampled colours land at:
+
+| view | cluster | target | distance |
+|---|---|---|---|
+| right | #B0ADA8 | mint #A6BAB2 | 19.2 |
+| right | #A7693C | orange #C5793E | 34.1 |
+| right | #BEBAB6 | mint #A6BAB2 | 24.3 |
+| front | #C9C6C2 | cream #DDD5C8 | 25.7 |
+
+The sampler (`qa_v2/v13_p1_review.py`) removes the backdrop *before* quantising; the
+first version quantised first and the backdrop gradient ate the palette slots, leaving
+one usable colour out of eight. Known limit: nearest-target by RGB distance confuses
+cream-in-shadow with mint, so hues within one family are not resolved.
+
+### P1 gates, all run on the finished file
+
+| gate | result |
+|---|---|
+| product-path support | PASS, 0 negative gaps |
+| hard-surface intersection | **0 / 96 frames** (the narrower shell removed the pre-existing 3-frame body clip as well) |
+| body width / arm root / chute mouth | 1.8000 / -1.864 / 1.160, all as frozen |
+| window / rim ratios | 0.6400 / 0.7513 |
+| hopper | untouched, pedestal top still the orb's rest plane |
+| actions / fcurves / keys | 39 / 149 / 3,345 |
+| loop endpoints | all zero |
+| grab contact | identical to 5 dp |
+| evaluated triangles | 18,934 (budget 25,000) |
+
+### comparison sheet: `review/v13/p1_contact.png`
+
+Reference panels over the matching renders. Reading it honestly, the remaining gaps are
+not P1's:
+
+- the window is a near-square rectangle where the reference is a 1.55 tall stadium, and
+  it has no nebula -> **P2**
+- the hopper is still a thin grey open cone where the reference is a thick-lipped cream
+  bowl on a short neck -> **P3**
+- the arm is a thin pipe with small hoops where the reference has a chunky arm with an
+  orange cuff and a three-finger hand -> **P3**
+- the chute is still the full 2.24 m brown plank; the ruling in section 4.5 wants a short
+  orange scoop plus a low dark rail beyond x 2.1 -> **P3**
+- body W:H is 1.00 against the reference 0.73; section 12 Q1 chose this compromise
+  knowingly, and nothing in P1 changed that
