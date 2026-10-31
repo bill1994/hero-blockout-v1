@@ -1,0 +1,305 @@
+{
+  "blend": "G:\\DSHProject\\hero-blockout\\hero-blockout-v1\\hero_animation_v13_soft.blend",
+  "applied": true,
+  "action": "ProductAction.001_V2",
+  "rest_bottom": 0.7,
+  "release_frame": 289,
+  "changes": {
+    "raised_keys": [
+      {
+        "frame": 255.459,
+        "from": 0.86,
+        "to": 0.92595,
+        "bottom_was": 0.63405
+      },
+      {
+        "frame": 273.756,
+        "from": 1.2,
+        "to": 1.2125,
+        "bottom_was": 0.6875
+      }
+    ],
+    "inserted_keys": [
+      {
+        "frame": 254,
+        "to": 0.90111,
+        "bottom_was": 0.69464
+      },
+      {
+        "frame": 255,
+        "to": 0.91474,
+        "bottom_was": 0.65155
+      },
+      {
+        "frame": 256,
+        "to": 0.94292,
+        "bottom_was": 0.64759
+      },
+      {
+        "frame": 272,
+        "to": 1.21143,
+        "bottom_was": 0.69928
+      },
+      {
+        "frame": 273,
+        "to": 1.21231,
+        "bottom_was": 0.68959
+      },
+      {
+        "frame": 274,
+        "to": 1.21226,
+        "bottom_was": 0.68774
+      },
+      {
+        "frame": 275,
+        "to": 1.20748,
+        "bottom_was": 0.69252
+      }
+    ],
+    "flight_keys": [
+      {
+        "frame": 290,
+        "t_s": 0.0167,
+        "to": 1.19856,
+        "bottom_from": 0.69773,
+        "bottom_to": 0.6963,
+        "drop": 0.0014
+      },
+      {
+        "frame": 291,
+        "t_s": 0.0333,
+        "to": 1.19438,
+        "bottom_from": 0.69782,
+        "bottom_to": 0.6922,
+        "drop": 0.0054
+      },
+      {
+        "frame": 292,
+        "t_s": 0.05,
+        "to": 1.18745,
+        "bottom_from": 0.69794,
+        "bottom_to": 0.6854,
+        "drop": 0.0123
+      },
+      {
+        "frame": 293,
+        "t_s": 0.0667,
+        "to": 1.17777,
+        "bottom_from": 0.69808,
+        "bottom_to": 0.6759,
+        "drop": 0.0218
+      },
+      {
+        "frame": 294,
+        "t_s": 0.0833,
+        "to": 1.16534,
+        "bottom_from": 0.69825,
+        "bottom_to": 0.6636,
+        "drop": 0.0341
+      },
+      {
+        "frame": 295,
+        "t_s": 0.1,
+        "to": 1.15015,
+        "bottom_from": 0.69845,
+        "bottom_to": 0.6486,
+        "drop": 0.0491
+      },
+      {
+        "frame": 296,
+        "t_s": 0.1167,
+        "to": 1.1322,
+        "bottom_from": 0.69869,
+        "bottom_to": 0.6309,
+        "drop": 0.0668
+      },
+      {
+        "frame": 297,
+        "t_s": 0.1333,
+        "to": 1.1115,
+        "bottom_from": 0.69896,
+        "bottom_to": 0.6105,
+        "drop": 0.0872
+      },
+      {
+        "frame": 298,
+        "t_s": 0.15,
+        "to": 1.08803,
+        "bottom_from": 0.69926,
+        "bottom_to": 0.5873,
+        "drop": 0.1104
+      },
+      {
+        "frame": 299,
+        "t_s": 0.1667,
+        "to": 1.06179,
+        "bottom_from": 0.69961,
+        "bottom_to": 0.5614,
+        "drop": 0.1362
+      },
+      {
+        "frame": 300,
+        "t_s": 0.1833,
+        "to": 1.03279,
+        "bottom_from": 0.7,
+        "bottom_to": 0.5328,
+        "drop": 0.1649
+      },
+      {
+        "frame": 301,
+        "t_s": 0.2,
+        "to": 0.7516,
+        "bottom_from": 0.94985,
+        "bottom_to": 0.5015,
+        "drop": 0.1962
+      }
+    ]
+  },
+  "scope_guard": {
+    "violations": [],
+    "product_fcurves_before": 8,
+    "product_fcurves_after": 8,
+    "loc_z_keys_before": 7,
+    "loc_z_keys_after": 26
+  },
+  "post": {
+    "contact": [
+      {
+        "frame": 250,
+        "bottom": 0.7
+      },
+      {
+        "frame": 251,
+        "bottom": 0.7
+      },
+      {
+        "frame": 252,
+        "bottom": 0.7
+      },
+      {
+        "frame": 253,
+        "bottom": 0.7
+      },
+      {
+        "frame": 254,
+        "bottom": 0.7
+      },
+      {
+        "frame": 255,
+        "bottom": 0.7
+      },
+      {
+        "frame": 256,
+        "bottom": 0.7
+      },
+      {
+        "frame": 257,
+        "bottom": 0.82062
+      },
+      {
+        "frame": 258,
+        "bottom": 0.92925
+      },
+      {
+        "frame": 268,
+        "bottom": 0.83539
+      },
+      {
+        "frame": 269,
+        "bottom": 0.78131
+      },
+      {
+        "frame": 270,
+        "bottom": 0.73885
+      },
+      {
+        "frame": 271,
+        "bottom": 0.71081
+      },
+      {
+        "frame": 272,
+        "bottom": 0.7
+      },
+      {
+        "frame": 273,
+        "bottom": 0.7
+      },
+      {
+        "frame": 274,
+        "bottom": 0.7
+      },
+      {
+        "frame": 275,
+        "bottom": 0.7
+      },
+      {
+        "frame": 276,
+        "bottom": 0.70705
+      },
+      {
+        "frame": 277,
+        "bottom": 0.71262
+      },
+      {
+        "frame": 278,
+        "bottom": 0.7129
+      }
+    ],
+    "flight": [
+      {
+        "frame": 289,
+        "bottom": 0.69681
+      },
+      {
+        "frame": 290,
+        "bottom": 0.69629
+      },
+      {
+        "frame": 291,
+        "bottom": 0.6922
+      },
+      {
+        "frame": 292,
+        "bottom": 0.68539
+      },
+      {
+        "frame": 293,
+        "bottom": 0.67585
+      },
+      {
+        "frame": 294,
+        "bottom": 0.66359
+      },
+      {
+        "frame": 295,
+        "bottom": 0.6486
+      },
+      {
+        "frame": 296,
+        "bottom": 0.63089
+      },
+      {
+        "frame": 297,
+        "bottom": 0.61046
+      },
+      {
+        "frame": 298,
+        "bottom": 0.58729
+      },
+      {
+        "frame": 299,
+        "bottom": 0.5614
+      },
+      {
+        "frame": 300,
+        "bottom": 0.53279
+      },
+      {
+        "frame": 301,
+        "bottom": 0.50145
+      }
+    ],
+    "worst_bottom_contact": 0.7
+  },
+  "json": null
+}

@@ -171,7 +171,16 @@ for fr in (31, 43, 147, 155):
 out["grab_contact"] = contact
 
 # ---------------- poly budget ----------------
+# Measure on a frame where every mesh is actually visible. This used to inherit
+# whatever frame the grab-contact loop left behind (f155), where Product is keyed
+# to scale 0.001; Blender then does not evaluate its Bevel modifier, so the shell
+# read as a bare 12-tri cube and the total came out 96 tris short (18,314 vs the
+# real 18,410). Same file, Product visible at f240: 18,410 either way.
+POLY_FRAME = 240
+sc.frame_set(POLY_FRAME)
+out["poly_frame"] = POLY_FRAME
 dg = bpy.context.evaluated_depsgraph_get()
+dg.update()
 tris = 0
 mesh_objs = 0
 for o in bpy.data.objects:

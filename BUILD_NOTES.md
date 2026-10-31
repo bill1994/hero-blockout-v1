@@ -540,3 +540,73 @@ is correct for a product sliding off a lip.
    animation surgery, which collides with the "do not touch the animation" constraint
    and has to be decided, not drifted into.
 
+## v13 product-path fix (2026-10-31, after both rulings: these are defects)
+
+Rulings: the level flight is a defect; the squash that goes into the chute floor is
+interpenetration, not an acceptable squash. Both live in `ProductAction.001_V2`, which
+section 3.1 of the design doc froze. The freeze was written to protect working
+animation from a style pass, not to make a measured defect permanent, so it is
+narrowed here: `location[2]` only, additions plus two raised keys, nothing else.
+
+Script: `qa_v2/v13_product_path_fix.py` (dry run by default, `--apply` writes).
+Report: `qa_v2/v13_product_path_fix_report.json`.
+
+### what was actually wrong
+
+| defect | mechanism | numbers |
+|---|---|---|
+| squash penetration | the squash is authored (`scale[2]` = 0.400 at f253.629) but scaled **about the object centre**, so shrinking already lifts the bottom; the `location[2]` key at f255.459 then drops the centre 34 mm as well. Two moves, same direction, bottom under the floor. Correct squash-against-floor keeps the bottom planted and lets the centre RISE as the box gets shorter | f255 bottom 0.6516, f256 0.6476 vs floor 0.705 |
+| level flight | `location[2]` has **no key at all after f273.756**. x was keyed every frame f280-f300; z was never keyed, so it held the landing value through the whole exit | f289-f300 bottom 0.6977 -> 0.7000, dz = 0.000, nothing underneath |
+| landing dip | not a squash at all: `scale[2]` is 1.0246 (slightly stretched) and the location key eases 12 mm below the floor | f273 -10.4 mm, f274 -12.3 mm, f275 -7.5 mm |
+
+### what the fix does
+
+- Contact windows (f250-f258, f268-f278): where the measured bottom is below the rest
+  plane 0.700, raise `location[2]` by exactly the deficit. Never lower a frame, never
+  touch `scale`, so the squash still reads as a squash. 2 existing keys raised
+  (f255.459 0.86 -> 0.93, f273.756 1.20 -> 1.21) and 7 frame keys inserted.
+- Flight: from release at f289 (first frame fully off the lip) with v_z = 0 and
+  9.81 m/s^2, key the vertical each frame to f301. 12 keys added.
+- Result: `location[2]` 7 -> 26 keys, total keys 3,294 -> 3,313.
+  Post-fix worst contact bottom **0.70000**, exactly the rest plane.
+
+### scope guard (checked, not asserted)
+
+| | before | after |
+|---|---|---|
+| actions | 39 | 39 |
+| fcurves | 149 | 149 |
+| keys | 3,294 | 3,313 (+19, all in ProductAction.001_V2 78 -> 97) |
+| loop endpoint max abs delta | all 0 | all 0 |
+| grab contact (finger->Idea) | 0.01799 / 0.00614 / 0.02555 / 0.02348 / 0.41537 / 0.47581 | identical |
+| Product curves other than `location[2]` | - | byte-identical (dumped and diffed) |
+
+### gate: FAIL -> PASS
+
+`qa_v2/v13_product_path_v13p0fix.json`: counts RESTING 43 / ARC 14 / EXITED 13 /
+COLLAPSED 26, zero PENETRATING, zero HOVERING, no FLAT_FLIGHT, exit=0.
+Residual negative gaps are the f235-f241 emergence frames at -0.0137 (pre-existing,
+inside tol_pen 0.015, untouched by this fix).
+
+What this fix does **not** buy: the drop is physically correct but visually modest,
+because only ~0.15 s of the flight is inside the frame. Droop is 4.9 cm at f294 and
+8.7 cm at f297; by f300 the product is already out of frame, which is why
+`review/v13/gatefix_f0300.png` is pixel-identical to the old shot while
+`gatefix_f0294.png` differs by 1,251 px. A punchier read needs a launch velocity or a
+different exit speed, and that is an art call, not a physics one.
+
+### audit artifact found while verifying (fixed)
+
+`evaluated_triangles` read 18,314 before the fix and 18,410 after, which looked like
+the fix added 96 triangles. It did not. The audit inherited the frame its grab-contact
+loop ended on (f155); Product is keyed to scale 0.001 there, Blender does not evaluate
+its Bevel modifier, and the shell counted as a bare 12-tri cube instead of 108. Same
+file measured with Product visible at f240: **18,410 both before and after**. The
+audit now measures the poly budget at `POLY_FRAME = 240` and records `poly_frame` in
+its JSON. 18,410 is the real number and is still well under the 25,000 budget; the
+old 18,314 was an undercount and should not be quoted as a baseline.
+
+### commits
+
+- `gate_f0*.png` = before, `gatefix_f0*.png` = after, same camera, same frames.
+
