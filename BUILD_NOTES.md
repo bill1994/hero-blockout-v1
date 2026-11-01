@@ -1168,6 +1168,22 @@ rides the chute (f257-f289), then the loop returns to f1. Frame-to-frame mean ab
 difference peaks at **3.807 / 255** (f273 -> f289) and never pops; f1 and f327 are
 pixel-identical.
 
+### export truth - checked two ways, because the first one lied
+
+`review/v13/p3b_glb_roundtrip_f31.png` re-imports the GLB into a scratch scene and renders
+the hand: the claw survives the round trip as three hooked orange fingers on an ellipsoid
+palm. But in that render the orb sits far up-left instead of in the claw, and that is **not a
+GLB defect** - Blender's glTF importer turns each of the 18 clips into a separate action and
+activates only one per object, so the frame-31 pose is assembled from whatever happened to be
+live. Do not read animation state out of a Blender round-trip render.
+
+The numeric check settles it. Parsing the GLB's own accessors, `IdeaAction_V2` carries
+**327 keys over t 0.0167..5.45 s**, and its first and last samples are identical
+`(-3.3, 3.8, 0.6)` in glTF Y-up, which is Blender `(-3.3, -0.6, 3.8)` - exactly f1, so loop
+closure survives the export. At t 0.5 s the sampler reads `(-3.2922, 1.7098, 0.623)`, i.e.
+Blender `(-3.2922, 0.623, -1.7098)`, against the blend's f30/f31 values around
+`(-3.2949, -0.6181, 1.7219)` - the same pose, one frame apart in the sampling.
+
 ### how P3b was authored - and the gap that leaves
 
 Everything above was applied live through the Blender MCP bridge on port 9876, per the
