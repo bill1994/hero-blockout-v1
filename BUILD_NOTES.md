@@ -1191,3 +1191,77 @@ project rule that this stage runs through MCP only. **There is no standalone
 `qa_v2/v13_p3b_claw.py`.** The parameters in this section are the source of truth, and the
 next stage script should consume them; until that script exists, P3b cannot be replayed from
 the P3a asset the way P1/P2/P3a can.
+
+## v13 P3c (2026-11-01) - reference pass 2: arm chain, window slimming, body roundness
+
+A second, much closer read of `review/v13/ref_iso_full.png` overturned three earlier readings
+and drove this pass. All of it was applied live through the Blender MCP bridge on port 9876.
+
+### what the reference actually shows (corrections)
+
+1. **The arm is a ball-and-tube chain, not a bent pipe with big rings.** Cream ball socket on
+   a cream boss that sits on the mint side panel, with a **thin dark ring at each joint**;
+   cream upper arm -> cream elbow ball -> cream forearm -> **dark wrist sleeve + thin amber
+   ferrule** -> three **flat leaf-shaped** amber fingers around the orb. Dark metal appears
+   only at joint seams and the wrist sleeve.
+2. **The hopper is a wide funnel with a short thick neck and a thick rolled lip**, sitting on
+   a mint rounded-rectangle recessed pad on the top face - not a mint band around the machine.
+3. **The plinth is a dark rounded band with four small round feet**, and the front panel
+   carries one amber and one mint button, each on a thin dark collar.
+
+### what was changed
+
+| item | change |
+|---|---|
+| `Arm_Rings_Shoulder`, `Arm_Rings_Elbow` | **deleted** - not in the reference at all |
+| `Arm_UpperArm`, `Arm_Forearm` | rebuilt as true surface-of-revolution tubes: shoulder `(-1.5,0,1.5)` -> elbow `(-1.6678,-1.2914,2.4297)` L 1.6 r 0.108->0.098; elbow -> wrist `(-1.7108,-1.6224,1.07)` L 1.4 r 0.105->0.082. Object scale reset to (1,1,1), size baked into the mesh, `Bevel_Art` **removed** (dense curved surface + bevel is the same NaN trap that killed the fingercaps), `Smooth by Angle` kept. 700 v / 674 f and 588 v / 562 f |
+| joint seam rings | built into the tube mesh as a proud ring (+0.013 r, ±0.011 wide), second material slot `MAT_Arm_Dark`, placed at `t = sqrt(r_ball^2 - r_tube^2)/L` -> 0.090 shoulder, 0.929 / 0.0765 at the elbow |
+| `Arm_Shoulder_Joint`, `Arm_Elbow_Joint`, `Arm_Base` | material `MAT_Arm_Dark` -> **`MAT_Arm`** (the reference's joints are cream; only the seam rings are dark) |
+| window | `Machine_WindowFrame` was 1.128 x 1.26 (aspect 1.117, read as a round window). Frame + Glow + Cavity + 30 `P2_Nebula_*` + `Cutter_Window` scaled in X by **K=0.78** about each part's own X centre -> frame 0.8798 x 1.26 = **aspect 1.4321** |
+| `Machine_Detail` | the three Ø0.196 grey discs on the front (x -0.3 / 0 / +0.3 at z 1.75) were three connected islands inside this object. Removed by bmesh connected-component selection (`cz > 1.5`); 12 f / 16 v left (the two side boxes) |
+| `Machine_Body` | `EdgeBevel` 0.012/3 -> **0.05/4**, and the modifier order changed from `OutletCut -> WindowCut -> EdgeBevel -> Smooth` to **`EdgeBevel -> OutletCut -> WindowCut -> Smooth`** so the cut edges are not re-beveled into the window frame |
+| `Machine_Panel_Top` | was a floating x ±0.94 / y ±0.8 board at z 1.96..2.0 with a 0.06 air gap above a 1.9 body top. Rebuilt inset: x ±0.80, y ±0.70, **z 1.885..1.925** |
+| `Machine_Hopper` | rebuilt as a lathed vessel: neck r 0.285 -> flare -> thick rolled lip (outer 0.678, inner 0.503, so a 0.167 lip), inner wall returns to r 0.250. World **r 0.678, z 1.925..2.674**, 1,776 tris. Only mesh vertices were touched - the object carries `Machine_HopperAction_V2` (26 z keys) and its location must not move |
+| `Machine_Base` | its 16 top vertices sat at z 0.0 while `Machine_Body`'s underside is at 0.1, i.e. the body floated 0.1 above the plinth. Raised to **z 0.12** (above the body underside, avoiding coplanar z-fighting) |
+| `P3c_Button_Power`, `P3c_Button_Mode` | new, no action. Lathed about Y, front slightly domed, r 0.042 amber at (x 0.075, z 0.333) and r 0.027 mint at (x 0.215, z 0.333), protruding 0.048 to y -0.848. Parented to `Machine_Body` with `matrix_parent_inverse = body.matrix_world.inverted()`, `matrix_basis` identity |
+| `Machine_Light_01/02/03` | were Ø0.14 spheres bulging 0.09 out of the front panel - three big pale discs in every front view and not in the reference. Scaled to 0.26 (Ø0.0218) and sunk so they protrude **0.004** (y -0.804..-0.664); their z-jitter action is untouched |
+
+### gates after this pass
+
+`qa_v2/v13_grab_gate.py` -> **PASS**, and byte-identical to P3b: f31/f43 L 0.01148 R 0.01432,
+f147 L 0.01808 R 0.02085, f155 L 0.40630 R 0.45380, overlap 0 everywhere, tip_gap_LR
+0.22482 / 0.22482 / 0.20923 / 0.20923. The hand was not touched, so this is the control that
+the machine edits did not disturb the grip.
+`qa_v2/v13_product_path_gate.py` -> **PASS**, counts RESTING 43 / ARC 14 / EXITED 13 /
+COLLAPSED 26, arc 257..270 peaking +0.379 at f263, first_exited f289, negative gaps 0.
+Loop closure: every one of the 93 objects' `matrix_world` compared at f1 vs f327 -> **zero
+difference**. Actions 37, fcurves 147, keys 3,331 - all equal to the frozen P3b values.
+Budget: **23,854 / 25,000** triangles.
+
+### gotchas added by this pass
+
+- `o.location += dloc` **and** moving vertices moves the part twice. The three front lights
+  first flew out to y -2.448 this way. Move the object OR the geometry, never both.
+- Converting world coordinates into a mesh needs `obj.matrix_world.inverted()`. Writing world
+  z straight into a hopper whose object sits at z 2.45 put it at z 4.4..5.1.
+- `evaluated_depsgraph_get()` must be re-fetched after a geometry edit; a stale depsgraph
+  reports the pre-edit bounding box and makes the edit look like a no-op.
+- `sc.evee` is not a thing; it is `sc.eevee`.
+- An exception mid-script leaves the temporary `QA_*` camera and lights in the scene. Clear
+  them before re-running or the next "clean" render carries stale rigs.
+
+### still open after P3c (honest list)
+
+1. **The chute is 2.24 long = 1.24 of body width; the reference measures 0.677.** It cannot
+   be shortened without dropping the product: `ProductAction.001_V2` carries the product from
+   x 1.36 to 5.9 along that surface over f232..f289, and the part is parented to the keyframed
+   empty `Machine_OutputChute`. From behind, the chute reads as a slab plus a thin rail with
+   no visible support. This is the single largest remaining silhouette difference.
+2. `Outlet_Flap` reads as a detached flat plate at the chute mouth in the f1 pose; it is
+   animated, so its rest pose cannot be re-authored casually.
+3. The window interior is still light grey behind the pale nebula spheres; the reference is a
+   dark teal cavity with a diffuse nebula. That is a material change, deliberately deferred.
+4. No four small round feet yet, and the mint side panel is a thin strip rather than the
+   reference's large rounded panel.
+5. `Cam_Hero` plus two suns only is not the reference's studio look. The shape reads much
+   better under the `QA_*` rig than under the shipped camera.

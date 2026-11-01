@@ -1,6 +1,6 @@
 # STATUS — hero-blockout-v1 / v13 style pass
 
-**Last updated:** 2026-11-01 (after stage P3b)
+**Last updated:** 2026-11-01 (after stage P3c — reference pass 2, geometry only, no GLB yet)
 **Branch:** `main`. Everything below is committed. Remote work should continue from `main`.
 
 Read `BUILD_NOTES.md` for the measured detail behind every claim here. This file is the
@@ -18,10 +18,13 @@ check yourself.
 | v13 P1 | `hero_animation_v13_p1.blend` | shell 2.32 → 1.80, junctions, mint bands, palette, window 0.64 |
 | v13 P2 | `hero_animation_v13_p2.blend` + `.glb` | window rebuilt, emissive nebula, GLB verified |
 | v13 P3a | `hero_animation_v13_p3.blend` | grab gate, chute split, hopper bowl |
-| **v13 P3b (current)** | **`hero_animation_v13_p3b.blend` + `.glb`** | **hand rebuilt as a three-finger claw, floating lines removed, GLB re-exported, animation QA sheet done** |
+| **v13 P3b** | **`hero_animation_v13_p3b.blend` + `.glb`** | **hand rebuilt as a three-finger claw, floating lines removed, GLB re-exported, animation QA sheet done** |
+| **v13 P3c (current)** | **`hero_animation_v13_p3c.blend`** | **reference pass 2, geometry only: arm rebuilt as a ball-and-tube chain with seam rings, hopper chunkier, window slimmed to aspect 1.43, body bevel 0.05, top plate inset, plinth gap closed, two buttons added, three front lights shrunk. No GLB yet — re-export from this file.** |
 
-`hero_animation_v13_p3b.glb` is the current deliverable: 1,094,460 B, 76 meshes, 83 nodes,
-15 materials, 18 animations, 21,802 triangles, images/textures/samplers all 0.
+`hero_animation_v13_p3b.glb` is the current GLB deliverable: 1,094,460 B, 76 meshes, 83 nodes,
+15 materials, 18 animations, 21,802 triangles, images/textures/samplers all 0. **It predates
+P3c**, so it does not contain the rebuilt arm or hopper — re-export from
+`hero_animation_v13_p3c.blend` before shipping anything.
 `hero_animation_v13_p3.glb` does not exist - the GLB skipped P3a entirely.
 
 ## 2. What the plan wanted vs what is done
@@ -60,9 +63,9 @@ check yourself.
 | chute mouth | `Machine_Chute` min x = **1.160** | same |
 | chute floor / support plane | **z 0.705** | `qa_v2/v13_product_path_gate.py` |
 | orb rest | pedestal top **z 2.35**, orb centre (0,0,2.6), r 0.25 | axis ray in `v13_p3_chute_hopper.py` report |
-| animation | 39 actions, 149 fcurves, 3,345 keys on P3a; **37 / 147 / 3,331 from P3b** (see below), loop endpoints all 0 | `qa_v2/v13_baseline_audit.py` |
-| grab contact | f31 0.01799/0.00614, f43 same, f147 0.02555/0.02348, f155 0.41537/0.47581 - **these are the P3a numbers; since P3b they are f31 0.01148/0.01432, f147 0.01808/0.02085, f155 0.40630/0.45380, overlap 0** | `qa_v2/v13_grab_gate.py` |
-| triangle budget | 20,646 on P3a; **22,650 from P3b** of 25,000 | `v13_baseline_audit.py` |
+| animation | 39 actions, 149 fcurves, 3,345 keys on P3a; **37 / 147 / 3,331 from P3b onward** (unchanged by P3c), loop endpoints all 0, f1 vs f327 `matrix_world` of all 93 objects identical | `qa_v2/v13_baseline_audit.py` |
+| grab contact | **current (P3b/P3c): f31 0.01148/0.01432, f43 same, f147 0.01808/0.02085, f155 0.40630/0.45380, overlap 0** — the P3a numbers were f31 0.01799/0.00614, f147 0.02555/0.02348, f155 0.41537/0.47581 | `qa_v2/v13_grab_gate.py` |
+| triangle budget | 20,646 on P3a; 22,650 on P3b; **23,854 from P3c** of 25,000 | `v13_baseline_audit.py` |
 
 The 39 -> 37 action drop is **not a regression**: `MAT_Window_Noise1Action` and
 `MAT_Window_Noise2Action` lost their nodes when P2 rebuilt the window, became zero-user
@@ -118,10 +121,11 @@ v13_p1a_shell.py  ->  v13_p1b_dress.py  ->  v13_p1c_details.py  ->  v13_p2_windo
                   ->  v13_p3_chute_hopper.py  ->  (P3b claw: NO SCRIPT)
 ```
 
-P3b is the one stage with no script. It was authored live through the Blender MCP bridge
-(port 9876) under the project rule that this stage runs through MCP only. Every parameter is
-recorded in `BUILD_NOTES.md` under "v13 P3b", so the script can be written from it, but
-**P3b cannot currently be replayed from the P3a asset** the way the earlier stages can.
+P3b and P3c are the two stages with no script. Both were authored live through the Blender
+MCP bridge (port 9876) under the project rule that those stages run through MCP only. Every
+parameter is recorded in `BUILD_NOTES.md` under "v13 P3b" and "v13 P3c", so the scripts can be
+written from them, but **neither stage can currently be replayed from the P3a asset** the way
+the earlier stages can.
 
 `v13_p1_seat_contact.py` is idempotent-ish and must be re-run **after any change to the
 chute or body geometry**, because it re-derives the product's contact height from the
@@ -135,14 +139,32 @@ surface that is actually there. It only ever raises, never lowers.
    the wrist, so fingers reach its surface at x 0.146 and cannot meet in front of it without
    wrapping past x 0.579. The delivered ceiling is "three pads touching, palm cupped behind".
    Changing that means changing the orb radius, which the animation pins.
-3. **Remaining shape deltas against the reference**, all measured, none of them may touch the
-   animation: body W:H 1.00 vs the reference's 0.73 (accepted compromise), hopper neck still a
-   straight cylinder while the reference has a short cream neck under the mint collar, base
-   band still thin, and the arm still reads as a pipe with hoops rather than the reference's
-   tapered tube.
-4. **Delivery checklist**: `.blend` + `.glb` + `BUILD_NOTES.md` stage section. P3b has all
-   three; what is left is a final side-by-side four-view against
-   `reference/style_v13_ref.png` at delivery framing.
+3. **Remaining shape deltas against the reference after P3c**, all measured, none of them may
+   touch the animation:
+   - **The chute is the big one.** `Machine_Chute` is 2.24 long = 1.24 of body width; the
+     reference measures 0.677. It cannot be shortened: `ProductAction.001_V2` drives the
+     product from x 1.36 to 5.9 along that surface over f232..f289 and the part is parented
+     to the keyframed empty `Machine_OutputChute`. From behind it reads as a slab with a thin
+     unsupported rail.
+   - `Outlet_Flap` reads as a detached flat plate at the chute mouth in the f1 pose; it is
+     animated, so the pose cannot be re-authored casually.
+   - Window cavity is still light grey behind pale nebula spheres; the reference is a dark
+     teal cavity with a diffuse nebula. Material change, deliberately deferred.
+   - No four small round feet; the mint side panel is a thin strip rather than the
+     reference's large rounded panel.
+   - body W:H 1.00 vs the reference's 0.73 (the section 12 Q1 accepted compromise).
+4. **Lighting is now the weakest link, not geometry.** `Cam_Hero` plus two suns
+   (`SUN_Hero` 3.0, `FILL_Hero` 0.8) with a 0.051 world is not the reference's studio look —
+   the machine renders flat and dark under it while the shape reads well under the `QA_*`
+   rig. Reverse-engineering the reference's soft key from upper left + large fill + seamless
+   grey backdrop + contact shadow was ranked as a top lever in the design doc and is still
+   untouched.
+5. **Re-export the GLB from `hero_animation_v13_p3c.blend`** (`export_apply=True`,
+   `use_visible=False` so the keyframed-hidden `Product`/pedestal survive, then delete the 5
+   scaffolding cutters/proxies first). The existing `hero_animation_v13_p3b.glb` predates
+   P3c and does not contain the new arm or hopper.
+6. **Delivery checklist**: `.blend` + `.glb` + `BUILD_NOTES.md` stage section + a final
+   side-by-side four-view against `reference/style_v13_ref.png` at delivery framing.
 
 ## 7. Tool caveats worth knowing before you trust a number
 
