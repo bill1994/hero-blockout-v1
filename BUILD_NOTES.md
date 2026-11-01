@@ -1491,3 +1491,77 @@ Modelling is finished. What remains, in the order the reference punishes us for 
    collar and hatch all match the reference; only the structural tongue is long.
 5. `window_h_to_w` 1.2972 against the reference's 1.5528 — unreachable, the reference's own
    three window numbers contradict each other (see the P3f unit-trap note).
+
+## v13 P3h (2026-11-02)
+
+### Why: the shoulder was a pile of boxes
+
+The reference crop the client sent (`m01677`) shows the arm socket as one small round boss:
+a cream disc with a raised ring, sitting on the mint side panel, a thin cream tube leaving its
+centre, then a cream ball joint, then the arm. There is no box anywhere in that region.
+
+Ours was four boxes stacked: `P1_ShoulderBay` (1.2 x 1.0 x 0.7 slab), `Arm_Mount`
+(0.748 x 0.879 x 0.30 plate reaching x -1.928, i.e. further out than the ball itself),
+`Arm_Base` (r 0.364 disc) and `Arm_Yaw_Housing` (r 0.22 cone). Union silhouette read as one
+fat block, which is exactly the complaint.
+
+### What changed
+
+1. `P1_ShoulderBay` mesh rebuilt as three islands in one object: torus boss (major 0.245,
+   minor 0.075, 24 x 8, centre x -0.985 / z 1.30), backing disc (r 0.315, x -0.912 to -0.950,
+   outer face deliberately 0.004 short of the mint panel at -0.908 so it cannot z-fight) and
+   the stub tube (x -0.945 to -1.415, r 0.150 to 0.128, 20 segments). 240 faces. The Bevel
+   P3g had added to this object was deleted first — it exploded the 240 faces into 3,064
+   triangles.
+2. `Arm_Base` mesh replaced by a UV sphere r 0.160 (8 rings x 14 segments), local z +0.170 so
+   the world centre lands on (-1.5, 0, 1.32). It acts as the yaw bearing ball, which is safe
+   because a sphere is invariant under the Z rotation that `Arm_Yaw_Pivot` applies.
+3. `Arm_Yaw_Housing` replaced by a cream torus ring around the shoulder ball
+   (major 0.152, minor 0.036, local z +0.115).
+4. `Arm_ShoulderRiser` replaced by a thin dark seam ring (major 0.163, minor 0.026, local
+   z +0.015) — the dark ring at the ball/arm junction that the reference does show.
+5. `Arm_Mount` hidden (`hide_render` / `hide_viewport` / `hide_set(True)`). Data and its
+   `Arm_MountAction_V2` location jitter are untouched, so the animation and the action count
+   survive; the plate simply never renders again. Same treatment as the four light meshes in
+   P3e: **any future GLB export must use `use_visible=True` or these five come back.**
+
+Frozen values untouched: no action, no object origin, no parent link, `Arm_Shoulder_Joint`
+still at (-1.5, 0, 1.5) with r 0.18.
+
+### Two traps worth keeping
+
+- **`from_pydata` loses materials.** Assigning a freshly built mesh with `obj.data = me`
+  replaces the material slot list with empty, and the object then renders in the default grey.
+  It looked exactly like a wrong-material bug in `p3h_shoulder.png` (the stub came out stone
+  grey). Fix: `me.materials.append(mat)` before or after the swap. The old mesh's
+  `materials` list is not carried over.
+- **`evaluated_get(dg).matrix_world` can report identity** for these objects, so measuring
+  world positions from evaluated copies silently returned local coordinates (the sphere read
+  as x +-0.16 instead of -1.66..-1.34). Use `obj.matrix_world.translation` on the real object.
+  Also `Mesh` has no `.bound_box`; only `Object` does.
+
+### Gates
+
+Triangle cost 24,148 → **24,464 of 25,000**. `qa_v2/v13_grab_p3h.json` **PASS**, every number
+identical to P3f/P3g (f31 L 0.00557 R 0.01118; f43 same; f147 L 0.01267 R 0.01492; f155
+L 0.40271 R 0.45016; overlap 0 on all four frames; tip gap 0.20781 / 0.20781 / 0.19348 /
+0.19348). `qa_v2/v13_product_path_p3h.json` **PASS** — RESTING 43 / ARC 14 / EXITED 13 /
+COLLAPSED 26, arc 257..270 peak +0.379 at f263, first_exited f289, negative gaps 0, support
+ratio 1.0 on every sampled frame. `qa_v2/v13_shape_metrics_p3h.json` identical to P3f/P3g.
+Loop closure over 104 objects (QA rig still present) f1 vs f327 worst 0.0, 0 broken; NaN 0;
+0 texture nodes; 37 actions.
+
+Renders: `review/v13/p3h_shoulder.png` (socket close-up), `p3h_3q.png`, `p3h_front.png`.
+
+Saved `hero_animation_v13_p3h.blend` — 347,043 bytes, 98 objects, 86 meshes, 37 actions,
+24,464 triangles, `scene.camera` = `Cam_Hero`, frame 1, QA rig deleted before saving.
+
+### Still open after P3h
+
+1. The outlet still reads as a shelf: cream scoop + orange inner floor + dark tongue, against
+   the reference's single small round spout. The tongue length is frozen by the animation
+   (see P3g item 4); the scoop shape itself could still become rounder.
+2. Window frame reads near-black and the glow ring reads as a bright cartoon outline —
+   material work, deferred.
+3. The 30 nebula spheres are flat pastel discs in the cavity.
+4. Lighting: `Cam_Hero` plus two suns still leaves the body underlit.
