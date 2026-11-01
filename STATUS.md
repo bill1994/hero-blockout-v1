@@ -1,6 +1,6 @@
 # STATUS — hero-blockout-v1 / v13 style pass
 
-**Last updated:** 2026-11-02 (after stage P3f — reference pass 3: top mint skin, window resized, fingers thickened)
+**Last updated:** 2026-11-02 (after stage P3g — the geometry pass is finished; materials and lighting are the only work left)
 **Branch:** `main`. Everything below is committed. Remote work should continue from `main`.
 
 Read `BUILD_NOTES.md` for the measured detail behind every claim here. This file is the
@@ -22,13 +22,14 @@ check yourself.
 | **v13 P3c** | **`hero_animation_v13_p3c.blend`** | reference pass 2, geometry only: arm rebuilt as a ball-and-tube chain with seam rings, hopper chunkier, window slimmed, body bevel 0.05, plinth gap closed, two buttons added, three front lights shrunk |
 | **v13 P3d** | **`hero_animation_v13_p3d.blend`** | zero-risk finishing: feet dug out of the plinth, hopper throat mint collar, button ring seats, wrist amber cuff, tilted label decal |
 | **v13 P3e** | **`hero_animation_v13_p3e.blend`** | outlet pass: rail narrowed to y ±0.42, `P1_ChuteSeat` rebuilt as a collar, `Outlet_Flap` re-authored as a flush cream hatch, plinth overhang trimmed, four reference-absent light meshes hidden |
-| **v13 P3f (current)** | **`hero_animation_v13_p3f.blend`** | **reference pass 3: top mint is now a conformal skin wrapping the shoulders, window widened to 0.5421 and heightened, side mint strips raised to meet the skin, `Arm_Mount` creamed, fingers thickened 1.12× as tubes. No GLB yet — re-export from this file.** |
+| **v13 P3f** | **`hero_animation_v13_p3f.blend`** | reference pass 3: top mint is now a conformal skin wrapping the shoulders, window widened to 0.5421 and heightened, side mint strips raised to meet the skin, `Arm_Mount` creamed, fingers thickened 1.12× as tubes |
+| **v13 P3g (current)** | **`hero_animation_v13_p3g.blend`** | **geometry pass closed: bevels on `P1_ShoulderBay` and both mint strips, eight bolt heads pulled 0.006 proud. Modelling is finished; materials and lighting are the only work left. No GLB yet — re-export from this file.** |
 
 `hero_animation_v13_p3b.glb` is the newest GLB deliverable: 1,094,460 B, 76 meshes, 83 nodes,
 15 materials, 18 animations, 21,802 triangles, images/textures/samplers all 0. **It predates
-P3c, P3d, P3e and P3f**, so it does not contain the rebuilt arm, the hopper rework, the outlet
-pass, the top skin or the resized window — re-export from `hero_animation_v13_p3f.blend` before
-shipping anything.
+P3c through P3g**, so it does not contain the rebuilt arm, the hopper rework, the outlet pass,
+the top skin, the resized window or the polish pass — re-export from
+`hero_animation_v13_p3g.blend` before shipping anything.
 `hero_animation_v13_p3.glb` does not exist - the GLB skipped P3a entirely.
 
 ## 2. What the plan wanted vs what is done
@@ -69,7 +70,7 @@ shipping anything.
 | orb rest | pedestal top **z 2.35**, orb centre (0,0,2.6), r 0.25 | axis ray in `v13_p3_chute_hopper.py` report |
 | animation | 39 actions, 149 fcurves, 3,345 keys on P3a; **37 / 147 / 3,331 from P3b onward** (unchanged by P3c), loop endpoints all 0, f1 vs f327 `matrix_world` of all 93 objects identical | `qa_v2/v13_baseline_audit.py` |
 | grab contact | **current (P3f): f31 0.00557/0.01118, f43 same, f147 0.01267/0.01492, f155 0.40271/0.45016, overlap 0** — P3b..P3e were f31 0.01148/0.01432, f147 0.01808/0.02085, f155 0.40630/0.45380; the P3f tightening is the 1.12× finger thickening, still well clear of the 0.002 floor | `qa_v2/v13_grab_gate.py` |
-| triangle budget | 20,646 on P3a; 22,650 on P3b; 23,854 on P3c; 23,442 on P3d; 23,322 on P3e; **23,540 from P3f** of 25,000 (22,764 of them visible — the four hidden light meshes account for the rest) | `v13_baseline_audit.py` |
+| triangle budget | 20,646 on P3a; 22,650 on P3b; 23,854 on P3c; 23,442 on P3d; 23,322 on P3e; 23,540 on P3f; **24,148 from P3g** of 25,000 (the shoulder-bay and mint-strip bevels cost 608) | `v13_baseline_audit.py` |
 
 The 39 -> 37 action drop is **not a regression**: `MAT_Window_Noise1Action` and
 `MAT_Window_Noise2Action` lost their nodes when P2 rebuilt the window, became zero-user

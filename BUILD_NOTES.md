@@ -1442,3 +1442,52 @@ seven QA lights and cameras and their data-blocks were deleted before saving.
    deviation.
 6. `Cam_Hero` plus the two suns still leave the body underlit; the QA rig is the only thing that
    makes the colours readable. Lighting pass, deliberately deferred.
+
+## v13 P3g (2026-11-02) — closing the geometry pass
+
+Small polish so the geometry side can be declared finished. Materials and lighting are still
+deliberately untouched.
+
+1. **Bevels on the last two hard-edged parts.** `P1_ShoulderBay` (the cream bay the arm root
+   grows out of, 192 verts) had no modifier at all and read as a die-cut box from the back;
+   it now carries an angle-limited Bevel of 0.012 / 3. `P1_MintStrip_L/R` were 0.010-thick
+   plates with square edges; both now carry Bevel 0.004 / 2, so the mint panel has a soft
+   rim instead of a paper edge.
+2. **Bolt heads were invisible.** All eight `P1_Bolt_*` sat 0.001 proud of their face, which
+   is sub-pixel at any sane render size. The 12 front-most vertices of each bolt were pulled
+   to y ±0.806 (0.006 proud). Vertices only — no object transform, no origin, no parent, no
+   action touched.
+
+Triangle cost: 23,540 → **24,148 of 25,000** (the shoulder bay grew 372 → 668, each mint strip
+76 → 236). Everything else is unchanged: `qa_v2/v13_grab_p3g.json` **PASS** with the same
+numbers as P3f to five decimals (f31 L 0.00557 R 0.01118; f147 L 0.01267 R 0.01492; f155
+L 0.40271 R 0.45016; overlap 0); `qa_v2/v13_product_path_p3g.json` **PASS** (RESTING 43 / ARC 14
+/ EXITED 13 / COLLAPSED 26, negative gaps 0, support ratio 1.0 on every frame);
+`qa_v2/v13_shape_metrics_p3g.json` unchanged from P3f; loop closure over all 98 objects at
+f1 vs f327 worst delta 0.0, 0 broken; NaN 0; 37 actions.
+
+Renders: `review/v13/p3g_front.png`, `p3g_3q.png`, `p3g_back.png` (the back view is new — it is
+the first time the back has been rendered, and it confirms the mint skin stops cleanly at the
+top edge and the plinth band reads as one piece around all four sides).
+
+Saved `hero_animation_v13_p3g.blend` — 339,818 bytes, 98 objects, 88 meshes, 37 actions,
+24,148 triangles, `scene.camera` = `Cam_Hero`, frame 1, QA rig deleted before saving.
+
+### What is left, and none of it is geometry
+
+Modelling is finished. What remains, in the order the reference punishes us for it:
+
+1. **Materials** (deferred by request): `MAT_Window_Frame` base 0.024 reads near-black instead
+   of charcoal; `MAT_Color_Mint` is too glossy on the top skin; the 30 `P2_Nebula_*` spheres
+   are flat pastel; `MAT_Window_Cavity` is light grey instead of dark teal.
+2. **Lighting** (deferred by request): `Cam_Hero` plus two suns (`SUN_Hero` 3.0, `FILL_Hero`
+   0.8, world 0.051) still leaves the body underlit.
+3. **GLB re-export** from P3g with `use_visible=True`, after deleting the five scaffolding
+   cutters/proxies (`Cutter_Outlet`, `Cutter_Window`, `P1_Cutter_SeatOpen`,
+   `Product_Proxy_FitCheck`, `Product_Proxy_Large`).
+4. **Documented deviation that will not be fixed**: the outlet tongue is still 2.24 long
+   (1.24 of body width) against the reference's 0.677, because `ProductAction.001_V2` slides
+   the orb along it and the path gate fails on any shorter version. The cream scoop, seat
+   collar and hatch all match the reference; only the structural tongue is long.
+5. `window_h_to_w` 1.2972 against the reference's 1.5528 — unreachable, the reference's own
+   three window numbers contradict each other (see the P3f unit-trap note).
