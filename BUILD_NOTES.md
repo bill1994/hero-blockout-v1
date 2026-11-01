@@ -1265,3 +1265,72 @@ Budget: **23,854 / 25,000** triangles.
    reference's large rounded panel.
 5. `Cam_Hero` plus two suns only is not the reference's studio look. The shape reads much
    better under the `QA_*` rig than under the shipped camera.
+
+## v13 P3e (2026-11-02)
+
+Reference-fidelity pass on the outlet side plus the base plinth. File
+`hero_animation_v13_p3e.blend`. 98 objects, 88 meshes, 37 actions, 23,322 / 25,000 triangles,
+loop broken 0, NaN 0, texture nodes 0. No action, object origin or parenting was changed.
+
+### What changed
+
+1. **`Machine_Chute` dark rail narrowed.** Side walls y ±0.52 → ±0.42 (tip ±0.36); the
+   underside at the tip lifted 0.605 → 0.672 so it tapers instead of ending as a plank edge.
+   The support surface (`z = 0.705`, x 2.1…3.4) is untouched, so the product path is
+   bit-identical. A first attempt at ±0.34 made the gate emit a low-support warning
+   (ratio 0.33 over f248…f288); ±0.42 restores ratio 1.0 for the frames that had it.
+2. **`P1_ChuteSeat` rebuilt.** It was a 1.07-tall portal frame (the "ear" in every 3/4 and
+   back view). Now a 0.55-tall collar: x 0.90…1.16, outer y ±0.745 / z 0.455…1.005, inner
+   opening y ±0.685 / z 0.505…0.955 so it hugs the scoop cross-section instead of
+   intersecting it. Rebuilt as a four-wall tube with rounded corners (radius 0.035) plus a
+   0.008 chamfer; 380 → 364 tris. Rebuilding beat scaling: scaling z squashed the opening and
+   pushed the frame through the scoop.
+3. **`Outlet_Flap` re-authored as a flush hatch.** Object scale (0.04, 0.8, 0.5) baked to
+   (1, 1, 1); the eight vertices were rewritten so that in the rest pose (−30° about Y) the
+   panel sits flush on the body's right face: x 0.896…0.936, y ±0.62, z 1.012…1.44. Material
+   `MAT_Color_Amber` → `MAT_Body`. Origin, parent and the single `rotation_euler[1]` fcurve
+   are untouched, so it still swings out over f227…f255.
+4. **`Machine_Base` overhang trimmed.** Right edge x 1.158 → 0.925 so the plinth no longer
+   pokes out under the scoop; footprint now x ±0.925, y ±0.8, z 0…0.12, bevel 0.018 / 2.
+   With `P1_BaseBand` (z 0.1…0.284, bevel 0.020 / 2) the plinth now reads as one charcoal
+   block 0…0.284 = 0.158 of body height against the reference's 0.1576.
+5. **`Machine_Panel_Top` bevel 0.012 / 2** so the top plate stops reading as a hard seam.
+6. **Four light meshes hidden.** `Machine_Light_01/02/03` (three pale discs at z 1.75) and
+   `Machine_LightStrip` (the front strip that sliced the charcoal band in half) do not exist
+   in the reference. They are hidden, not deleted: data and their `*Action_V2` curves are
+   kept for a later FX pass. **The GLB exporter must use `use_visible=True`, otherwise they
+   come back.**
+
+### Preflight finding (recorded because it constrains every later chute change)
+
+A downward raycast from the product's bounding-box centre onto `Machine_Chute`'s evaluated
+mesh, over all 57 RESTING+ARC frames, hits the cream shell (`MAT_Body`) **0 times**. The
+product rides the amber inner floor (`MAT_Color_Amber`) until its centre reaches xc 2.09 and
+the dark rail (`MAT_Arm_Dark`) from xc 2.22 out to xc 3.38; at f287…f288 only the rear edge
+rests on the rail's tip. Cutting the cream shell would therefore have been safe, but the
+shell already ends at x 2.1, and the rail cannot be shortened without failing the path gate.
+
+### Gate evidence
+
+- `qa_v2/v13_grab_p3e.json` — **PASS**, bit-identical to P3b/P3c/P3d (f31/f43 L 0.01148
+  R 0.01432; f147 L 0.01808 R 0.02085; f155 L 0.40630 R 0.45380; overlap 0 everywhere).
+- `qa_v2/v13_product_path_p3e.json` — **PASS**, RESTING 43 / ARC 14 / EXITED 13 /
+  COLLAPSED 26, arc peak +0.379 @f263, first_exited f289, negative gaps 0.
+- `qa_v2/v13_shape_metrics_p3e.json` — charcoal_h_to_body_h 0.1578 vs the reference's 0.1576;
+  chute_len_to_body_w still 1.2444 because the metric measures the whole object, which
+  includes the structural tongue. The cream scoop alone is 0.94 long (0.52 of body width)
+  and the seat-to-scoop-end span 0.90…2.10 is 1.20 (0.667), against the reference's 0.677.
+- Loop closure: 98 objects, `matrix_world` f1 vs f327, 0 broken.
+- Renders: `review/v13/p3d5_front.png`, `p3d5_hero_3q.png`, `p3d5_base.png`,
+  `p3d3_outlet_closeup.png`, `p3d4_right.png`.
+
+### Still open
+
+1. The scoop still reads as a tray with an orange floor plus a dark tongue; the reference is
+   a small rounded spout. The tongue is structural (see preflight), so this stays.
+2. The three-finger claw is still round tubes; the reference is flat, wide leaves. That is
+   batch 3 and it needs the grab gate re-run.
+3. Window cavity, window frame and the mint glow are still flat colour blocks — material pass.
+4. `Product` is `hide_render = True` in the shipped file (pre-existing, not a P3e change).
+5. The top mint surface is a plain plate; the reference wraps a mint band over the top and
+   down the right shoulder.

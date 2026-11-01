@@ -65,7 +65,7 @@ P3c**, so it does not contain the rebuilt arm or hopper — re-export from
 | orb rest | pedestal top **z 2.35**, orb centre (0,0,2.6), r 0.25 | axis ray in `v13_p3_chute_hopper.py` report |
 | animation | 39 actions, 149 fcurves, 3,345 keys on P3a; **37 / 147 / 3,331 from P3b onward** (unchanged by P3c), loop endpoints all 0, f1 vs f327 `matrix_world` of all 93 objects identical | `qa_v2/v13_baseline_audit.py` |
 | grab contact | **current (P3b/P3c): f31 0.01148/0.01432, f43 same, f147 0.01808/0.02085, f155 0.40630/0.45380, overlap 0** — the P3a numbers were f31 0.01799/0.00614, f147 0.02555/0.02348, f155 0.41537/0.47581 | `qa_v2/v13_grab_gate.py` |
-| triangle budget | 20,646 on P3a; 22,650 on P3b; **23,854 from P3c** of 25,000 | `v13_baseline_audit.py` |
+| triangle budget | 20,646 on P3a; 22,650 on P3b; 23,854 on P3c; 23,442 on P3d; **23,322 from P3e** of 25,000 | `v13_baseline_audit.py` |
 
 The 39 -> 37 action drop is **not a regression**: `MAT_Window_Noise1Action` and
 `MAT_Window_Noise2Action` lost their nodes when P2 rebuilt the window, became zero-user
@@ -144,14 +144,21 @@ surface that is actually there. It only ever raises, never lowers.
    - **The chute is the big one.** `Machine_Chute` is 2.24 long = 1.24 of body width; the
      reference measures 0.677. It cannot be shortened: `ProductAction.001_V2` drives the
      product from x 1.36 to 5.9 along that surface over f232..f289 and the part is parented
-     to the keyframed empty `Machine_OutputChute`. From behind it reads as a slab with a thin
-     unsupported rail.
-   - `Outlet_Flap` reads as a detached flat plate at the chute mouth in the f1 pose; it is
-     animated, so the pose cannot be re-authored casually.
+     to the keyframed empty `Machine_OutputChute`. P3e narrowed the rail to y ±0.42 and
+     rebuilt `P1_ChuteSeat` as a 0.55-tall collar, so it now reads as a scoop plus a slim
+     tongue; a downward raycast proved the cream shell carries the product on **0 of 57**
+     RESTING+ARC frames (amber floor to xc 2.09, dark rail from xc 2.22), so the shell is
+     decorative and only the tongue is structural.
+   - `Outlet_Flap` was re-authored in P3e as a flush cream hatch (scale baked to 1, vertices
+     rebuilt, amber -> `MAT_Body`); the −30° visor pose is gone. Its action still swings it
+     out over f227..f255.
    - Window cavity is still light grey behind pale nebula spheres; the reference is a dark
      teal cavity with a diffuse nebula. Material change, deliberately deferred.
-   - No four small round feet; the mint side panel is a thin strip rather than the
-     reference's large rounded panel.
+   - Four feet exist (`Machine_Feet`, exposed 0.08 below the plinth since P3d); the mint side
+     panel is still a thin strip rather than the reference's large rounded panel.
+   - `Machine_Light_01/02/03` and `Machine_LightStrip` do not exist in the reference and were
+     hidden in P3e rather than deleted (data + actions kept for a later FX pass). Any GLB
+     export must use `use_visible=True` or they come back.
    - body W:H 1.00 vs the reference's 0.73 (the section 12 Q1 accepted compromise).
 4. **Lighting is now the weakest link, not geometry.** `Cam_Hero` plus two suns
    (`SUN_Hero` 3.0, `FILL_Hero` 0.8) with a 0.051 world is not the reference's studio look —

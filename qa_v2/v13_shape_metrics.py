@@ -71,6 +71,7 @@ parts = {n: dim(n) for n in (
     "Machine_Hopper",
     "Machine_Chute",
     "Machine_Base",
+    "P1_BaseBand",
     "Arm_Base",
     "Arm_Finger_L",
     "Arm_Finger_R",
@@ -94,6 +95,13 @@ if body and body["w"] and body["h"]:
     wg = parts["Machine_WindowGlow"]
     if wg and wg["w"]:
         ratios["window_h_to_w"] = round(wg["h"] / wg["w"], 4)
+    # the visible charcoal plinth is Machine_Base + P1_BaseBand stacked and sharing
+    # MAT_Arm_Dark, so measure their union -- Machine_Base alone under-reports it
+    blk = [p for p in (parts["Machine_Base"], parts["P1_BaseBand"]) if p]
+    if blk:
+        z_lo = min(p["min"][2] for p in blk)
+        z_hi = max(p["max"][2] for p in blk)
+        ratios["charcoal_h_to_body_h"] = round((z_hi - z_lo) / bh, 4)
     # how far the window centre sits from the body centre, as a fraction of body h
     if wg:
         ratios["window_centre_dz_to_body_h"] = round(
