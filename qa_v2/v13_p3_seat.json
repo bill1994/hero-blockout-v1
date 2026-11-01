@@ -1,0 +1,18 @@
+{
+  "blend": "G:\\DSHProject\\hero-blockout\\hero-blockout-v1\\hero_animation_v13_p3.blend",
+  "applied": true,
+  "clearance": 0.001,
+  "changes": [],
+  "skipped": [
+    {
+      "frame": 276,
+      "gap": 0.00688,
+      "why": "already clear of the surface"
+    },
+    {
+      "frame": 279,
+      "gap": 0.00622,
+      "why": "already clear of the surface"
+    }
+  ]
+}

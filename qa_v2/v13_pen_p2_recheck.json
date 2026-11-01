@@ -1,0 +1,208 @@
+{
+  "blend": "G:\\DSHProject\\hero-blockout\\hero-blockout-v1\\hero_animation_v13_p2.blend",
+  "target": "Product",
+  "against": [
+    "Machine_Body",
+    "Machine_Chute",
+    "P1_ChuteSeat",
+    "P1_ShoulderBay"
+  ],
+  "range": [
+    232,
+    327
+  ],
+  "summary": {
+    "frames_checked": 96,
+    "frames_with_overlap": 27,
+    "per_object_frames": {
+      "Machine_Chute": 27,
+      "P1_ChuteSeat": 7
+    },
+    "first": {
+      "frame": 234,
+      "hits": {
+        "Machine_Chute": 36,
+        "P1_ChuteSeat": 52
+      }
+    },
+    "last": {
+      "frame": 289,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    "missing_objects": [],
+    "verdict": "FAIL"
+  },
+  "rows": [
+    {
+      "frame": 234,
+      "hits": {
+        "Machine_Chute": 36,
+        "P1_ChuteSeat": 52
+      }
+    },
+    {
+      "frame": 235,
+      "hits": {
+        "Machine_Chute": 36,
+        "P1_ChuteSeat": 52
+      }
+    },
+    {
+      "frame": 236,
+      "hits": {
+        "Machine_Chute": 36,
+        "P1_ChuteSeat": 52
+      }
+    },
+    {
+      "frame": 237,
+      "hits": {
+        "Machine_Chute": 36,
+        "P1_ChuteSeat": 88
+      }
+    },
+    {
+      "frame": 238,
+      "hits": {
+        "Machine_Chute": 36,
+        "P1_ChuteSeat": 52
+      }
+    },
+    {
+      "frame": 239,
+      "hits": {
+        "Machine_Chute": 36,
+        "P1_ChuteSeat": 52
+      }
+    },
+    {
+      "frame": 240,
+      "hits": {
+        "Machine_Chute": 36,
+        "P1_ChuteSeat": 52
+      }
+    },
+    {
+      "frame": 270,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 271,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 272,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 273,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 274,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 275,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 276,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 277,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 278,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 279,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 280,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 281,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 282,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 283,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 284,
+      "hits": {
+        "Machine_Chute": 32
+      }
+    },
+    {
+      "frame": 285,
+      "hits": {
+        "Machine_Chute": 32
+      }
+    },
+    {
+      "frame": 286,
+      "hits": {
+        "Machine_Chute": 32
+      }
+    },
+    {
+      "frame": 287,
+      "hits": {
+        "Machine_Chute": 32
+      }
+    },
+    {
+      "frame": 288,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    },
+    {
+      "frame": 289,
+      "hits": {
+        "Machine_Chute": 34
+      }
+    }
+  ]
+}
