@@ -1,0 +1,48 @@
+v13 P3h - geometry pass closed, materials and lighting still open
+
+ASSET: hero_animation_v13_p3h.blend
+  347,043 B / 98 objects / 86 meshes / 16 materials / 37 actions / 147 fcurves
+  24,464 of 25,000 triangles / 0 texture nodes / NaN 0
+
+THIS STAGE (P3h) - arm socket rebuilt to the reference crop
+  P1_ShoulderBay   : one cream slab -> torus boss (major 0.245 / minor 0.075)
+                     + backing disc + stub tube (r 0.150->0.128), 240 faces
+  Arm_Base         : r 0.364 disc -> r 0.160 ball (yaw bearing)
+  Arm_Yaw_Housing  : r 0.22 cone -> cream ring around the shoulder ball
+  Arm_ShoulderRiser: r 0.20 ring -> thin dark seam ring (major 0.163)
+  Arm_Mount        : 0.748x0.879x0.30 plate reaching x -1.928 -> HIDDEN.
+                     Data and Arm_MountAction_V2 kept; export with use_visible=True.
+
+STAGES DONE SO FAR
+  P3a baseline audit + grab gate pinned before touching the claw
+  P3b hand rebuilt as a three-finger claw, GLB re-exported, animation QA sheet
+  P3c arm as ball-and-tube chain with seam rings, hopper chunkier, window slimmed,
+      body bevel 0.05 with reordered booleans, top plate inset, plinth gap closed
+  P3d zero-risk finishing: feet dug out of the plinth, hopper mint collar,
+      button ring seats, wrist amber cuff, tilted label decal
+  P3e outlet pass: rail narrowed to y +-0.42, chute seat rebuilt as a collar,
+      Outlet_Flap re-authored as a flush cream hatch, four light meshes hidden
+  P3f top mint as a conformal skin, window widened to 0.5421 and heightened,
+      side strips raised to meet the skin, fingers thickened 1.12x as tubes
+  P3g bevels on the shoulder bay and mint strips, bolt heads 0.006 proud
+  P3h arm socket round (this tag)
+
+GATES (all green, grab numbers unchanged since P3e)
+  grab gate   PASS  f31 L 0.00557 R 0.01118 / f43 same / f147 L 0.01267 R 0.01492 /
+                    f155 L 0.40271 R 0.45016 / overlap 0 on all four frames
+  path gate   PASS  RESTING 43 / ARC 14 / EXITED 13 / COLLAPSED 26,
+                    arc peak +0.379 @f263, first_exited f289, negative gaps 0,
+                    support ratio 1.0 on every sampled frame
+  shape       window_w_to_body_w 0.5421 (reference 0.5421),
+              charcoal_h_to_body_h 0.1578 (reference 0.1576)
+  loop close  104 objects f1 vs f327 worst 0.0, 0 broken
+
+STILL OPEN
+  1. outlet still reads as a shelf (cream scoop + orange floor + dark tongue)
+     against the reference's small round spout; the tongue length is frozen by
+     ProductAction.001_V2
+  2. MAT_Window_Frame 0.024 reads near-black instead of charcoal
+  3. the 30 P2_Nebula_* spheres are flat pastel discs, no volume
+  4. lighting: Cam_Hero plus two suns still leaves the body underlit
+  5. GLB must be re-exported from this file with use_visible=True - five objects
+     are hidden on purpose (Machine_Light_01/02/03, Machine_LightStrip, Arm_Mount)
