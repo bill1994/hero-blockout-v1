@@ -1,6 +1,6 @@
 # STATUS — hero-blockout-v1 / v13 style pass
 
-**Last updated:** 2026-11-01 (after commit `12e43ab`, stage P3a)
+**Last updated:** 2026-11-01 (after stage P3b)
 **Branch:** `main`. Everything below is committed. Remote work should continue from `main`.
 
 Read `BUILD_NOTES.md` for the measured detail behind every claim here. This file is the
@@ -17,10 +17,12 @@ check yourself.
 | v13 P0 | `hero_animation_v13_soft.blend` | hygiene pass only (materials, loop closure, re-seat ornaments) |
 | v13 P1 | `hero_animation_v13_p1.blend` | shell 2.32 → 1.80, junctions, mint bands, palette, window 0.64 |
 | v13 P2 | `hero_animation_v13_p2.blend` + `.glb` | window rebuilt, emissive nebula, GLB verified |
-| **v13 P3a (current)** | **`hero_animation_v13_p3.blend`** | grab gate, chute split, hopper bowl |
+| v13 P3a | `hero_animation_v13_p3.blend` | grab gate, chute split, hopper bowl |
+| **v13 P3b (current)** | **`hero_animation_v13_p3b.blend` + `.glb`** | **hand rebuilt as a three-finger claw, floating lines removed, GLB re-exported, animation QA sheet done** |
 
-`hero_animation_v13_p3.glb` does **not** exist yet — the GLB was last exported at P2 and
-must be re-exported once the claw work lands.
+`hero_animation_v13_p3b.glb` is the current deliverable: 1,094,460 B, 76 meshes, 83 nodes,
+15 materials, 18 animations, 21,802 triangles, images/textures/samplers all 0.
+`hero_animation_v13_p3.glb` does not exist - the GLB skipped P3a entirely.
 
 ## 2. What the plan wanted vs what is done
 
@@ -34,8 +36,8 @@ must be re-exported once the claw work lands.
 | P3 grab criterion pinned before claw work | done |
 | P3 hopper bowl | done |
 | P3 chute scoop + rail | done |
-| **P3 claw (rounded pads + fixed third finger)** | **not started** |
-| final GLB export + animation QA sheet | not started |
+| **P3 claw (rounded pads + fixed third finger)** | **done - palm ellipsoid, three hooked fingers, wrist collar rebuilt** |
+| final GLB export + animation QA sheet | done (P3b) |
 
 ### two places where the design doc contradicts itself (both decided, both recorded)
 
@@ -58,9 +60,13 @@ must be re-exported once the claw work lands.
 | chute mouth | `Machine_Chute` min x = **1.160** | same |
 | chute floor / support plane | **z 0.705** | `qa_v2/v13_product_path_gate.py` |
 | orb rest | pedestal top **z 2.35**, orb centre (0,0,2.6), r 0.25 | axis ray in `v13_p3_chute_hopper.py` report |
-| animation | 39 actions, 149 fcurves, 3,345 keys, loop endpoints all 0 | `qa_v2/v13_baseline_audit.py` |
-| grab contact | f31 0.01799/0.00614, f43 same, f147 0.02555/0.02348, f155 0.41537/0.47581 | `qa_v2/v13_grab_gate.py` |
-| triangle budget | 20,646 of 25,000 | `v13_baseline_audit.py` |
+| animation | 39 actions, 149 fcurves, 3,345 keys on P3a; **37 / 147 / 3,331 from P3b** (see below), loop endpoints all 0 | `qa_v2/v13_baseline_audit.py` |
+| grab contact | f31 0.01799/0.00614, f43 same, f147 0.02555/0.02348, f155 0.41537/0.47581 - **these are the P3a numbers; since P3b they are f31 0.01148/0.01432, f147 0.01808/0.02085, f155 0.40630/0.45380, overlap 0** | `qa_v2/v13_grab_gate.py` |
+| triangle budget | 20,646 on P3a; **22,650 from P3b** of 25,000 | `v13_baseline_audit.py` |
+
+The 39 -> 37 action drop is **not a regression**: `MAT_Window_Noise1Action` and
+`MAT_Window_Noise2Action` lost their nodes when P2 rebuilt the window, became zero-user
+datablocks and were dropped on the next save-reload. Nothing evaluates them.
 
 ## 4. Gates and how to run them
 
@@ -109,8 +115,13 @@ asset, in sequence, each on the output of the previous:
 
 ```
 v13_p1a_shell.py  ->  v13_p1b_dress.py  ->  v13_p1c_details.py  ->  v13_p2_window.py
-                  ->  v13_p3_chute_hopper.py  ->  (P3b claw, to be written)
+                  ->  v13_p3_chute_hopper.py  ->  (P3b claw: NO SCRIPT)
 ```
+
+P3b is the one stage with no script. It was authored live through the Blender MCP bridge
+(port 9876) under the project rule that this stage runs through MCP only. Every parameter is
+recorded in `BUILD_NOTES.md` under "v13 P3b", so the script can be written from it, but
+**P3b cannot currently be replayed from the P3a asset** the way the earlier stages can.
 
 `v13_p1_seat_contact.py` is idempotent-ish and must be re-run **after any change to the
 chute or body geometry**, because it re-derives the product's contact height from the
@@ -118,16 +129,20 @@ surface that is actually there. It only ever raises, never lowers.
 
 ## 6. What is next (in order)
 
-1. **Claw (P3b).** `Arm_Finger_L/R` meshes → rounded chunky pads; add a third fixed finger
-   on the wrist (no action). Rotation keys, origins and parenting must not move. Judge with
-   `v13_grab_gate.py` — it fails on finger/orb face overlap, so a pad that grips by
-   penetrating is rejected even if the distance looks fine.
-2. **Re-export the GLB** from the finished blend
-   (`export_apply=True`) and re-run the texture check — the P2 rule is hard: images 0,
-   textures 0, samplers 0.
-3. **Animation QA contact sheet** for the delivered frame rate, plus a final four-view
-   against `reference/style_v13_ref.png`.
-4. **Delivery checklist**: `.blend` + `.glb` + `BUILD_NOTES.md` stage section.
+1. **Write `qa_v2/v13_p3b_claw.py`** from the recorded parameters so the claw stage becomes
+   replayable like the others. This is the only stage-script gap left.
+2. **The claw cannot close around the orb.** The orb is r 0.25 with its centre 0.396 ahead of
+   the wrist, so fingers reach its surface at x 0.146 and cannot meet in front of it without
+   wrapping past x 0.579. The delivered ceiling is "three pads touching, palm cupped behind".
+   Changing that means changing the orb radius, which the animation pins.
+3. **Remaining shape deltas against the reference**, all measured, none of them may touch the
+   animation: body W:H 1.00 vs the reference's 0.73 (accepted compromise), hopper neck still a
+   straight cylinder while the reference has a short cream neck under the mint collar, base
+   band still thin, and the arm still reads as a pipe with hoops rather than the reference's
+   tapered tube.
+4. **Delivery checklist**: `.blend` + `.glb` + `BUILD_NOTES.md` stage section. P3b has all
+   three; what is left is a final side-by-side four-view against
+   `reference/style_v13_ref.png` at delivery framing.
 
 ## 7. Tool caveats worth knowing before you trust a number
 
@@ -147,11 +162,26 @@ surface that is actually there. It only ever raises, never lowers.
   compared at the wrong place. The gate builds world-space trees instead.
 - **Building meshes in world coordinates for a parented object** silently displaces it
   (this moved the window cutter and stopped the outlet cutting). Build in local space via
-  `matrix_world.inverted()`.
+  `matrix_world.inverted()`. The claw is the sharpest case: `Arm_Finger_L/R` and
+  `Arm_Gripper` all carry a non-identity `matrix_parent_inverse`, so wrist-space points have
+  to be pushed through `obj.matrix_world.inverted() @ wrist.matrix_world` before they are
+  written into the mesh.
+- **Degenerate faces become NaN under Bevel, and NaN kills the glTF exporter.**
+  `export_apply=True` fails with `ValueError: cannot convert float NaN to integer` at
+  `io_scene_gltf2/blender/exp/export.py:515`. The raw mesh looks fine because `polygon.area`
+  is only read after evaluation. Check the evaluated mesh: `Arm_Finger_L/R` had 15 NaN
+  vertices each, grown from 16 zero-area tip-cap faces. `remove_doubles(1e-5)` +
+  `dissolve_degenerate(1e-6)` fixes it; the grab gate does not notice, because you cannot
+  grip with a degenerate face.
 
 ## 8. Open questions for the user
 
-- The claw is the last visual gap; the reference's hand is a chunky three-finger claw with
-  an orange cuff, and the current one is a thin pipe with oversized hoops.
+- **The claw is closed as far as geometry allows.** Reference wants a cage of three fingers
+  around the orb; the orb (r 0.25, centre 0.396 ahead of the wrist) makes that impossible
+  without moving the animation. Delivered: three hooked pads touching the orb, palm cupped
+  behind. If a true cage is wanted, the orb radius or its distance from the wrist has to
+  change - that is a user call, not a modelling one.
+- **P3b has no stage script** (see section 5). Worth writing before anyone replays the
+  pipeline.
 - Body W:H stays at 1.00 against the reference's 0.73 — accepted in section 12 Q1, not
   revisited since.

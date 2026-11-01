@@ -1,0 +1,72 @@
+{
+  "blend": "G:\\DSHProject\\BlenderMcp\\hero_animation_v13_p3b.blend",
+  "target": "Idea",
+  "frames": [
+    31,
+    43,
+    147,
+    155
+  ],
+  "limits": {
+    "31": {
+      "min": 0.002,
+      "max": 0.06,
+      "contact": true
+    },
+    "43": {
+      "min": 0.002,
+      "max": 0.06,
+      "contact": true
+    },
+    "147": {
+      "min": 0.005,
+      "max": 0.08,
+      "contact": true
+    },
+    "155": {
+      "min": 0.3,
+      "max": null,
+      "contact": false
+    }
+  },
+  "rows": [
+    {
+      "frame": 31,
+      "L_to_Idea": 0.01148,
+      "L_overlap_faces": 0,
+      "R_to_Idea": 0.01432,
+      "R_overlap_faces": 0,
+      "tip_gap_LR": 0.22482,
+      "pass": true
+    },
+    {
+      "frame": 43,
+      "L_to_Idea": 0.01148,
+      "L_overlap_faces": 0,
+      "R_to_Idea": 0.01432,
+      "R_overlap_faces": 0,
+      "tip_gap_LR": 0.22482,
+      "pass": true
+    },
+    {
+      "frame": 147,
+      "L_to_Idea": 0.01808,
+      "L_overlap_faces": 0,
+      "R_to_Idea": 0.02085,
+      "R_overlap_faces": 0,
+      "tip_gap_LR": 0.20923,
+      "pass": true
+    },
+    {
+      "frame": 155,
+      "L_to_Idea": 0.4063,
+      "L_overlap_faces": 0,
+      "R_to_Idea": 0.4538,
+      "R_overlap_faces": 0,
+      "tip_gap_LR": 0.20923,
+      "pass": true
+    }
+  ],
+  "verdict": "PASS",
+  "failures": []
+}

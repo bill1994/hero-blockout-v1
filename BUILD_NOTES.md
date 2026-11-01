@@ -1042,3 +1042,136 @@ mistake that silently moved the window cutter in P2.
 - the hopper's neck is a straight cylinder; the reference has a short cream neck with the
   mint collar under it
 - GLB has not been re-exported since P2
+
+## v13 P3b (2026-11-01) - the hand rebuilt as a three-finger claw, and a NaN that was mine
+
+Stage file: `hero_animation_v13_p3b.blend`, exported as `hero_animation_v13_p3b.glb`
+(1,094,460 B). P3a's `hero_animation_v13_p3.glb` is untouched.
+
+### what the reference actually shows, at full resolution
+
+Cropped from `reference/style_v13_ref.png` into `review/v13/ref_front_claw.png` and
+`review/v13/ref_iso_full.png`: cream forearm, a **dark narrow wrist cuff carrying a thin
+orange clamp**, a dark irregular palm block, then **three chunky orange fingers spread
+120 degrees** (up, lower-left, lower-right) around a small orange orb. Every finger is
+visibly jointed, thick at the base, rounded at the tip, slightly hooked. The orb *is* the
+grabbed `Idea`, so the amber-on-amber colour scheme the asset already had was correct; what
+was wrong was the shape, not the colour.
+
+### the geometric deadlock, stated before modelling
+
+At f31 the orb is `r 0.25` with its centre **0.396** ahead of the wrist. The old palm block
+was 0.337 wide, so the orb was *wider than the palm*. Sweeping forward on the y=0 plane,
+the orb surface is reached at **x = 0.146** - barely past the wrist. A cage of fingers
+closing *around* the orb, the way the reference reads, is therefore not reachable: the
+fingers would have to arc out past x = 0.579 to meet in front of it. The ceiling is
+**three pads touching the orb with the palm cupped behind it**, and that is what P3b
+delivers. Changing it would mean changing the orb radius, which the animation pins.
+
+### geometry as built (all in wrist space, then transformed into each object's own space)
+
+| part | construction | tris |
+|---|---|---|
+| `Arm_Gripper` (palm) | UV sphere 32x18 scaled to RX 0.076 / RY 0.156 / RZ 0.134, centred CX 0.058, front edge tapered `f = 1 - 0.10k^2` | 1,088 |
+| `Arm_WristCollar` | cone ring x -0.118..0.006, radius 0.090 -> 0.101 on an S curve, 24x12, both ends fan-capped | 312 |
+| `Arm_Finger_L/R` | 4-point cubic Bezier, radius `prof(t) = (0.0455 + 0.0030 sin(pi min(t/0.60,1))) * (1 + 0.13e^-((t-0.30)/0.10)^2 - 0.10e^-((t-0.50)/0.055)^2 - 0.09e^-((t-0.78)/0.05)^2)`, `NSEG 28`, `NRING 16`, width 0.95, thickness 1.08 | 1,024 each |
+| `Arm_Finger_C` | new object, parent `Arm_Wrist`, `matrix_parent_inverse` and `matrix_basis` both identity, no action, `MAT_Color_Amber`; Bezier P0 (0.050,0,-0.060) P1 (0.115,0,-0.150) P2 (0.170,0,-0.255) P3 (0.230,0,-0.300), radius `0.0505 + 0.0030 sin(pi t)`, thickness 1.02 | 1,024 |
+
+`Arm_Seams_Fore` and `Arm_Seams_Upper` (the floating thin lines) are deleted.
+
+Left finger control points, the ones that finally worked:
+`P0 (0.090, 0.145, 0)`, `P1 (0.160, 0.1962, 0)`, `P2 (0.300, 0.380, 0.095)`,
+`P3 (0.3737, 0.2542, 0.1783)`; the right finger is the exact mirror
+`(x, -y, z)`. The radius formula's three Gaussians are the knuckle grooves - a raised
+band at t 0.30 and pinches at 0.50 and 0.78.
+
+### five failed attempts, all measured
+
+1. **Flat oval cross-section.** Semi-axes 0.048 x 0.036 rendered as "one fat finger and one
+   thin twig", because the review camera looks mostly down world Y and the finger's narrow
+   axis pointed at it.
+2. **Raising the tips.** P2 to z 0.028 and P3 to z 0.072 changed almost nothing visually -
+   the two fingers are mirror-symmetric in y, so from that camera one is always hidden
+   behind the orb.
+3. **Wrapping the tips toward the orb's front.** `P3 = (0.375, 0.240, 0.168)` drove
+   `overlap_faces` to 60/36 and the distances to 0.00283/0.00372, straight to FAIL. Sweeping
+   P3 outward along the orb normal (k 0.2946 -> 0.322) only moved the worst clearance from
+   -0.00868 to -0.00513, because **the worst point sits at t ~ 0.5, not at the tip**.
+4. **The third finger's cross-section axis.** `S_AXc = (0.636, 0, -0.772)` against a tangent
+   of `(0.733, 0, -0.678)` gives a dot product of **0.989** - nearly parallel, so the
+   section collapsed to a line 0.0371 wide and rendered as a thin stick. Fixed by deriving
+   the frame from the tangent (`u` = Y projected onto the tangent's normal plane,
+   `v = t x u`) which produced 0.1142 x 0.1026 x 0.2845.
+5. **The palm buried in the orb.** The first palm block reached x 0.185 while the orb
+   surface sits at x 0.1462 on y=0, so 0.039 of palm was inside the orb and rendered as a
+   grey wedge cutting through it. The grab gate only tests finger-vs-orb, so it could not
+   see this. Replaced by the ellipsoid above: `palm_dist_to_orb = 0.01466`.
+
+The winning move for the fingers was **bulging P2 outward** rather than reaching with P3:
+scanning `worst(P2,P3) = min_t(|cb(t) - C| - 0.25 - prof(t))` over the feasible region gives
+a best surface clearance of **0.0143**, and the shape reads as a hooked claw instead of a
+straight tube.
+
+### the NaN: a degenerate face I built, amplified by a modifier
+
+`export_apply=True` died with
+`ValueError: cannot convert float NaN to integer` at `io_scene_gltf2/blender/exp/export.py:515`
+(`if int(obj) == obj:`). `export_apply=False` exported fine, which localised the fault to
+"applying modifiers", not to the scene. F-curves, object transforms, material inputs and raw
+mesh data were all clean.
+
+Evaluating every mesh through the depsgraph and counting non-finite vertices found exactly
+two offenders: `Arm_Finger_L` and `Arm_Finger_R`, **15 NaN vertices each**. Their raw meshes
+held **16 zero-area faces and 16 duplicate vertices** - the tip cap emitted a ring whose
+radius had already collapsed to zero, so it produced degenerate quads; `Bevel_Art`
+(width 0.006, segments 2) then turned those into NaN.
+
+Fix: `bmesh.ops.remove_doubles(dist=1e-5)` + `bmesh.ops.dissolve_degenerate(dist=1e-6)`,
+then drop any face still under 1e-10 area and any vertex left without faces. Both fingers
+settled at **498 verts / 512 polys**, min face area 1.047e-4, and evaluated to
+578 verts / 592 polys with **zero NaN**. The grab gate values did not move at all - cleaning
+degenerate geometry changes nothing you can grip with.
+
+### P3b gates
+
+| gate | result |
+|---|---|
+| grab (`v13_grab_gate.py`, pinned, untouched) | **PASS** - f31/f43 L 0.01148 R 0.01432, f147 L 0.01808 R 0.02085, f155 L 0.40630 R 0.45380, overlap 0 everywhere |
+| loop closure | f1 vs f327 on 97 objects' `matrix_world`: **zero difference**; rendered pixels: **0 px above 8 levels** |
+| finger vs machine intersection | **0 hits / 1,640 pairs** (4 claw objects x 5 machine parts, 82 frames at step 4) |
+| actions / fcurves / keys | 37 / 147 / 3,331 |
+| evaluated triangles | 22,650 (budget 25,000) |
+| GLB | 76 meshes, 83 nodes, 15 materials, 18 animations, 21,802 tris, **images 0 / textures 0 / samplers 0**, no non-finite accessor bounds |
+
+`tip_gap_LR` dropped from 0.31632 to 0.22482 (f31) and 0.20923 (f147) because the fingers are
+now thick hooks. That number is reported, not constrained.
+
+### the action count changed, and it is not a regression
+
+Frozen invariants said 39 actions / 149 fcurves / 3,345 keys; this file has 37 / 147 / 3,331.
+The two missing actions are `MAT_Window_Noise1Action` and `MAT_Window_Noise2Action` - the
+window-noise material drivers. P2 rebuilt the window and deleted the nodes they animated, so
+they became zero-user datablocks and were dropped on the first save-reload cycle. They are
+never evaluated (no object references them) and the window noise never survived glTF anyway.
+The 37 that remain include the 18 that actually drive the rig.
+
+### animation QA sheet
+
+`review/v13/p3b_anim_contact_sheet.png` - 22 frames (every 16th across 1..327, plus 327) in a
+5x5 grid at 420 px cells, rendered from a temporary `QA_AnimCam` (lens 50) framing the whole
+act: centre (-0.075, -0.588, 1.982), radius 4.284, distance 12.138. The camera and its drive
+are removed before saving, so the deliverable never contains QA furniture.
+
+Reading it: orb starts far upper-left, arm swings in and takes it (f17-f49), holds through
+the middle (f65-f145), lifts and releases over the hopper (f161-f241), product emerges and
+rides the chute (f257-f289), then the loop returns to f1. Frame-to-frame mean absolute
+difference peaks at **3.807 / 255** (f273 -> f289) and never pops; f1 and f327 are
+pixel-identical.
+
+### how P3b was authored - and the gap that leaves
+
+Everything above was applied live through the Blender MCP bridge on port 9876, per the
+project rule that this stage runs through MCP only. **There is no standalone
+`qa_v2/v13_p3b_claw.py`.** The parameters in this section are the source of truth, and the
+next stage script should consume them; until that script exists, P3b cannot be replayed from
+the P3a asset the way P1/P2/P3a can.
