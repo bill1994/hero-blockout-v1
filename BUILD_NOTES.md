@@ -1333,4 +1333,112 @@ shell already ends at x 2.1, and the rail cannot be shortened without failing th
 3. Window cavity, window frame and the mint glow are still flat colour blocks — material pass.
 4. `Product` is `hide_render = True` in the shipped file (pre-existing, not a P3e change).
 5. The top mint surface is a plain plate; the reference wraps a mint band over the top and
-   down the right shoulder.
+   down the right shoulder. *(fixed in P3f — see below)*
+
+## v13 P3f (2026-11-02)
+
+User rulings that drove this pass (verbatim, one per item): hide the three gray lights and the
+front-bottom light strip (keep the data, do not delete); rework the top mint into a band that
+wraps over the top and down to the shoulders; widen the front window; enter batch ③ but **keep
+the fingers as round tubes** because they read better than flat leaves.
+
+The fourth pending item, the base band, turned out to be a measurement error rather than a
+conflict: the charcoal region is `Machine_Base` (z 0…0.12) plus `P1_BaseBand` (z 0.1…0.284),
+which butt together, so its total height is 0.284 = **0.1578** of body height against the
+reference's 0.1576. The earlier 0.102 figure only measured `P1_BaseBand`. No band enlargement
+and no button relocation were needed, and the A/B/C options were dropped.
+
+### Changes
+
+1. **Top mint skin** — deleted the flat plate `Machine_Panel_Top` (a separate 0.04-thick slab
+   sitting 0.025 proud of the body top; from the side it read as a pane of glass laid on the
+   box). `P3f_TopSkin` is instead built from `Machine_Body`'s *evaluated* mesh: take the faces
+   with `center.z >= 1.715 and normal.z > 0.22 and abs(normal.y) < 0.52` (top face plus the
+   left/right shoulder bevels, front and back faces excluded), offset every vertex 0.0025
+   along its normal, and rebuild as a separate object (214 tris, 128 verts, world
+   z 1.8342…1.9024, x ±0.8966, y ±0.7555), `MAT_Color_Mint`, all faces smooth, parented to
+   `Machine_Body` with `matrix_parent_inverse = body.matrix_world.inverted()`. A conformal
+   skin reads as paint; a bevelled cover plate of any thickness reads as a glass table top.
+2. **Side mint connection** — `P1_MintStrip_L` widened from y ±0.34 to **±0.60**
+   (`scale.y = 1.24/0.68 = 1.8235`) and both L/R strips raised so their top edge meets the
+   skin at **z 1.845** (`scale.z = (1.845-0.28)/1.44 = 1.0868`, `location.z = (0.28+1.845)/2
+   = 1.0625`). The right strip was *not* widened in y: `P1_ChuteSeat` occupies z 0.455…1.005
+   there and the two would interpenetrate.
+3. **`Arm_Mount` material** `MAT_Arm_Dark` → `MAT_Arm`. It is a dark box spanning
+   x −1.928…−1.18, z 0.7…1.0 that does not exist in the reference; the reference has a cream
+   raised shoulder pad there. Material only, no transform, no action touched.
+4. **Window widened in x** — two factors, F1 = 1.1091 then F2 = 1.14625, multiplied into the
+   `scale.x` of `Machine_WindowFrame`, `Machine_WindowGlow`, `Machine_WindowCavity` and
+   `Cutter_Window`, with the 30 `P2_Nebula_*` `location.x` scaled by the same factors (their
+   radii were left alone). Result: frame x ±0.5593, glass x ±0.4879 → **0.9757 = 0.5421 of
+   body width, an exact match to the reference**. Cavity 0.9599, cutter 0.9757.
+5. **Window heightened in z** — about the common centre `KC = 1.0128`, `scale.z *= KZ =
+   1.1341` and `location.z = (loc.z - KC) * KZ + KC + DZ` with `DZ = 0.1019`, applied to the
+   same four objects plus the nebulae's z. Final frame z **0.3985…1.828** (0.0235 clear of the
+   button tops at 0.375, 0.0215 clear of the top bevel start at 1.85), glass z 0.4802…1.7458
+   (height 1.2656), cutter z 0.4674…1.733. This is the ceiling: taller runs into the button
+   row, wider runs into the body's own width.
+6. **Fingers thickened (batch ③, tubes kept)** — per-vertex PCA on `Arm_Finger_L/R/C`: take the
+   world-space point cloud, SVD for the principal axis `a`, split each vertex into an axial
+   component `t` and a perpendicular component `q`, then scale `q *= 1.12` while leaving `t`
+   alone. That thickens the whole bend evenly and does not move the endpoints.
+   `Arm_Finger_L/R` axis (0.3906, −0.7328, −0.5572) / (−0.5649, −0.6086, −0.5572), axial length
+   0.4227, perpendicular radius 0.08828 → 0.09887; `Arm_Finger_C` axis
+   (−0.0805, −0.6198, 0.7806), length 0.3505, radius 0.06174 → 0.06915. A first attempt at
+   1.16 dropped the f31 left-finger clearance to 0.00381 against a 0.002 floor — 0.0018 of
+   margin — so it was backed off to 1.12.
+
+### The window metric has a unit trap
+
+`v13_shape_metrics.py` `window_w_to_body_w` measures **`Machine_WindowGlow`** (glass plus the
+mint ring), not the `Machine_WindowFrame` outer box. Scaling the frame to 0.5421 still reported
+0.4729 and cost a wasted iteration. Note also that the reference's three window numbers cannot
+all hold at once: 0.5421 × 1.5528 = 0.8416, but `window_h_to_body_h` is 0.6158. One of the
+three must give.
+
+### Gate evidence
+
+- `qa_v2/v13_grab_p3f.json` — **PASS**. f31 L 0.00557 R 0.01118; f147 L 0.01267 R 0.01492;
+  f155 L 0.40271 R 0.45016; overlap 0 everywhere. Tighter than P3e because the fingers are
+  thicker, but still clear of the 0.002 floor.
+- `qa_v2/v13_product_path_p3f.json` — **PASS**, RESTING 43 / ARC 14 / EXITED 13 / COLLAPSED 26,
+  arc peak +0.379 @f263, first_exited f289, negative gaps 0, support ratio 1.0 on every frame
+  (9 / 6 / 3 columns over the chute).
+- `qa_v2/v13_shape_metrics_p3f.json` — `window_w_to_body_w` **0.5421** (reference 0.5421),
+  `window_h_to_body_h` **0.7032** (reference 0.6158), `window_h_to_w` **1.2972** (reference
+  1.5528, unreachable — see the unit trap above; the geometric ceiling is about 1.33),
+  `charcoal_h_to_body_h` 0.1578 (reference 0.1576), `hopper_dia_to_body_w` 0.7533,
+  `chute_len_to_body_w` 1.2444, `window_centre_dz_to_body_h` 0.0628,
+  `claw_reach_beyond_body_w` 0.4411, `base_h_to_body_h` 0.0667, `body_w_to_h` 1.0.
+- Loop closure: 105 objects (98 plus the 7 temporary QA rig), `matrix_world` f1 vs f327, worst
+  delta 0.0, 0 broken. NaN objects 0, texture nodes 0, 16 materials, 37 actions, 147 fcurves,
+  3,331 keys, **23,540 triangles of 25,000**.
+- Render rig: `QAKEY` area light at (−4.5, −6.5, 7.5) 320 W size 6, `QAFILL` (5.5, −4.5, 3.0)
+  110 W size 7, `QARIM` (0.5, 6.5, 5.0) 170 W size 6; cameras `QACAM` front at (−0.05, −9, 1.0)
+  lens 80, `QACAM_3Q` (−5.2, −6.4, 4.6) lens 68 aimed at (−0.05, 0, 1.0), `QACAM_TOP`
+  (−2.6, −4.2, 6.4) lens 62 aimed at (−0.05, 0, 1.55), `QACAM_CLAW` (−3.15, −3.55, 1.80)
+  lens 85 aimed at the claw centre (−1.4917, −1.7935, 0.8692). EEVEE, 56 samples, AgX,
+  look None, exposure −1.1, world background 0.055. **Set `scene.frame_set(1)` before every
+  render**: the gate scripts leave the scene on frame 155, and the first P3f front render
+  came out aimed at the machine's bottom corner.
+- Renders: `review/v13/p3f_front.png`, `p3f_3q.png`, `p3f_top.png`, `p3f_claw.png`.
+
+### Saved
+
+`G:\DSHProject\BlenderMcp\hero_animation_v13_p3f.blend` — 338,746 bytes, 98 objects, 88 meshes,
+16 materials, 37 actions, 23,540 triangles, current frame 1, `scene.camera` = `Cam_Hero`. The
+seven QA lights and cameras and their data-blocks were deleted before saving.
+
+### Still open after P3f
+
+1. The window frame reads as near-black: `MAT_Window_Frame` base colour is 0.024 and the
+   reference frame is a mid charcoal with visible thickness. Material pass.
+2. The mint top skin is too glossy — it catches a hard specular from the QA key light and reads
+   as plastic film. Also material (roughness), not geometry.
+3. The 30 pastel `P2_Nebula_*` spheres inside the window still have no volume. Material pass.
+4. `P1_ShoulderBay` is a hard-edged box with no bevel, visible from the back as an ear.
+5. The outlet is still a tray with an amber floor and a dark tongue rather than a small rounded
+   spout. The tongue is load-bearing for the product path gate, so this stays as a documented
+   deviation.
+6. `Cam_Hero` plus the two suns still leave the body underlit; the QA rig is the only thing that
+   makes the colours readable. Lighting pass, deliberately deferred.
