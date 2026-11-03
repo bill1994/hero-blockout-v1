@@ -1,0 +1,161 @@
+###JSON_START###
+{
+ "Machine_Base": {
+  "components": 4,
+  "verts": 384,
+  "bbox_min": [
+   -0.925,
+   -0.8,
+   0.0
+  ],
+  "bbox_max": [
+   0.925,
+   0.8,
+   0.288
+  ],
+  "signed_volume": 0.10949,
+  "bbox_volume": 0.85248,
+  "fill_ratio": 0.1284
+ },
+ "Machine_Feet": {
+  "components": 4,
+  "verts": 192,
+  "bbox_min": [
+   -0.7575,
+   -0.61,
+   -0.1
+  ],
+  "bbox_max": [
+   0.7575,
+   0.61,
+   0.0
+  ],
+  "signed_volume": 0.00636,
+  "bbox_volume": 0.18483,
+  "fill_ratio": 0.0344
+ },
+ "P1_BaseBand": {
+  "components": 1,
+  "verts": 224,
+  "bbox_min": [
+   -0.925,
+   -0.825,
+   0.26
+  ],
+  "bbox_max": [
+   0.925,
+   0.825,
+   0.444
+  ],
+  "signed_volume": 0.55164,
+  "bbox_volume": 0.56166,
+  "fill_ratio": 0.9822
+ },
+ "bore_ray_from_inside_x0.3": {
+  "z=1.05": [
+   [
+    "Machine_Body",
+    0.74
+   ],
+   [
+    "Machine_Chute",
+    0.86
+   ],
+   [
+    "Machine_Chute",
+    2.3
+   ],
+   [
+    "P1_ChuteRail",
+    2.524
+   ],
+   [
+    "ESCAPE",
+    2.525
+   ]
+  ],
+  "z=1.1": [
+   [
+    "Machine_Body",
+    0.74
+   ],
+   [
+    "ESCAPE",
+    0.741
+   ]
+  ],
+  "z=1.2": [
+   [
+    "Machine_Body",
+    0.74
+   ],
+   [
+    "ESCAPE",
+    0.741
+   ]
+  ],
+  "z=1.3": [
+   [
+    "Machine_Body",
+    0.74
+   ],
+   [
+    "ESCAPE",
+    0.741
+   ]
+  ],
+  "z=1.4": [
+   [
+    "Machine_Body",
+    0.74
+   ],
+   [
+    "ESCAPE",
+    0.741
+   ]
+  ],
+  "z=1.44": [
+   [
+    "Machine_Body",
+    0.74
+   ],
+   [
+    "ESCAPE",
+    0.741
+   ]
+  ]
+ },
+ "mouth_ray_nobody": {
+  "z=1.1": [
+   [
+    "ESCAPE",
+    2.9
+   ]
+  ],
+  "z=1.2": [
+   [
+    "ESCAPE",
+    2.9
+   ]
+  ],
+  "z=1.3": [
+   [
+    "ESCAPE",
+    2.9
+   ]
+  ],
+  "z=1.4": [
+   [
+    "ESCAPE",
+    2.9
+   ]
+  ],
+  "z=1.5": [
+   [
+    "ESCAPE",
+    2.9
+   ]
+  ]
+ }
+}
+###JSON_END###

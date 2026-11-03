@@ -1,0 +1,175 @@
+{
+  "visible_triangles": 67444,
+  "tri_budget": 60000,
+  "tri_top10": {
+    "Machine_Chute": 23200,
+    "P1_ChuteSeat": 20000,
+    "Machine_Hopper": 1776,
+    "Arm_Finger_L": 1646,
+    "Arm_Finger_R": 1646,
+    "Arm_UpperArm": 1396,
+    "Machine_Body": 1300,
+    "Arm_Forearm": 1172,
+    "Arm_Gripper": 1088,
+    "Machine_WindowGlass": 1064
+  },
+  "orphan_meshes": [],
+  "orphan_materials": [],
+  "orphan_images": [],
+  "actions_total": 36,
+  "actions_unused": [
+    "Arm_Elbow_PivotAction",
+    "Arm_Finger_LAction",
+    "Arm_Finger_RAction",
+    "Arm_MountAction",
+    "Arm_Shoulder_PivotAction",
+    "Arm_WristAction",
+    "Arm_Yaw_PivotAction",
+    "IdeaAction",
+    "Machine_BodyAction",
+    "Machine_HopperAction",
+    "Machine_LightStripAction",
+    "Machine_Light_01Action",
+    "Machine_Light_02Action",
+    "Machine_Light_03Action",
+    "Machine_OutputChuteAction",
+    "Machine_RootAction",
+    "Machine_WindowAction",
+    "Machine_WindowAction_V2",
+    "ProductAction.001"
+  ],
+  "actions_unused_count": 19,
+  "scene_camera": null,
+  "view_layer_camera_overrides": [],
+  "collection_membership": {
+    "Arm": {
+      "objects": [
+        "Arm_Base",
+        "Arm_Elbow_Joint",
+        "Arm_Elbow_Pivot",
+        "Arm_Finger_C",
+        "Arm_Finger_L",
+        "Arm_Finger_R",
+        "Arm_Forearm",
+        "Arm_GrabPoint",
+        "Arm_Gripper",
+        "Arm_Mount",
+        "Arm_ShoulderRiser",
+        "Arm_Shoulder_Joint",
+        "Arm_Shoulder_Pivot",
+        "Arm_UpperArm",
+        "Arm_Wrist",
+        "Arm_Yaw_Housing",
+        "Arm_Yaw_Pivot"
+      ],
+      "children": []
+    },
+    "Camera": {
+      "objects": [
+        "Cam_Check_Right",
+        "Cam_Check_Top",
+        "Cam_Hero"
+      ],
+      "children": []
+    },
+    "Collection": {
+      "objects": [
+        "Arm_WristCollar"
+      ],
+      "children": []
+    },
+    "HERO_BLOCKOUT_V01": {
+      "objects": [],
+      "children": [
+        "Arm",
+        "Camera",
+        "Machine",
+        "Props"
+      ]
+    },
+    "HERO_FIT_CHECK": {
+      "objects": [
+        "Product_Proxy_FitCheck",
+        "Product_Proxy_Large"
+      ],
+      "children": []
+    },
+    "LEGACY_UNUSED": {
+      "objects": [
+        "Prop_IdeaPedestal"
+      ],
+      "children": []
+    },
+    "Machine": {
+      "objects": [
+        "Cutter_Outlet",
+        "Machine_Base",
+        "Machine_Body",
+        "Machine_Hopper",
+        "Machine_LightStrip",
+        "Machine_Light_01",
+        "Machine_Light_02",
+        "Machine_Light_03",
+        "Machine_OutputChute",
+        "Machine_Root"
+      ],
+      "children": []
+    },
+    "Props": {
+      "objects": [
+        "Idea",
+        "Product"
+      ],
+      "children": []
+    }
+  },
+  "product_at245": {
+    "bbox_min": [
+      1.388,
+      -0.35,
+      1.086
+    ],
+    "bbox_max": [
+      2.088,
+      0.35,
+      1.486
+    ]
+  },
+  "chute_bbox": {
+    "min": [
+      0.88,
+      -0.534,
+      0.968
+    ],
+    "max": [
+      2.46,
+      0.534,
+      1.472
+    ]
+  },
+  "chute_floor_z_in_x1.1_2.5": 0.968,
+  "arm_chain": {
+    "Arm_Base": "Machine_Root",
+    "Arm_Elbow_Joint": "Arm_Elbow_Pivot",
+    "Arm_Elbow_Pivot": "Arm_Shoulder_Pivot",
+    "Arm_Finger_C": "Arm_Wrist",
+    "Arm_Finger_L": "Arm_Wrist",
+    "Arm_Finger_R": "Arm_Wrist",
+    "Arm_Forearm": "Arm_Elbow_Pivot",
+    "Arm_Forearm_Seam_A": "Arm_Forearm",
+    "Arm_Forearm_Seam_B": "Arm_Forearm",
+    "Arm_GrabPoint": "Arm_Wrist",
+    "Arm_Gripper": "Arm_Wrist",
+    "Arm_Mount": "Machine_Root",
+    "Arm_Shoulder_Joint": "Arm_Shoulder_Pivot",
+    "Arm_Shoulder_Pivot": "Arm_Yaw_Pivot",
+    "Arm_ShoulderRiser": "Arm_Yaw_Pivot",
+    "Arm_UpperArm": "Arm_Shoulder_Pivot",
+    "Arm_UpperArm_Seam_A": "Arm_UpperArm",
+    "Arm_UpperArm_Seam_B": "Arm_UpperArm",
+    "Arm_Wrist": "Arm_Elbow_Pivot",
+    "Arm_WristCollar": "Arm_Wrist",
+    "Arm_Yaw_Housing": "Arm_Yaw_Pivot",
+    "Arm_Yaw_Pivot": "Arm_Base"
+  }
+}

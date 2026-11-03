@@ -1,0 +1,1094 @@
+{
+  "Arm_Elbow_PivotAction": {
+    "rotation_euler[0]": {
+      "keys": 55,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "rotation_euler[1]": {
+      "keys": 55,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "rotation_euler[2]": {
+      "keys": 55,
+      "range": [
+        1.0,
+        239.0
+      ]
+    }
+  },
+  "Arm_Elbow_PivotAction_V2": {
+    "rotation_euler[0]": {
+      "keys": 40,
+      "range": [
+        1.0,
+        276.5
+      ]
+    },
+    "rotation_euler[1]": {
+      "keys": 38,
+      "range": [
+        1.0,
+        326.5
+      ]
+    },
+    "rotation_euler[2]": {
+      "keys": 40,
+      "range": [
+        1.0,
+        276.5
+      ]
+    }
+  },
+  "Arm_Finger_LAction": {
+    "rotation_euler[0]": {
+      "keys": 8,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "rotation_euler[1]": {
+      "keys": 8,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "rotation_euler[2]": {
+      "keys": 8,
+      "range": [
+        1.0,
+        239.0
+      ]
+    }
+  },
+  "Arm_Finger_LAction_V2": {
+    "rotation_euler[0]": {
+      "keys": 8,
+      "range": [
+        1.0,
+        291.3
+      ]
+    },
+    "rotation_euler[1]": {
+      "keys": 8,
+      "range": [
+        1.0,
+        291.3
+      ]
+    },
+    "rotation_euler[2]": {
+      "keys": 5,
+      "range": [
+        1.0,
+        137.2
+      ]
+    }
+  },
+  "Arm_Finger_RAction": {
+    "rotation_euler[0]": {
+      "keys": 8,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "rotation_euler[1]": {
+      "keys": 8,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "rotation_euler[2]": {
+      "keys": 8,
+      "range": [
+        1.0,
+        239.0
+      ]
+    }
+  },
+  "Arm_Finger_RAction_V2": {
+    "rotation_euler[0]": {
+      "keys": 8,
+      "range": [
+        1.0,
+        291.3
+      ]
+    },
+    "rotation_euler[1]": {
+      "keys": 8,
+      "range": [
+        1.0,
+        291.3
+      ]
+    },
+    "rotation_euler[2]": {
+      "keys": 5,
+      "range": [
+        1.0,
+        137.2
+      ]
+    }
+  },
+  "Arm_MountAction": {
+    "location[0]": {
+      "keys": 6,
+      "range": [
+        127.6,
+        179.0
+      ]
+    },
+    "location[2]": {
+      "keys": 16,
+      "range": [
+        127.6,
+        174.3
+      ]
+    }
+  },
+  "Arm_MountAction_V2": {
+    "location[0]": {
+      "keys": 7,
+      "range": [
+        1.0,
+        189.7
+      ]
+    },
+    "location[2]": {
+      "keys": 23,
+      "range": [
+        1.0,
+        242.7
+      ]
+    },
+    "location[1]": {
+      "keys": 22,
+      "range": [
+        1.0,
+        242.7
+      ]
+    }
+  },
+  "Arm_Shoulder_PivotAction": {
+    "rotation_euler[0]": {
+      "keys": 55,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "rotation_euler[1]": {
+      "keys": 55,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "rotation_euler[2]": {
+      "keys": 55,
+      "range": [
+        1.0,
+        239.0
+      ]
+    }
+  },
+  "Arm_Shoulder_PivotAction_V2": {
+    "rotation_euler[0]": {
+      "keys": 40,
+      "range": [
+        1.0,
+        276.5
+      ]
+    },
+    "rotation_euler[1]": {
+      "keys": 36,
+      "range": [
+        1.0,
+        326.5
+      ]
+    },
+    "rotation_euler[2]": {
+      "keys": 40,
+      "range": [
+        1.0,
+        276.5
+      ]
+    }
+  },
+  "Arm_WristAction": {
+    "rotation_euler[0]": {
+      "keys": 54,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "rotation_euler[1]": {
+      "keys": 54,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "rotation_euler[2]": {
+      "keys": 54,
+      "range": [
+        1.0,
+        239.0
+      ]
+    }
+  },
+  "Arm_WristAction_V2": {
+    "rotation_euler[0]": {
+      "keys": 39,
+      "range": [
+        1.0,
+        276.5
+      ]
+    },
+    "rotation_euler[1]": {
+      "keys": 44,
+      "range": [
+        1.0,
+        300.9
+      ]
+    },
+    "rotation_euler[2]": {
+      "keys": 43,
+      "range": [
+        1.0,
+        300.9
+      ]
+    }
+  },
+  "Arm_Yaw_PivotAction": {
+    "rotation_euler[0]": {
+      "keys": 55,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "rotation_euler[1]": {
+      "keys": 55,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "rotation_euler[2]": {
+      "keys": 55,
+      "range": [
+        1.0,
+        239.0
+      ]
+    }
+  },
+  "Arm_Yaw_PivotAction_V2": {
+    "rotation_euler[0]": {
+      "keys": 40,
+      "range": [
+        1.0,
+        270.0
+      ]
+    },
+    "rotation_euler[1]": {
+      "keys": 40,
+      "range": [
+        1.0,
+        270.0
+      ]
+    },
+    "rotation_euler[2]": {
+      "keys": 31,
+      "range": [
+        1.0,
+        189.2
+      ]
+    }
+  },
+  "IdeaAction": {
+    "location[0]": {
+      "keys": 56,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "location[1]": {
+      "keys": 56,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "location[2]": {
+      "keys": 56,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "scale[0]": {
+      "keys": 3,
+      "range": [
+        217.1,
+        223.4
+      ]
+    },
+    "scale[1]": {
+      "keys": 3,
+      "range": [
+        217.1,
+        223.4
+      ]
+    },
+    "scale[2]": {
+      "keys": 3,
+      "range": [
+        217.1,
+        223.4
+      ]
+    },
+    "constraints[\"FollowGrab\"].influence[0]": {
+      "keys": 5,
+      "range": [
+        1.0,
+        113.5
+      ]
+    },
+    "hide_viewport[0]": {
+      "keys": 54,
+      "range": [
+        1.0,
+        223.4
+      ]
+    },
+    "hide_render[0]": {
+      "keys": 54,
+      "range": [
+        1.0,
+        223.4
+      ]
+    }
+  },
+  "IdeaAction_V2": {
+    "location[0]": {
+      "keys": 132,
+      "range": [
+        1.0,
+        311.5
+      ]
+    },
+    "location[1]": {
+      "keys": 134,
+      "range": [
+        1.0,
+        311.5
+      ]
+    },
+    "location[2]": {
+      "keys": 145,
+      "range": [
+        1.0,
+        311.5
+      ]
+    },
+    "rotation_euler[0]": {
+      "keys": 130,
+      "range": [
+        1.0,
+        327.0
+      ]
+    },
+    "rotation_euler[1]": {
+      "keys": 130,
+      "range": [
+        1.0,
+        327.0
+      ]
+    },
+    "rotation_euler[2]": {
+      "keys": 130,
+      "range": [
+        1.0,
+        327.0
+      ]
+    },
+    "hide_viewport[0]": {
+      "keys": 5,
+      "range": [
+        1.0,
+        311.5
+      ]
+    },
+    "hide_render[0]": {
+      "keys": 5,
+      "range": [
+        1.0,
+        311.5
+      ]
+    }
+  },
+  "Machine_BodyAction": {
+    "location[0]": {
+      "keys": 6,
+      "range": [
+        127.6,
+        179.0
+      ]
+    },
+    "location[2]": {
+      "keys": 16,
+      "range": [
+        127.6,
+        174.3
+      ]
+    }
+  },
+  "Machine_BodyAction_V2": {
+    "location[0]": {
+      "keys": 7,
+      "range": [
+        1.0,
+        189.7
+      ]
+    },
+    "location[2]": {
+      "keys": 26,
+      "range": [
+        1.0,
+        242.7
+      ]
+    },
+    "location[1]": {
+      "keys": 22,
+      "range": [
+        1.0,
+        242.7
+      ]
+    }
+  },
+  "Machine_HopperAction": {
+    "location[0]": {
+      "keys": 12,
+      "range": [
+        1.0,
+        179.0
+      ]
+    },
+    "location[2]": {
+      "keys": 16,
+      "range": [
+        127.6,
+        174.3
+      ]
+    }
+  },
+  "Machine_HopperAction_V2": {
+    "location[0]": {
+      "keys": 7,
+      "range": [
+        1.0,
+        189.7
+      ]
+    },
+    "location[2]": {
+      "keys": 26,
+      "range": [
+        1.0,
+        242.7
+      ]
+    },
+    "location[1]": {
+      "keys": 22,
+      "range": [
+        1.0,
+        242.7
+      ]
+    }
+  },
+  "Machine_Light_01Action": {
+    "location[0]": {
+      "keys": 6,
+      "range": [
+        127.6,
+        179.0
+      ]
+    },
+    "location[2]": {
+      "keys": 16,
+      "range": [
+        127.6,
+        174.3
+      ]
+    },
+    "color[0]": {
+      "keys": 5,
+      "range": [
+        127.6,
+        160.0
+      ]
+    },
+    "color[1]": {
+      "keys": 5,
+      "range": [
+        127.6,
+        160.0
+      ]
+    },
+    "color[2]": {
+      "keys": 5,
+      "range": [
+        127.6,
+        160.0
+      ]
+    },
+    "color[3]": {
+      "keys": 5,
+      "range": [
+        127.6,
+        160.0
+      ]
+    }
+  },
+  "Machine_Light_01Action_V2": {
+    "location[0]": {
+      "keys": 7,
+      "range": [
+        1.0,
+        189.7
+      ]
+    },
+    "location[2]": {
+      "keys": 23,
+      "range": [
+        1.0,
+        242.7
+      ]
+    },
+    "location[1]": {
+      "keys": 22,
+      "range": [
+        1.0,
+        242.7
+      ]
+    },
+    "color[0]": {
+      "keys": 4,
+      "range": [
+        156.4,
+        171.6
+      ]
+    },
+    "color[1]": {
+      "keys": 4,
+      "range": [
+        156.4,
+        171.6
+      ]
+    },
+    "color[2]": {
+      "keys": 4,
+      "range": [
+        156.4,
+        171.6
+      ]
+    },
+    "color[3]": {
+      "keys": 5,
+      "range": [
+        156.4,
+        207.2
+      ]
+    }
+  },
+  "Machine_Light_02Action": {
+    "location[0]": {
+      "keys": 6,
+      "range": [
+        127.6,
+        179.0
+      ]
+    },
+    "location[2]": {
+      "keys": 16,
+      "range": [
+        127.6,
+        174.3
+      ]
+    },
+    "color[0]": {
+      "keys": 5,
+      "range": [
+        127.6,
+        160.0
+      ]
+    },
+    "color[1]": {
+      "keys": 5,
+      "range": [
+        127.6,
+        160.0
+      ]
+    },
+    "color[2]": {
+      "keys": 5,
+      "range": [
+        127.6,
+        160.0
+      ]
+    },
+    "color[3]": {
+      "keys": 5,
+      "range": [
+        127.6,
+        160.0
+      ]
+    }
+  },
+  "Machine_Light_02Action_V2": {
+    "location[0]": {
+      "keys": 7,
+      "range": [
+        1.0,
+        189.7
+      ]
+    },
+    "location[2]": {
+      "keys": 23,
+      "range": [
+        1.0,
+        242.7
+      ]
+    },
+    "location[1]": {
+      "keys": 22,
+      "range": [
+        1.0,
+        242.7
+      ]
+    },
+    "color[0]": {
+      "keys": 4,
+      "range": [
+        156.4,
+        171.6
+      ]
+    },
+    "color[1]": {
+      "keys": 4,
+      "range": [
+        156.4,
+        171.6
+      ]
+    },
+    "color[2]": {
+      "keys": 4,
+      "range": [
+        156.4,
+        171.6
+      ]
+    },
+    "color[3]": {
+      "keys": 5,
+      "range": [
+        156.4,
+        207.2
+      ]
+    }
+  },
+  "Machine_Light_03Action": {
+    "location[0]": {
+      "keys": 6,
+      "range": [
+        127.6,
+        179.0
+      ]
+    },
+    "location[2]": {
+      "keys": 16,
+      "range": [
+        127.6,
+        174.3
+      ]
+    },
+    "color[0]": {
+      "keys": 5,
+      "range": [
+        127.6,
+        160.0
+      ]
+    },
+    "color[1]": {
+      "keys": 5,
+      "range": [
+        127.6,
+        160.0
+      ]
+    },
+    "color[2]": {
+      "keys": 5,
+      "range": [
+        127.6,
+        160.0
+      ]
+    },
+    "color[3]": {
+      "keys": 5,
+      "range": [
+        127.6,
+        160.0
+      ]
+    }
+  },
+  "Machine_Light_03Action_V2": {
+    "location[0]": {
+      "keys": 7,
+      "range": [
+        1.0,
+        189.7
+      ]
+    },
+    "location[2]": {
+      "keys": 23,
+      "range": [
+        1.0,
+        242.7
+      ]
+    },
+    "location[1]": {
+      "keys": 22,
+      "range": [
+        1.0,
+        242.7
+      ]
+    },
+    "color[0]": {
+      "keys": 4,
+      "range": [
+        156.4,
+        171.6
+      ]
+    },
+    "color[1]": {
+      "keys": 4,
+      "range": [
+        156.4,
+        171.6
+      ]
+    },
+    "color[2]": {
+      "keys": 4,
+      "range": [
+        156.4,
+        171.6
+      ]
+    },
+    "color[3]": {
+      "keys": 5,
+      "range": [
+        156.4,
+        207.2
+      ]
+    }
+  },
+  "Machine_LightStripAction": {
+    "location[0]": {
+      "keys": 6,
+      "range": [
+        127.6,
+        179.0
+      ]
+    },
+    "location[2]": {
+      "keys": 16,
+      "range": [
+        127.6,
+        174.3
+      ]
+    },
+    "color[0]": {
+      "keys": 3,
+      "range": [
+        161.6,
+        172.7
+      ]
+    },
+    "color[1]": {
+      "keys": 3,
+      "range": [
+        161.6,
+        172.7
+      ]
+    },
+    "color[2]": {
+      "keys": 3,
+      "range": [
+        161.6,
+        172.7
+      ]
+    },
+    "color[3]": {
+      "keys": 3,
+      "range": [
+        161.6,
+        172.7
+      ]
+    }
+  },
+  "Machine_LightStripAction_V2": {
+    "location[0]": {
+      "keys": 7,
+      "range": [
+        1.0,
+        189.7
+      ]
+    },
+    "location[2]": {
+      "keys": 23,
+      "range": [
+        1.0,
+        242.7
+      ]
+    },
+    "location[1]": {
+      "keys": 22,
+      "range": [
+        1.0,
+        242.7
+      ]
+    },
+    "color[0]": {
+      "keys": 6,
+      "range": [
+        188.0,
+        281.8
+      ]
+    },
+    "color[1]": {
+      "keys": 6,
+      "range": [
+        188.0,
+        281.8
+      ]
+    },
+    "color[2]": {
+      "keys": 6,
+      "range": [
+        188.0,
+        281.8
+      ]
+    },
+    "color[3]": {
+      "keys": 3,
+      "range": [
+        188.0,
+        204.9
+      ]
+    }
+  },
+  "Machine_OutputChuteAction": {
+    "location[0]": {
+      "keys": 6,
+      "range": [
+        127.6,
+        179.0
+      ]
+    },
+    "location[2]": {
+      "keys": 16,
+      "range": [
+        127.6,
+        174.3
+      ]
+    }
+  },
+  "Machine_OutputChuteAction_V2": {
+    "location[0]": {
+      "keys": 7,
+      "range": [
+        1.0,
+        189.7
+      ]
+    },
+    "location[2]": {
+      "keys": 23,
+      "range": [
+        1.0,
+        242.7
+      ]
+    },
+    "location[1]": {
+      "keys": 22,
+      "range": [
+        1.0,
+        242.7
+      ]
+    }
+  },
+  "Machine_RootAction": {},
+  "Machine_RootAction_V2": {
+    "rotation_euler[0]": {
+      "keys": 26,
+      "range": [
+        156.4,
+        242.7
+      ]
+    },
+    "rotation_euler[1]": {
+      "keys": 21,
+      "range": [
+        156.4,
+        242.7
+      ]
+    },
+    "rotation_euler[2]": {
+      "keys": 5,
+      "range": [
+        156.4,
+        186.3
+      ]
+    }
+  },
+  "Machine_WindowAction": {
+    "location[0]": {
+      "keys": 6,
+      "range": [
+        127.6,
+        179.0
+      ]
+    },
+    "location[2]": {
+      "keys": 16,
+      "range": [
+        127.6,
+        174.3
+      ]
+    }
+  },
+  "Machine_WindowAction_V2": {},
+  "ProductAction.001": {
+    "location[0]": {
+      "keys": 10,
+      "range": [
+        1.0,
+        235.0
+      ]
+    },
+    "location[1]": {
+      "keys": 10,
+      "range": [
+        1.0,
+        235.0
+      ]
+    },
+    "location[2]": {
+      "keys": 10,
+      "range": [
+        1.0,
+        235.0
+      ]
+    },
+    "scale[0]": {
+      "keys": 4,
+      "range": [
+        1.0,
+        235.0
+      ]
+    },
+    "scale[1]": {
+      "keys": 4,
+      "range": [
+        1.0,
+        235.0
+      ]
+    },
+    "scale[2]": {
+      "keys": 4,
+      "range": [
+        1.0,
+        235.0
+      ]
+    },
+    "hide_viewport[0]": {
+      "keys": 6,
+      "range": [
+        1.0,
+        239.0
+      ]
+    },
+    "hide_render[0]": {
+      "keys": 6,
+      "range": [
+        1.0,
+        239.0
+      ]
+    }
+  },
+  "ProductAction.001_V2": {
+    "location[0]": {
+      "keys": 32,
+      "range": [
+        1.0,
+        308.0
+      ]
+    },
+    "location[1]": {
+      "keys": 1,
+      "range": [
+        1.0,
+        1.0
+      ]
+    },
+    "location[2]": {
+      "keys": 58,
+      "range": [
+        1.0,
+        301.0
+      ]
+    },
+    "scale[0]": {
+      "keys": 7,
+      "range": [
+        1.0,
+        326.5
+      ]
+    },
+    "scale[1]": {
+      "keys": 7,
+      "range": [
+        1.0,
+        326.5
+      ]
+    },
+    "scale[2]": {
+      "keys": 16,
+      "range": [
+        1.0,
+        326.5
+      ]
+    },
+    "hide_viewport[0]": {
+      "keys": 4,
+      "range": [
+        1.0,
+        326.5
+      ]
+    },
+    "hide_render[0]": {
+      "keys": 4,
+      "range": [
+        1.0,
+        326.5
+      ]
+    }
+  }
+}

@@ -1,0 +1,3071 @@
+###JSON_START###
+{
+ "BASE": {
+  "Arm_Base": {
+   "name": "Arm_Base",
+   "type": "MESH",
+   "parent": "Machine_Root",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -1.66,
+    -0.156,
+    1.8133
+   ],
+   "bbox_max": [
+    -1.34,
+    0.156,
+    2.1333
+   ],
+   "dim": [
+    0.32,
+    0.312,
+    0.32
+   ],
+   "loc": [
+    -1.5,
+    0.0,
+    1.8233
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [
+    {
+     "name": "Smooth by Angle",
+     "type": "NODES",
+     "show_viewport": true,
+     "show_render": true
+    }
+   ],
+   "materials": [
+    "MAT_Arm"
+   ],
+   "mesh": {
+    "verts": 100,
+    "polys": 112,
+    "edges": 210,
+    "tris": 196,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 0.01596,
+    "ngons": 0,
+    "smooth_polys": 112
+   },
+   "n_world_verts": 100
+  },
+  "Machine_Base": {
+   "name": "Machine_Base",
+   "type": "MESH",
+   "parent": "Machine_Root",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -0.925,
+    -0.8,
+    0.0
+   ],
+   "bbox_max": [
+    0.925,
+    0.8,
+    0.288
+   ],
+   "dim": [
+    1.85,
+    1.6,
+    0.288
+   ],
+   "loc": [
+    1.03,
+    0.63,
+    -0.096
+   ],
+   "scale": [
+    0.34,
+    0.34,
+    0.192
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [
+    {
+     "name": "EdgeBevel",
+     "type": "BEVEL",
+     "width": 0.025,
+     "segments": 3,
+     "limit_method": "ANGLE",
+     "angle_limit": 0.69813,
+     "use_clamp_overlap": true,
+     "offset_type": "OFFSET",
+     "show_viewport": true,
+     "show_render": true
+    },
+    {
+     "name": "Smooth by Angle",
+     "type": "NODES",
+     "show_viewport": true,
+     "show_render": true
+    }
+   ],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 384,
+    "polys": 392,
+    "edges": 768,
+    "tris": 752,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 4.93298,
+    "ngons": 0,
+    "smooth_polys": 392
+   },
+   "n_world_verts": 384
+  },
+  "Machine_Feet": {
+   "name": "Machine_Feet",
+   "type": "MESH",
+   "parent": "Machine_Root",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -0.7575,
+    -0.61,
+    -0.1
+   ],
+   "bbox_max": [
+    0.7575,
+    0.61,
+    0.0
+   ],
+   "dim": [
+    1.515,
+    1.22,
+    0.1
+   ],
+   "loc": [
+    0.0,
+    0.0,
+    -0.02
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 192,
+    "polys": 104,
+    "edges": 288,
+    "tris": 368,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 0.00636,
+    "ngons": 8,
+    "smooth_polys": 104
+   },
+   "n_world_verts": 192
+  },
+  "P1_BaseBand": {
+   "name": "P1_BaseBand",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -0.925,
+    -0.825,
+    0.26
+   ],
+   "bbox_max": [
+    0.925,
+    0.825,
+    0.444
+   ],
+   "dim": [
+    1.85,
+    1.65,
+    0.184
+   ],
+   "loc": [
+    0.0,
+    0.0,
+    -0.33
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [
+    {
+     "name": "Bevel_Art",
+     "type": "BEVEL",
+     "width": 0.025,
+     "segments": 3,
+     "limit_method": "ANGLE",
+     "angle_limit": 0.69813,
+     "use_clamp_overlap": true,
+     "offset_type": "OFFSET",
+     "show_viewport": true,
+     "show_render": true
+    }
+   ],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 224,
+    "polys": 198,
+    "edges": 420,
+    "tris": 444,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 0.55164,
+    "ngons": 2,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 224
+  }
+ },
+ "BASE_profile": [
+  {
+   "z": 0.28,
+   "x": [
+    -0.925,
+    0.925
+   ],
+   "y": [
+    -0.8,
+    0.8
+   ],
+   "n": 192
+  }
+ ],
+ "BOLTS": {
+  "P1_Bolt_B0": {
+   "name": "P1_Bolt_B0",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -0.808,
+    0.7975,
+    0.5053
+   ],
+   "bbox_max": [
+    -0.752,
+    0.8085,
+    0.5613
+   ],
+   "dim": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "loc": [
+    -0.78,
+    0.803,
+    0.0433
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_B1": {
+   "name": "P1_Bolt_B1",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    0.752,
+    0.7975,
+    0.5053
+   ],
+   "bbox_max": [
+    0.808,
+    0.8085,
+    0.5613
+   ],
+   "dim": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "loc": [
+    0.78,
+    0.803,
+    0.0433
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_B2": {
+   "name": "P1_Bolt_B2",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -0.808,
+    0.7975,
+    2.4187
+   ],
+   "bbox_max": [
+    -0.752,
+    0.8085,
+    2.4747
+   ],
+   "dim": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "loc": [
+    -0.78,
+    0.803,
+    1.9567
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_B3": {
+   "name": "P1_Bolt_B3",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    0.752,
+    0.7975,
+    2.4187
+   ],
+   "bbox_max": [
+    0.808,
+    0.8085,
+    2.4747
+   ],
+   "dim": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "loc": [
+    0.78,
+    0.803,
+    1.9567
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_F0": {
+   "name": "P1_Bolt_F0",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -0.808,
+    -0.8085,
+    0.5053
+   ],
+   "bbox_max": [
+    -0.752,
+    -0.7975,
+    0.5613
+   ],
+   "dim": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "loc": [
+    -0.78,
+    -0.803,
+    0.0433
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_F1": {
+   "name": "P1_Bolt_F1",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    0.752,
+    -0.8085,
+    0.5053
+   ],
+   "bbox_max": [
+    0.808,
+    -0.7975,
+    0.5613
+   ],
+   "dim": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "loc": [
+    0.78,
+    -0.803,
+    0.0433
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_F2": {
+   "name": "P1_Bolt_F2",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -0.808,
+    -0.8085,
+    2.4187
+   ],
+   "bbox_max": [
+    -0.752,
+    -0.7975,
+    2.4747
+   ],
+   "dim": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "loc": [
+    -0.78,
+    -0.803,
+    1.9567
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_F3": {
+   "name": "P1_Bolt_F3",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    0.752,
+    -0.8085,
+    2.4187
+   ],
+   "bbox_max": [
+    0.808,
+    -0.7975,
+    2.4747
+   ],
+   "dim": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "loc": [
+    0.78,
+    -0.803,
+    1.9567
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_L0": {
+   "name": "P1_Bolt_L0",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -0.9085,
+    -0.808,
+    0.505
+   ],
+   "bbox_max": [
+    -0.8975,
+    -0.752,
+    0.561
+   ],
+   "dim": [
+    0.011,
+    0.056,
+    0.056
+   ],
+   "loc": [
+    -0.903,
+    -0.78,
+    0.043
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    -90.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_L1": {
+   "name": "P1_Bolt_L1",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -0.9085,
+    0.752,
+    0.505
+   ],
+   "bbox_max": [
+    -0.8975,
+    0.808,
+    0.561
+   ],
+   "dim": [
+    0.011,
+    0.056,
+    0.056
+   ],
+   "loc": [
+    -0.903,
+    0.78,
+    0.043
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    -90.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_L2": {
+   "name": "P1_Bolt_L2",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -0.9085,
+    -0.808,
+    2.419
+   ],
+   "bbox_max": [
+    -0.8975,
+    -0.752,
+    2.475
+   ],
+   "dim": [
+    0.011,
+    0.056,
+    0.056
+   ],
+   "loc": [
+    -0.903,
+    -0.78,
+    1.957
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    -90.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_L3": {
+   "name": "P1_Bolt_L3",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -0.9085,
+    0.752,
+    2.419
+   ],
+   "bbox_max": [
+    -0.8975,
+    0.808,
+    2.475
+   ],
+   "dim": [
+    0.011,
+    0.056,
+    0.056
+   ],
+   "loc": [
+    -0.903,
+    0.78,
+    1.957
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    -90.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_R0": {
+   "name": "P1_Bolt_R0",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    0.8975,
+    -0.808,
+    0.505
+   ],
+   "bbox_max": [
+    0.9085,
+    -0.752,
+    0.561
+   ],
+   "dim": [
+    0.011,
+    0.056,
+    0.056
+   ],
+   "loc": [
+    0.903,
+    -0.78,
+    0.043
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_R1": {
+   "name": "P1_Bolt_R1",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    0.8975,
+    0.752,
+    0.505
+   ],
+   "bbox_max": [
+    0.9085,
+    0.808,
+    0.561
+   ],
+   "dim": [
+    0.011,
+    0.056,
+    0.056
+   ],
+   "loc": [
+    0.903,
+    0.78,
+    0.043
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_R2": {
+   "name": "P1_Bolt_R2",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    0.8975,
+    -0.808,
+    2.419
+   ],
+   "bbox_max": [
+    0.9085,
+    -0.752,
+    2.475
+   ],
+   "dim": [
+    0.011,
+    0.056,
+    0.056
+   ],
+   "loc": [
+    0.903,
+    -0.78,
+    1.957
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  },
+  "P1_Bolt_R3": {
+   "name": "P1_Bolt_R3",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    0.8975,
+    0.752,
+    2.419
+   ],
+   "bbox_max": [
+    0.9085,
+    0.808,
+    2.475
+   ],
+   "dim": [
+    0.011,
+    0.056,
+    0.056
+   ],
+   "loc": [
+    0.903,
+    0.78,
+    1.957
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 34,
+    "polys": 20,
+    "edges": 52,
+    "tris": 64,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 2e-05,
+    "ngons": 5,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 34
+  }
+ },
+ "BOLTS_positions": {
+  "P1_Bolt_B0": {
+   "world": [
+    -0.78,
+    0.803,
+    0.5333
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_B1": {
+   "world": [
+    0.78,
+    0.803,
+    0.5333
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_B2": {
+   "world": [
+    -0.78,
+    0.803,
+    2.4467
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_B3": {
+   "world": [
+    0.78,
+    0.803,
+    2.4467
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_F0": {
+   "world": [
+    -0.78,
+    -0.803,
+    0.5333
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_F1": {
+   "world": [
+    0.78,
+    -0.803,
+    0.5333
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_F2": {
+   "world": [
+    -0.78,
+    -0.803,
+    2.4467
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_F3": {
+   "world": [
+    0.78,
+    -0.803,
+    2.4467
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_L0": {
+   "world": [
+    -0.903,
+    -0.78,
+    0.533
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    -90.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_L1": {
+   "world": [
+    -0.903,
+    0.78,
+    0.533
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    -90.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_L2": {
+   "world": [
+    -0.903,
+    -0.78,
+    2.447
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    -90.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_L3": {
+   "world": [
+    -0.903,
+    0.78,
+    2.447
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    -90.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_R0": {
+   "world": [
+    0.903,
+    -0.78,
+    0.533
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_R1": {
+   "world": [
+    0.903,
+    0.78,
+    0.533
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_R2": {
+   "world": [
+    0.903,
+    -0.78,
+    2.447
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  "P1_Bolt_R3": {
+   "world": [
+    0.903,
+    0.78,
+    2.447
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "verts": 34,
+   "polys": 20,
+   "mat": [
+    "MAT_Arm_Dark"
+   ]
+  }
+ },
+ "BOOLEANS": [
+  {
+   "host": "Machine_Body",
+   "mod": "OutletCut",
+   "op": "OBJECT",
+   "target": "Cutter_Outlet"
+  },
+  {
+   "host": "Machine_Body",
+   "mod": "WindowCut",
+   "op": "OBJECT",
+   "target": "Cutter_Window"
+  }
+ ],
+ "CLAW": {
+  "Arm_Finger_C": {
+   "name": "Arm_Finger_C",
+   "type": "MESH",
+   "parent": "Arm_Wrist",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -1.78,
+    -1.6732,
+    1.3832
+   ],
+   "bbox_max": [
+    -1.6031,
+    -1.2748,
+    1.7335
+   ],
+   "dim": [
+    0.1769,
+    0.3984,
+    0.3503
+   ],
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Color_Amber"
+   ],
+   "mesh": {
+    "verts": 514,
+    "polys": 528,
+    "edges": 1040,
+    "tris": 1024,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 0.00337,
+    "ngons": 0,
+    "smooth_polys": 528
+   },
+   "n_world_verts": 514
+  },
+  "Arm_Finger_L": {
+   "name": "Arm_Finger_L",
+   "type": "MESH",
+   "parent": "Arm_Wrist",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -1.6653,
+    -1.9642,
+    1.3438
+   ],
+   "bbox_max": [
+    -1.3098,
+    -1.608,
+    1.7443
+   ],
+   "dim": [
+    0.3555,
+    0.3562,
+    0.4005
+   ],
+   "loc": [
+    1.66,
+    0.175,
+    1.5
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    42.0
+   ],
+   "modifiers": [
+    {
+     "name": "Bevel_Art",
+     "type": "BEVEL",
+     "width": 0.012,
+     "segments": 2,
+     "limit_method": "ANGLE",
+     "angle_limit": 0.5236,
+     "use_clamp_overlap": true,
+     "offset_type": "OFFSET",
+     "show_viewport": true,
+     "show_render": true
+    },
+    {
+     "name": "Smooth by Angle",
+     "type": "NODES",
+     "show_viewport": true,
+     "show_render": true
+    }
+   ],
+   "materials": [
+    "MAT_Color_Amber"
+   ],
+   "mesh": {
+    "verts": 825,
+    "polys": 839,
+    "edges": 1662,
+    "tris": 1646,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 0.00243,
+    "ngons": 44,
+    "smooth_polys": 839
+   },
+   "n_world_verts": 825
+  },
+  "Arm_Finger_R": {
+   "name": "Arm_Finger_R",
+   "type": "MESH",
+   "parent": "Arm_Wrist",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -2.1516,
+    -1.8836,
+    1.3438
+   ],
+   "bbox_max": [
+    -1.7853,
+    -1.5637,
+    1.7443
+   ],
+   "dim": [
+    0.3663,
+    0.3199,
+    0.4005
+   ],
+   "loc": [
+    1.66,
+    -0.175,
+    1.5
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    -42.0
+   ],
+   "modifiers": [
+    {
+     "name": "Bevel_Art",
+     "type": "BEVEL",
+     "width": 0.012,
+     "segments": 2,
+     "limit_method": "ANGLE",
+     "angle_limit": 0.5236,
+     "use_clamp_overlap": true,
+     "offset_type": "OFFSET",
+     "show_viewport": true,
+     "show_render": true
+    },
+    {
+     "name": "Smooth by Angle",
+     "type": "NODES",
+     "show_viewport": true,
+     "show_render": true
+    }
+   ],
+   "materials": [
+    "MAT_Color_Amber"
+   ],
+   "mesh": {
+    "verts": 825,
+    "polys": 839,
+    "edges": 1662,
+    "tris": 1646,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 0.00243,
+    "ngons": 44,
+    "smooth_polys": 839
+   },
+   "n_world_verts": 825
+  },
+  "Arm_GrabPoint": {
+   "name": "Arm_GrabPoint",
+   "type": "EMPTY",
+   "parent": "Arm_Wrist",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -1.7231,
+    -1.717,
+    1.3549
+   ],
+   "bbox_max": [
+    -1.7231,
+    -1.717,
+    1.3549
+   ],
+   "dim": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "loc": [
+    1.9,
+    0.0,
+    1.5
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": []
+  },
+  "Arm_Gripper": {
+   "name": "Arm_Gripper",
+   "type": "MESH",
+   "parent": "Arm_Wrist",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -1.8864,
+    -1.8033,
+    1.5813
+   ],
+   "bbox_max": [
+    -1.5388,
+    -1.469,
+    1.7928
+   ],
+   "dim": [
+    0.3476,
+    0.3343,
+    0.2115
+   ],
+   "loc": [
+    1.54,
+    0.0,
+    1.5
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [
+    {
+     "name": "Bevel_Art",
+     "type": "BEVEL",
+     "width": 0.012,
+     "segments": 2,
+     "limit_method": "ANGLE",
+     "angle_limit": 0.5236,
+     "use_clamp_overlap": true,
+     "offset_type": "OFFSET",
+     "show_viewport": true,
+     "show_render": true
+    },
+    {
+     "name": "Smooth by Angle",
+     "type": "NODES",
+     "show_viewport": true,
+     "show_render": true
+    }
+   ],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 546,
+    "polys": 576,
+    "edges": 1120,
+    "tris": 1088,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 0.00643,
+    "ngons": 0,
+    "smooth_polys": 576
+   },
+   "n_world_verts": 546
+  },
+  "Arm_Wrist": {
+   "name": "Arm_Wrist",
+   "type": "EMPTY",
+   "parent": "Arm_Elbow_Pivot",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -1.7108,
+    -1.6224,
+    1.7434
+   ],
+   "bbox_max": [
+    -1.7108,
+    -1.6224,
+    1.7434
+   ],
+   "dim": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "loc": [
+    1.5,
+    0.0,
+    1.5
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": []
+  },
+  "Arm_WristCollar": {
+   "name": "Arm_WristCollar",
+   "type": "MESH",
+   "parent": "Arm_Wrist",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -1.8237,
+    -1.7341,
+    1.7135
+   ],
+   "bbox_max": [
+    -1.5944,
+    -1.4843,
+    1.8821
+   ],
+   "dim": [
+    0.2293,
+    0.2498,
+    0.1686
+   ],
+   "loc": [
+    -0.055,
+    -0.0,
+    0.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "modifiers": [
+    {
+     "name": "Bevel_Art",
+     "type": "BEVEL",
+     "width": 0.012,
+     "segments": 2,
+     "limit_method": "ANGLE",
+     "angle_limit": 0.5236,
+     "use_clamp_overlap": true,
+     "offset_type": "OFFSET",
+     "show_viewport": true,
+     "show_render": true
+    }
+   ],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 350,
+    "polys": 360,
+    "edges": 708,
+    "tris": 696,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 0.00339,
+    "ngons": 0,
+    "smooth_polys": 360
+   },
+   "n_world_verts": 350
+  },
+  "P3d_WristCuff": {
+   "name": "P3d_WristCuff",
+   "type": "MESH",
+   "parent": "Arm_Wrist",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    -1.8232,
+    -1.7237,
+    1.7599
+   ],
+   "bbox_max": [
+    -1.5943,
+    -1.49,
+    1.8551
+   ],
+   "dim": [
+    0.2289,
+    0.2337,
+    0.0952
+   ],
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Color_Amber"
+   ],
+   "mesh": {
+    "verts": 240,
+    "polys": 240,
+    "edges": 480,
+    "tris": 480,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 0.0003,
+    "ngons": 0,
+    "smooth_polys": 240
+   },
+   "n_world_verts": 240
+  }
+ },
+ "CLAW_by_frame": {
+  "f31": {
+   "Arm_Finger_C": {
+    "bbox_min": [
+     -3.0814,
+     -0.5821,
+     2.2487
+    ],
+    "bbox_max": [
+     -2.9284,
+     -0.4526,
+     2.6045
+    ],
+    "dim": [
+     0.1529,
+     0.1295,
+     0.3558
+    ],
+    "world_centre": [
+     -2.9991,
+     -0.5145,
+     2.4221
+    ],
+    "rot_deg": [
+     0.0,
+     -0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "Arm_Finger_L": {
+    "bbox_min": [
+     -3.3586,
+     -0.9173,
+     2.4831
+    ],
+    "bbox_max": [
+     -3.0037,
+     -0.6612,
+     2.6558
+    ],
+    "dim": [
+     0.3548,
+     0.2561,
+     0.1727
+    ],
+    "world_centre": [
+     -3.1855,
+     -0.8147,
+     2.5558
+    ],
+    "rot_deg": [
+     0.0,
+     0.0,
+     21.77
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "Arm_Finger_R": {
+    "bbox_min": [
+     -3.5126,
+     -0.4641,
+     2.4831
+    ],
+    "bbox_max": [
+     -3.1077,
+     -0.3259,
+     2.6558
+    ],
+    "dim": [
+     0.4049,
+     0.1382,
+     0.1727
+    ],
+    "world_centre": [
+     -3.3306,
+     -0.3919,
+     2.5558
+    ],
+    "rot_deg": [
+     0.0,
+     0.0,
+     -21.77
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "Arm_Gripper": {
+    "bbox_min": [
+     -3.1814,
+     -0.6892,
+     2.5262
+    ],
+    "bbox_max": [
+     -2.955,
+     -0.3873,
+     2.7434
+    ],
+    "dim": [
+     0.2264,
+     0.3018,
+     0.2172
+    ],
+    "world_centre": [
+     -3.0691,
+     -0.5385,
+     2.6338
+    ],
+    "rot_deg": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "Arm_WristCollar": {
+    "bbox_min": [
+     -3.1058,
+     -0.6207,
+     2.5998
+    ],
+    "bbox_max": [
+     -2.886,
+     -0.4136,
+     2.8188
+    ],
+    "dim": [
+     0.2198,
+     0.2071,
+     0.219
+    ],
+    "world_centre": [
+     -2.9919,
+     -0.512,
+     2.7133
+    ],
+    "rot_deg": [
+     0.0,
+     -0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "P3d_WristCuff": {
+    "bbox_min": [
+     -3.0749,
+     -0.6122,
+     2.6319
+    ],
+    "bbox_max": [
+     -2.8951,
+     -0.4069,
+     2.8088
+    ],
+    "dim": [
+     0.1797,
+     0.2053,
+     0.1769
+    ],
+    "world_centre": [
+     -2.9851,
+     -0.5097,
+     2.7203
+    ],
+    "rot_deg": [
+     0.0,
+     -0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  "f147": {
+   "Arm_Finger_C": {
+    "bbox_min": [
+     -0.3732,
+     -0.0642,
+     3.7881
+    ],
+    "bbox_max": [
+     -0.0518,
+     0.0642,
+     4.0778
+    ],
+    "dim": [
+     0.3215,
+     0.1283,
+     0.2897
+    ],
+    "world_centre": [
+     -0.203,
+     0.0,
+     3.9181
+    ],
+    "rot_deg": [
+     0.0,
+     -0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "Arm_Finger_L": {
+    "bbox_min": [
+     -0.3311,
+     0.1042,
+     4.0556
+    ],
+    "bbox_max": [
+     -0.0642,
+     0.3558,
+     4.3681
+    ],
+    "dim": [
+     0.267,
+     0.2516,
+     0.3126
+    ],
+    "world_centre": [
+     -0.1921,
+     0.2535,
+     4.2156
+    ],
+    "rot_deg": [
+     0.0,
+     0.0,
+     42.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "Arm_Finger_R": {
+    "bbox_min": [
+     -0.3311,
+     -0.3558,
+     4.0556
+    ],
+    "bbox_max": [
+     -0.0642,
+     -0.1042,
+     4.3681
+    ],
+    "dim": [
+     0.267,
+     0.2516,
+     0.3126
+    ],
+    "world_centre": [
+     -0.1921,
+     -0.2535,
+     4.2156
+    ],
+    "rot_deg": [
+     0.0,
+     0.0,
+     -42.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "Arm_Gripper": {
+    "bbox_min": [
+     -0.4227,
+     -0.156,
+     3.9622
+    ],
+    "bbox_max": [
+     -0.2633,
+     0.156,
+     4.2245
+    ],
+    "dim": [
+     0.1594,
+     0.312,
+     0.2624
+    ],
+    "world_centre": [
+     -0.3426,
+     0.0,
+     4.0935
+    ],
+    "rot_deg": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "Arm_WristCollar": {
+    "bbox_min": [
+     -0.5335,
+     -0.1009,
+     3.966
+    ],
+    "bbox_max": [
+     -0.3707,
+     0.1009,
+     4.1783
+    ],
+    "dim": [
+     0.1628,
+     0.2019,
+     0.2123
+    ],
+    "world_centre": [
+     -0.4534,
+     0.0,
+     4.0668
+    ],
+    "rot_deg": [
+     0.0,
+     -0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "P3d_WristCuff": {
+    "bbox_min": [
+     -0.5099,
+     -0.1018,
+     3.9615
+    ],
+    "bbox_max": [
+     -0.4164,
+     0.1018,
+     4.1673
+    ],
+    "dim": [
+     0.0936,
+     0.2036,
+     0.2059
+    ],
+    "world_centre": [
+     -0.4631,
+     0.0,
+     4.0645
+    ],
+    "rot_deg": [
+     0.0,
+     -0.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  }
+ },
+ "CLAW_radial": {
+  "f31": [
+   {
+    "finger": "Arm_Finger_L",
+    "angle_deg": -97.23,
+    "radius": 0.2122
+   },
+   {
+    "finger": "Arm_Finger_C",
+    "angle_deg": 18.94,
+    "radius": 0.04
+   },
+   {
+    "finger": "Arm_Finger_R",
+    "angle_deg": 135.11,
+    "radius": 0.2122
+   }
+  ],
+  "f147": [
+   {
+    "finger": "Arm_Finger_C",
+    "angle_deg": -180.0,
+    "radius": 0.04
+   },
+   {
+    "finger": "Arm_Finger_R",
+    "angle_deg": -56.31,
+    "radius": 0.2122
+   },
+   {
+    "finger": "Arm_Finger_L",
+    "angle_deg": 56.31,
+    "radius": 0.2122
+   }
+  ]
+ },
+ "OUTLET": {
+  "Cutter_Outlet": {
+   "name": "Cutter_Outlet",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": true,
+   "hide_viewport": true,
+   "visible": false,
+   "bbox_min": [
+    0.74,
+    -0.652,
+    1.023
+   ],
+   "bbox_max": [
+    1.24,
+    0.652,
+    1.452
+   ],
+   "dim": [
+    0.5,
+    1.304,
+    0.429
+   ],
+   "loc": [
+    0.99,
+    0.0,
+    -0.2525
+   ],
+   "scale": [
+    0.25,
+    0.652,
+    0.2145
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [],
+   "mesh": {
+    "verts": 8,
+    "polys": 6,
+    "edges": 12,
+    "tris": 12,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 8.0,
+    "ngons": 0,
+    "smooth_polys": 0
+   },
+   "n_world_verts": 8
+  },
+  "Machine_Chute": {
+   "name": "Machine_Chute",
+   "type": "MESH",
+   "parent": "Machine_OutputChute",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    0.86,
+    -0.415,
+    1.039
+   ],
+   "bbox_max": [
+    2.3,
+    0.415,
+    1.556
+   ],
+   "dim": [
+    1.44,
+    0.83,
+    0.517
+   ],
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "modifiers": [
+    {
+     "name": "Smooth by Angle",
+     "type": "NODES",
+     "show_viewport": true,
+     "show_render": true
+    }
+   ],
+   "materials": [
+    "MAT_Color_Amber"
+   ],
+   "mesh": {
+    "verts": 184,
+    "polys": 178,
+    "edges": 360,
+    "tris": 364,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": -0.09042,
+    "ngons": 2,
+    "smooth_polys": 178
+   },
+   "n_world_verts": 184
+  },
+  "Machine_OutputChute": {
+   "name": "Machine_OutputChute",
+   "type": "EMPTY",
+   "parent": "Machine_Root",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    2.1,
+    0.0,
+    1.08
+   ],
+   "bbox_max": [
+    2.1,
+    0.0,
+    1.08
+   ],
+   "dim": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "loc": [
+    2.1,
+    0.0,
+    1.08
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": []
+  },
+  "P1_ChuteRail": {
+   "name": "P1_ChuteRail",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    2.3,
+    -0.42,
+    0.83
+   ],
+   "bbox_max": [
+    2.8,
+    0.42,
+    1.056
+   ],
+   "dim": [
+    0.5,
+    0.84,
+    0.226
+   ],
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 60,
+    "polys": 58,
+    "edges": 116,
+    "tris": 116,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": -0.0504,
+    "ngons": 0,
+    "smooth_polys": 58
+   },
+   "n_world_verts": 60
+  },
+  "P1_ChuteSeat": {
+   "name": "P1_ChuteSeat",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": true,
+   "hide_viewport": true,
+   "visible": false,
+   "bbox_min": [
+    0.86,
+    -0.634,
+    -0.618
+   ],
+   "bbox_max": [
+    2.52,
+    0.634,
+    -0.245
+   ],
+   "dim": [
+    1.66,
+    1.268,
+    0.373
+   ],
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "modifiers": [
+    {
+     "name": "Smooth_Outlet",
+     "type": "SUBSURF",
+     "levels": 2,
+     "render_levels": 2,
+     "show_viewport": true,
+     "show_render": true
+    },
+    {
+     "name": "Smooth by Angle",
+     "type": "NODES",
+     "show_viewport": true,
+     "show_render": true
+    }
+   ],
+   "materials": [
+    "MAT_Body"
+   ],
+   "mesh": {
+    "verts": 602,
+    "polys": 650,
+    "edges": 1250,
+    "tris": 1200,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 0.20013,
+    "ngons": 0,
+    "smooth_polys": 650
+   },
+   "n_world_verts": 602
+  },
+  "P1_OutletCollar": {
+   "name": "P1_OutletCollar",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    1.5,
+    -0.52,
+    0.97
+   ],
+   "bbox_max": [
+    1.6,
+    0.52,
+    1.597
+   ],
+   "dim": [
+    0.1,
+    1.04,
+    0.627
+   ],
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Body"
+   ],
+   "mesh": {
+    "verts": 128,
+    "polys": 128,
+    "edges": 256,
+    "tris": 256,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 0.02061,
+    "ngons": 0,
+    "smooth_polys": 128
+   },
+   "n_world_verts": 128
+  },
+  "P1_OutletRailL": {
+   "name": "P1_OutletRailL",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    0.86,
+    0.416,
+    1.0
+   ],
+   "bbox_max": [
+    2.32,
+    0.51,
+    1.32
+   ],
+   "dim": [
+    1.46,
+    0.094,
+    0.32
+   ],
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Body"
+   ],
+   "mesh": {
+    "verts": 120,
+    "polys": 98,
+    "edges": 216,
+    "tris": 236,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 0.04157,
+    "ngons": 2,
+    "smooth_polys": 98
+   },
+   "n_world_verts": 120
+  },
+  "P1_OutletRailR": {
+   "name": "P1_OutletRailR",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    0.86,
+    -0.51,
+    1.0
+   ],
+   "bbox_max": [
+    2.32,
+    -0.416,
+    1.32
+   ],
+   "dim": [
+    1.46,
+    0.094,
+    0.32
+   ],
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Body"
+   ],
+   "mesh": {
+    "verts": 120,
+    "polys": 98,
+    "edges": 216,
+    "tris": 236,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 0.04157,
+    "ngons": 2,
+    "smooth_polys": 98
+   },
+   "n_world_verts": 120
+  },
+  "P2_OutletBand": {
+   "name": "P2_OutletBand",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    0.9,
+    -0.07,
+    1.6
+   ],
+   "bbox_max": [
+    0.93,
+    0.07,
+    2.09
+   ],
+   "dim": [
+    0.03,
+    0.14,
+    0.49
+   ],
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Color_Amber"
+   ],
+   "mesh": {
+    "verts": 8,
+    "polys": 6,
+    "edges": 12,
+    "tris": 12,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": -0.00206,
+    "ngons": 0,
+    "smooth_polys": 6
+   },
+   "n_world_verts": 8
+  },
+  "P3d_RingSeat_Mode": {
+   "name": "P3d_RingSeat_Mode",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    0.177,
+    -0.8015,
+    0.5404
+   ],
+   "bbox_max": [
+    0.253,
+    -0.785,
+    0.6164
+   ],
+   "dim": [
+    0.076,
+    0.0165,
+    0.076
+   ],
+   "loc": [
+    0.0,
+    0.0,
+    -0.2446
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 240,
+    "polys": 240,
+    "edges": 480,
+    "tris": 480,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 3e-05,
+    "ngons": 0,
+    "smooth_polys": 240
+   },
+   "n_world_verts": 240
+  },
+  "P3d_RingSeat_Power": {
+   "name": "P3d_RingSeat_Power",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "hide_render": false,
+   "hide_viewport": false,
+   "visible": true,
+   "bbox_min": [
+    0.013,
+    -0.8015,
+    0.5164
+   ],
+   "bbox_max": [
+    0.137,
+    -0.785,
+    0.6404
+   ],
+   "dim": [
+    0.124,
+    0.0165,
+    0.124
+   ],
+   "loc": [
+    0.0,
+    0.0,
+    -0.2446
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rot_deg": [
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "modifiers": [],
+   "materials": [
+    "MAT_Arm_Dark"
+   ],
+   "mesh": {
+    "verts": 240,
+    "polys": 240,
+    "edges": 480,
+    "tris": 480,
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0,
+    "wire_edges": 0,
+    "signed_volume": 7e-05,
+    "ngons": 0,
+    "smooth_polys": 240
+   },
+   "n_world_verts": 240
+  }
+ },
+ "CHUTE_openness": {
+  "boundary_edges": 0,
+  "nonmanifold": 0,
+  "verts": 184,
+  "faces": 178
+ },
+ "CHUTE_slices": {
+  "0.9": [],
+  "1.1": [],
+  "1.3": [],
+  "1.5": [],
+  "1.58": [
+   [
+    -0.415,
+    1.039
+   ],
+   [
+    -0.415,
+    1.556
+   ],
+   [
+    -0.38,
+    1.074
+   ],
+   [
+    -0.38,
+    1.556
+   ],
+   [
+    0.38,
+    1.074
+   ],
+   [
+    0.38,
+    1.556
+   ],
+   [
+    0.415,
+    1.039
+   ],
+   [
+    0.415,
+    1.556
+   ]
+  ],
+  "1.9": [],
+  "2.2": [],
+  "2.29": []
+ },
+ "AXIS_RAYS": {
+  "z1.1": [
+   [
+    "Machine_Body",
+    0.74
+   ],
+   [
+    "ESCAPE",
+    0.742
+   ]
+  ],
+  "z1.2": [
+   [
+    "Machine_Body",
+    0.74
+   ],
+   [
+    "ESCAPE",
+    0.742
+   ]
+  ],
+  "z1.3": [
+   [
+    "Machine_Body",
+    0.74
+   ],
+   [
+    "ESCAPE",
+    0.742
+   ]
+  ],
+  "z1.4": [
+   [
+    "Machine_Body",
+    0.74
+   ],
+   [
+    "ESCAPE",
+    0.742
+   ]
+  ],
+  "z1.5": [
+   [
+    "Machine_Body",
+    0.9
+   ],
+   [
+    "ESCAPE",
+    0.901
+   ]
+  ]
+ },
+ "total_tris": 25464
+}
+###JSON_END###

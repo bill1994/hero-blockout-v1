@@ -1,0 +1,1652 @@
+###JSON_START###
+{
+ "BASE_DOWN_GRID": {
+  "x=-0.85,y=-0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.327
+   ],
+   [
+    "Machine_Base",
+    0.288
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Base",
+    0.0
+   ],
+   [
+    "ESCAPE",
+    -0.001
+   ]
+  ],
+  "x=-0.85,y=-0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.292
+   ],
+   [
+    "Machine_Base",
+    0.288
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Base",
+    -0.0
+   ],
+   [
+    "ESCAPE",
+    -0.001
+   ]
+  ],
+  "x=-0.85,y=0.0": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.292
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=-0.85,y=0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.292
+   ],
+   [
+    "Machine_Base",
+    0.288
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Base",
+    0.0
+   ],
+   [
+    "ESCAPE",
+    -0.001
+   ]
+  ],
+  "x=-0.85,y=0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.327
+   ],
+   [
+    "Machine_Base",
+    0.288
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Base",
+    0.0
+   ],
+   [
+    "ESCAPE",
+    -0.001
+   ]
+  ],
+  "x=-0.7,y=-0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Base",
+    0.288
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Base",
+    0.0
+   ],
+   [
+    "ESCAPE",
+    -0.001
+   ]
+  ],
+  "x=-0.7,y=-0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Base",
+    0.288
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Feet",
+    0.0
+   ],
+   [
+    "Machine_Feet",
+    -0.1
+   ],
+   [
+    "ESCAPE",
+    -0.101
+   ]
+  ],
+  "x=-0.7,y=0.0": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=-0.7,y=0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Base",
+    0.288
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Feet",
+    0.0
+   ],
+   [
+    "Machine_Feet",
+    -0.1
+   ],
+   [
+    "ESCAPE",
+    -0.101
+   ]
+  ],
+  "x=-0.7,y=0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Base",
+    0.288
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Base",
+    0.0
+   ],
+   [
+    "ESCAPE",
+    -0.001
+   ]
+  ],
+  "x=-0.55,y=-0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Base",
+    0.288
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Base",
+    0.0
+   ],
+   [
+    "ESCAPE",
+    -0.001
+   ]
+  ],
+  "x=-0.55,y=-0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Base",
+    0.288
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Base",
+    -0.0
+   ],
+   [
+    "ESCAPE",
+    -0.001
+   ]
+  ],
+  "x=-0.55,y=0.0": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=-0.55,y=0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Base",
+    0.288
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Base",
+    0.0
+   ],
+   [
+    "ESCAPE",
+    -0.001
+   ]
+  ],
+  "x=-0.55,y=0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Base",
+    0.288
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Base",
+    -0.0
+   ],
+   [
+    "ESCAPE",
+    -0.001
+   ]
+  ],
+  "x=-0.39,y=-0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Base",
+    0.286
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Base",
+    0.002
+   ],
+   [
+    "ESCAPE",
+    0.0
+   ]
+  ],
+  "x=-0.39,y=-0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Base",
+    0.286
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Base",
+    0.002
+   ],
+   [
+    "ESCAPE",
+    0.0
+   ]
+  ],
+  "x=-0.39,y=0.0": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=-0.39,y=0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Base",
+    0.286
+   ],
+   [
+    "Machine_Body",
+    0.26
+   ],
+   [
+    "Machine_Base",
+    0.002
+   ],
+   [
+    "ESCAPE",
+    0.0
+   ]
+  ],
+  "x=-0.39,y=0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Base",
+    0.286
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Base",
+    0.002
+   ],
+   [
+    "ESCAPE",
+    0.0
+   ]
+  ],
+  "x=-0.2,y=-0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=-0.2,y=-0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=-0.2,y=0.0": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=-0.2,y=0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=-0.2,y=0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.0,y=-0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.0,y=-0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.0,y=0.0": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.0,y=0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.0,y=0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.2,y=-0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.2,y=-0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.2,y=0.0": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.2,y=0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.2,y=0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.45,y=-0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.45,y=-0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.45,y=0.0": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.45,y=0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.45,y=0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.65,y=-0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.65,y=-0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "Machine_Feet",
+    0.0
+   ],
+   [
+    "Machine_Feet",
+    -0.1
+   ],
+   [
+    "ESCAPE",
+    -0.101
+   ]
+  ],
+  "x=0.65,y=0.0": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.65,y=0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.26
+   ],
+   [
+    "Machine_Feet",
+    0.0
+   ],
+   [
+    "Machine_Feet",
+    -0.1
+   ],
+   [
+    "ESCAPE",
+    -0.101
+   ]
+  ],
+  "x=0.65,y=0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.8,y=-0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.287
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.8,y=-0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.8,y=0.0": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.8,y=0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.267
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.8,y=0.7": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.287
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.9,y=-0.7": [
+   [
+    "P1_BaseBand",
+    0.425
+   ],
+   [
+    "P1_BaseBand",
+    0.279
+   ],
+   [
+    "ESCAPE",
+    0.278
+   ]
+  ],
+  "x=0.9,y=-0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.397
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.9,y=0.0": [
+   [
+    "P1_MintStrip_R",
+    0.506
+   ],
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.397
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.9,y=0.52": [
+   [
+    "P1_BaseBand",
+    0.444
+   ],
+   [
+    "Machine_Body",
+    0.397
+   ],
+   [
+    "P1_BaseBand",
+    0.26
+   ],
+   [
+    "ESCAPE",
+    0.259
+   ]
+  ],
+  "x=0.9,y=0.7": [
+   [
+    "P1_BaseBand",
+    0.425
+   ],
+   [
+    "P1_BaseBand",
+    0.279
+   ],
+   [
+    "ESCAPE",
+    0.278
+   ]
+  ]
+ },
+ "NEAR_BASE_MESHES": [
+  {
+   "name": "Arm_Mount",
+   "hide_render": true,
+   "visible": false,
+   "bbox_min": [
+    -0.939,
+    -0.6567,
+    -0.5
+   ],
+   "bbox_max": [
+    0.5,
+    0.6278,
+    0.5
+   ],
+   "mat": [
+    "MAT_Arm"
+   ],
+   "parent": "Machine_Root"
+  },
+  {
+   "name": "Machine_Base",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    -0.925,
+    -0.8,
+    0.0
+   ],
+   "bbox_max": [
+    0.925,
+    0.8,
+    0.288
+   ],
+   "mat": [
+    "MAT_Arm_Dark"
+   ],
+   "parent": "Machine_Root"
+  },
+  {
+   "name": "Machine_Body",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    -0.9,
+    -0.8,
+    0.26
+   ],
+   "bbox_max": [
+    0.9,
+    0.8,
+    2.72
+   ],
+   "mat": [
+    "MAT_Body"
+   ],
+   "parent": "Machine_Root"
+  },
+  {
+   "name": "Machine_Feet",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    -0.7575,
+    -0.61,
+    -0.1
+   ],
+   "bbox_max": [
+    0.7575,
+    0.61,
+    0.0
+   ],
+   "mat": [
+    "MAT_Arm_Dark"
+   ],
+   "parent": "Machine_Root"
+  },
+  {
+   "name": "Machine_Light_01",
+   "hide_render": true,
+   "visible": false,
+   "bbox_min": [
+    -0.07,
+    -0.808,
+    -0.07
+   ],
+   "bbox_max": [
+    0.07,
+    -0.668,
+    0.07
+   ],
+   "mat": [
+    "MAT_Hero_Light"
+   ],
+   "parent": "Machine_Root"
+  },
+  {
+   "name": "Machine_Light_02",
+   "hide_render": true,
+   "visible": false,
+   "bbox_min": [
+    -0.07,
+    -0.808,
+    -0.07
+   ],
+   "bbox_max": [
+    0.07,
+    -0.668,
+    0.07
+   ],
+   "mat": [
+    "MAT_Hero_Light"
+   ],
+   "parent": "Machine_Root"
+  },
+  {
+   "name": "Machine_Light_03",
+   "hide_render": true,
+   "visible": false,
+   "bbox_min": [
+    -0.07,
+    -0.808,
+    -0.07
+   ],
+   "bbox_max": [
+    0.07,
+    -0.668,
+    0.07
+   ],
+   "mat": [
+    "MAT_Hero_Light"
+   ],
+   "parent": "Machine_Root"
+  },
+  {
+   "name": "Machine_LightStrip",
+   "hide_render": true,
+   "visible": false,
+   "bbox_min": [
+    -0.5,
+    -0.5,
+    -0.5
+   ],
+   "bbox_max": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "mat": [
+    "MAT_Hero_Light"
+   ],
+   "parent": "Machine_Root"
+  },
+  {
+   "name": "P1_BaseBand",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    -0.925,
+    -0.825,
+    0.26
+   ],
+   "bbox_max": [
+    0.925,
+    0.825,
+    0.444
+   ],
+   "mat": [
+    "MAT_Arm_Dark"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P1_Bolt_B0",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    -0.808,
+    0.7975,
+    0.5053
+   ],
+   "bbox_max": [
+    -0.752,
+    0.8085,
+    0.5613
+   ],
+   "mat": [
+    "MAT_Arm_Dark"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P1_Bolt_B1",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    0.752,
+    0.7975,
+    0.5053
+   ],
+   "bbox_max": [
+    0.808,
+    0.8085,
+    0.5613
+   ],
+   "mat": [
+    "MAT_Arm_Dark"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P1_Bolt_F0",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    -0.808,
+    -0.8085,
+    0.5053
+   ],
+   "bbox_max": [
+    -0.752,
+    -0.7975,
+    0.5613
+   ],
+   "mat": [
+    "MAT_Arm_Dark"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P1_Bolt_F1",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    0.752,
+    -0.8085,
+    0.5053
+   ],
+   "bbox_max": [
+    0.808,
+    -0.7975,
+    0.5613
+   ],
+   "mat": [
+    "MAT_Arm_Dark"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P1_Bolt_L0",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    -0.9085,
+    -0.808,
+    0.505
+   ],
+   "bbox_max": [
+    -0.8975,
+    -0.752,
+    0.561
+   ],
+   "mat": [
+    "MAT_Arm_Dark"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P1_Bolt_L1",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    -0.9085,
+    0.752,
+    0.505
+   ],
+   "bbox_max": [
+    -0.8975,
+    0.808,
+    0.561
+   ],
+   "mat": [
+    "MAT_Arm_Dark"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P1_Bolt_R0",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    0.8975,
+    -0.808,
+    0.505
+   ],
+   "bbox_max": [
+    0.9085,
+    -0.752,
+    0.561
+   ],
+   "mat": [
+    "MAT_Arm_Dark"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P1_Bolt_R1",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    0.8975,
+    0.752,
+    0.505
+   ],
+   "bbox_max": [
+    0.9085,
+    0.808,
+    0.561
+   ],
+   "mat": [
+    "MAT_Arm_Dark"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P1_MintStrip_L",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    -0.912,
+    -0.62,
+    0.506
+   ],
+   "bbox_max": [
+    -0.89,
+    0.62,
+    2.6448
+   ],
+   "mat": [
+    "MAT_Color_Mint"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P1_MintStrip_R",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    0.89,
+    -0.34,
+    0.506
+   ],
+   "bbox_max": [
+    0.912,
+    0.34,
+    2.645
+   ],
+   "mat": [
+    "MAT_Color_Mint"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P3c_Button_Mode",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    0.188,
+    -0.848,
+    0.5514
+   ],
+   "bbox_max": [
+    0.242,
+    -0.796,
+    0.6054
+   ],
+   "mat": [
+    "MAT_Color_Mint"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P3c_Button_Power",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    0.033,
+    -0.848,
+    0.5364
+   ],
+   "bbox_max": [
+    0.117,
+    -0.796,
+    0.6204
+   ],
+   "mat": [
+    "MAT_Color_Amber"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P3d_Label",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    0.5339,
+    -0.8045,
+    0.5432
+   ],
+   "bbox_max": [
+    0.7561,
+    -0.8,
+    0.6656
+   ],
+   "mat": [
+    "MAT_Label"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P3d_RingSeat_Mode",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    0.177,
+    -0.8015,
+    0.5404
+   ],
+   "bbox_max": [
+    0.253,
+    -0.785,
+    0.6164
+   ],
+   "mat": [
+    "MAT_Arm_Dark"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "P3d_RingSeat_Power",
+   "hide_render": false,
+   "visible": true,
+   "bbox_min": [
+    0.013,
+    -0.8015,
+    0.5164
+   ],
+   "bbox_max": [
+    0.137,
+    -0.785,
+    0.6404
+   ],
+   "mat": [
+    "MAT_Arm_Dark"
+   ],
+   "parent": "Machine_Body"
+  },
+  {
+   "name": "Product",
+   "hide_render": true,
+   "visible": false,
+   "bbox_min": [
+    -0.5,
+    -0.5,
+    -0.5
+   ],
+   "bbox_max": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "mat": [
+    "MAT_Product2"
+   ],
+   "parent": null
+  },
+  {
+   "name": "Product_Proxy_FitCheck",
+   "hide_render": true,
+   "visible": false,
+   "bbox_min": [
+    -0.5,
+    -0.5,
+    -0.5
+   ],
+   "bbox_max": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "mat": [
+    "MAT_Product2"
+   ],
+   "parent": null
+  },
+  {
+   "name": "Product_Proxy_Large",
+   "hide_render": true,
+   "visible": false,
+   "bbox_min": [
+    -0.5,
+    -0.5,
+    -0.5
+   ],
+   "bbox_max": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "mat": [
+    "MAT_Product2"
+   ],
+   "parent": null
+  },
+  {
+   "name": "Prop_IdeaPedestal",
+   "hide_render": true,
+   "visible": false,
+   "bbox_min": [
+    -0.18,
+    -0.18,
+    -0.325
+   ],
+   "bbox_max": [
+    0.18,
+    0.18,
+    0.325
+   ],
+   "mat": [
+    "MAT_Pedestal"
+   ],
+   "parent": null
+  }
+ ],
+ "Product_Proxy_FitCheck": {
+  "hide_render": true,
+  "visible": false,
+  "bbox_min": [
+   -0.5,
+   -0.5,
+   -0.5
+  ],
+  "bbox_max": [
+   0.5,
+   0.5,
+   0.5
+  ]
+ },
+ "Product_Proxy_Large": {
+  "hide_render": true,
+  "visible": false,
+  "bbox_min": [
+   -0.5,
+   -0.5,
+   -0.5
+  ],
+  "bbox_max": [
+   0.5,
+   0.5,
+   0.5
+  ]
+ },
+ "Prop_IdeaPedestal": {
+  "hide_render": true,
+  "visible": false,
+  "bbox_min": [
+   -0.18,
+   -0.18,
+   -0.325
+  ],
+  "bbox_max": [
+   0.18,
+   0.18,
+   0.325
+  ]
+ },
+ "Idea": {
+  "hide_render": false,
+  "visible": true,
+  "bbox_min": [
+   -3.55,
+   -0.85,
+   4.2233
+  ],
+  "bbox_max": [
+   -3.05,
+   -0.35,
+   4.7233
+  ]
+ },
+ "Product": {
+  "hide_render": true,
+  "visible": false,
+  "bbox_min": [
+   -0.5,
+   -0.5,
+   -0.5
+  ],
+  "bbox_max": [
+   0.5,
+   0.5,
+   0.5
+  ]
+ }
+}
+###JSON_END###

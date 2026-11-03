@@ -16,3 +16,12 @@ Thumbs.db
 
 # ---> Superpowers run ledger (art passes)
 .superpowers/
+
+# ---> WorkBuddy agent workspace (memory log + local paths, not publishable)
+.workbuddy/
+
+# ---> Scratch crops / throwaway bisect renders (curated shots live in review/)
+scratch/crops/
+scratch/p18_render/
+scratch/p18_sheet/
+scratch/p18_gap/

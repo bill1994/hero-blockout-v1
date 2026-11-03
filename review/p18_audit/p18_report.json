@@ -1,0 +1,2907 @@
+{
+  "blender_version": "5.4.0 Alpha",
+  "scene_name": "Scene",
+  "render_engine": "BLENDER_EEVEE",
+  "fps": 60,
+  "frame_range": [
+    1,
+    327,
+    1
+  ],
+  "resolution": [
+    1100,
+    1100,
+    100
+  ],
+  "object_count": 83,
+  "collections": [
+    "Arm",
+    "Camera",
+    "Collection",
+    "HERO_BLOCKOUT_V01",
+    "HERO_FIT_CHECK",
+    "LEGACY_UNUSED",
+    "Machine",
+    "Props"
+  ],
+  "actions": [
+    {
+      "name": "Arm_Elbow_PivotAction",
+      "users": 1,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBArm_Elbow_Pivot"
+      ]
+    },
+    {
+      "name": "Arm_Elbow_PivotAction_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        326.5
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBArm_Elbow_Pivot"
+      ]
+    },
+    {
+      "name": "Arm_Finger_LAction",
+      "users": 1,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBArm_Finger_L"
+      ]
+    },
+    {
+      "name": "Arm_Finger_LAction_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        291.3484802246094
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBArm_Finger_L"
+      ]
+    },
+    {
+      "name": "Arm_Finger_RAction",
+      "users": 1,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBArm_Finger_R"
+      ]
+    },
+    {
+      "name": "Arm_Finger_RAction_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        291.3484802246094
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBArm_Finger_R"
+      ]
+    },
+    {
+      "name": "Arm_MountAction",
+      "users": 1,
+      "range": [
+        127.64598846435547,
+        179.01498413085938
+      ],
+      "fcurves": 2,
+      "slots": [
+        "OBArm_Mount"
+      ]
+    },
+    {
+      "name": "Arm_MountAction_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        242.651611328125
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBArm_Mount"
+      ]
+    },
+    {
+      "name": "Arm_Shoulder_PivotAction",
+      "users": 1,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBArm_Shoulder_Pivot"
+      ]
+    },
+    {
+      "name": "Arm_Shoulder_PivotAction_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        326.5
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBArm_Shoulder_Pivot"
+      ]
+    },
+    {
+      "name": "Arm_WristAction",
+      "users": 1,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBArm_Wrist"
+      ]
+    },
+    {
+      "name": "Arm_WristAction_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        300.8939514160156
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBArm_Wrist"
+      ]
+    },
+    {
+      "name": "Arm_Yaw_PivotAction",
+      "users": 1,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBArm_Yaw_Pivot"
+      ]
+    },
+    {
+      "name": "Arm_Yaw_PivotAction_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        270.0
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBArm_Yaw_Pivot"
+      ]
+    },
+    {
+      "name": "IdeaAction",
+      "users": 1,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "fcurves": 9,
+      "slots": [
+        "OBIdea"
+      ]
+    },
+    {
+      "name": "IdeaAction_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        327.0
+      ],
+      "fcurves": 8,
+      "slots": [
+        "OBIdea"
+      ]
+    },
+    {
+      "name": "Machine_BodyAction",
+      "users": 1,
+      "range": [
+        127.64598846435547,
+        179.01498413085938
+      ],
+      "fcurves": 2,
+      "slots": [
+        "OBMachine_Body"
+      ]
+    },
+    {
+      "name": "Machine_BodyAction_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        242.651611328125
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBMachine_Body"
+      ]
+    },
+    {
+      "name": "Machine_HopperAction",
+      "users": 1,
+      "range": [
+        1.0,
+        179.01498413085938
+      ],
+      "fcurves": 2,
+      "slots": [
+        "OBMachine_Hopper"
+      ]
+    },
+    {
+      "name": "Machine_HopperAction_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        242.651611328125
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBMachine_Hopper"
+      ]
+    },
+    {
+      "name": "Machine_Light_01Action",
+      "users": 1,
+      "range": [
+        127.64598846435547,
+        179.01498413085938
+      ],
+      "fcurves": 6,
+      "slots": [
+        "OBMachine_Light_01"
+      ]
+    },
+    {
+      "name": "Machine_Light_01Action_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        242.651611328125
+      ],
+      "fcurves": 7,
+      "slots": [
+        "OBMachine_Light_01"
+      ]
+    },
+    {
+      "name": "Machine_Light_02Action",
+      "users": 1,
+      "range": [
+        127.64598846435547,
+        179.01498413085938
+      ],
+      "fcurves": 6,
+      "slots": [
+        "OBMachine_Light_02"
+      ]
+    },
+    {
+      "name": "Machine_Light_02Action_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        242.651611328125
+      ],
+      "fcurves": 7,
+      "slots": [
+        "OBMachine_Light_02"
+      ]
+    },
+    {
+      "name": "Machine_Light_03Action",
+      "users": 1,
+      "range": [
+        127.64598846435547,
+        179.01498413085938
+      ],
+      "fcurves": 6,
+      "slots": [
+        "OBMachine_Light_03"
+      ]
+    },
+    {
+      "name": "Machine_Light_03Action_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        242.651611328125
+      ],
+      "fcurves": 7,
+      "slots": [
+        "OBMachine_Light_03"
+      ]
+    },
+    {
+      "name": "Machine_LightStripAction",
+      "users": 1,
+      "range": [
+        127.64598846435547,
+        179.01498413085938
+      ],
+      "fcurves": 6,
+      "slots": [
+        "OBMachine_LightStrip"
+      ]
+    },
+    {
+      "name": "Machine_LightStripAction_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        281.80303955078125
+      ],
+      "fcurves": 7,
+      "slots": [
+        "OBMachine_LightStrip"
+      ]
+    },
+    {
+      "name": "Machine_OutputChuteAction",
+      "users": 1,
+      "range": [
+        127.64598846435547,
+        179.01498413085938
+      ],
+      "fcurves": 2,
+      "slots": [
+        "OBMachine_OutputChute"
+      ]
+    },
+    {
+      "name": "Machine_OutputChuteAction_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        242.651611328125
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBMachine_OutputChute"
+      ]
+    },
+    {
+      "name": "Machine_RootAction",
+      "users": 1,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "fcurves": 0,
+      "slots": [
+        "OBMachine_Root"
+      ]
+    },
+    {
+      "name": "Machine_RootAction_V2",
+      "users": 2,
+      "range": [
+        156.36009216308594,
+        242.651611328125
+      ],
+      "fcurves": 3,
+      "slots": [
+        "OBMachine_Root"
+      ]
+    },
+    {
+      "name": "Machine_WindowAction",
+      "users": 1,
+      "range": [
+        127.64598846435547,
+        179.01498413085938
+      ],
+      "fcurves": 2,
+      "slots": [
+        "OBMachine_Window"
+      ]
+    },
+    {
+      "name": "Machine_WindowAction_V2",
+      "users": 1,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "fcurves": 0,
+      "slots": [
+        "OBMachine_Window"
+      ]
+    },
+    {
+      "name": "ProductAction.001",
+      "users": 1,
+      "range": [
+        1.0,
+        239.0
+      ],
+      "fcurves": 8,
+      "slots": [
+        "OBProduct"
+      ]
+    },
+    {
+      "name": "ProductAction.001_V2",
+      "users": 2,
+      "range": [
+        1.0,
+        326.5
+      ],
+      "fcurves": 8,
+      "slots": [
+        "OBProduct"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "MAT_Arm",
+      "users": 8,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Arm_Dark",
+      "users": 15,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Body",
+      "users": 3,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Color_Amber",
+      "users": 6,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Color_Mint",
+      "users": 5,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Hero_Light",
+      "users": 4,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Idea",
+      "users": 1,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Label",
+      "users": 1,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Nebula_Plasma_Back",
+      "users": 1,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Nebula_Plasma_Baked",
+      "users": 1,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Pedestal",
+      "users": 1,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Product2",
+      "users": 3,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Window_Cavity",
+      "users": 1,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Window_Frame",
+      "users": 1,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Window_Glass",
+      "users": 1,
+      "use_nodes": true
+    },
+    {
+      "name": "MAT_Window_Glow",
+      "users": 1,
+      "use_nodes": true
+    }
+  ],
+  "images": [
+    {
+      "name": "plasma_bake.png",
+      "size": [
+        512,
+        768
+      ],
+      "packed": true,
+      "src": "G:\\DSHProject\\hero-blockout\\hero-blockout-v1\\review\\v14\\plasma_bake.png"
+    },
+    {
+      "name": "Render Result",
+      "size": [
+        0,
+        0
+      ],
+      "packed": false,
+      "src": ""
+    },
+    {
+      "name": "Viewer Node",
+      "size": [
+        256,
+        256
+      ],
+      "packed": false,
+      "src": ""
+    }
+  ],
+  "world": [
+    "World"
+  ],
+  "cameras": [
+    {
+      "name": "Cam_Check_Right_Data",
+      "lens": 50.0
+    },
+    {
+      "name": "Cam_Check_Top_Data",
+      "lens": 50.0
+    },
+    {
+      "name": "Cam_Hero_Data",
+      "lens": 45.70000076293945
+    }
+  ],
+  "lights": [
+    {
+      "name": "AREA_Fill",
+      "type": "AREA",
+      "energy": 170.0,
+      "color": [
+        0.8799999952316284,
+        0.9399999976158142,
+        1.0
+      ]
+    },
+    {
+      "name": "AREA_Key",
+      "type": "AREA",
+      "energy": 620.0,
+      "color": [
+        1.0,
+        0.9700000286102295,
+        0.9300000071525574
+      ]
+    },
+    {
+      "name": "AREA_Rim",
+      "type": "AREA",
+      "energy": 360.0,
+      "color": [
+        1.0,
+        0.9800000190734863,
+        0.949999988079071
+      ]
+    },
+    {
+      "name": "FILL_Hero_Data",
+      "type": "SUN",
+      "energy": 0.6000000238418579,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "SUN_Hero_Data",
+      "type": "SUN",
+      "energy": 1.2999999523162842,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "armatures": [],
+  "objects": [
+    {
+      "name": "AREA_Fill",
+      "type": "LIGHT",
+      "parent": null,
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": null
+    },
+    {
+      "name": "AREA_Key",
+      "type": "LIGHT",
+      "parent": null,
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": null
+    },
+    {
+      "name": "AREA_Rim",
+      "type": "LIGHT",
+      "parent": null,
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": null
+    },
+    {
+      "name": "Arm_Base",
+      "type": "MESH",
+      "parent": "Machine_Root",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 100,
+      "polys": 112,
+      "modifiers": [
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -1.66,
+          -0.156,
+          1.8133
+        ],
+        "max": [
+          -1.34,
+          0.156,
+          2.1333
+        ],
+        "dims": [
+          0.32,
+          0.312,
+          0.32
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Arm_Elbow_Joint",
+      "type": "MESH",
+      "parent": "Arm_Elbow_Pivot",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 482,
+      "polys": 512,
+      "modifiers": [
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -1.8173,
+          -1.4409,
+          2.9531
+        ],
+        "max": [
+          -1.5182,
+          -1.1418,
+          3.2528
+        ],
+        "dims": [
+          0.3,
+          0.3,
+          0.3
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Arm_Elbow_Pivot",
+      "type": "EMPTY",
+      "parent": "Arm_Shoulder_Pivot",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": "Arm_Elbow_PivotAction_V2"
+    },
+    {
+      "name": "Arm_Finger_C",
+      "type": "MESH",
+      "parent": "Arm_Wrist",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 514,
+      "polys": 528,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -1.7602,
+          -1.6207,
+          1.3952
+        ],
+        "max": [
+          -1.6271,
+          -1.3343,
+          1.7173
+        ],
+        "dims": [
+          0.2803,
+          0.1283,
+          0.3277
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Arm_Finger_L",
+      "type": "MESH",
+      "parent": "Arm_Wrist",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 498,
+      "polys": 512,
+      "modifiers": [
+        {
+          "n": "Bevel_Art",
+          "type": "BEVEL"
+        },
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -1.6146,
+          -1.9494,
+          1.4097
+        ],
+        "max": [
+          -1.3837,
+          -1.6141,
+          1.6774
+        ],
+        "dims": [
+          0.352,
+          0.1277,
+          0.2658
+        ]
+      },
+      "anim": "Arm_Finger_LAction_V2"
+    },
+    {
+      "name": "Arm_Finger_R",
+      "type": "MESH",
+      "parent": "Arm_Wrist",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 498,
+      "polys": 512,
+      "modifiers": [
+        {
+          "n": "Bevel_Art",
+          "type": "BEVEL"
+        },
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -2.0915,
+          -1.8715,
+          1.4097
+        ],
+        "max": [
+          -1.8164,
+          -1.5812,
+          1.6774
+        ],
+        "dims": [
+          0.352,
+          0.1277,
+          0.2658
+        ]
+      },
+      "anim": "Arm_Finger_RAction_V2"
+    },
+    {
+      "name": "Arm_Forearm",
+      "type": "MESH",
+      "parent": "Arm_Elbow_Pivot",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 588,
+      "polys": 562,
+      "modifiers": [
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -1.7928,
+          -1.7021,
+          1.7239
+        ],
+        "max": [
+          -1.5542,
+          -1.1894,
+          3.128
+        ],
+        "dims": [
+          1.4001,
+          0.232,
+          0.232
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Arm_Forearm_Seam_A",
+      "type": "MESH",
+      "parent": "Arm_Forearm",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 64,
+      "polys": 32,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -1.7863,
+          -1.5172,
+          2.559
+        ],
+        "max": [
+          -1.5815,
+          -1.3139,
+          2.6273
+        ],
+        "dims": [
+          0.02,
+          0.2048,
+          0.2048
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Arm_Forearm_Seam_B",
+      "type": "MESH",
+      "parent": "Arm_Forearm",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 64,
+      "polys": 32,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -1.7913,
+          -1.5943,
+          2.2205
+        ],
+        "max": [
+          -1.598,
+          -1.4022,
+          2.286
+        ],
+        "dims": [
+          0.02,
+          0.1933,
+          0.1933
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Arm_GrabPoint",
+      "type": "EMPTY",
+      "parent": "Arm_Wrist",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": null
+    },
+    {
+      "name": "Arm_Gripper",
+      "type": "MESH",
+      "parent": "Arm_Wrist",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 546,
+      "polys": 576,
+      "modifiers": [
+        {
+          "n": "Bevel_Art",
+          "type": "BEVEL"
+        },
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -1.8678,
+          -1.7678,
+          1.6077
+        ],
+        "max": [
+          -1.5573,
+          -1.5044,
+          1.7673
+        ],
+        "dims": [
+          0.152,
+          0.312,
+          0.268
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Arm_Mount",
+      "type": "MESH",
+      "parent": "Machine_Root",
+      "hide_render": true,
+      "hide_viewport": true,
+      "verts": 8,
+      "polys": 6,
+      "modifiers": [
+        {
+          "n": "MountBevel",
+          "type": "BEVEL"
+        },
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -0.939,
+          -0.6567,
+          -0.5
+        ],
+        "max": [
+          0.5,
+          0.6278,
+          0.5
+        ],
+        "dims": [
+          1.439,
+          1.2845,
+          1.0
+        ]
+      },
+      "anim": "Arm_MountAction_V2"
+    },
+    {
+      "name": "Arm_Shoulder_Joint",
+      "type": "MESH",
+      "parent": "Arm_Shoulder_Pivot",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 482,
+      "polys": 512,
+      "modifiers": [
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -1.6788,
+          -0.1799,
+          1.9934
+        ],
+        "max": [
+          -1.3212,
+          0.1799,
+          2.3532
+        ],
+        "dims": [
+          0.36,
+          0.36,
+          0.36
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Arm_Shoulder_Pivot",
+      "type": "EMPTY",
+      "parent": "Arm_Yaw_Pivot",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": "Arm_Shoulder_PivotAction_V2"
+    },
+    {
+      "name": "Arm_ShoulderRiser",
+      "type": "MESH",
+      "parent": "Arm_Yaw_Pivot",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 176,
+      "polys": 176,
+      "modifiers": [
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -1.689,
+          -0.1871,
+          1.9873
+        ],
+        "max": [
+          -1.311,
+          0.1871,
+          2.0393
+        ],
+        "dims": [
+          0.3766,
+          0.3774,
+          0.052
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Arm_UpperArm",
+      "type": "MESH",
+      "parent": "Arm_Shoulder_Pivot",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 700,
+      "polys": 674,
+      "modifiers": [
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -1.7684,
+          -1.3493,
+          2.0854
+        ],
+        "max": [
+          -1.3929,
+          0.0638,
+          3.1828
+        ],
+        "dims": [
+          1.6001,
+          0.2404,
+          0.2404
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Arm_UpperArm_Seam_A",
+      "type": "MESH",
+      "parent": "Arm_UpperArm",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 64,
+      "polys": 32,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -1.6733,
+          -0.5574,
+          2.4264
+        ],
+        "max": [
+          -1.4525,
+          -0.4111,
+          2.6175
+        ],
+        "dims": [
+          0.02,
+          0.2205,
+          0.2205
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Arm_UpperArm_Seam_B",
+      "type": "MESH",
+      "parent": "Arm_UpperArm",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 64,
+      "polys": 32,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -1.7128,
+          -0.8788,
+          2.6609
+        ],
+        "max": [
+          -1.497,
+          -0.7354,
+          2.8479
+        ],
+        "dims": [
+          0.02,
+          0.2155,
+          0.2155
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Arm_Wrist",
+      "type": "EMPTY",
+      "parent": "Arm_Elbow_Pivot",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": "Arm_WristAction_V2"
+    },
+    {
+      "name": "Arm_WristCollar",
+      "type": "MESH",
+      "parent": "Arm_Wrist",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 302,
+      "polys": 312,
+      "modifiers": [
+        {
+          "n": "Bevel_Art",
+          "type": "BEVEL"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -1.8111,
+          -1.7211,
+          1.7135
+        ],
+        "max": [
+          -1.6107,
+          -1.5079,
+          1.8794
+        ],
+        "dims": [
+          0.124,
+          0.2019,
+          0.2019
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Arm_Yaw_Housing",
+      "type": "MESH",
+      "parent": "Arm_Yaw_Pivot",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 176,
+      "polys": 176,
+      "modifiers": [
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -1.688,
+          -0.1861,
+          2.0373
+        ],
+        "max": [
+          -1.312,
+          0.1861,
+          2.1093
+        ],
+        "dims": [
+          0.376,
+          0.3729,
+          0.072
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Arm_Yaw_Pivot",
+      "type": "EMPTY",
+      "parent": "Arm_Base",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": "Arm_Yaw_PivotAction_V2"
+    },
+    {
+      "name": "Cam_Check_Right",
+      "type": "CAMERA",
+      "parent": null,
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": null
+    },
+    {
+      "name": "Cam_Check_Top",
+      "type": "CAMERA",
+      "parent": null,
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": null
+    },
+    {
+      "name": "Cam_Hero",
+      "type": "CAMERA",
+      "parent": null,
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": null
+    },
+    {
+      "name": "Cutter_Outlet",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": true,
+      "hide_viewport": true,
+      "verts": 8,
+      "polys": 6,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          0.74,
+          -0.652,
+          1.023
+        ],
+        "max": [
+          1.24,
+          0.652,
+          1.452
+        ],
+        "dims": [
+          0.5,
+          1.304,
+          0.429
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Cutter_Window",
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "hide_viewport": true,
+      "verts": 64,
+      "polys": 34,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.4255,
+          -0.87,
+          0.9738
+        ],
+        "max": [
+          0.4255,
+          -0.45,
+          2.3156
+        ],
+        "dims": [
+          0.8511,
+          0.42,
+          1.3418
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "FILL_Hero",
+      "type": "LIGHT",
+      "parent": null,
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": null
+    },
+    {
+      "name": "Idea",
+      "type": "MESH",
+      "parent": null,
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 482,
+      "polys": 512,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -3.55,
+          -0.85,
+          4.2233
+        ],
+        "max": [
+          -3.05,
+          -0.35,
+          4.7233
+        ],
+        "dims": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "anim": "IdeaAction_V2"
+    },
+    {
+      "name": "Machine_Base",
+      "type": "MESH",
+      "parent": "Machine_Root",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 32,
+      "polys": 24,
+      "modifiers": [
+        {
+          "n": "EdgeBevel",
+          "type": "BEVEL"
+        },
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -0.925,
+          -0.8,
+          0.0
+        ],
+        "max": [
+          0.925,
+          0.8,
+          0.288
+        ],
+        "dims": [
+          1.85,
+          1.6,
+          0.288
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Machine_Body",
+      "type": "MESH",
+      "parent": "Machine_Root",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 192,
+      "polys": 170,
+      "modifiers": [
+        {
+          "n": "EdgeBevel",
+          "type": "BEVEL"
+        },
+        {
+          "n": "OutletCut",
+          "type": "BOOLEAN"
+        },
+        {
+          "n": "WindowCut",
+          "type": "BOOLEAN"
+        },
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -0.9,
+          -0.8,
+          0.26
+        ],
+        "max": [
+          0.9,
+          0.8,
+          2.72
+        ],
+        "dims": [
+          1.8,
+          1.6,
+          2.46
+        ]
+      },
+      "anim": "Machine_BodyAction_V2"
+    },
+    {
+      "name": "Machine_Chute",
+      "type": "MESH",
+      "parent": "Machine_OutputChute",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 702,
+      "polys": 750,
+      "modifiers": [
+        {
+          "n": "Smooth_Outlet",
+          "type": "SUBSURF"
+        },
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          0.88,
+          -0.534,
+          0.968
+        ],
+        "max": [
+          2.46,
+          0.534,
+          1.472
+        ],
+        "dims": [
+          1.58,
+          1.0556,
+          0.4618
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Machine_Feet",
+      "type": "MESH",
+      "parent": "Machine_Root",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 192,
+      "polys": 104,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.7575,
+          -0.61,
+          -0.1
+        ],
+        "max": [
+          0.7575,
+          0.61,
+          0.0
+        ],
+        "dims": [
+          1.515,
+          1.22,
+          0.1
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Machine_Hopper",
+      "type": "MESH",
+      "parent": "Machine_Root",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 913,
+      "polys": 912,
+      "modifiers": [
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -0.7,
+          -0.7,
+          2.72
+        ],
+        "max": [
+          0.7,
+          0.7,
+          3.469
+        ],
+        "dims": [
+          1.4,
+          1.4,
+          0.749
+        ]
+      },
+      "anim": "Machine_HopperAction_V2"
+    },
+    {
+      "name": "Machine_Light_01",
+      "type": "MESH",
+      "parent": "Machine_Root",
+      "hide_render": true,
+      "hide_viewport": true,
+      "verts": 62,
+      "polys": 72,
+      "modifiers": [
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -0.07,
+          -0.808,
+          -0.07
+        ],
+        "max": [
+          0.07,
+          -0.668,
+          0.07
+        ],
+        "dims": [
+          0.14,
+          0.14,
+          0.14
+        ]
+      },
+      "anim": "Machine_Light_01Action_V2"
+    },
+    {
+      "name": "Machine_Light_02",
+      "type": "MESH",
+      "parent": "Machine_Root",
+      "hide_render": true,
+      "hide_viewport": true,
+      "verts": 62,
+      "polys": 72,
+      "modifiers": [
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -0.07,
+          -0.808,
+          -0.07
+        ],
+        "max": [
+          0.07,
+          -0.668,
+          0.07
+        ],
+        "dims": [
+          0.14,
+          0.14,
+          0.14
+        ]
+      },
+      "anim": "Machine_Light_02Action_V2"
+    },
+    {
+      "name": "Machine_Light_03",
+      "type": "MESH",
+      "parent": "Machine_Root",
+      "hide_render": true,
+      "hide_viewport": true,
+      "verts": 62,
+      "polys": 72,
+      "modifiers": [
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -0.07,
+          -0.808,
+          -0.07
+        ],
+        "max": [
+          0.07,
+          -0.668,
+          0.07
+        ],
+        "dims": [
+          0.14,
+          0.14,
+          0.14
+        ]
+      },
+      "anim": "Machine_Light_03Action_V2"
+    },
+    {
+      "name": "Machine_LightStrip",
+      "type": "MESH",
+      "parent": "Machine_Root",
+      "hide_render": true,
+      "hide_viewport": true,
+      "verts": 8,
+      "polys": 6,
+      "modifiers": [
+        {
+          "n": "Bevel_Art",
+          "type": "BEVEL"
+        },
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -0.5,
+          -0.5,
+          -0.5
+        ],
+        "max": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "dims": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "anim": "Machine_LightStripAction_V2"
+    },
+    {
+      "name": "Machine_OutputChute",
+      "type": "EMPTY",
+      "parent": "Machine_Root",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": "Machine_OutputChuteAction_V2"
+    },
+    {
+      "name": "Machine_Root",
+      "type": "EMPTY",
+      "parent": null,
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": "Machine_RootAction_V2"
+    },
+    {
+      "name": "Machine_WindowCavity",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 64,
+      "polys": 33,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.4186,
+          -0.456,
+          0.9832
+        ],
+        "max": [
+          0.4186,
+          -0.385,
+          2.3062
+        ],
+        "dims": [
+          0.8372,
+          0.06,
+          1.3225
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Machine_WindowFrame",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 128,
+      "polys": 128,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.4878,
+          -0.8548,
+          0.887
+        ],
+        "max": [
+          0.4878,
+          -0.7722,
+          2.4024
+        ],
+        "dims": [
+          0.9756,
+          0.07,
+          1.5149
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Machine_WindowGlass",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 561,
+      "polys": 560,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.452,
+          -0.795,
+          0.9477
+        ],
+        "max": [
+          0.452,
+          -0.78,
+          2.3417
+        ],
+        "dims": [
+          0.904,
+          0.015,
+          1.394
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Machine_WindowGlow",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 128,
+      "polys": 128,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.4255,
+          -0.7956,
+          0.9738
+        ],
+        "max": [
+          0.4255,
+          -0.7765,
+          2.3156
+        ],
+        "dims": [
+          0.8511,
+          0.008,
+          1.3418
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_BaseBand",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 56,
+      "polys": 30,
+      "modifiers": [
+        {
+          "n": "Bevel_Art",
+          "type": "BEVEL"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -0.925,
+          -0.825,
+          0.26
+        ],
+        "max": [
+          0.925,
+          0.825,
+          0.444
+        ],
+        "dims": [
+          1.85,
+          1.65,
+          0.184
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_B0",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.808,
+          0.7975,
+          0.5053
+        ],
+        "max": [
+          -0.752,
+          0.8085,
+          0.5613
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_B1",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          0.752,
+          0.7975,
+          0.5053
+        ],
+        "max": [
+          0.808,
+          0.8085,
+          0.5613
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_B2",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.808,
+          0.7975,
+          2.4187
+        ],
+        "max": [
+          -0.752,
+          0.8085,
+          2.4747
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_B3",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          0.752,
+          0.7975,
+          2.4187
+        ],
+        "max": [
+          0.808,
+          0.8085,
+          2.4747
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_F0",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.808,
+          -0.8085,
+          0.5053
+        ],
+        "max": [
+          -0.752,
+          -0.7975,
+          0.5613
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_F1",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          0.752,
+          -0.8085,
+          0.5053
+        ],
+        "max": [
+          0.808,
+          -0.7975,
+          0.5613
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_F2",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.808,
+          -0.8085,
+          2.4187
+        ],
+        "max": [
+          -0.752,
+          -0.7975,
+          2.4747
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_F3",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          0.752,
+          -0.8085,
+          2.4187
+        ],
+        "max": [
+          0.808,
+          -0.7975,
+          2.4747
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_L0",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.9085,
+          -0.808,
+          0.505
+        ],
+        "max": [
+          -0.8975,
+          -0.752,
+          0.561
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_L1",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.9085,
+          0.752,
+          0.505
+        ],
+        "max": [
+          -0.8975,
+          0.808,
+          0.561
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_L2",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.9085,
+          -0.808,
+          2.419
+        ],
+        "max": [
+          -0.8975,
+          -0.752,
+          2.475
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_L3",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.9085,
+          0.752,
+          2.419
+        ],
+        "max": [
+          -0.8975,
+          0.808,
+          2.475
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_R0",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          0.8975,
+          -0.808,
+          0.505
+        ],
+        "max": [
+          0.9085,
+          -0.752,
+          0.561
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_R1",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          0.8975,
+          0.752,
+          0.505
+        ],
+        "max": [
+          0.9085,
+          0.808,
+          0.561
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_R2",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          0.8975,
+          -0.808,
+          2.419
+        ],
+        "max": [
+          0.9085,
+          -0.752,
+          2.475
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_Bolt_R3",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 34,
+      "polys": 20,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          0.8975,
+          0.752,
+          2.419
+        ],
+        "max": [
+          0.9085,
+          0.808,
+          2.475
+        ],
+        "dims": [
+          0.056,
+          0.011,
+          0.056
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_ChuteSeat",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 602,
+      "polys": 650,
+      "modifiers": [
+        {
+          "n": "Smooth_Outlet",
+          "type": "SUBSURF"
+        },
+        {
+          "n": "Smooth by Angle",
+          "type": "NODES"
+        }
+      ],
+      "bbox": {
+        "min": [
+          0.86,
+          -0.634,
+          0.872
+        ],
+        "max": [
+          2.52,
+          0.634,
+          1.245
+        ],
+        "dims": [
+          1.66,
+          1.2581,
+          0.3503
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_MintStrip_L",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 40,
+      "polys": 22,
+      "modifiers": [
+        {
+          "n": "EdgeBevel",
+          "type": "BEVEL"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -0.912,
+          -0.62,
+          0.506
+        ],
+        "max": [
+          -0.89,
+          0.62,
+          2.6448
+        ],
+        "dims": [
+          0.022,
+          1.24,
+          2.1388
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_MintStrip_R",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 16,
+      "polys": 12,
+      "modifiers": [
+        {
+          "n": "EdgeBevel",
+          "type": "BEVEL"
+        }
+      ],
+      "bbox": {
+        "min": [
+          0.89,
+          -0.34,
+          0.506
+        ],
+        "max": [
+          0.912,
+          0.34,
+          2.645
+        ],
+        "dims": [
+          0.022,
+          0.68,
+          2.139
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P1_ShoulderBay",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 96,
+      "polys": 50,
+      "modifiers": [
+        {
+          "n": "RimBevel",
+          "type": "BEVEL"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -1.415,
+          -0.32,
+          1.58
+        ],
+        "max": [
+          -0.91,
+          0.32,
+          2.22
+        ],
+        "dims": [
+          0.505,
+          0.64,
+          0.64
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P2_Plasma",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 4,
+      "polys": 1,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.43,
+          -0.53,
+          0.965
+        ],
+        "max": [
+          0.43,
+          -0.53,
+          2.325
+        ],
+        "dims": [
+          0.86,
+          0.0,
+          1.36
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P2_Plasma_Back",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 4,
+      "polys": 1,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.43,
+          -0.468,
+          0.965
+        ],
+        "max": [
+          0.43,
+          -0.468,
+          2.325
+        ],
+        "dims": [
+          0.86,
+          0.0,
+          1.36
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P3c_Button_Mode",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 168,
+      "polys": 142,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          0.188,
+          -0.848,
+          0.5514
+        ],
+        "max": [
+          0.242,
+          -0.796,
+          0.6054
+        ],
+        "dims": [
+          0.054,
+          0.052,
+          0.054
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P3c_Button_Power",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 168,
+      "polys": 142,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          0.033,
+          -0.848,
+          0.5364
+        ],
+        "max": [
+          0.117,
+          -0.796,
+          0.6204
+        ],
+        "dims": [
+          0.084,
+          0.052,
+          0.084
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P3d_HopperCollar",
+      "type": "MESH",
+      "parent": "Machine_Hopper",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 280,
+      "polys": 280,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.3738,
+          -0.3738,
+          2.72
+        ],
+        "max": [
+          0.3738,
+          0.3738,
+          2.787
+        ],
+        "dims": [
+          0.7475,
+          0.7475,
+          0.067
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P3d_Label",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 56,
+      "polys": 30,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          0.5339,
+          -0.8045,
+          0.5432
+        ],
+        "max": [
+          0.7561,
+          -0.8,
+          0.6656
+        ],
+        "dims": [
+          0.2221,
+          0.0045,
+          0.1225
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P3d_RingSeat_Mode",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 240,
+      "polys": 240,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          0.177,
+          -0.8015,
+          0.5404
+        ],
+        "max": [
+          0.253,
+          -0.785,
+          0.6164
+        ],
+        "dims": [
+          0.076,
+          0.0165,
+          0.076
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P3d_RingSeat_Power",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 240,
+      "polys": 240,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          0.013,
+          -0.8015,
+          0.5164
+        ],
+        "max": [
+          0.137,
+          -0.785,
+          0.6404
+        ],
+        "dims": [
+          0.124,
+          0.0165,
+          0.124
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P3d_WristCuff",
+      "type": "MESH",
+      "parent": "Arm_Wrist",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 240,
+      "polys": 240,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -1.8109,
+          -1.7096,
+          1.7603
+        ],
+        "max": [
+          -1.6068,
+          -1.5038,
+          1.8547
+        ],
+        "dims": [
+          0.048,
+          0.2036,
+          0.2036
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "P3f_TopSkin",
+      "type": "MESH",
+      "parent": "Machine_Body",
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": 128,
+      "polys": 97,
+      "modifiers": [
+        {
+          "n": "Bevel_Art",
+          "type": "BEVEL"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -0.8966,
+          -0.7555,
+          2.6519
+        ],
+        "max": [
+          0.8966,
+          0.7555,
+          2.7201
+        ],
+        "dims": [
+          1.7932,
+          1.511,
+          0.0683
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Product",
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "hide_viewport": true,
+      "verts": 8,
+      "polys": 6,
+      "modifiers": [
+        {
+          "n": "Bevel_Art",
+          "type": "BEVEL"
+        }
+      ],
+      "bbox": {
+        "min": [
+          -0.5,
+          -0.5,
+          -0.5
+        ],
+        "max": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "dims": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "anim": "ProductAction.001_V2"
+    },
+    {
+      "name": "Product_Proxy_FitCheck",
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "hide_viewport": true,
+      "verts": 8,
+      "polys": 6,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.5,
+          -0.5,
+          -0.5
+        ],
+        "max": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "dims": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Product_Proxy_Large",
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "hide_viewport": true,
+      "verts": 8,
+      "polys": 6,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.5,
+          -0.5,
+          -0.5
+        ],
+        "max": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "dims": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "Prop_IdeaPedestal",
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "hide_viewport": true,
+      "verts": 64,
+      "polys": 34,
+      "modifiers": [],
+      "bbox": {
+        "min": [
+          -0.18,
+          -0.18,
+          -0.325
+        ],
+        "max": [
+          0.18,
+          0.18,
+          0.325
+        ],
+        "dims": [
+          0.36,
+          0.36,
+          0.65
+        ]
+      },
+      "anim": null
+    },
+    {
+      "name": "SUN_Hero",
+      "type": "LIGHT",
+      "parent": null,
+      "hide_render": false,
+      "hide_viewport": false,
+      "verts": null,
+      "polys": null,
+      "modifiers": [],
+      "bbox": null,
+      "anim": null
+    }
+  ]
+}

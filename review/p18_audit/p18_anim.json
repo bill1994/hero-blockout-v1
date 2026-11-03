@@ -1,0 +1,1409 @@
+{
+  "fps": 60,
+  "frame_start": 1,
+  "frame_end": 327,
+  "duration_s": 5.45,
+  "actions": [
+    {
+      "object": "Arm_Elbow_Pivot",
+      "action": "Arm_Elbow_PivotAction_V2",
+      "slots": [
+        "OBArm_Elbow_Pivot"
+      ],
+      "slot_in_use": "OBArm_Elbow_Pivot",
+      "fcurves": 3,
+      "keys_total": 118,
+      "keyed_channels": [
+        "rotation_euler",
+        "rotation_euler",
+        "rotation_euler"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "rotation_euler",
+          "idx": 0,
+          "keys": 40,
+          "first_frame": 1.0,
+          "last_frame": 276.5,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 1,
+          "keys": 38,
+          "first_frame": 1.0,
+          "last_frame": 326.5,
+          "value_min": 1.44,
+          "value_max": 2.08106,
+          "delta": 0.64106,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 2,
+          "keys": 40,
+          "first_frame": 1.0,
+          "last_frame": 276.5,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": [],
+          "rot_deg_range": [
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "object": "Arm_Finger_L",
+      "action": "Arm_Finger_LAction_V2",
+      "slots": [
+        "OBArm_Finger_L"
+      ],
+      "slot_in_use": "OBArm_Finger_L",
+      "fcurves": 3,
+      "keys_total": 21,
+      "keyed_channels": [
+        "rotation_euler",
+        "rotation_euler",
+        "rotation_euler"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "rotation_euler",
+          "idx": 0,
+          "keys": 8,
+          "first_frame": 1.0,
+          "last_frame": 291.35,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 1,
+          "keys": 8,
+          "first_frame": 1.0,
+          "last_frame": 291.35,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 2,
+          "keys": 5,
+          "first_frame": 1.0,
+          "last_frame": 137.2,
+          "value_min": 0.38,
+          "value_max": 0.733,
+          "delta": 0.353,
+          "modifiers": [],
+          "rot_deg_range": [
+            21.77,
+            42.0
+          ]
+        }
+      ]
+    },
+    {
+      "object": "Arm_Finger_R",
+      "action": "Arm_Finger_RAction_V2",
+      "slots": [
+        "OBArm_Finger_R"
+      ],
+      "slot_in_use": "OBArm_Finger_R",
+      "fcurves": 3,
+      "keys_total": 21,
+      "keyed_channels": [
+        "rotation_euler",
+        "rotation_euler",
+        "rotation_euler"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "rotation_euler",
+          "idx": 0,
+          "keys": 8,
+          "first_frame": 1.0,
+          "last_frame": 291.35,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 1,
+          "keys": 8,
+          "first_frame": 1.0,
+          "last_frame": 291.35,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 2,
+          "keys": 5,
+          "first_frame": 1.0,
+          "last_frame": 137.2,
+          "value_min": -0.733,
+          "value_max": -0.38,
+          "delta": 0.353,
+          "modifiers": [],
+          "rot_deg_range": [
+            -42.0,
+            -21.77
+          ]
+        }
+      ]
+    },
+    {
+      "object": "Arm_Mount",
+      "action": "Arm_MountAction_V2",
+      "slots": [
+        "OBArm_Mount"
+      ],
+      "slot_in_use": "OBArm_Mount",
+      "fcurves": 3,
+      "keys_total": 52,
+      "keyed_channels": [
+        "location",
+        "location",
+        "location"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "location",
+          "idx": 0,
+          "keys": 7,
+          "first_frame": 1.0,
+          "last_frame": 189.71,
+          "value_min": -1.44,
+          "value_max": -1.40945,
+          "delta": 0.03055,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 2,
+          "keys": 23,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": 0.7785,
+          "value_max": 0.85906,
+          "delta": 0.08056,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 1,
+          "keys": 22,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        }
+      ]
+    },
+    {
+      "object": "Arm_Shoulder_Pivot",
+      "action": "Arm_Shoulder_PivotAction_V2",
+      "slots": [
+        "OBArm_Shoulder_Pivot"
+      ],
+      "slot_in_use": "OBArm_Shoulder_Pivot",
+      "fcurves": 3,
+      "keys_total": 116,
+      "keyed_channels": [
+        "rotation_euler",
+        "rotation_euler",
+        "rotation_euler"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "rotation_euler",
+          "idx": 0,
+          "keys": 40,
+          "first_frame": 1.0,
+          "last_frame": 276.5,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 1,
+          "keys": 36,
+          "first_frame": 1.0,
+          "last_frame": 326.5,
+          "value_min": -2.13874,
+          "value_max": -0.5,
+          "delta": 1.63874,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 2,
+          "keys": 40,
+          "first_frame": 1.0,
+          "last_frame": 276.5,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": [],
+          "rot_deg_range": [
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "object": "Arm_Wrist",
+      "action": "Arm_WristAction_V2",
+      "slots": [
+        "OBArm_Wrist"
+      ],
+      "slot_in_use": "OBArm_Wrist",
+      "fcurves": 3,
+      "keys_total": 126,
+      "keyed_channels": [
+        "rotation_euler",
+        "rotation_euler",
+        "rotation_euler"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "rotation_euler",
+          "idx": 0,
+          "keys": 39,
+          "first_frame": 1.0,
+          "last_frame": 276.5,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 1,
+          "keys": 44,
+          "first_frame": 1.0,
+          "last_frame": 300.89,
+          "value_min": -0.3,
+          "value_max": 0.4,
+          "delta": 0.7,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 2,
+          "keys": 43,
+          "first_frame": 1.0,
+          "last_frame": 300.89,
+          "value_min": -0.12,
+          "value_max": 0.15,
+          "delta": 0.27,
+          "modifiers": [],
+          "rot_deg_range": [
+            -6.88,
+            8.59
+          ]
+        }
+      ]
+    },
+    {
+      "object": "Arm_Yaw_Pivot",
+      "action": "Arm_Yaw_PivotAction_V2",
+      "slots": [
+        "OBArm_Yaw_Pivot"
+      ],
+      "slot_in_use": "OBArm_Yaw_Pivot",
+      "fcurves": 3,
+      "keys_total": 111,
+      "keyed_channels": [
+        "rotation_euler",
+        "rotation_euler",
+        "rotation_euler"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "rotation_euler",
+          "idx": 0,
+          "keys": 40,
+          "first_frame": 1.0,
+          "last_frame": 270.0,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 1,
+          "keys": 40,
+          "first_frame": 1.0,
+          "last_frame": 270.0,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 2,
+          "keys": 31,
+          "first_frame": 1.0,
+          "last_frame": 189.19,
+          "value_min": -2.811,
+          "value_max": 2e-05,
+          "delta": 2.81102,
+          "modifiers": [],
+          "rot_deg_range": [
+            -161.06,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "object": "Idea",
+      "action": "IdeaAction_V2",
+      "slots": [
+        "OBIdea"
+      ],
+      "slot_in_use": "OBIdea",
+      "fcurves": 8,
+      "keys_total": 811,
+      "keyed_channels": [
+        "location",
+        "location",
+        "location",
+        "rotation_euler",
+        "rotation_euler",
+        "rotation_euler",
+        "hide_viewport",
+        "hide_render"
+      ],
+      "interp": [
+        "BEZIER",
+        "CONSTANT",
+        "LINEAR"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "location",
+          "idx": 0,
+          "keys": 132,
+          "first_frame": 1.0,
+          "last_frame": 311.5,
+          "value_min": -3.37803,
+          "value_max": 0.0989,
+          "delta": 3.47693,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 1,
+          "keys": 134,
+          "first_frame": 1.0,
+          "last_frame": 311.5,
+          "value_min": -1.32124,
+          "value_max": 0.00199,
+          "delta": 1.32322,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 2,
+          "keys": 145,
+          "first_frame": 1.0,
+          "last_frame": 311.5,
+          "value_min": 2.33105,
+          "value_max": 4.47333,
+          "delta": 2.14228,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 0,
+          "keys": 130,
+          "first_frame": 1.0,
+          "last_frame": 327.0,
+          "value_min": -0.81344,
+          "value_max": 0.00279,
+          "delta": 0.81624,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 1,
+          "keys": 130,
+          "first_frame": 1.0,
+          "last_frame": 327.0,
+          "value_min": -0.00814,
+          "value_max": 1.12956,
+          "delta": 1.1377,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 2,
+          "keys": 130,
+          "first_frame": 1.0,
+          "last_frame": 327.0,
+          "value_min": -8e-05,
+          "value_max": 2.5825,
+          "delta": 2.58258,
+          "modifiers": [],
+          "rot_deg_range": [
+            -0.0,
+            147.97
+          ]
+        },
+        {
+          "path": "hide_viewport",
+          "idx": 0,
+          "keys": 5,
+          "first_frame": 1.0,
+          "last_frame": 311.5,
+          "value_min": 0.0,
+          "value_max": 1.0,
+          "delta": 1.0,
+          "modifiers": []
+        },
+        {
+          "path": "hide_render",
+          "idx": 0,
+          "keys": 5,
+          "first_frame": 1.0,
+          "last_frame": 311.5,
+          "value_min": 0.0,
+          "value_max": 1.0,
+          "delta": 1.0,
+          "modifiers": []
+        }
+      ]
+    },
+    {
+      "object": "Machine_Body",
+      "action": "Machine_BodyAction_V2",
+      "slots": [
+        "OBMachine_Body"
+      ],
+      "slot_in_use": "OBMachine_Body",
+      "fcurves": 3,
+      "keys_total": 55,
+      "keyed_channels": [
+        "location",
+        "location",
+        "location"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "location",
+          "idx": 0,
+          "keys": 7,
+          "first_frame": 1.0,
+          "last_frame": 189.71,
+          "value_min": 0.0,
+          "value_max": 0.03055,
+          "delta": 0.03055,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 2,
+          "keys": 26,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": 1.4185,
+          "value_max": 1.49906,
+          "delta": 0.08056,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 1,
+          "keys": 22,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        }
+      ]
+    },
+    {
+      "object": "Machine_Hopper",
+      "action": "Machine_HopperAction_V2",
+      "slots": [
+        "OBMachine_Hopper"
+      ],
+      "slot_in_use": "OBMachine_Hopper",
+      "fcurves": 3,
+      "keys_total": 55,
+      "keyed_channels": [
+        "location",
+        "location",
+        "location"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "location",
+          "idx": 0,
+          "keys": 7,
+          "first_frame": 1.0,
+          "last_frame": 189.71,
+          "value_min": 0.0,
+          "value_max": 0.03055,
+          "delta": 0.03055,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 2,
+          "keys": 26,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": 3.1735,
+          "value_max": 3.25406,
+          "delta": 0.08056,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 1,
+          "keys": 22,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        }
+      ]
+    },
+    {
+      "object": "Machine_LightStrip",
+      "action": "Machine_LightStripAction_V2",
+      "slots": [
+        "OBMachine_LightStrip"
+      ],
+      "slot_in_use": "OBMachine_LightStrip",
+      "fcurves": 7,
+      "keys_total": 73,
+      "keyed_channels": [
+        "location",
+        "location",
+        "location",
+        "color",
+        "color",
+        "color",
+        "color"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "location",
+          "idx": 0,
+          "keys": 7,
+          "first_frame": 1.0,
+          "last_frame": 189.71,
+          "value_min": 0.0,
+          "value_max": 0.03055,
+          "delta": 0.03055,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 2,
+          "keys": 23,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": 0.32517,
+          "value_max": 0.40573,
+          "delta": 0.08056,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 1,
+          "keys": 22,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": -0.82,
+          "value_max": -0.82,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 0,
+          "keys": 6,
+          "first_frame": 188.0,
+          "last_frame": 281.8,
+          "value_min": 1.0,
+          "value_max": 1.8,
+          "delta": 0.8,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 1,
+          "keys": 6,
+          "first_frame": 188.0,
+          "last_frame": 281.8,
+          "value_min": 1.0,
+          "value_max": 1.8,
+          "delta": 0.8,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 2,
+          "keys": 6,
+          "first_frame": 188.0,
+          "last_frame": 281.8,
+          "value_min": 1.0,
+          "value_max": 1.8,
+          "delta": 0.8,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 3,
+          "keys": 3,
+          "first_frame": 188.0,
+          "last_frame": 204.87,
+          "value_min": 1.0,
+          "value_max": 1.0,
+          "delta": 0.0,
+          "modifiers": []
+        }
+      ]
+    },
+    {
+      "object": "Machine_Light_01",
+      "action": "Machine_Light_01Action_V2",
+      "slots": [
+        "OBMachine_Light_01"
+      ],
+      "slot_in_use": "OBMachine_Light_01",
+      "fcurves": 7,
+      "keys_total": 69,
+      "keyed_channels": [
+        "location",
+        "location",
+        "location",
+        "color",
+        "color",
+        "color",
+        "color"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "location",
+          "idx": 0,
+          "keys": 7,
+          "first_frame": 1.0,
+          "last_frame": 189.71,
+          "value_min": -0.3,
+          "value_max": -0.26945,
+          "delta": 0.03055,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 2,
+          "keys": 23,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": 2.4435,
+          "value_max": 2.52406,
+          "delta": 0.08056,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 1,
+          "keys": 22,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": -0.82,
+          "value_max": -0.82,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 0,
+          "keys": 4,
+          "first_frame": 156.36,
+          "last_frame": 171.58,
+          "value_min": 1.0,
+          "value_max": 1.6,
+          "delta": 0.6,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 1,
+          "keys": 4,
+          "first_frame": 156.36,
+          "last_frame": 171.58,
+          "value_min": 1.0,
+          "value_max": 1.6,
+          "delta": 0.6,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 2,
+          "keys": 4,
+          "first_frame": 156.36,
+          "last_frame": 171.58,
+          "value_min": 1.0,
+          "value_max": 1.6,
+          "delta": 0.6,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 3,
+          "keys": 5,
+          "first_frame": 156.36,
+          "last_frame": 207.16,
+          "value_min": 1.0,
+          "value_max": 1.0,
+          "delta": 0.0,
+          "modifiers": []
+        }
+      ]
+    },
+    {
+      "object": "Machine_Light_02",
+      "action": "Machine_Light_02Action_V2",
+      "slots": [
+        "OBMachine_Light_02"
+      ],
+      "slot_in_use": "OBMachine_Light_02",
+      "fcurves": 7,
+      "keys_total": 69,
+      "keyed_channels": [
+        "location",
+        "location",
+        "location",
+        "color",
+        "color",
+        "color",
+        "color"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "location",
+          "idx": 0,
+          "keys": 7,
+          "first_frame": 1.0,
+          "last_frame": 189.71,
+          "value_min": 0.0,
+          "value_max": 0.03055,
+          "delta": 0.03055,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 2,
+          "keys": 23,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": 2.4435,
+          "value_max": 2.52406,
+          "delta": 0.08056,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 1,
+          "keys": 22,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": -0.82,
+          "value_max": -0.82,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 0,
+          "keys": 4,
+          "first_frame": 156.36,
+          "last_frame": 171.58,
+          "value_min": 1.0,
+          "value_max": 1.6,
+          "delta": 0.6,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 1,
+          "keys": 4,
+          "first_frame": 156.36,
+          "last_frame": 171.58,
+          "value_min": 1.0,
+          "value_max": 1.6,
+          "delta": 0.6,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 2,
+          "keys": 4,
+          "first_frame": 156.36,
+          "last_frame": 171.58,
+          "value_min": 1.0,
+          "value_max": 1.6,
+          "delta": 0.6,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 3,
+          "keys": 5,
+          "first_frame": 156.36,
+          "last_frame": 207.16,
+          "value_min": 1.0,
+          "value_max": 1.0,
+          "delta": 0.0,
+          "modifiers": []
+        }
+      ]
+    },
+    {
+      "object": "Machine_Light_03",
+      "action": "Machine_Light_03Action_V2",
+      "slots": [
+        "OBMachine_Light_03"
+      ],
+      "slot_in_use": "OBMachine_Light_03",
+      "fcurves": 7,
+      "keys_total": 69,
+      "keyed_channels": [
+        "location",
+        "location",
+        "location",
+        "color",
+        "color",
+        "color",
+        "color"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "location",
+          "idx": 0,
+          "keys": 7,
+          "first_frame": 1.0,
+          "last_frame": 189.71,
+          "value_min": 0.3,
+          "value_max": 0.33055,
+          "delta": 0.03055,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 2,
+          "keys": 23,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": 2.4435,
+          "value_max": 2.52406,
+          "delta": 0.08056,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 1,
+          "keys": 22,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": -0.82,
+          "value_max": -0.82,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 0,
+          "keys": 4,
+          "first_frame": 156.36,
+          "last_frame": 171.58,
+          "value_min": 1.0,
+          "value_max": 1.6,
+          "delta": 0.6,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 1,
+          "keys": 4,
+          "first_frame": 156.36,
+          "last_frame": 171.58,
+          "value_min": 1.0,
+          "value_max": 1.6,
+          "delta": 0.6,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 2,
+          "keys": 4,
+          "first_frame": 156.36,
+          "last_frame": 171.58,
+          "value_min": 1.0,
+          "value_max": 1.6,
+          "delta": 0.6,
+          "modifiers": []
+        },
+        {
+          "path": "color",
+          "idx": 3,
+          "keys": 5,
+          "first_frame": 156.36,
+          "last_frame": 207.16,
+          "value_min": 1.0,
+          "value_max": 1.0,
+          "delta": 0.0,
+          "modifiers": []
+        }
+      ]
+    },
+    {
+      "object": "Machine_OutputChute",
+      "action": "Machine_OutputChuteAction_V2",
+      "slots": [
+        "OBMachine_OutputChute"
+      ],
+      "slot_in_use": "OBMachine_OutputChute",
+      "fcurves": 3,
+      "keys_total": 52,
+      "keyed_channels": [
+        "location",
+        "location",
+        "location"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "location",
+          "idx": 0,
+          "keys": 7,
+          "first_frame": 1.0,
+          "last_frame": 189.71,
+          "value_min": 2.1,
+          "value_max": 2.13055,
+          "delta": 0.03055,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 2,
+          "keys": 23,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": 1.0085,
+          "value_max": 1.08906,
+          "delta": 0.08056,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 1,
+          "keys": 22,
+          "first_frame": 1.0,
+          "last_frame": 242.65,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        }
+      ]
+    },
+    {
+      "object": "Machine_Root",
+      "action": "Machine_RootAction_V2",
+      "slots": [
+        "OBMachine_Root"
+      ],
+      "slot_in_use": "OBMachine_Root",
+      "fcurves": 3,
+      "keys_total": 52,
+      "keyed_channels": [
+        "rotation_euler",
+        "rotation_euler",
+        "rotation_euler"
+      ],
+      "interp": [
+        "BEZIER"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "rotation_euler",
+          "idx": 0,
+          "keys": 26,
+          "first_frame": 156.36,
+          "last_frame": 242.65,
+          "value_min": -0.00549,
+          "value_max": 0.02745,
+          "delta": 0.03294,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 1,
+          "keys": 21,
+          "first_frame": 156.36,
+          "last_frame": 242.65,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "rotation_euler",
+          "idx": 2,
+          "keys": 5,
+          "first_frame": 156.36,
+          "last_frame": 186.3,
+          "value_min": 0.0,
+          "value_max": 0.02042,
+          "delta": 0.02042,
+          "modifiers": [],
+          "rot_deg_range": [
+            0.0,
+            1.17
+          ]
+        }
+      ]
+    },
+    {
+      "object": "Product",
+      "action": "ProductAction.001_V2",
+      "slots": [
+        "OBProduct"
+      ],
+      "slot_in_use": "OBProduct",
+      "fcurves": 8,
+      "keys_total": 129,
+      "keyed_channels": [
+        "location",
+        "location",
+        "location",
+        "scale",
+        "scale",
+        "scale",
+        "hide_viewport",
+        "hide_render"
+      ],
+      "interp": [
+        "BEZIER",
+        "CONSTANT",
+        "LINEAR"
+      ],
+      "extrapolation": [
+        "CONSTANT"
+      ],
+      "detail": [
+        {
+          "path": "location",
+          "idx": 0,
+          "keys": 32,
+          "first_frame": 1.0,
+          "last_frame": 308.0,
+          "value_min": 1.2417,
+          "value_max": 4.44964,
+          "delta": 3.20795,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 1,
+          "keys": 1,
+          "first_frame": 1.0,
+          "last_frame": 1.0,
+          "value_min": 0.0,
+          "value_max": 0.0,
+          "delta": 0.0,
+          "modifiers": []
+        },
+        {
+          "path": "location",
+          "idx": 2,
+          "keys": 58,
+          "first_frame": 1.0,
+          "last_frame": 301.0,
+          "value_min": 1.1316,
+          "value_max": 1.93,
+          "delta": 0.7984,
+          "modifiers": []
+        },
+        {
+          "path": "scale",
+          "idx": 0,
+          "keys": 7,
+          "first_frame": 1.0,
+          "last_frame": 326.5,
+          "value_min": 0.001,
+          "value_max": 0.7,
+          "delta": 0.699,
+          "modifiers": []
+        },
+        {
+          "path": "scale",
+          "idx": 1,
+          "keys": 7,
+          "first_frame": 1.0,
+          "last_frame": 326.5,
+          "value_min": 0.001,
+          "value_max": 0.7,
+          "delta": 0.699,
+          "modifiers": []
+        },
+        {
+          "path": "scale",
+          "idx": 2,
+          "keys": 16,
+          "first_frame": 1.0,
+          "last_frame": 326.5,
+          "value_min": 0.001,
+          "value_max": 1.025,
+          "delta": 1.024,
+          "modifiers": []
+        },
+        {
+          "path": "hide_viewport",
+          "idx": 0,
+          "keys": 4,
+          "first_frame": 1.0,
+          "last_frame": 326.5,
+          "value_min": 0.0,
+          "value_max": 1.0,
+          "delta": 1.0,
+          "modifiers": []
+        },
+        {
+          "path": "hide_render",
+          "idx": 0,
+          "keys": 4,
+          "first_frame": 1.0,
+          "last_frame": 326.5,
+          "value_min": 0.0,
+          "value_max": 1.0,
+          "delta": 1.0,
+          "modifiers": []
+        }
+      ]
+    }
+  ],
+  "unused_actions": [
+    "Arm_Elbow_PivotAction",
+    "Arm_Finger_LAction",
+    "Arm_Finger_RAction",
+    "Arm_MountAction",
+    "Arm_Shoulder_PivotAction",
+    "Arm_WristAction",
+    "Arm_Yaw_PivotAction",
+    "IdeaAction",
+    "Machine_BodyAction",
+    "Machine_HopperAction",
+    "Machine_Light_01Action",
+    "Machine_Light_02Action",
+    "Machine_Light_03Action",
+    "Machine_LightStripAction",
+    "Machine_OutputChuteAction",
+    "Machine_RootAction",
+    "Machine_WindowAction",
+    "Machine_WindowAction_V2",
+    "ProductAction.001"
+  ],
+  "hierarchy": {
+    "Arm_Base": "Machine_Root",
+    "Arm_Elbow_Joint": "Arm_Elbow_Pivot",
+    "Arm_Elbow_Pivot": "Arm_Shoulder_Pivot",
+    "Arm_Finger_C": "Arm_Wrist",
+    "Arm_Finger_L": "Arm_Wrist",
+    "Arm_Finger_R": "Arm_Wrist",
+    "Arm_Forearm": "Arm_Elbow_Pivot",
+    "Arm_Forearm_Seam_A": "Arm_Forearm",
+    "Arm_Forearm_Seam_B": "Arm_Forearm",
+    "Arm_GrabPoint": "Arm_Wrist",
+    "Arm_Gripper": "Arm_Wrist",
+    "Arm_Mount": "Machine_Root",
+    "Arm_Shoulder_Joint": "Arm_Shoulder_Pivot",
+    "Arm_Shoulder_Pivot": "Arm_Yaw_Pivot",
+    "Arm_ShoulderRiser": "Arm_Yaw_Pivot",
+    "Arm_UpperArm": "Arm_Shoulder_Pivot",
+    "Arm_UpperArm_Seam_A": "Arm_UpperArm",
+    "Arm_UpperArm_Seam_B": "Arm_UpperArm",
+    "Arm_Wrist": "Arm_Elbow_Pivot",
+    "Arm_WristCollar": "Arm_Wrist",
+    "Arm_Yaw_Housing": "Arm_Yaw_Pivot",
+    "Arm_Yaw_Pivot": "Arm_Base",
+    "Cutter_Outlet": "Machine_Body",
+    "Machine_Base": "Machine_Root",
+    "Machine_Body": "Machine_Root",
+    "Machine_Chute": "Machine_OutputChute",
+    "Machine_Feet": "Machine_Root",
+    "Machine_Hopper": "Machine_Root",
+    "Machine_Light_01": "Machine_Root",
+    "Machine_Light_02": "Machine_Root",
+    "Machine_Light_03": "Machine_Root",
+    "Machine_LightStrip": "Machine_Root",
+    "Machine_OutputChute": "Machine_Root",
+    "Machine_WindowCavity": "Machine_Body",
+    "Machine_WindowFrame": "Machine_Body",
+    "Machine_WindowGlass": "Machine_Body",
+    "Machine_WindowGlow": "Machine_Body",
+    "P1_BaseBand": "Machine_Body",
+    "P1_Bolt_B0": "Machine_Body",
+    "P1_Bolt_B1": "Machine_Body",
+    "P1_Bolt_B2": "Machine_Body",
+    "P1_Bolt_B3": "Machine_Body",
+    "P1_Bolt_F0": "Machine_Body",
+    "P1_Bolt_F1": "Machine_Body",
+    "P1_Bolt_F2": "Machine_Body",
+    "P1_Bolt_F3": "Machine_Body",
+    "P1_Bolt_L0": "Machine_Body",
+    "P1_Bolt_L1": "Machine_Body",
+    "P1_Bolt_L2": "Machine_Body",
+    "P1_Bolt_L3": "Machine_Body",
+    "P1_Bolt_R0": "Machine_Body",
+    "P1_Bolt_R1": "Machine_Body",
+    "P1_Bolt_R2": "Machine_Body",
+    "P1_Bolt_R3": "Machine_Body",
+    "P1_ChuteSeat": "Machine_Body",
+    "P1_MintStrip_L": "Machine_Body",
+    "P1_MintStrip_R": "Machine_Body",
+    "P1_ShoulderBay": "Machine_Body",
+    "P2_Plasma": "Machine_Body",
+    "P2_Plasma_Back": "Machine_Body",
+    "P3c_Button_Mode": "Machine_Body",
+    "P3c_Button_Power": "Machine_Body",
+    "P3d_HopperCollar": "Machine_Hopper",
+    "P3d_Label": "Machine_Body",
+    "P3d_RingSeat_Mode": "Machine_Body",
+    "P3d_RingSeat_Power": "Machine_Body",
+    "P3d_WristCuff": "Arm_Wrist",
+    "P3f_TopSkin": "Machine_Body"
+  },
+  "collection_counts": {
+    "Arm": 17,
+    "Camera": 3,
+    "Collection": 1,
+    "HERO_BLOCKOUT_V01": 0,
+    "HERO_FIT_CHECK": 2,
+    "LEGACY_UNUSED": 1,
+    "Machine": 10,
+    "Props": 2
+  }
+}
