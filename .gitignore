@@ -25,3 +25,18 @@ scratch/crops/
 scratch/p18_render/
 scratch/p18_sheet/
 scratch/p18_gap/
+
+# ---> v14 repair intermediate checkpoints. Regenerate with exec/v14_fix.py
+# from hero_animation_v14_p19.blend; only the final p47 is tracked.
+hero_animation_v14_p2[0-9]_*.blend
+hero_animation_v14_p3[0-9]_*.blend
+hero_animation_v14_p4[0-6]_*.blend
+hero_animation_v14_p19_p20_outlet_normals.blend
+
+# ---> Local throwaway probes and QA renders (curated shots live in review/)
+scratch/*.png
+scratch/audit_*.json
+scratch/probe_*.json
+scratch/measure_ref*.json
+scratch/verify_*.json
+scratch/claw_*.json
