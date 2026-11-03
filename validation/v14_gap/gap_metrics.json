@@ -1,0 +1,165 @@
+[
+  {
+    "view": "ref_side",
+    "kind": "ref",
+    "obj_bbox": [
+      0,
+      0,
+      413,
+      779
+    ],
+    "obj_wh": [
+      414,
+      780
+    ],
+    "orange_bbox": [
+      36,
+      42,
+      368,
+      539
+    ],
+    "orange_wh": [
+      333,
+      498
+    ],
+    "orange_px": 36531,
+    "cream_px": 91629,
+    "orange_share": 0.285,
+    "far_end_margin_px": 45,
+    "far_end_margin_ratio": 0.1351,
+    "orange_height_profile_px": [
+      3,
+      324,
+      42,
+      39,
+      39,
+      39,
+      54,
+      78,
+      153,
+      165,
+      138,
+      18
+    ],
+    "profile_max_to_median": 6.75
+  },
+  {
+    "view": "p6_side",
+    "kind": "model",
+    "obj_bbox": [
+      44,
+      460,
+      1322,
+      944
+    ],
+    "obj_wh": [
+      1279,
+      485
+    ],
+    "orange_bbox": null,
+    "orange_wh": null,
+    "orange_px": 0,
+    "cream_px": 585902,
+    "orange_share": 0.0,
+    "obj_world_wh": [
+      1.6437,
+      0.6233
+    ]
+  },
+  {
+    "view": "ref_top",
+    "kind": "ref",
+    "obj_bbox": [
+      0,
+      0,
+      488,
+      893
+    ],
+    "obj_wh": [
+      489,
+      894
+    ],
+    "orange_bbox": [
+      141,
+      267,
+      446,
+      575
+    ],
+    "orange_wh": [
+      306,
+      309
+    ],
+    "orange_px": 86580,
+    "cream_px": 142767,
+    "orange_share": 0.3775,
+    "far_end_margin_px": 42,
+    "far_end_margin_ratio": 0.1373,
+    "orange_height_profile_px": [
+      3,
+      297,
+      300,
+      294,
+      291,
+      291,
+      288,
+      285,
+      291,
+      291,
+      279,
+      204
+    ],
+    "profile_max_to_median": 1.031
+  },
+  {
+    "view": "p6_top",
+    "kind": "model",
+    "obj_bbox": [
+      45,
+      118,
+      1322,
+      1281
+    ],
+    "obj_wh": [
+      1278,
+      1164
+    ],
+    "orange_bbox": [
+      84,
+      203,
+      1239,
+      1196
+    ],
+    "orange_wh": [
+      1156,
+      994
+    ],
+    "orange_px": 1032553,
+    "cream_px": 253956,
+    "orange_share": 0.8026,
+    "obj_world_wh": [
+      1.6424,
+      1.4959
+    ],
+    "orange_world_wh": [
+      1.4856,
+      1.2774
+    ],
+    "far_end_margin_px": 83,
+    "far_end_margin_ratio": 0.0718,
+    "orange_height_profile_px": [
+      994,
+      994,
+      994,
+      994,
+      994,
+      994,
+      994,
+      982,
+      924,
+      812,
+      610,
+      55
+    ],
+    "profile_max_to_median": 1.0
+  }
+]
