@@ -1,264 +1,245 @@
-# STATUS — hero-blockout-v1 / v13 style pass
+# STATUS — hero-blockout / 抓娃娃机资产（main @ `5ae66db`）
 
-**Last updated:** 2026-11-03 (after stage P6 — the outlet is now a cream hull with an amber liner, not a channel cut in a slab; see the P6 row below)
-**Branch:** `main`. Everything below is committed. Remote work should continue from `main`.
+**Last updated:** 2026-11-24
+**Branch:** `main` · **Tip:** `5ae66db` "v14 repair pass: outlet, base, screws, claw" (2026-11-04)
+**Working tree:** v14 侧原有未提交改动仍在（`M hero_animation_v14_p19.blend` 于 11-08 被另存、若干未跟踪 `.blend`），**本轮未触碰、未提交**。V2 重建的产物见 §10。
+`M hero_animation_v14_p19.blend` · 未跟踪 `hero_animation_v14_p7.blend`、`reconstruct.blend`、`hero_animation_v14_p47_hole_f3.blend`、`zhuazhuaji.blend`、`zhuazhuaji_webfix.blend`、`zhuazhuaji_webfix.glb`、`scratch/*`
 
-Read `BUILD_NOTES.md` for the measured detail behind every claim here. This file is the
-short version: where the asset is, what is proven, what is left, and how to run each
-check yourself.
+## 0. Bottom line
 
----
-
-## 1. Where the asset is
-
-| stage | file | state |
-|---|---|---|
-| v12 | `hero_animation_v12_style.blend` | pre-v13 baseline, untouched |
-| v13 P0 | `hero_animation_v13_soft.blend` | hygiene pass only (materials, loop closure, re-seat ornaments) |
-| v13 P1 | `hero_animation_v13_p1.blend` | shell 2.32 → 1.80, junctions, mint bands, palette, window 0.64 |
-| v13 P2 | `hero_animation_v13_p2.blend` + `.glb` | window rebuilt, emissive nebula, GLB verified |
-| v13 P3a | `hero_animation_v13_p3.blend` | grab gate, chute split, hopper bowl |
-| **v13 P3b** | **`hero_animation_v13_p3b.blend` + `.glb`** | **hand rebuilt as a three-finger claw, floating lines removed, GLB re-exported, animation QA sheet done** |
-| **v13 P3c** | **`hero_animation_v13_p3c.blend`** | reference pass 2, geometry only: arm rebuilt as a ball-and-tube chain with seam rings, hopper chunkier, window slimmed, body bevel 0.05, plinth gap closed, two buttons added, three front lights shrunk |
-| **v13 P3d** | **`hero_animation_v13_p3d.blend`** | zero-risk finishing: feet dug out of the plinth, hopper throat mint collar, button ring seats, wrist amber cuff, tilted label decal |
-| **v13 P3e** | **`hero_animation_v13_p3e.blend`** | outlet pass: rail narrowed to y ±0.42, `P1_ChuteSeat` rebuilt as a collar, `Outlet_Flap` re-authored as a flush cream hatch, plinth overhang trimmed, four reference-absent light meshes hidden |
-| **v13 P3f** | **`hero_animation_v13_p3f.blend`** | reference pass 3: top mint is now a conformal skin wrapping the shoulders, window widened to 0.5421 and heightened, side mint strips raised to meet the skin, `Arm_Mount` creamed, fingers thickened 1.12× as tubes |
-| **v13 P3g** | **`hero_animation_v13_p3g.blend`** | geometry pass closed: bevels on `P1_ShoulderBay` and both mint strips, eight bolt heads pulled 0.006 proud |
-| **v13 P3h (current)** | **`hero_animation_v13_p3h.blend`** | **arm socket rebuilt to the reference crop: torus boss + backing disc + stub tube in `P1_ShoulderBay`, `Arm_Base` is a ball, yaw housing and riser are rings, the `Arm_Mount` plate is hidden. The arm no longer reads as a stack of boxes. No GLB yet — re-export from this file with `use_visible=True` (five objects are hidden on purpose).** |
-| **v14 P4 (current)** | **`hero_animation_v14_p4.blend`** | **seven-item pass.** (1) `Arm_Base`, `Arm_Yaw_Housing` and `Arm_ShoulderRiser` carried 1.80-2.05 units of baked mesh offset, so the whole socket collapsed to the machine origin and the two rings rendered lying on the floor; mesh offsets zeroed, the socket now reads ball + collar + ball at the shoulder. (2) `MAT_Window_Glow` was white with emission 0; now cyan (0.122, 0.791, 0.783 linear) at strength 4.0. (3) body height 1.80 -> 2.46 (mesh Z x 1.36667, action keys +0.49), window re-cut to 0.9756 x 1.5154, every body child remapped proportionally. (4) chute shortened 2.24 -> 1.22 and all 24 faces set to `MAT_Color_Amber`. (5) base 0.12 -> 0.28 (scale_z 0.18667). (6) three-point studio lighting: world 0.55/0.52/0.48, AREA_Key 620 W, AREA_Fill 170 W, AREA_Rim 360 W, sun 1.3, exposure 0, view transform Standard. (7) the 30 `P2_Nebula_*` capsules are gone, replaced by `P2_Plasma`, a procedural emissive plane inside the window recess. Grab distance stays 0.006 at f31/f96/f147, loop delta 0.000, and every body child follows the f165 wobble by the same -0.048. Follow-up polish in the same file: `P1_ShoulderBay` was a lumpy blob and is now a rebuilt 48-segment cylindrical boss (radius 0.32, local x -0.365..0.14) with a 0.022 rim bevel; hopper scaled 1.03248 in XY so its diameter is exactly 0.7778 of body width; the outlet bore shrank from 0.91 to 0.52 tall and was re-centred on the chute mouth (z 0.878..1.398); `Outlet_Flap` became a compact 1.04 x 0.44 hatch covering that bore; `P1_ChuteSeat` trimmed to y +-0.70. All seven ratios now land within 2% (six within 0.1%). `hero_animation_v14_p4.glb` IS exported: 1.39 MB, 45 meshes, 52 nodes, 11 materials, 12 animations (hidden lights and `Arm_Mount` correctly excluded by use_visible), 1 embedded PNG. The plasma is procedural, so it was baked to `review/v14/plasma_bake.png` (512x768) and re-authored as `MAT_Nebula_Plasma_Baked` — procedural node trees do NOT survive glTF. The plane needed an explicit UV layer for that texture to land. Second polish pass: `Machine_Chute` was a flat-floored prism (32 verts) and is now a lofted curved U-channel scoop — 5 stations from x 1.16 to 2.38, elliptical trough 0.355 deep on a 0.05 shell, tapering half-width 0.63 -> 0.35 so the spout narrows, 190 verts, all faces on `MAT_Color_Amber`, world envelope x 1.16-2.38 / y +-0.68 / z 1.035-1.44, trough floor at 1.085 which is exactly where `Product` seats at f232. `Arm_Finger_L/R` were fat round sausages; they are now flattened 0.74 in local Y and cross-section-tapered to 0.70 over the outer 45% of their length, so they read as blades instead of tubes. Grab still 0.006 at f31/96/147, loop delta 0.000, chute_len/bodyW 0.6778. GLB re-exported at 1.42 MB with the same 45/52/11/12/1 structure. Plan-gap pass: `Machine_WindowGlass` added — a 56-segment superellipse disc (0.452 x 0.697 half-extents, exponent 3.2) domed 0.015 forward at y -0.780, with `MAT_Window_Glass` (base 0.020/0.060/0.058, roughness 0.02, alpha 0.38, IOR 1.45, alphaMode BLEND) — this closes the plan's missing third window layer, and it visibly tints the plasma. Screws went 8 -> 16 (`P1_Bolt_L0..L3` / `R0..R3` added on the side faces, rotated 90 deg about Z). A second plasma plane `P2_Plasma_Back` sits 0.062 behind the first with mirrored UVs at emission 0.55. `Arm_UpperArm_Seam_A/B` and `Arm_Forearm_Seam_A/B` are dark seam bands (32-gon rings, host radius +0.006, 0.020 wide) parented into the tubes. Triangles 24,512 / 60,000. Grab 0.006, loop 0.000, seam rings track the arm with 0.000 offset. GLB now 1,535,696 B, 59 meshes / 66 nodes / 13 materials / 12 animations / 1 image, `MAT_Window_Glass` exported as alphaMode BLEND. Structural pass: `P1_MintStrip_L/R` are now separate plates, 0.022 thick with their outer faces at +-0.912 (0.012 proud of the shell at +-0.900) so the panel edge casts a real step instead of reading as a decal. Bevel discipline normalised to a 4:2:1 ratio at model scale — class A 0.050 (shell), class B 0.025 (base, base band, shoulder bay, detail rail, top skin, which had no bevel before), class C 0.012 (gripper, wrist collar, outlet flap, fingers), with the mint plates and chute seat at 0.008/0.020. Triangles 25,392 / 60,000. Grab 0.006, loop 0.000, panel step measured at 0.012. GLB now 1,557,024 B / 59 meshes / 66 nodes / 13 materials / 12 animations / 1 image. Closing pass: the 8 side screws were misplaced at x +-0.803 (inside the 0.9 shell, invisible) and are now at +-0.903 with the rotation flipped per side; all 16 now share ONE `P1_Bolt_mesh` — a 12-gon head, radius 0.028 (up from 0.018 so the slot reads), 0.011 thick, with a 0.004-deep slot cut by an applied EXACT boolean — which is why the GLB mesh count dropped 59 -> 44. Base raised to 0.288 so base+feet / bodyH = 0.1577 against the reference 0.1576. `MAT_Idea` was Emission-only (the orb rendered as a flat disc); it now runs through the Principled BSDF with base + emissive 0.55, so the orb shades. Finger closed pose tightened from 0.5236 to 0.38 rad: f31/43 fingertip-to-orb-centre went 0.2602/0.2630 -> 0.2531/0.2560 against the plan's 0.2497 target, and f147 open stays 0.2677/0.2703 against 0.267. The f147-156 hopper check was run frame by frame: the orb is above the rim at f147/f152 (descending) and crosses into the bowl between f152 and f156, staying inside through f165 — the drop beat lands in the right window. Triangles 25,712 / 60,000. Grab 0.006, loop 0.000. GLB 1,524,228 B / 44 meshes / 66 nodes / 13 materials / 12 animations / 1 image. Known residual: fingertip distance is 1.4-2.5% over the plan's 0.2497 (rotation alone cannot close it — the finger arc is nearly tangential to the ball at that pose), and the plan's literal 4 mm / R12 numbers were applied as ratios instead, because at 1.8-unit body scale they are 0.9 px and smaller than the existing fillet.** |
-| **v14 P6 (current)** | **`hero_animation_v14_p6.blend` + `.glb`** | **outlet rebuild — the outlet no longer reads as "a channel cut in a slab". Every boundary now obeys one contract: trough outer y ±0.640 / outer floor 1.035 / trough floor 1.085 / rim 1.440; bore y ±0.652 z 1.023–1.452; collar cavity y ±0.646 z 1.029–1.446 ⇒ 0.006 clearance on every side and no coplanar faces anywhere. (1) `Cutter_Outlet` had a stale non-identity `matrix_parent_inverse`; cleared and resized so the bore wraps the trough instead of being an unrelated 0.52-tall slot. (2) `P1_ChuteSeat` is no longer a root-only plate — it is a full-length cream COLLAR, a stadium-plan tray (outer ±0.748, walls 0.924–1.550, floor slab at 0.924) swept x 0.82 → 2.4867 with an elliptical nose, the rim diving 1.550 → 1.478 toward the tip, 168 verts / 128 polys, bevel 0.05 × 3 seg, `MAT_Body`. Evidence: `review/v14/ref_outlet_top.png` and `ref_outlet_34.png` show cream wrapping the ENTIRE amber opening with a dark groove between them — cream is the outer hull, amber only the liner. (3) `Machine_Chute` rebuilt as a 70-pt U-section loft: back cap pushed to x 0.88 (buried in the body so the amber throat meets the bore instead of leaving a cream shelf), 8 straight stations to x 1.74 then an elliptical plan nose (A 0.640) out to u 0.9999, rim roll 0.010 × 0.012 over a 0.040 flat band, 1,633 verts / 2,852 tris `MAT_Color_Amber`. (4) `Outlet_Flap` DELETED with `Outlet_FlapAction` — every hinge it could have is creased into the collar: a top hinge at (0.90, 1.446) at net −70° puts the tip at (1.286, 1.305), inside the trough; >90° hits the collar lip; a bottom hinge hits the lower wall; a mouth lid would hide the scoop. The reference has no flap. **This is a deviation from the approved contract — flagged, not buried.** (5) `Machine_Detail` deleted (the floating rail). (6) `P1_MintStrip_R` split into z 0.506–0.924 and 1.550–2.645 so the collar interrupts the band. `Product` still seats at f232 with a 0.001 gap over the trough floor 1.085. Triangles 28,174 / 60,000. GLB 1,577,084 B / 42 meshes / 64 nodes / 13 materials / 11 animations / 1 image — exported from the live 5.4 session because `blender_export` shells out to a PATH blender that is not installed here (`spawn blender ENOENT`); that path also bakes every animation, hence the "different interpolation methods" warnings. Checkpoint `hero_animation_v14_p5.blend` holds the same contract WITHOUT the full-length collar. |
-
-`hero_animation_v13_p3b.glb` is the newest GLB deliverable: 1,094,460 B, 76 meshes, 83 nodes,
-15 materials, 18 animations, 21,802 triangles, images/textures/samplers all 0. **It predates
-P3c through P3h**, so it does not contain the rebuilt arm, the hopper rework, the outlet pass,
-the top skin, the resized window, the polish passes or the new arm socket — re-export from
-`hero_animation_v13_p3h.blend` before shipping anything, and pass `use_visible=True`: five
-objects (`Machine_Light_01/02/03`, `Machine_LightStrip`, `Arm_Mount`) are hidden deliberately
-because the reference has nothing there.
-`hero_animation_v13_p3.glb` does not exist - the GLB skipped P3a entirely.
-
-## 2. What the plan wanted vs what is done
-
-| plan stage | status |
+| 问题 | 现状（可证实） |
 |---|---|
-| P0 audit fixes (D1–D3, Q4 loop closure) | done, verified |
-| P1 shell round + width 1.80 + three junctions | done |
-| P1 palette to section 5.1 | done (values set from measured p50 midtones) |
-| P1 window ~0.64 | done, then corrected in P2 to the measured 0.5421 (see below) |
-| P2 window shape + nebula + GLB parity | done |
-| P3 grab criterion pinned before claw work | done |
-| P3 hopper bowl | done |
-| P3 chute scoop + rail | done |
-| **P3 claw (rounded pads + fixed third finger)** | **done - palm ellipsoid, three hooked fingers, wrist collar rebuilt** |
-| final GLB export + animation QA sheet | done (P3b) |
+| 最新已提交几何 | `hero_animation_v14_p47_no_rail.blend`（repair pass） |
+| 最新 GLB | `hero_animation_v14_p6.glb`（2026-11-02）—— 不含 P18 / P19 / repair 的任何改动 |
+| p47 的 GLB | **不存在**，未导出 |
+| 未提交改动 | `p19.blend` 于 2026-11-08 19:05 被另存：删 `P1_MintStrip_L/R`、`P3f_TopSkin`，加无材质 `Cube`（动作 36→37）；无文档 |
+| 沉孔可见性 | **12/20**：F3 已在 `p47_hole_f3.blend` 开孔；T0–T3、L0–L3 仍被挡（§3.1 / §9-2） |
+| 旁支 | `zhuazhuaji*` 是同一场景拷贝后删件 + 从 Desktop append 的 WIP（§5），不是 p47 的后代 |
+| 文档 | `BUILD_NOTES.md` 止于 v13 P3h，**v14 零记录**；本文件是 v14 唯一台账 |
 
-### two places where the design doc contradicts itself (both decided, both recorded)
+一句话：主线停在 p47，但 p47 没有 GLB、也没有对应渲染；最新导出的 GLB 仍是 p6，它不含 v14 后续的任何改动。
 
-1. **Window width.** Section 6 P1 says ~0.64 of body width; section 4.3 measures the
-   reference at 0.5421. 4.3 is the scripted measurement, so P2 rebuilt the opening to
-   **0.5467 x 0.6200**. The 1.5528 window aspect in 4.3 is not reproducible on this body
-   at all — it only holds because the reference machine is 0.73 W:H and this one is 1.00
-   (section 12 Q1's accepted compromise).
-2. **Hopper throat.** Section 12 Q1 asks whether the ball still passes the hopper mouth.
-   There is no mouth: measured, the hopper is a closed shell and the orb **rests on a
-   solid pedestal whose top face is z 2.35**. Nothing shrinks the hopper; section 9's
-   "ball jams" risk is void.
+## 1. v14 提交链
 
-## 3. Verified invariants (frozen — do not let these drift)
-
-| quantity | value | how it is checked |
-|---|---|---|
-| body width / height | 1.8000 / 1.8000, x ±0.9000 | `qa_v2/v13_p1_preflight.py` |
-| arm root | `Arm_Base` min x = **-1.864** | same |
-| chute mouth | `Machine_Chute` min x = **1.160** | same |
-| chute floor / support plane | **z 0.705** | `qa_v2/v13_product_path_gate.py` |
-| orb rest | pedestal top **z 2.35**, orb centre (0,0,2.6), r 0.25 | axis ray in `v13_p3_chute_hopper.py` report |
-| animation | 39 actions, 149 fcurves, 3,345 keys on P3a; **37 / 147 / 3,331 from P3b onward** (unchanged by P3c), loop endpoints all 0, f1 vs f327 `matrix_world` of all 93 objects identical | `qa_v2/v13_baseline_audit.py` |
-| grab contact | **current (P3f): f31 0.00557/0.01118, f43 same, f147 0.01267/0.01492, f155 0.40271/0.45016, overlap 0** — P3b..P3e were f31 0.01148/0.01432, f147 0.01808/0.02085, f155 0.40630/0.45380; the P3f tightening is the 1.12× finger thickening, still well clear of the 0.002 floor | `qa_v2/v13_grab_gate.py` |
-| triangle budget | 20,646 on P3a; 22,650 on P3b; 23,854 on P3c; 23,442 on P3d; 23,322 on P3e; 23,540 on P3f; 24,148 on P3g; **24,464 from P3h** of 25,000 (the arm-socket rebuild cost 316 net) | `v13_baseline_audit.py` |
-
-The 39 -> 37 action drop is **not a regression**: `MAT_Window_Noise1Action` and
-`MAT_Window_Noise2Action` lost their nodes when P2 rebuilt the window, became zero-user
-datablocks and were dropped on the next save-reload. Nothing evaluates them.
-
-## 4. Gates and how to run them
-
-Blender used throughout: `G:\Blender\blender-5.4.0-alpha\blender.exe` (machine-specific —
-change the path on another machine; the asset was written by 5.4, opening it in 5.3 warns
-about data loss).
-
-```bat
-set BL=C:\path\to\blender.exe
-set A=hero_animation_v13_p3.blend
-
-:: animation integrity, loop closure, grab contact, poly budget
-"%BL%" --background %A% --python qa_v2/v13_baseline_audit.py -- --out qa_v2/x_audit.json
-
-:: product support + fall (the gate the plan was missing)
-"%BL%" --background %A% --python qa_v2/v13_product_path_gate.py -- --out qa_v2/x_gate.json
-
-:: hard-surface intersection (product vs shell / chute / junction pieces)
-"%BL%" --background %A% --python qa_v2/v13_penetration_check.py -- --out qa_v2/x_pen.json
-
-:: grab contact, judged against the pinned bands
-"%BL%" --background %A% --python qa_v2/v13_grab_gate.py -- --out qa_v2/x_grab.json
-
-:: frozen anchors, hopper, window ratios
-"%BL%" --background %A% --python qa_v2/v13_p1_preflight.py -- --out qa_v2/x_pre.json
-
-:: four orthographic views (AgX; Standard used to clip the cream to white)
-"%BL%" --background %A% --python qa_v2/v13_p0_render.py -- --outdir review/v13 --prefix x
-```
-
-Gates exit non-zero on FAIL (product-path uses 3, intersection 3, grab 3), so they can be
-wired into CI as-is.
-
-Palette sampling and the reference contact sheet run on plain Python + Pillow, not
-Blender:
-
-```bat
-python qa_v2/v13_p1_review.py --palette review/v13/p3_front.png ^
-    --sheet review/v13/contact.png --panels review/v13/p3_front.png,review/v13/p3_right.png,review/v13/p3_top.png
-```
-
-## 5. Pipeline order (running these twice is NOT safe)
-
-The stage scripts mutate the file they are given. Run them in this order from the P0
-asset, in sequence, each on the output of the previous:
-
-```
-v13_p1a_shell.py  ->  v13_p1b_dress.py  ->  v13_p1c_details.py  ->  v13_p2_window.py
-                  ->  v13_p3_chute_hopper.py  ->  (P3b claw: NO SCRIPT)
-```
-
-P3b and P3c are the two stages with no script. Both were authored live through the Blender
-MCP bridge (port 9876) under the project rule that those stages run through MCP only. Every
-parameter is recorded in `BUILD_NOTES.md` under "v13 P3b" and "v13 P3c", so the scripts can be
-written from them, but **neither stage can currently be replayed from the P3a asset** the way
-the earlier stages can.
-
-`v13_p1_seat_contact.py` is idempotent-ish and must be re-run **after any change to the
-chute or body geometry**, because it re-derives the product's contact height from the
-surface that is actually there. It only ever raises, never lowers.
-
-## 6. What is next (in order)
-
-1. **Write `qa_v2/v13_p3b_claw.py`** from the recorded parameters so the claw stage becomes
-   replayable like the others. This is the only stage-script gap left.
-2. **The claw cannot close around the orb.** The orb is r 0.25 with its centre 0.396 ahead of
-   the wrist, so fingers reach its surface at x 0.146 and cannot meet in front of it without
-   wrapping past x 0.579. The delivered ceiling is "three pads touching, palm cupped behind".
-   Changing that means changing the orb radius, which the animation pins.
-3. **Remaining shape deltas against the reference after P3c**, all measured, none of them may
-   touch the animation:
-   - **The chute is the big one.** `Machine_Chute` is 2.24 long = 1.24 of body width; the
-     reference measures 0.677. It cannot be shortened: `ProductAction.001_V2` drives the
-     product from x 1.36 to 5.9 along that surface over f232..f289 and the part is parented
-     to the keyframed empty `Machine_OutputChute`. P3e narrowed the rail to y ±0.42 and
-     rebuilt `P1_ChuteSeat` as a 0.55-tall collar, so it now reads as a scoop plus a slim
-     tongue; a downward raycast proved the cream shell carries the product on **0 of 57**
-     RESTING+ARC frames (amber floor to xc 2.09, dark rail from xc 2.22), so the shell is
-     decorative and only the tongue is structural.
-   - `Outlet_Flap` was re-authored in P3e as a flush cream hatch (scale baked to 1, vertices
-     rebuilt, amber -> `MAT_Body`); the −30° visor pose is gone. Its action still swings it
-     out over f227..f255.
-   - Window cavity is still light grey behind pale nebula spheres; the reference is a dark
-     teal cavity with a diffuse nebula. Material change, deliberately deferred. The window
-     *geometry* is now at reference proportion: `Machine_WindowGlow` is 0.9757 wide = **0.5421
-     of body width, an exact match**; height 1.2656 = 0.7032 of body height against the
-     reference's 0.6158, so `window_h_to_w` lands on 1.2972 against the reference's 1.5528.
-     That last gap is unreachable: the reference's own three window numbers are mutually
-     inconsistent (0.5421 × 1.5528 = 0.8416 ≠ 0.6158) and the button row plus the top bevel
-     cap the achievable height at about 1.33.
-   - The mint top is now a conformal skin (`P3f_TopSkin`, rebuilt from the body's evaluated
-     top and shoulder faces, offset 0.0025 along the normals) that wraps both shoulders, and
-     `P1_MintStrip_L/R` were raised to z 1.845 to meet it — so the mint reads as one continuous
-     band instead of a plate on a box. It is too glossy under the QA key light; roughness is a
-     material value and stays deferred.
-   - Fingers are round tubes, thickened 1.12× along their bend by a PCA split (axial component
-     untouched, perpendicular component scaled). The user ruled that round tubes read better
-     than the reference's flat leaves, so the leaf rebuild is cancelled.
-   - Four feet exist (`Machine_Feet`, exposed 0.08 below the plinth since P3d); the mint side
-     panel is still a thin strip rather than the reference's large rounded panel.
-   - `Machine_Light_01/02/03` and `Machine_LightStrip` do not exist in the reference and were
-     hidden in P3e rather than deleted (data + actions kept for a later FX pass). Any GLB
-     export must use `use_visible=True` or they come back.
-   - body W:H 1.00 vs the reference's 0.73 (the section 12 Q1 accepted compromise).
-4. **Lighting is now the weakest link, not geometry.** `Cam_Hero` plus two suns
-   (`SUN_Hero` 3.0, `FILL_Hero` 0.8) with a 0.051 world is not the reference's studio look —
-   the machine renders flat and dark under it while the shape reads well under the `QA_*`
-   rig. Reverse-engineering the reference's soft key from upper left + large fill + seamless
-   grey backdrop + contact shadow was ranked as a top lever in the design doc and is still
-   untouched.
-5. **Re-export the GLB from `hero_animation_v13_p3f.blend`** (`export_apply=True`,
-   `use_visible=True` because `Machine_Light_01/02/03` and `Machine_LightStrip` are hidden and
-   absent from the reference, then delete the 5 scaffolding cutters/proxies first). The
-   existing `hero_animation_v13_p3b.glb` predates P3c…P3f and does not contain any of it.
-6. **Delivery checklist**: `.blend` + `.glb` + `BUILD_NOTES.md` stage section + a final
-   side-by-side four-view against `reference/style_v13_ref.png` at delivery framing.
-
-## 7. Tool caveats worth knowing before you trust a number
-
-- **QA render exposure.** `v13_p0_render.py` used `Standard` view transform, which blew the
-  cream to #FFF (25.8% of the front view's subject pixels). It now defaults to AgX. Any
-  colour verdict made from renders produced before that change is void.
-- **Stale depsgraph in `--background`.** `object.matrix_world` is not refreshed after
-  `frame_set`; always read `obj.evaluated_get(dg).matrix_world`. And when measuring polygons,
-  measure at a frame where the object is visible — the poly budget used to be read at f155
-  where `Product` is scaled to 0.001, and its bevel was skipped, undercounting by 96 tris.
-- **Welded seams + bevel = self-intersecting geometry.** The rebuilt chute welded three
-  boxes at coplanar seams; the existing bevel modifier then produced self-intersecting
-  geometry and every overlap test lied by 7 frames. Loose parts, walls sunk 5 mm into the
-  floor, fixed it. Do not "fix" the intersection gate by triangulating it — that made a
-  known-clean file report 27 frames.
-- **`BVHTree.FromObject` ignores the parent chain**, so pieces parented to the body are
-  compared at the wrong place. The gate builds world-space trees instead.
-- **Building meshes in world coordinates for a parented object** silently displaces it
-  (this moved the window cutter and stopped the outlet cutting). Build in local space via
-  `matrix_world.inverted()`. The claw is the sharpest case: `Arm_Finger_L/R` and
-  `Arm_Gripper` all carry a non-identity `matrix_parent_inverse`, so wrist-space points have
-  to be pushed through `obj.matrix_world.inverted() @ wrist.matrix_world` before they are
-  written into the mesh.
-- **Degenerate faces become NaN under Bevel, and NaN kills the glTF exporter.**
-  `export_apply=True` fails with `ValueError: cannot convert float NaN to integer` at
-  `io_scene_gltf2/blender/exp/export.py:515`. The raw mesh looks fine because `polygon.area`
-  is only read after evaluation. Check the evaluated mesh: `Arm_Finger_L/R` had 15 NaN
-  vertices each, grown from 16 zero-area tip-cap faces. `remove_doubles(1e-5)` +
-  `dissolve_degenerate(1e-6)` fixes it; the grab gate does not notice, because you cannot
-  grip with a degenerate face.
-
-## 8. Open questions for the user
-
-- **The claw is closed as far as geometry allows.** Reference wants a cage of three fingers
-  around the orb; the orb (r 0.25, centre 0.396 ahead of the wrist) makes that impossible
-  without moving the animation. Delivered: three hooked pads touching the orb, palm cupped
-  behind. If a true cage is wanted, the orb radius or its distance from the wrist has to
-  change - that is a user call, not a modelling one.
-- **P3b has no stage script** (see section 5). Worth writing before anyone replays the
-  pipeline.
-- Body W:H stays at 1.00 against the reference's 0.73 — accepted in section 12 Q1, not
-  revisited since.
-
----
-
-## 9. 四处重点核查（2026-11-03，审计阶段）
-
-被审资产 `hero_animation_v14_p19.blend`。完整报告：`review/v14/FOUR_POINT_AUDIT.md`，
-对照渲染 `review/v14/audit/`（12 张），实测 JSON `scratch/audit_deep.json` /
-`probe_outlet.json` / `probe_outlet2.json` / `probe_final.json` / `measure_ref*.json`。
-
-**四项全部判定为差异，均需处理。** 高度/比例类指标实际上都是达标的，差的是结构性质：
-
-| 部位 | 参考图 | 当前实测 | 根因 |
+| commit | date | 内容 | 产物 |
 |---|---|---|---|
-| 底座 | 实心内收碗形 + 4 只圆截面短脚 | `Machine_Base` 填充率 **0.128**、4 个连通分量；`Machine_Feet` 填充率 **0.034**、4 块悬空薄方片（z −0.10…0，与底座主体不相接） | 底座被建成了"桌板架"而非实心体；`P1_BaseBand` y ±0.825 比底座 ±0.80 外凸 0.025 成台阶。底座+脚/机身高 **0.1577**（参考 0.1576，达标） |
-| 螺丝孔 | 沉孔凹窝（内壁亮环 + 窝底阴影），每面 4 枚，窝径 ~13 px，浅奶油色 | 16 枚 **外凸 11 mm** 近黑螺帽（`P1_Bolt_*`），`Machine_Body` 上**无 ScrewCut 布尔** | 凹凸方向反了；位置贴面板四角而非参考实测位 |
-| 夹爪 | 3 片**扁叶片**（有厚薄方向）+ 每片根部圆销铰链，浅杏色 sRGB(0.90,0.81,0.69) | 3 根**圆管**，管身有环形瘤节，**无铰链件**，琥珀橙 sRGB(0.884,0.697,0.526)；张角 112.6°–123.7°（应 120° 等分） | PCA 1.12× 加粗留下瘤节；铰链硬件从未建；扁叶重建此前被用户裁定取消（§6），属**已知授权偏离** |
-| 出料口 | 橙腔**真实凹槽**（自遮蔽渐变），奶油唇完整包住 + 暗缝，L 形竖腿 z1.12–2.09 + 圆勺，总长 0.66 倍机身宽 | `Machine_Chute` signed_volume **−0.09042**（法线翻转的闭合壳，0 非流形边）、顶面封死；`Cutter_Outlet` x 0.74…1.24 而 `Machine_Body` 在 **x=0.74 仍是实体** → 机身孔是**盲孔**；口内视线被实心墙堵死；橙件 z 1.556 比奶油唇 1.320 **高 0.236**（关系反） | 橙件是封闭实体不是槽；机身孔未挖穿；唇橙包裹关系反 |
+| `1eac252` | 11-02 | P4 参考锁定比例、材质、出口重建计划 | `p4.blend` / `p4.glb` |
+| `da691bc` | 11-02 | P6 出口改为奶油壳 + 琥珀内衬 | `p5.blend`（对照）、`p6.blend` / `p6.glb` |
+| `496b454` | 11-03 | P18 出口改为橙色嘴 + 奶油托（越界：67,444 tris） | `p18.blend` |
+| `6c21d26` | 11-03 | P19 收回为开放 U 槽 + 奶油领口，拆掉 P18 的回归 | `p19.blend` |
+| `92b7ed5` | 11-03 | 四点审计：底座 / 螺丝 / 爪 / 出口 | `review/v14/AUDIT_REVIEW.md` 等 |
+| `5ae66db` | 11-04 | repair pass：出口、底座、螺丝、爪 | `hero_animation_v14_p47_no_rail.blend` |
 
-**新发现（此前未记录）**：`Machine_Base` 的非均匀 scale (0.34, 0.34, 0.192) 未 apply，
-导致其 Bevel 0.025 在 XY 方向实际只有 0.0085 —— 底座圆角被缩放压扁。
+`p5.blend` 并入了 P6 提交，没有单独 commit。
 
-**执行顺序建议**：底座 → 沉孔 → 夹爪 → 出料口（出料口风险最高，依赖产品落座高度）。
-**待用户裁决三项**：① 夹爪维持圆管还是改回扁叶；② 长托 `P1_ChuteRail` 保留还是删除；
-③ 出料口是否按参考缩短至 0.66 倍机身宽并重定时产品动画。
+## 2. 文件台账（2026-11-10 实测，Blender 后台只读统计）
+
+### 2.1 v14 blend
+
+| 文件 | git | 大小 | 对象 | 网格对象 | 材质 | 动作 | 备注 |
+|---|---|---|---|---|---|---|---|
+| `p4.blend` | tracked | 871,210 B | 86 | 71 | 16 | 37 | P4 基线 |
+| `p5.blend` | tracked | 896,413 B | 83 | 68 | 16 | 36 | P6 的对照检查点 |
+| `p6.blend` | tracked | 897,815 B | 83 | 68 | 16 | 36 | 最后一个出过 GLB 的状态 |
+| `p7.blend` | **untracked** | 896,517 B | 83 | 68 | 16 | 36 | 11-02 16:04 另存，无文档；不在提交链上 |
+| `p18.blend` | tracked | 873,741 B | 83 | 68 | 16 | 36 | 出口回归版（tris 68,124 全部对象） |
+| `p19.blend`（HEAD） | tracked | 877,407 B* | 88 | 73 | 16 | 36 | 审计所用版本；无激活相机 |
+| `p19.blend`（工作区） | **M** | 886,884 B | 86 | 71 | 16 | 37 | 未提交 WIP，见 §4 |
+| `p47_no_rail.blend` | tracked | 870,177 B | 117 | 93 | 16 | 36 | 主线头部；激活相机 = `OutletCam` |
+| `p47_hole_f3.blend` | **untracked** | 873,076 B | 118 | 94 | 16 | 36 | p47 + `P3d_Label` 的 F3 过孔（§3.1） |
+| `reconstruct.blend` | **untracked** | 879,126 B | 65 | 50 | 16 | 36 | 11-05 另存，无文档、无激活相机，缺底座/脚 |
+
+\* HEAD blob 877,407 B；工作区被覆盖为 886,884 B（尺寸不同也说明不是单纯的元数据变更）。HEAD 内容用 `git show` 导出到临时文件后统计。
+
+### 2.2 GLB
+
+| 文件 | git | 大小 | meshes | nodes | 材质 | 动画 | 贴图 |
+|---|---|---|---|---|---|---|---|
+| `v12_style.glb` | tracked | 581,760 B | — | — | — | — | — |
+| `v13_p2.glb` | tracked | 857,620 B | — | — | — | — | — |
+| `v13_p3b.glb` | tracked | 1,094,460 B | 76 | 83 | 15 | 18 | 0 |
+| `v14_p4.glb` | tracked | 1,524,228 B | 44 | 66 | 13 | 12 | 1 |
+| `v14_p6.glb` | tracked | 1,577,084 B | 42 | 64 | 13 | 11 | 1 |
+| `zhuazhuaji_webfix.glb` | **untracked** | 1,198,796 B | 35 | 56 | 12 | 17 | 0 |
+
+GLB 数字均由解析 GLB JSON chunk 得到；v12 / p2 只核对了体积。
+
+### 2.3 v13 与更早
+
+v13 是 11 个阶段文件（`p1`、`p2`、`p3`、`p3b`–`p3h`、`soft`，250–347 KB），只出过 `p2.glb`、`p3b.glb`；细节留在 git 历史与 `BUILD_NOTES.md`，不在此重复。v13 的"最新交付物"已不是 p3b（见 §8）。
+
+## 3. 已证实的量化指标（p47，repair pass 后）
+
+| 项 | 值 | 来源 |
+|---|---|---|
+| 三角面 | **26,424**（audit，f240；预算 60,000） | `qa_v2/v13_baseline_audit.py` 复跑 |
+| 动画 | 36 actions / 146 fcurves / 3,324 keys，loop 端点差 **0.0** | 同上 |
+| 底座实体率 | **0.90241**（bbox 1.80 × 1.56 × 0.268，z 0.02–0.288；scale 已归 1） | bmesh 体积复测 |
+| 底座脚嵌入 | `Machine_Feet` z −0.10…0.02，即嵌入底座 **0.02** | bbox 复测 |
+| 溜槽法线 | 有符号体积 **+0.090418**（朝外）；bbox x 0.86–2.30 / y ±0.415 / z 1.039–1.556 | bmesh 复测 |
+| 出口贯穿 | 机身壁已切开：从 x 0.80、0.85 向 +X 的射线在 z 1.10/1.30 全部逸出；内端由琥珀 `P1_BoreBack`（x 0.66–0.72）封住，顶部有 `P1_BoreLinerTop`（z 1.432–1.452） | 射线复测 |
+| 领口位置 | 奶油领口 bbox x 2.22–2.32、y ±0.52、z 0.97–1.597（已在嘴部）；`P1_ChuteRail`、`P1_ChuteSeat`、`P1_BaseBand`、`P2_OutletBand`、`P1_Bolt_*` 均已移除 | 对象表 |
+| 螺丝 | 0 个螺栓实体；20 个 `Cutter_Screw_{B,F,L,R,T}{0-3}` 已布尔切入机身；开孔后 **12/20** 可见（§3.1） | 对象表 + 轴向射线 |
+| 爪硬件 | 12 件（`Arm_Finger_{L,R,C}_{cuff,pin,washerA,washerB}`），全部父级 `Arm_Wrist`；cuff=琥珀，pin/washer=深色 | 对象表 |
+| 产品路径 | PASS：0/96 帧穿透，首帧逸出 f289，弧顶间隙 0.3901 @ f263 | `v13_product_path_gate.py` 复跑 |
+| 穿透 | PASS：0/96 帧（`P1_ChuteSeat` 已删，gate 对其跳过） | `v13_penetration_check.py` 复跑 |
+| 抓取 | PASS（v13 gate 口径）：f31 L 0.00645 / R 0.00853，指尖间距 0.2371 | `v13_grab_gate.py` 复跑 |
+
+p19（审计版，供对照）：24,612 可见三角面、36 actions、抓取 0.2531/0.2560（尖到球心口径）、loop 0.000 —— 见 `review/v14/p19/P19_REPORT.md`。
+
+### 3.1 沉孔可见性（`p47_hole_f3.blend`，轴向射线）
+
+沿每个 cutter 轴线从外部射入，跳过不参与渲染的 `Cutter_*`，取第一个实体命中：
+
+| 组 | 命中 | 结论 |
+|---|---|---|
+| B0–B3 / R0–R3 | `Machine_Body` | 可见 8 |
+| F0–F2 | `Machine_Body` @ y −0.784 | 可见 3 |
+| F3 | `P3d_Label` 过孔 → `Machine_Body` @ y −0.784 | **新开孔**，可见 1 |
+| L0–L3 | `P1_MintStrip_L` @ x −0.912 | 被挡 4 |
+| T0–T3 | `Machine_Hopper` @ z 3.4447 | 被挡 4 |
+
+F3 孔：r 0.015（等于沉孔口半径）、与 cutter 同轴、贯穿 4.5 mm 标签；标签太薄，放不下 class C 0.012 倒角，孔边保留直角。标签 bbox 未变，孔壁用 `MAT_Label`，tris 26,684（较 p47 +260，含新 cutter）。
+
+另核实：20 个 cutter 里只有 B/L 两组是口大腔小（r 0.031 在表面）；F/R/T 三组方向相反（r 0.015 在表面、0.031 在 16 mm 深处），从外面看到的是 30 mm 口。F3 的孔按 30 mm 口开，尺寸一致；其余未改。
+
+## 4. 未提交的 p19 改动（WIP，不可当基线）
+
+disk 上 `p19.blend`（11-08 19:05）相对 HEAD 的实测差异：
+
+- 删除 `P1_MintStrip_L`、`P1_MintStrip_R`、`P3f_TopSkin`；
+- 新增 `Cube`：144 verts / 270 tris，**无材质**、无修改器、父级为空，location 有 27 个关键帧（`CubeAction`，因此动作 36→37）；
+- 激活相机从"无"改为 `Cam_Hero`；
+- 规模：86 对象 / 71 网格对象 / 27,018 tris（audit），HEAD 为 88 / 73 / 27,344（raw）。
+
+没有对应脚本、日志或提交说明。**该文件的渲染状态未验证**：`Cube` 无材质，其包围盒（x ±0.931 / y ±0.799 / z 0.417–2.702）正好套住机身下部。
+
+## 5. `zhuazhuaji*` 支线判定：另起一支，不是主线替换
+
+证据（全部可复现）：
+
+1. **同一场景**：`p19` / `p47` / `zhuazhuaji` / `zhuazhuaji_webfix` / `reconstruct` 的 scene `uuid` 都是 `0c0915f9-5824-4d97-953c-c2faf89ffc66`，同一来源的拷贝。
+2. **只删不加**：`reconstruct.blend` = p19 工作区 − 21 个对象（`Machine_Base`、`Machine_Feet`、16 个 `P1_Bolt_*`、`P1_ChuteRail`、`P1_OutletCollar`、`Cube`），无任何独有对象。
+3. **继续删件**：`zhuazhuaji.blend` 在 p19 基础上又缺 `Arm_Base`、4 个接缝环、`Machine_WindowCavity`、`P2_Plasma` / `P2_Plasma_Back`、`P1_ShoulderBay`、`P1_OutletCollar`、`P1_OutletRailL/R`、`P2_OutletBand`、`Machine_Chute`、`P1_Bolt_R0`；材质 16→13，动作仍是 37（含 `CubeAction.001`）。
+4. **append 痕迹**：`zhuazhuaji_webfix.blend` 多出 `Cube.001`、`Cylinder`、`Cylinder.001`、`Arm_Shoulder_Joint.001`（均无材质，`Cylinder` 带 Mirror），以及 `MAT_Arm.001` / `MAT_Arm_Dark.001` / `MAT_Body.001` / `MAT_Product2.001` 与 6 个重复 action；`scratch/zhuazhuaji_audit/webfix_restore.py` 明确从 `C:\Users\Administrator\Desktop\zhuazhuaji.blend` append。删件还带走了动作：37→22。
+5. **没有 repair 成果**：`zhuazhuaji*` 里没有任何 p47 新增件（20 个沉孔切刀、12 个爪硬件、10 个出口件、`P1_BoreBack`），`Machine_Chute` 在 webfix 里是 32 verts / 48 tris 的方盒（MAT_Body），不是琥珀 U 槽。
+6. **GLB 落后于 blend**：`webfix_export.py` 10:20 导出 GLB → `webfix_restore.py` 11:01 append → 11:02 保存。GLB 里没有 4 个 WIP 对象（`Cube.001` / `Cylinder` / `Cylinder.001` / `Arm_Shoulder_Joint.001`），材质 12 vs blend 17、动画 17 vs blend 22、mesh 35 vs blend 57 个网格对象；即 **GLB 不是当前 blend 的导出**。
+
+结论：这是从 p19 工作区拷出、删掉成品件、再从 Desktop 补件的 **web 向旁支**，几何上不能替代 p47（缺底座/脚/出口唇/爪硬件，溜槽是方盒）。
+
+**待确认**（仓库内无法证实）：这条支线要解决的"web"问题是什么、是否要合并回主线、由谁维护 —— 只有 `scratch/zhuazhuaji_audit/*.py` 脚本，没有说明文档；`zhuazhuaji.blend` 源文件在 Desktop，不在仓库。
+
+## 6. 工具与流程注意事项（v13 实测，至今仍适用）
+
+- Blender：`G:\Blender\blender-5.4.0-alpha\blender.exe`（5.4.0-alpha）。重大改动走 live session + MCP；本文件数字全部来自 `--background` **只读**加载。
+- GLB 导出用 `use_visible=True`：`Machine_Light_01/02/03`、`Machine_LightStrip` 从 P3e 起就是隐藏件（参考图里没有），不隐藏会重新出现在 GLB；导出前先删脚手架 cutter/proxy。
+- `--background` 的 depsgraph 会过期：`frame_set` 之后读 `obj.evaluated_get(dg).matrix_world`；三角面要在对象可见的帧上量（f155 处 `Product` 被缩到 0.001，会少数 96 tris）。
+- QA 渲染的 view transform 决定颜色结论：早期 `Standard` 把奶油打到 #FFF（前视图主体 25.8% 像素），改 AgX 之前的所有颜色判断作废。
+- 焊接接缝 + Bevel 会自交，让重叠检测虚报（曾差 7 帧）；用"零件下沉 5 mm"解决，不要靠三角化"修"检测门（曾把干净文件报成 27 帧）。
+- `BVHTree.FromObject` 不认父级变换，父级挂件要用世界空间树（`qa_v2` 门禁已按此实现）。
+- 给有父级的对象按世界坐标写 mesh 会静默位移，需用 `matrix_world.inverted()` 回局部空间。爪最敏感：`Arm_Finger_L/R`、`Arm_Gripper` 的 `matrix_parent_inverse` 都不是单位阵。
+- 退化面在 Bevel 后变 NaN，glTF 导出直接失败（`ValueError: cannot convert float NaN to integer`）；先 `remove_doubles(1e-5)` + `dissolve_degenerate(1e-6)`，并且要查 evaluated mesh，raw mesh 看不出来。
+- 审计/门禁脚本在 `qa_v2/`，输出写 `qa_v2/*.json`；每步另存新 `.blend`，不要覆盖（`p19.blend` 就是被原地覆盖的）。
+
+## 7. 复现本文件数字
+
+```powershell
+$B = "G:\Blender\blender-5.4.0-alpha\blender.exe"
+$F = "g:\DSHProject\BlenderMcp\hero_animation_v14_p47_no_rail.blend"
+& $B --background $F --python qa_v2\v13_baseline_audit.py  -- --out $env:TEMP\a.json
+& $B --background $F --python qa_v2\v13_product_path_gate.py -- --out $env:TEMP\b.json
+& $B --background $F --python qa_v2\v13_penetration_check.py  -- --out $env:TEMP\c.json
+& $B --background $F --python qa_v2\v13_grab_gate.py          -- --out $env:TEMP\d.json
+```
+
+GLB 计数：直接解析文件头的 JSON chunk（meshes / nodes / materials / animations / images）。
+
+## 8. 旧台账的更正与缺口
+
+**已更正/收敛**
+- "最新 GLB 交付物 = `v13_p3b.glb`" 已过期 → 现为 `v14_p6.glb`，但也不是 p47 的导出。
+- P4 那一格混着 1.39 MB / 45 meshes / 52 nodes / 11 materials 等中间值，只有最后一组与文件一致：1,524,228 B / 44 / 66 / 13 / 12 / 1。现在只保留最终值。
+- 原 §3 的 invariants（机身 1.8000/1.8000、24,464 tris、37 动作、抓取 0.00557/0.01118）是 **v13 P3h** 口径，v14 已改（机身 2.46 高、预算 60,000、36 动作），不再作为检查线；改为 §3 的 p47 实测。
+- 原 §6 "what is next"、§8 "open questions" 是 v13 遗留（爪/溜槽），已删除，见 §9。
+
+**缺口（显性登记，未补圆）**
+1. p47 无 GLB；`review/v14/` 下也没有 repair pass 的渲染（只有 p19 与 audit 的图）。
+2. 沉孔可见性 **12/20**：F3 已由 `p47_hole_f3.blend` 在 `P3d_Label` 上开同轴过孔（§3.1）。其余 8 个仍被挡：
+   - T0–T3：`Machine_Hopper` 外沿在 z 3.4447 遮住，沿 −Z 要穿约 58 mm 的漏斗壁；在盛球面开孔会破坏语义，未做。
+   - L0–L3：`P1_MintStrip_L` 厚 22 mm，倒角后外表面只到 y ±0.6141；螺钉在 y ±0.6，只剩 14.1 mm 半径，而沉孔口半径 31 mm，开孔会切掉薄荷条边角。
+   备选做法见 §9-2。
+3. 爪的三指 **120° 等分未做**（`exec/EXECUTION_PLAN.md` 待办），repair 只换了指环、加了铰链硬件。
+4. 底座仍是圆角方板 + 倒角，参考的"碗形内收弧"未做（待办）。
+5. 爪/出口改完后动画没有重排（p47 与 p19 同为 36 actions，提交说明也未提动画）；`EXECUTION_PLAN.md` 待办里的"张开→抓球→进料口释放"仍未做，抓取姿态只过了 v13 门禁口径（f31 L 0.00645 / R 0.00853）。
+6. `BUILD_NOTES.md` 无 v14 记录；`exec/EXECUTION_PLAN.md` §6 的执行日志只到 11-03 的"第一轮"（0–4 阶段，阶段 4 标"⚠️ 未完成"），没有阶段 5/6 的记录，而 11-04 的 `5ae66db` 已经做了爪硬件、出口、螺丝 —— 日志停留在它之前，按提交和文件为准。
+7. `qa_v2/p47_gate.json`、`qa_v2/p47_pen.json` 里记的绝对路径是 `G:\DSHProject\hero-blockout\...`，不是当前 `g:\DSHProject\BlenderMcp`；内容与复跑结果一致，但路径对不上。
+8. `p7.blend`、`reconstruct.blend`、`zhuazhuaji*` 全部未跟踪且没有任何说明；`scratch/*.txt`、`scratch/*.json` 是过程日志/探针输出，不是可审阅的文档。
+
+## 9. 待用户裁决
+
+1. p47 是否就是 v14 主线的收口？要不要为它导出 GLB / 补渲染。
+2. 沉孔可见性：F3 已完成。T0–T3 / L0–L3 需要选：
+   - T：把 hopper 外沿收小或抬高，或把 4 枚顶螺钉移到 hopper 外；或接受 4 枚为内部紧固件（16/20）。
+   - L：在薄荷条孔位加宽/加圆形凸台（保留 class C 倒角），或把 4 枚侧螺钉内移到 y ±0.55；或接受在薄荷条边缘开缺（不推荐）。
+3. `p19.blend` 工作区的 `Cube` 改动是继续还是丢弃（当前它未提交、无材质）。
+4. `zhuazhuaji` 支线：并入主线、独立发布，还是弃用；源文件在 Desktop 需要纳入仓库吗。
+
+## 10. V2 重建（2026-11-23 / 11-24）—— 从 Tripo 参照反推低模 + 复用 p19 动画
+
+**目标**：用 Tripo 生成的 triangulate 参照（`ReferenceModel.blend`，43 件 mesh / 2,411 v / 2,929 tris / 100% 三角面 / 无骨架无动画）反推一套拓扑更好的低模，并把 `hero_animation_v14_p19.blend` 的既有动画原样接上。
+
+**做法（B′）**：不重建骨架，`bpy.ops.wm.open_mainfile(p19)` 后**原地替换 mesh datablock**——对象 / 父子 / `matrix_parent_inverse` / action / 约束 / 枢轴一个都不动，动画因此天然对齐；只有网格是新的。
+
+**尺度冲突与取舍**：Tripo 主体 1.000 宽 × 0.754 高，p19 主体 1.800 宽 × 2.460 高，机械臂伸展 x −3.02 vs −0.41（7.4×），宽高比甚至相反。动画位移是绝对量，字面照 Tripo 建会让机械臂转 90° 时爪子伸不出机壳。故落成 B′：**绝对尺寸与枢轴位置全部照 p19，只搬 Tripo 的造型语言**（圆角半径、曲率、分割线、格栅、配色）。代价是整体比 Tripo 高瘦，这是约束的结果而不是建模失误。
+
+**产物**
+
+| 文件 | 内容 |
+|---|---|
+| `rebuild_v2.blend` | 正式工程，可直接打开播放 1–327 帧 |
+| `versions\rebuild_t1.blend` | T1 首版（出料口过长、铭牌过小，已否决，留档） |
+| `versions\rebuild_t1b.blend` | T1 修正版（放行） |
+| `versions\rebuild_t2.blend` | 与 `rebuild_v2.blend` 字节一致（导出前快照） |
+| `export\hero_v2.glb` | 交付 GLB，1,166,580 B / 58 nodes / 28 clips / 1–327 帧 @60fps |
+| `versions\rebuild_t1b_report.json` / `rebuild_t2_report.json` | 每步的量化验收记录 |
+
+**网格口径**
+
+| 资产 | verts | tris | 四边面 |
+|---|---|---|---|
+| Tripo 参照 | 2,411 | 2,929 | 0（全三角面） |
+| p19 原资产 | 11,918 | 23,150 | 10,532 |
+| **V2 重建** | **8,175** | **16,050** | **92.0%** |
+
+**动画门禁**（`scripts\verify_anim.py`，17 个动画对象 × 8 帧 = 136 采样点，逐点比对 `matrix_world` 的位移/欧拉/缩放，阈值 1e-4）：
+
+```
+VFRAME 136  mismatched=8  worst_delta=0.03248000
+```
+
+8 个不一致点**全部**是 `Machine_Hopper`——它的对象 scale 从 p19 的 `(1.0325, 1.0325, 1)` 归一成 `(1,1,1)`，世界半径直接烘进剖面。外观与动画路径完全一致，只有对象局部缩放值与 p19 不同。其余 128 点 delta = 0。
+
+**两个导出事实（踩过，记下来）**
+
+1. glTF 没有可见性通道。`Product` / `Idea` 的 `hide_render` 驱动显隐，导出前被烘焙成 scale 通道（隐藏帧 1e-4 而非 0，避免退化矩阵；对半径 0.5 的球是 5e-5 单位，亚像素）。`Product` 作者意的 f300 `(0.7, 0.7, 1.0)` 保留。烘焙只在导出进程内存里做，`rebuild_v2.blend` 不回写。
+2. **`Machine_Body` 在源文件里 `hide_get()==True`**（大纲视图那只眼睛），`hide_render` / `hide_viewport` 却都是 False。glTF 导出器在 `use_selection=True` 下会整颗丢弃 `select_get()==False` 的对象——于是**主壳体长期以来从未进过任何 `hero_v2.glb`**，而它的 4 个配件被当成根节点导出，等于"有字无身"。已在 `scripts\export_glb.py` 修掉：导出前对 `hide_render` 与 `hide_viewport` 同为 False 的 mesh 清一次 outliner 眼睛，恢复的恰好只有 `Machine_Body`（+1 节点，57→58）。
+
+**已知未圆**
+
+1. 珊瑚端帽是实心圆角块，不是参考图那种"奶油鼻 + 细珊瑚包边"——在"托盘止于 x=2.60 / 护栏止于 x=2.88"的约束下，单件只能是实心盖。
+2. 铭牌字标是四块胶囊压印条，读得出"有个标"，读不出字母（不用真字体转网格的代价）。
+3. 整体比 Tripo 高瘦（见上，动画约束所致）。
+4. `Machine_Hopper` 的对象 scale 与 p19 不同（外观与动画一致，只是局部缩放值）。
+5. `Machine_Light_01/02/03/LightStrip` 与 `Arm_Mount` 被有意排除在 GLB 之外（沿用 `use_selection=True` 口径，未切 `use_visible`），它们身上的 color 动画因此不在 GLB 里。
+
+**复现**
+
+```
+blender.exe -b --python scripts\build_v2.py -- 4      # 从 p19 重建全部网格 -> rebuild_v2.blend
+blender.exe -b --python scripts\verify_anim.py        # 动画门禁
+blender.exe -b --python scripts\export_glb.py         # 烘焙可见性 + 导出 GLB
+blender.exe -b --python scripts\validate_glb_vis.py   # 回导校验
+blender.exe -b --python scripts\anim_sheet.py -- 'G:\DSHProject\BlenderMcp\renders\anim' 4
+```
+
+`build_v2.py` 是幂等的：每次运行都从 p19 重新打开，`-- <stage>` 控制建到第几阶段。`render_compare.py` 的 outdir **必须是绝对路径**，相对路径会静默不写盘。

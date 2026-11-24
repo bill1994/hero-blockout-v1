@@ -1,0 +1,3900 @@
+{
+ "file": "G:\\DSHProject\\BlenderMcp\\hero_animation_v14_p19.blend",
+ "blender": "5.4.0 Alpha",
+ "scene_frame_range": [
+  1,
+  327
+ ],
+ "fps": 60,
+ "active_camera": "Cam_Hero",
+ "n_objects": 86,
+ "n_actions": 37,
+ "objects": [
+  {
+   "name": "AREA_Fill",
+   "type": "LIGHT",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    6.5,
+    -5.5,
+    2.2
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    6.5,
+    -5.5,
+    2.2
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  },
+  {
+   "name": "AREA_Key",
+   "type": "LIGHT",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    -5.5,
+    -7.0,
+    7.5
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -5.5,
+    -7.0,
+    7.5
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  },
+  {
+   "name": "AREA_Rim",
+   "type": "LIGHT",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    1.5,
+    7.5,
+    5.5
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    1.5,
+    7.5,
+    5.5
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  },
+  {
+   "name": "Arm_Base",
+   "type": "MESH",
+   "parent": "Machine_Root",
+   "parent_type": "OBJECT",
+   "loc": [
+    -1.5,
+    0.0,
+    1.823333
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -1.5,
+    0.0,
+    1.823333
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.32,
+    0.311977,
+    0.32
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 100,
+   "polys": 112,
+   "mats": [
+    "MAT_Arm"
+   ]
+  },
+  {
+   "name": "Arm_Elbow_Joint",
+   "type": "MESH",
+   "parent": "Arm_Elbow_Pivot",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.1,
+    0.0,
+    1.5
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -2.078331,
+    -0.198476,
+    3.651894
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.3,
+    0.3,
+    0.3
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 482,
+   "polys": 512,
+   "mats": [
+    "MAT_Arm"
+   ]
+  },
+  {
+   "name": "Arm_Elbow_Pivot",
+   "type": "EMPTY",
+   "parent": "Arm_Shoulder_Pivot",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.1,
+    0.0,
+    1.5
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -2.078331,
+    -0.198476,
+    3.651894
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": "Arm_Elbow_PivotAction_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  },
+  {
+   "name": "Arm_Finger_C",
+   "type": "MESH",
+   "parent": "Arm_Wrist",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -3.023594,
+    -0.522878,
+    2.671464
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.280257,
+    0.128329,
+    0.327651
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 514,
+   "polys": 528,
+   "mats": [
+    "MAT_Color_Amber"
+   ]
+  },
+  {
+   "name": "Arm_Finger_L",
+   "type": "MESH",
+   "parent": "Arm_Wrist",
+   "parent_type": "OBJECT",
+   "loc": [
+    1.66,
+    0.175,
+    1.5
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -3.074819,
+    -0.725476,
+    2.559415
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.352023,
+    0.127738,
+    0.265815
+   ],
+   "action": "Arm_Finger_LAction_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 498,
+   "polys": 512,
+   "mats": [
+    "MAT_Color_Amber"
+   ]
+  },
+  {
+   "name": "Arm_Finger_R",
+   "type": "MESH",
+   "parent": "Arm_Wrist",
+   "parent_type": "OBJECT",
+   "loc": [
+    1.66,
+    -0.175,
+    1.5
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -3.18843,
+    -0.394428,
+    2.559415
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.352023,
+    0.127738,
+    0.265815
+   ],
+   "action": "Arm_Finger_RAction_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 498,
+   "polys": 512,
+   "mats": [
+    "MAT_Color_Amber"
+   ]
+  },
+  {
+   "name": "Arm_Forearm",
+   "type": "MESH",
+   "parent": "Arm_Elbow_Pivot",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.8,
+    0.0,
+    1.5
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -2.550963,
+    -0.360677,
+    3.161679
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    1.400083,
+    0.232014,
+    0.232014
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 588,
+   "polys": 562,
+   "mats": [
+    "MAT_Arm",
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "Arm_Forearm_Seam_A",
+   "type": "MESH",
+   "parent": "Arm_Forearm",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -2.550963,
+    -0.360677,
+    3.161679
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.02,
+    0.204794,
+    0.204794
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 64,
+   "polys": 32,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "Arm_Forearm_Seam_B",
+   "type": "MESH",
+   "parent": "Arm_Forearm",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -2.550963,
+    -0.360677,
+    3.161679
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.02,
+    0.193269,
+    0.193269
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 64,
+   "polys": 32,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "Arm_GrabPoint",
+   "type": "EMPTY",
+   "parent": "Arm_Wrist",
+   "parent_type": "OBJECT",
+   "loc": [
+    1.9,
+    0.0,
+    1.5
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -3.293669,
+    -0.615564,
+    2.391341
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  },
+  {
+   "name": "Arm_Gripper",
+   "type": "MESH",
+   "parent": "Arm_Wrist",
+   "parent_type": "OBJECT",
+   "loc": [
+    1.54,
+    0.0,
+    1.5
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -3.050601,
+    -0.532146,
+    2.643452
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.152,
+    0.312,
+    0.268
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 546,
+   "polys": 576,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "Arm_Mount",
+   "type": "MESH",
+   "parent": "Machine_Root",
+   "parent_type": "OBJECT",
+   "loc": [
+    -1.44,
+    0.0,
+    0.85
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    1.439027,
+    1.284487,
+    1.0
+   ],
+   "action": "Arm_MountAction_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": false,
+   "visible_viewport": false,
+   "verts": 8,
+   "polys": 6,
+   "mats": [
+    "MAT_Arm"
+   ]
+  },
+  {
+   "name": "Arm_Shoulder_Joint",
+   "type": "MESH",
+   "parent": "Arm_Shoulder_Pivot",
+   "parent_type": "OBJECT",
+   "loc": [
+    -1.5,
+    0.0,
+    1.5
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -1.5,
+    0.0,
+    2.173333
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.36,
+    0.36,
+    0.36
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 482,
+   "polys": 512,
+   "mats": [
+    "MAT_Arm"
+   ]
+  },
+  {
+   "name": "Arm_Shoulder_Pivot",
+   "type": "EMPTY",
+   "parent": "Arm_Yaw_Pivot",
+   "parent_type": "OBJECT",
+   "loc": [
+    -1.5,
+    0.0,
+    1.5
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -1.5,
+    0.0,
+    2.173333
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": "Arm_Shoulder_PivotAction_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  },
+  {
+   "name": "Arm_ShoulderRiser",
+   "type": "MESH",
+   "parent": "Arm_Yaw_Pivot",
+   "parent_type": "OBJECT",
+   "loc": [
+    -1.5,
+    0.0,
+    1.4
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -1.5,
+    -0.0,
+    2.073333
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.376616,
+    0.377382,
+    0.052
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 176,
+   "polys": 176,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "Arm_UpperArm",
+   "type": "MESH",
+   "parent": "Arm_Shoulder_Pivot",
+   "parent_type": "OBJECT",
+   "loc": [
+    -0.7,
+    0.0,
+    1.5
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -1.789166,
+    -0.099238,
+    2.912613
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    1.600068,
+    0.24042,
+    0.24042
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 700,
+   "polys": 674,
+   "mats": [
+    "MAT_Arm",
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "Arm_UpperArm_Seam_A",
+   "type": "MESH",
+   "parent": "Arm_UpperArm",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -1.789166,
+    -0.099238,
+    2.912613
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.02,
+    0.22051,
+    0.22051
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 64,
+   "polys": 32,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "Arm_UpperArm_Seam_B",
+   "type": "MESH",
+   "parent": "Arm_UpperArm",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -1.789166,
+    -0.099238,
+    2.912613
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.02,
+    0.215516,
+    0.215516
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 64,
+   "polys": 32,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "Arm_Wrist",
+   "type": "EMPTY",
+   "parent": "Arm_Elbow_Pivot",
+   "parent_type": "OBJECT",
+   "loc": [
+    1.5,
+    0.0,
+    1.5
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -3.023594,
+    -0.522878,
+    2.671464
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": "Arm_WristAction_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  },
+  {
+   "name": "Arm_WristCollar",
+   "type": "MESH",
+   "parent": "Arm_Wrist",
+   "parent_type": "OBJECT",
+   "loc": [
+    -0.055,
+    -0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -2.986459,
+    -0.510133,
+    2.709981
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.124,
+    0.201889,
+    0.201889
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 302,
+   "polys": 312,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "Arm_Yaw_Housing",
+   "type": "MESH",
+   "parent": "Arm_Yaw_Pivot",
+   "parent_type": "OBJECT",
+   "loc": [
+    -1.5,
+    0.0,
+    1.4
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -1.5,
+    0.0,
+    2.073333
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.375965,
+    0.372866,
+    0.072
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 176,
+   "polys": 176,
+   "mats": [
+    "MAT_Arm"
+   ]
+  },
+  {
+   "name": "Arm_Yaw_Pivot",
+   "type": "EMPTY",
+   "parent": "Arm_Base",
+   "parent_type": "OBJECT",
+   "loc": [
+    -1.5,
+    0.0,
+    1.3
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -1.5,
+    0.0,
+    1.973333
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": "Arm_Yaw_PivotAction_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  },
+  {
+   "name": "Cam_Check_Right",
+   "type": "CAMERA",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    12.0,
+    0.0,
+    1.6
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    12.0,
+    0.0,
+    1.6
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  },
+  {
+   "name": "Cam_Check_Top",
+   "type": "CAMERA",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    0.6,
+    0.0,
+    14.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.6,
+    0.0,
+    14.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  },
+  {
+   "name": "Cam_Hero",
+   "type": "CAMERA",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    3.901077,
+    -8.534846,
+    3.492838
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    3.901077,
+    -8.534846,
+    3.492838
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  },
+  {
+   "name": "Cube",
+   "type": "MESH",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    1.49
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    1.49
+   ],
+   "world_scale": [
+    0.930701,
+    0.798994,
+    1.212114
+   ],
+   "dimensions": [
+    1.861403,
+    1.597987,
+    2.285053
+   ],
+   "action": "CubeAction",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 144,
+   "polys": 129,
+   "mats": []
+  },
+  {
+   "name": "Cutter_Outlet",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.99,
+    0.0,
+    -0.2525
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.99,
+    0.0,
+    1.2375
+   ],
+   "world_scale": [
+    0.25,
+    0.652,
+    0.2145
+   ],
+   "dimensions": [
+    0.5,
+    1.304,
+    0.429
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": false,
+   "visible_viewport": false,
+   "verts": 8,
+   "polys": 6,
+   "mats": []
+  },
+  {
+   "name": "Cutter_Window",
+   "type": "MESH",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.442405
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.442405
+   ],
+   "world_scale": [
+    1.108864,
+    1.0,
+    1.202302
+   ],
+   "dimensions": [
+    0.851075,
+    0.42,
+    1.341769
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": false,
+   "visible_viewport": false,
+   "verts": 64,
+   "polys": 34,
+   "mats": []
+  },
+  {
+   "name": "FILL_Hero",
+   "type": "LIGHT",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  },
+  {
+   "name": "Idea",
+   "type": "MESH",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    -3.287654,
+    -0.615597,
+    2.391389
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -3.287654,
+    -0.615597,
+    2.391389
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "action": "IdeaAction_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 482,
+   "polys": 512,
+   "mats": [
+    "MAT_Idea"
+   ]
+  },
+  {
+   "name": "Machine_Base",
+   "type": "MESH",
+   "parent": "Machine_Root",
+   "parent_type": "OBJECT",
+   "loc": [
+    1.03,
+    0.63,
+    -0.096
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    1.03,
+    0.63,
+    -0.096
+   ],
+   "world_scale": [
+    0.34,
+    0.34,
+    0.192
+   ],
+   "dimensions": [
+    1.85,
+    1.6,
+    0.288
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 32,
+   "polys": 24,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "Machine_Body",
+   "type": "MESH",
+   "parent": "Machine_Root",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    1.49
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    1.49
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    1.8,
+    1.6,
+    2.46
+   ],
+   "action": "Machine_BodyAction_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 192,
+   "polys": 170,
+   "mats": [
+    "MAT_Body"
+   ]
+  },
+  {
+   "name": "Machine_Chute",
+   "type": "MESH",
+   "parent": "Machine_OutputChute",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.38
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    1.44,
+    0.83,
+    0.517
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 184,
+   "polys": 178,
+   "mats": [
+    "MAT_Color_Amber"
+   ]
+  },
+  {
+   "name": "Machine_Feet",
+   "type": "MESH",
+   "parent": "Machine_Root",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    -0.02
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    -0.02
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    1.515,
+    1.22,
+    0.1
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 192,
+   "polys": 104,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "Machine_Hopper",
+   "type": "MESH",
+   "parent": "Machine_Root",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    3.245
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    3.245
+   ],
+   "world_scale": [
+    1.032478,
+    1.032478,
+    1.0
+   ],
+   "dimensions": [
+    1.40004,
+    1.40004,
+    0.749
+   ],
+   "action": "Machine_HopperAction_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 913,
+   "polys": 912,
+   "mats": [
+    "MAT_Body"
+   ]
+  },
+  {
+   "name": "Machine_Light_01",
+   "type": "MESH",
+   "parent": "Machine_Root",
+   "parent_type": "OBJECT",
+   "loc": [
+    -0.3,
+    -0.82,
+    1.75
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.14,
+    0.14,
+    0.14
+   ],
+   "action": "Machine_Light_01Action_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": false,
+   "visible_viewport": false,
+   "verts": 62,
+   "polys": 72,
+   "mats": [
+    "MAT_Hero_Light"
+   ]
+  },
+  {
+   "name": "Machine_Light_02",
+   "type": "MESH",
+   "parent": "Machine_Root",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    -0.82,
+    1.75
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.14,
+    0.14,
+    0.14
+   ],
+   "action": "Machine_Light_02Action_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": false,
+   "visible_viewport": false,
+   "verts": 62,
+   "polys": 72,
+   "mats": [
+    "MAT_Hero_Light"
+   ]
+  },
+  {
+   "name": "Machine_Light_03",
+   "type": "MESH",
+   "parent": "Machine_Root",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.3,
+    -0.82,
+    1.75
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.14,
+    0.14,
+    0.14
+   ],
+   "action": "Machine_Light_03Action_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": false,
+   "visible_viewport": false,
+   "verts": 62,
+   "polys": 72,
+   "mats": [
+    "MAT_Hero_Light"
+   ]
+  },
+  {
+   "name": "Machine_LightStrip",
+   "type": "MESH",
+   "parent": "Machine_Root",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    -0.82,
+    0.2
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "action": "Machine_LightStripAction_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": false,
+   "visible_viewport": false,
+   "verts": 8,
+   "polys": 6,
+   "mats": [
+    "MAT_Hero_Light"
+   ]
+  },
+  {
+   "name": "Machine_OutputChute",
+   "type": "EMPTY",
+   "parent": "Machine_Root",
+   "parent_type": "OBJECT",
+   "loc": [
+    2.1,
+    0.0,
+    1.08
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    2.1,
+    0.0,
+    1.08
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": "Machine_OutputChuteAction_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  },
+  {
+   "name": "Machine_Root",
+   "type": "EMPTY",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": "Machine_RootAction_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  },
+  {
+   "name": "Machine_WindowCavity",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    -0.057378
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    -0.000475,
+    0.438882
+   ],
+   "world_scale": [
+    1.108864,
+    1.0,
+    1.202302
+   ],
+   "dimensions": [
+    0.837236,
+    0.06,
+    1.322532
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 64,
+   "polys": 33,
+   "mats": [
+    "MAT_Window_Cavity"
+   ]
+  },
+  {
+   "name": "Machine_WindowFrame",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    -0.060635
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    -0.000502,
+    0.435625
+   ],
+   "world_scale": [
+    1.108864,
+    1.0,
+    1.202302
+   ],
+   "dimensions": [
+    0.975623,
+    0.07,
+    1.5149
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 128,
+   "polys": 128,
+   "mats": [
+    "MAT_Window_Frame"
+   ]
+  },
+  {
+   "name": "Machine_WindowGlass",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.904,
+    0.015,
+    1.394
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 561,
+   "polys": 560,
+   "mats": [
+    "MAT_Window_Glass"
+   ]
+  },
+  {
+   "name": "Machine_WindowGlow",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    -0.060407
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    -0.000501,
+    0.435853
+   ],
+   "world_scale": [
+    1.108864,
+    1.0,
+    1.202302
+   ],
+   "dimensions": [
+    0.851075,
+    0.008,
+    1.341769
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 128,
+   "polys": 128,
+   "mats": [
+    "MAT_Window_Glow"
+   ]
+  },
+  {
+   "name": "P1_BaseBand",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    -0.33
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.16
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    1.85,
+    1.65,
+    0.16454
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 140,
+   "polys": 113,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_B0",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    -0.78,
+    0.803,
+    0.043333
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -0.78,
+    0.803,
+    0.533333
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_B1",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.78,
+    0.803,
+    0.043333
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.78,
+    0.803,
+    0.533333
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_B2",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    -0.78,
+    0.803,
+    1.956667
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -0.78,
+    0.803,
+    2.446667
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_B3",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.78,
+    0.803,
+    1.956667
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.78,
+    0.803,
+    2.446667
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_F0",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    -0.78,
+    -0.803,
+    0.043333
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -0.78,
+    -0.803,
+    0.533333
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_F1",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.78,
+    -0.803,
+    0.043333
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.78,
+    -0.803,
+    0.533333
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_F2",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    -0.78,
+    -0.803,
+    1.956667
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -0.78,
+    -0.803,
+    2.446667
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_F3",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.78,
+    -0.803,
+    1.956667
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.78,
+    -0.803,
+    2.446667
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_L0",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    -0.903,
+    -0.78,
+    0.043
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -0.903,
+    -0.78,
+    0.533
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_L1",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    -0.903,
+    0.78,
+    0.043
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -0.903,
+    0.78,
+    0.533
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_L2",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    -0.903,
+    -0.78,
+    1.957
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -0.903,
+    -0.78,
+    2.447
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_L3",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    -0.903,
+    0.78,
+    1.957
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -0.903,
+    0.78,
+    2.447
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_R0",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.903,
+    -0.78,
+    0.043
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.903,
+    -0.78,
+    0.533
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_R1",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.903,
+    0.78,
+    0.043
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.903,
+    0.78,
+    0.533
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_R2",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.903,
+    -0.78,
+    1.957
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.903,
+    -0.78,
+    2.447
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_Bolt_R3",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.903,
+    0.78,
+    1.957
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.903,
+    0.78,
+    2.447
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.056,
+    0.011,
+    0.056
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 34,
+   "polys": 20,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_ChuteRail",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.5,
+    0.84,
+    0.226
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 60,
+   "polys": 58,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P1_ChuteSeat",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    1.66,
+    1.268,
+    0.373
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": false,
+   "visible_viewport": false,
+   "verts": 602,
+   "polys": 650,
+   "mats": [
+    "MAT_Body"
+   ]
+  },
+  {
+   "name": "P1_OutletCollar",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.1,
+    1.04,
+    0.627
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 128,
+   "polys": 128,
+   "mats": [
+    "MAT_Body"
+   ]
+  },
+  {
+   "name": "P1_OutletRailL",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    1.46,
+    0.094,
+    0.32
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 120,
+   "polys": 98,
+   "mats": [
+    "MAT_Body"
+   ]
+  },
+  {
+   "name": "P1_OutletRailR",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    1.46,
+    0.094,
+    0.32
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 120,
+   "polys": 98,
+   "mats": [
+    "MAT_Body"
+   ]
+  },
+  {
+   "name": "P1_ShoulderBay",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    -1.05,
+    0.0,
+    1.11
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -1.05,
+    0.0,
+    1.6
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.505,
+    0.64,
+    0.64
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 96,
+   "polys": 50,
+   "mats": [
+    "MAT_Arm"
+   ]
+  },
+  {
+   "name": "P2_OutletBand",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.03,
+    0.14,
+    0.49
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 8,
+   "polys": 6,
+   "mats": [
+    "MAT_Color_Amber"
+   ]
+  },
+  {
+   "name": "P2_Plasma",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    -0.53,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    -0.53,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.86,
+    0.0,
+    1.36
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 4,
+   "polys": 1,
+   "mats": [
+    "MAT_Nebula_Plasma_Baked"
+   ]
+  },
+  {
+   "name": "P2_Plasma_Back",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    -0.468,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    -0.468,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.86,
+    0.0,
+    1.36
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 4,
+   "polys": 1,
+   "mats": [
+    "MAT_Nebula_Plasma_Back"
+   ]
+  },
+  {
+   "name": "P3c_Button_Mode",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    -0.244567
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.245433
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.054,
+    0.052,
+    0.054
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 168,
+   "polys": 142,
+   "mats": [
+    "MAT_Color_Mint"
+   ]
+  },
+  {
+   "name": "P3c_Button_Power",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    -0.244567
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.245433
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.084,
+    0.052,
+    0.084
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 168,
+   "polys": 142,
+   "mats": [
+    "MAT_Color_Amber"
+   ]
+  },
+  {
+   "name": "P3d_HopperCollar",
+   "type": "MESH",
+   "parent": "Machine_Hopper",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.795
+   ],
+   "world_scale": [
+    1.032478,
+    1.032478,
+    1.0
+   ],
+   "dimensions": [
+    0.747514,
+    0.747514,
+    0.067
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 280,
+   "polys": 280,
+   "mats": [
+    "MAT_Color_Mint"
+   ]
+  },
+  {
+   "name": "P3d_Label",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    -0.2376
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.2524
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.222134,
+    0.0045,
+    0.122454
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 56,
+   "polys": 30,
+   "mats": [
+    "MAT_Label"
+   ]
+  },
+  {
+   "name": "P3d_RingSeat_Mode",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    -0.244567
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.245433
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.076,
+    0.0165,
+    0.076
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 240,
+   "polys": 240,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P3d_RingSeat_Power",
+   "type": "MESH",
+   "parent": "Machine_Body",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    -0.244567
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.245433
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.124,
+    0.0165,
+    0.124
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 240,
+   "polys": 240,
+   "mats": [
+    "MAT_Arm_Dark"
+   ]
+  },
+  {
+   "name": "P3d_WristCuff",
+   "type": "MESH",
+   "parent": "Arm_Wrist",
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    -3.023594,
+    -0.522878,
+    2.671464
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.048,
+    0.2036,
+    0.2036
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true,
+   "verts": 240,
+   "polys": 240,
+   "mats": [
+    "MAT_Color_Amber"
+   ]
+  },
+  {
+   "name": "Product",
+   "type": "MESH",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    1.266529,
+    0.0,
+    1.280054
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "action": "ProductAction.001_V2",
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": false,
+   "visible_viewport": false,
+   "verts": 8,
+   "polys": 6,
+   "mats": [
+    "MAT_Product2"
+   ]
+  },
+  {
+   "name": "Product_Proxy_FitCheck",
+   "type": "MESH",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    1.45,
+    0.0,
+    0.975
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": false,
+   "visible_viewport": false,
+   "verts": 8,
+   "polys": 6,
+   "mats": [
+    "MAT_Product2"
+   ]
+  },
+  {
+   "name": "Product_Proxy_Large",
+   "type": "MESH",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    1.45,
+    0.0,
+    1.025
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": false,
+   "visible_viewport": false,
+   "verts": 8,
+   "polys": 6,
+   "mats": [
+    "MAT_Product2"
+   ]
+  },
+  {
+   "name": "Prop_IdeaPedestal",
+   "type": "MESH",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    -3.6,
+    -0.5,
+    0.325
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.36,
+    0.36,
+    0.65
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": false,
+   "visible_viewport": false,
+   "verts": 64,
+   "polys": 34,
+   "mats": [
+    "MAT_Pedestal"
+   ]
+  },
+  {
+   "name": "SUN_Hero",
+   "type": "LIGHT",
+   "parent": null,
+   "parent_type": "OBJECT",
+   "loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rot_mode": "XYZ",
+   "world_loc": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "world_scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dimensions": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "action": null,
+   "action_slot": null,
+   "action_slot_handle": null,
+   "nla_tracks": 0,
+   "constraints": [],
+   "visible_render": true,
+   "visible_viewport": true
+  }
+ ],
+ "actions": [
+  {
+   "name": "Arm_Elbow_PivotAction",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    239.0
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "rotation_euler"
+   ],
+   "slots": [
+    "Arm_Elbow_Pivot"
+   ]
+  },
+  {
+   "name": "Arm_Elbow_PivotAction_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    326.5
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "rotation_euler"
+   ],
+   "slots": [
+    "Arm_Elbow_Pivot"
+   ]
+  },
+  {
+   "name": "Arm_Finger_LAction",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    239.0
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "rotation_euler"
+   ],
+   "slots": [
+    "Arm_Finger_L"
+   ]
+  },
+  {
+   "name": "Arm_Finger_LAction_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    291.348
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "rotation_euler"
+   ],
+   "slots": [
+    "Arm_Finger_L"
+   ]
+  },
+  {
+   "name": "Arm_Finger_RAction",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    239.0
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "rotation_euler"
+   ],
+   "slots": [
+    "Arm_Finger_R"
+   ]
+  },
+  {
+   "name": "Arm_Finger_RAction_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    291.348
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "rotation_euler"
+   ],
+   "slots": [
+    "Arm_Finger_R"
+   ]
+  },
+  {
+   "name": "Arm_MountAction",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    127.646,
+    179.015
+   ],
+   "n_fcurves": 2,
+   "paths": [
+    "location"
+   ],
+   "slots": [
+    "Arm_Mount"
+   ]
+  },
+  {
+   "name": "Arm_MountAction_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    242.652
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "location"
+   ],
+   "slots": [
+    "Arm_Mount"
+   ]
+  },
+  {
+   "name": "Arm_Shoulder_PivotAction",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    239.0
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "rotation_euler"
+   ],
+   "slots": [
+    "Arm_Shoulder_Pivot"
+   ]
+  },
+  {
+   "name": "Arm_Shoulder_PivotAction_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    326.5
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "rotation_euler"
+   ],
+   "slots": [
+    "Arm_Shoulder_Pivot"
+   ]
+  },
+  {
+   "name": "Arm_WristAction",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    239.0
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "rotation_euler"
+   ],
+   "slots": [
+    "Arm_Wrist"
+   ]
+  },
+  {
+   "name": "Arm_WristAction_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    300.894
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "rotation_euler"
+   ],
+   "slots": [
+    "Arm_Wrist"
+   ]
+  },
+  {
+   "name": "Arm_Yaw_PivotAction",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    239.0
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "rotation_euler"
+   ],
+   "slots": [
+    "Arm_Yaw_Pivot"
+   ]
+  },
+  {
+   "name": "Arm_Yaw_PivotAction_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    270.0
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "rotation_euler"
+   ],
+   "slots": [
+    "Arm_Yaw_Pivot"
+   ]
+  },
+  {
+   "name": "CubeAction",
+   "users": 1,
+   "use_fake_user": false,
+   "frame_range": [
+    1.0,
+    327.0
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "location"
+   ],
+   "slots": [
+    "Cube"
+   ]
+  },
+  {
+   "name": "IdeaAction",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    239.0
+   ],
+   "n_fcurves": 9,
+   "paths": [
+    "constraints[\"FollowGrab\"].influence",
+    "hide_render",
+    "hide_viewport",
+    "location",
+    "scale"
+   ],
+   "slots": [
+    "Idea"
+   ]
+  },
+  {
+   "name": "IdeaAction_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    327.0
+   ],
+   "n_fcurves": 8,
+   "paths": [
+    "hide_render",
+    "hide_viewport",
+    "location",
+    "rotation_euler"
+   ],
+   "slots": [
+    "Idea"
+   ]
+  },
+  {
+   "name": "Machine_BodyAction",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    127.646,
+    179.015
+   ],
+   "n_fcurves": 2,
+   "paths": [
+    "location"
+   ],
+   "slots": [
+    "Machine_Body"
+   ]
+  },
+  {
+   "name": "Machine_BodyAction_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    242.652
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "location"
+   ],
+   "slots": [
+    "Machine_Body"
+   ]
+  },
+  {
+   "name": "Machine_HopperAction",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    179.015
+   ],
+   "n_fcurves": 2,
+   "paths": [
+    "location"
+   ],
+   "slots": [
+    "Machine_Hopper"
+   ]
+  },
+  {
+   "name": "Machine_HopperAction_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    242.652
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "location"
+   ],
+   "slots": [
+    "Machine_Hopper"
+   ]
+  },
+  {
+   "name": "Machine_Light_01Action",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    127.646,
+    179.015
+   ],
+   "n_fcurves": 6,
+   "paths": [
+    "color",
+    "location"
+   ],
+   "slots": [
+    "Machine_Light_01"
+   ]
+  },
+  {
+   "name": "Machine_Light_01Action_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    242.652
+   ],
+   "n_fcurves": 7,
+   "paths": [
+    "color",
+    "location"
+   ],
+   "slots": [
+    "Machine_Light_01"
+   ]
+  },
+  {
+   "name": "Machine_Light_02Action",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    127.646,
+    179.015
+   ],
+   "n_fcurves": 6,
+   "paths": [
+    "color",
+    "location"
+   ],
+   "slots": [
+    "Machine_Light_02"
+   ]
+  },
+  {
+   "name": "Machine_Light_02Action_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    242.652
+   ],
+   "n_fcurves": 7,
+   "paths": [
+    "color",
+    "location"
+   ],
+   "slots": [
+    "Machine_Light_02"
+   ]
+  },
+  {
+   "name": "Machine_Light_03Action",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    127.646,
+    179.015
+   ],
+   "n_fcurves": 6,
+   "paths": [
+    "color",
+    "location"
+   ],
+   "slots": [
+    "Machine_Light_03"
+   ]
+  },
+  {
+   "name": "Machine_Light_03Action_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    242.652
+   ],
+   "n_fcurves": 7,
+   "paths": [
+    "color",
+    "location"
+   ],
+   "slots": [
+    "Machine_Light_03"
+   ]
+  },
+  {
+   "name": "Machine_LightStripAction",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    127.646,
+    179.015
+   ],
+   "n_fcurves": 6,
+   "paths": [
+    "color",
+    "location"
+   ],
+   "slots": [
+    "Machine_LightStrip"
+   ]
+  },
+  {
+   "name": "Machine_LightStripAction_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    281.803
+   ],
+   "n_fcurves": 7,
+   "paths": [
+    "color",
+    "location"
+   ],
+   "slots": [
+    "Machine_LightStrip"
+   ]
+  },
+  {
+   "name": "Machine_OutputChuteAction",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    127.646,
+    179.015
+   ],
+   "n_fcurves": 2,
+   "paths": [
+    "location"
+   ],
+   "slots": [
+    "Machine_OutputChute"
+   ]
+  },
+  {
+   "name": "Machine_OutputChuteAction_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    242.652
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "location"
+   ],
+   "slots": [
+    "Machine_OutputChute"
+   ]
+  },
+  {
+   "name": "Machine_RootAction",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    0.0,
+    0.0
+   ],
+   "n_fcurves": 0,
+   "paths": [],
+   "slots": [
+    "Machine_Root"
+   ]
+  },
+  {
+   "name": "Machine_RootAction_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    156.36,
+    242.652
+   ],
+   "n_fcurves": 3,
+   "paths": [
+    "rotation_euler"
+   ],
+   "slots": [
+    "Machine_Root"
+   ]
+  },
+  {
+   "name": "Machine_WindowAction",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    127.646,
+    179.015
+   ],
+   "n_fcurves": 2,
+   "paths": [
+    "location"
+   ],
+   "slots": [
+    "Machine_Window"
+   ]
+  },
+  {
+   "name": "Machine_WindowAction_V2",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    0.0,
+    0.0
+   ],
+   "n_fcurves": 0,
+   "paths": [],
+   "slots": [
+    "Machine_Window"
+   ]
+  },
+  {
+   "name": "ProductAction.001",
+   "users": 1,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    239.0
+   ],
+   "n_fcurves": 8,
+   "paths": [
+    "hide_render",
+    "hide_viewport",
+    "location",
+    "scale"
+   ],
+   "slots": [
+    "Product"
+   ]
+  },
+  {
+   "name": "ProductAction.001_V2",
+   "users": 2,
+   "use_fake_user": true,
+   "frame_range": [
+    1.0,
+    326.5
+   ],
+   "n_fcurves": 8,
+   "paths": [
+    "hide_render",
+    "hide_viewport",
+    "location",
+    "scale"
+   ],
+   "slots": [
+    "Product"
+   ]
+  }
+ ]
+}

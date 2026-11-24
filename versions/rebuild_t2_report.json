@@ -1,0 +1,995 @@
+{
+  "glb_path": "G:\\DSHProject\\BlenderMcp\\export\\hero_v2.glb",
+  "glb_size_bytes": 1166580,
+  "glb": {
+    "glb_bytes": 1166580,
+    "nodes": 58,
+    "meshes": 58,
+    "materials": 15,
+    "animations": 28,
+    "animation_names": [
+      "Idea",
+      "Arm_Base",
+      "Arm_Elbow_Joint",
+      "Arm_Forearm",
+      "Arm_Finger_C",
+      "Arm_Finger_L",
+      "Arm_Finger_R",
+      "Arm_Gripper",
+      "Arm_WristCollar",
+      "P3d_WristCuff",
+      "V2_ElbowDisc_L",
+      "V2_ElbowDisc_R",
+      "V2_ElbowDot_L",
+      "V2_ElbowDot_R",
+      "Arm_Shoulder_Joint",
+      "Arm_UpperArm",
+      "Arm_ShoulderRiser",
+      "Arm_Yaw_Housing",
+      "V2_ShoulderDisc_L",
+      "V2_ShoulderDisc_R",
+      "V2_ShoulderDot_L",
+      "V2_ShoulderDot_R",
+      "Machine_Base",
+      "Machine_Body",
+      "Machine_Feet",
+      "Machine_Hopper",
+      "Machine_Chute",
+      "Product"
+    ],
+    "images": 1
+  },
+  "glb_anim_time_range_s": [
+    0.016667,
+    5.45
+  ],
+  "glb_anim_frame_range_at_60fps": [
+    1.0,
+    327.0
+  ],
+  "raw_scale_channels": {
+    "Product": {
+      "keys": 327,
+      "interp": "LINEAR"
+    },
+    "Idea": {
+      "keys": 327,
+      "interp": "LINEAR"
+    }
+  },
+  "source": {
+    "file": "G:\\DSHProject\\BlenderMcp\\rebuild_v2.blend",
+    "fps": 60,
+    "frame_start": 1,
+    "frame_end": 327
+  },
+  "product_source_hidden_ranges": [
+    [
+      1,
+      231
+    ],
+    [
+      327,
+      327
+    ]
+  ],
+  "product_source_visible_frames": 95,
+  "idea_source_hidden_ranges": [
+    [
+      157,
+      311
+    ]
+  ],
+  "idea_source_visible_frames": 172,
+  "scale_check": {
+    "Product": {
+      "frames_checked": 327,
+      "mismatch_count": 0,
+      "mismatches": [],
+      "samples": {
+        "1": [
+          0.0001,
+          0.0001,
+          0.0001
+        ],
+        "120": [
+          0.0001,
+          0.0001,
+          0.0001
+        ],
+        "220": [
+          0.0001,
+          0.0001,
+          0.0001
+        ],
+        "300": [
+          0.7,
+          0.7,
+          1.0
+        ],
+        "327": [
+          0.0001,
+          0.0001,
+          0.0001
+        ]
+      }
+    },
+    "Idea": {
+      "frames_checked": 327,
+      "mismatch_count": 0,
+      "mismatches": [],
+      "samples": {
+        "1": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "120": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "220": [
+          0.0001,
+          0.0001,
+          0.0001
+        ],
+        "300": [
+          0.0001,
+          0.0001,
+          0.0001
+        ],
+        "327": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "product_scale": {
+    "f1": 0.0001,
+    "f120": 0.0001,
+    "f220": 0.0001,
+    "f300": 0.7,
+    "f327": 0.0001
+  },
+  "idea_scale": {
+    "f1": 1.0,
+    "f120": 1.0,
+    "f220": 0.0001,
+    "f300": 0.0001,
+    "f327": 1.0
+  },
+  "product_scale_xyz": {
+    "1": [
+      0.0001,
+      0.0001,
+      0.0001
+    ],
+    "120": [
+      0.0001,
+      0.0001,
+      0.0001
+    ],
+    "220": [
+      0.0001,
+      0.0001,
+      0.0001
+    ],
+    "300": [
+      0.7,
+      0.7,
+      1.0
+    ],
+    "327": [
+      0.0001,
+      0.0001,
+      0.0001
+    ]
+  },
+  "idea_scale_xyz": {
+    "1": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "120": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "220": [
+      0.0001,
+      0.0001,
+      0.0001
+    ],
+    "300": [
+      0.0001,
+      0.0001,
+      0.0001
+    ],
+    "327": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "import": {
+    "mesh_objects": 58,
+    "actions": 28,
+    "nla_tracks_unmuted": 28,
+    "fps": 60,
+    "note": "importer parks all but one clip in muted NLA tracks; unmuted before sampling"
+  },
+  "per_object_vs_source": {
+    "Arm_Base": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "Arm_Elbow_Joint": {
+      "max_dev": 0.0,
+      "at_frame": 28,
+      "animated": false
+    },
+    "Arm_Finger_C": {
+      "max_dev": 0.0,
+      "at_frame": 28,
+      "animated": false
+    },
+    "Arm_Finger_L": {
+      "max_dev": 1e-06,
+      "at_frame": 168,
+      "animated": true
+    },
+    "Arm_Finger_R": {
+      "max_dev": 1e-06,
+      "at_frame": 168,
+      "animated": true
+    },
+    "Arm_Forearm": {
+      "max_dev": 0.0,
+      "at_frame": 28,
+      "animated": false
+    },
+    "Arm_Forearm_Seam_A": {
+      "max_dev": 0.0,
+      "at_frame": 28,
+      "animated": false
+    },
+    "Arm_Forearm_Seam_B": {
+      "max_dev": 0.0,
+      "at_frame": 28,
+      "animated": false
+    },
+    "Arm_Gripper": {
+      "max_dev": 0.0,
+      "at_frame": 28,
+      "animated": false
+    },
+    "Arm_ShoulderRiser": {
+      "max_dev": 0.0,
+      "at_frame": 218,
+      "animated": false
+    },
+    "Arm_Shoulder_Joint": {
+      "max_dev": 1e-06,
+      "at_frame": 119,
+      "animated": false
+    },
+    "Arm_UpperArm": {
+      "max_dev": 1e-06,
+      "at_frame": 119,
+      "animated": false
+    },
+    "Arm_UpperArm_Seam_A": {
+      "max_dev": 1e-06,
+      "at_frame": 119,
+      "animated": false
+    },
+    "Arm_UpperArm_Seam_B": {
+      "max_dev": 1e-06,
+      "at_frame": 119,
+      "animated": false
+    },
+    "Arm_WristCollar": {
+      "max_dev": 0.0,
+      "at_frame": 160,
+      "animated": false
+    },
+    "Arm_Yaw_Housing": {
+      "max_dev": 1e-06,
+      "at_frame": 91,
+      "animated": false
+    },
+    "Idea": {
+      "max_dev": 0.945753,
+      "at_frame": 157,
+      "animated": true
+    },
+    "Machine_Base": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "Machine_Body": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": true
+    },
+    "Machine_Chute": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "Machine_Feet": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "Machine_Hopper": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": true
+    },
+    "Machine_WindowCavity": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "Machine_WindowFrame": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "Machine_WindowGlass": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "Machine_WindowGlow": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "P1_BaseBand": {
+      "max_dev": 0.0,
+      "at_frame": 159,
+      "animated": false
+    },
+    "P1_ChuteRail": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "P1_OutletCollar": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "P1_OutletRailL": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "P1_OutletRailR": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "P1_ShoulderBay": {
+      "max_dev": 0.0,
+      "at_frame": 169,
+      "animated": false
+    },
+    "P2_OutletBand": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "P2_Plasma": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "P2_Plasma_Back": {
+      "max_dev": 0.0,
+      "at_frame": 160,
+      "animated": false
+    },
+    "P3c_Button_Mode": {
+      "max_dev": 0.0,
+      "at_frame": 166,
+      "animated": false
+    },
+    "P3c_Button_Power": {
+      "max_dev": 0.0,
+      "at_frame": 166,
+      "animated": false
+    },
+    "P3d_HopperCollar": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "P3d_Label": {
+      "max_dev": 0.0,
+      "at_frame": 158,
+      "animated": false
+    },
+    "P3d_RingSeat_Mode": {
+      "max_dev": 0.0,
+      "at_frame": 166,
+      "animated": false
+    },
+    "P3d_RingSeat_Power": {
+      "max_dev": 0.0,
+      "at_frame": 166,
+      "animated": false
+    },
+    "P3d_WristCuff": {
+      "max_dev": 0.0,
+      "at_frame": 28,
+      "animated": false
+    },
+    "Product": {
+      "max_dev": 3.18616,
+      "at_frame": 1,
+      "animated": true
+    },
+    "V2_ElbowDisc_L": {
+      "max_dev": 1e-06,
+      "at_frame": 91,
+      "animated": false
+    },
+    "V2_ElbowDisc_R": {
+      "max_dev": 1e-06,
+      "at_frame": 91,
+      "animated": false
+    },
+    "V2_ElbowDot_L": {
+      "max_dev": 1e-06,
+      "at_frame": 91,
+      "animated": false
+    },
+    "V2_ElbowDot_R": {
+      "max_dev": 1e-06,
+      "at_frame": 91,
+      "animated": false
+    },
+    "V2_FrontPill": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "V2_NamePlate": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "V2_NamePlate_Line1": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "V2_NamePlate_Line2": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "V2_NamePlate_Mark": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "V2_ShoulderDisc_L": {
+      "max_dev": 0.0,
+      "at_frame": 15,
+      "animated": false
+    },
+    "V2_ShoulderDisc_R": {
+      "max_dev": 0.0,
+      "at_frame": 15,
+      "animated": false
+    },
+    "V2_ShoulderDot_L": {
+      "max_dev": 0.0,
+      "at_frame": 15,
+      "animated": false
+    },
+    "V2_ShoulderDot_R": {
+      "max_dev": 0.0,
+      "at_frame": 15,
+      "animated": false
+    },
+    "V2_SidePanel": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    },
+    "V2_SidePanelSlot": {
+      "max_dev": 0.0,
+      "at_frame": 162,
+      "animated": false
+    }
+  },
+  "source_mesh_objects_not_in_glb": [
+    "Arm_Mount",
+    "Cutter_Outlet",
+    "Cutter_Window",
+    "Machine_LightStrip",
+    "Machine_Light_01",
+    "Machine_Light_02",
+    "Machine_Light_03",
+    "P1_ChuteSeat",
+    "Product_Proxy_FitCheck",
+    "Product_Proxy_Large",
+    "Prop_IdeaPedestal"
+  ],
+  "visibility_object_checks": {
+    "Product": {
+      "translation_max_dev": 0.0,
+      "visible_scale_max_dev": 0.0,
+      "visible_scale_worst_frame": null
+    },
+    "Idea": {
+      "translation_max_dev": 0.0,
+      "visible_scale_max_dev": 6e-08,
+      "visible_scale_worst_frame": 32
+    }
+  },
+  "p19": {
+    "file": "G:\\DSHProject\\BlenderMcp\\hero_animation_v14_p19.blend",
+    "fps": 60,
+    "frame_start": 1,
+    "frame_end": 327,
+    "objects": 86
+  },
+  "rebuild_vs_p19": {
+    "AREA_Fill": {
+      "max_dev": 0.0,
+      "type": "LIGHT"
+    },
+    "AREA_Key": {
+      "max_dev": 0.0,
+      "type": "LIGHT"
+    },
+    "AREA_Rim": {
+      "max_dev": 0.0,
+      "type": "LIGHT"
+    },
+    "Arm_Base": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_Elbow_Joint": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_Elbow_Pivot": {
+      "max_dev": 0.0,
+      "type": "EMPTY"
+    },
+    "Arm_Finger_C": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_Finger_L": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_Finger_R": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_Forearm": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_Forearm_Seam_A": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_Forearm_Seam_B": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_GrabPoint": {
+      "max_dev": 0.0,
+      "type": "EMPTY"
+    },
+    "Arm_Gripper": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_Mount": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_ShoulderRiser": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_Shoulder_Joint": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_Shoulder_Pivot": {
+      "max_dev": 0.0,
+      "type": "EMPTY"
+    },
+    "Arm_UpperArm": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_UpperArm_Seam_A": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_UpperArm_Seam_B": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_Wrist": {
+      "max_dev": 0.0,
+      "type": "EMPTY"
+    },
+    "Arm_WristCollar": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_Yaw_Housing": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Arm_Yaw_Pivot": {
+      "max_dev": 0.0,
+      "type": "EMPTY"
+    },
+    "Cam_Check_Right": {
+      "max_dev": 0.0,
+      "type": "CAMERA"
+    },
+    "Cam_Check_Top": {
+      "max_dev": 0.0,
+      "type": "CAMERA"
+    },
+    "Cam_Hero": {
+      "max_dev": 0.0,
+      "type": "CAMERA"
+    },
+    "Cutter_Outlet": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Cutter_Window": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "FILL_Hero": {
+      "max_dev": 0.0,
+      "type": "LIGHT"
+    },
+    "Idea": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Machine_Base": {
+      "max_dev": 0.808,
+      "type": "MESH"
+    },
+    "Machine_Body": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Machine_Chute": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Machine_Feet": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Machine_Hopper": {
+      "max_dev": 0.032478,
+      "type": "MESH"
+    },
+    "Machine_LightStrip": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Machine_Light_01": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Machine_Light_02": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Machine_Light_03": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Machine_OutputChute": {
+      "max_dev": 0.0,
+      "type": "EMPTY"
+    },
+    "Machine_Root": {
+      "max_dev": 0.0,
+      "type": "EMPTY"
+    },
+    "Machine_WindowCavity": {
+      "max_dev": 0.202302,
+      "type": "MESH"
+    },
+    "Machine_WindowFrame": {
+      "max_dev": 0.202302,
+      "type": "MESH"
+    },
+    "Machine_WindowGlass": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Machine_WindowGlow": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P1_BaseBand": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P1_ChuteRail": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P1_ChuteSeat": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P1_OutletCollar": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P1_OutletRailL": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P1_OutletRailR": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P1_ShoulderBay": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P2_OutletBand": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P2_Plasma": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P2_Plasma_Back": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P3c_Button_Mode": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P3c_Button_Power": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P3d_HopperCollar": {
+      "max_dev": 0.032478,
+      "type": "MESH"
+    },
+    "P3d_Label": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P3d_RingSeat_Mode": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P3d_RingSeat_Power": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "P3d_WristCuff": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Product": {
+      "max_dev": 4.449643,
+      "type": "MESH"
+    },
+    "Product_Proxy_FitCheck": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Product_Proxy_Large": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "Prop_IdeaPedestal": {
+      "max_dev": 0.0,
+      "type": "MESH"
+    },
+    "SUN_Hero": {
+      "max_dev": 0.0,
+      "type": "LIGHT"
+    }
+  },
+  "rebuild_vs_p19_over_tol": {
+    "Machine_Base": 0.808,
+    "Machine_Hopper": 0.032478,
+    "Machine_WindowCavity": 0.202302,
+    "Machine_WindowFrame": 0.202302,
+    "P3d_HopperCollar": 0.032478,
+    "Product": 4.449643
+  },
+  "missing_object_reasons": {
+    "Arm_Mount": {
+      "hide_render": true,
+      "hide_viewport": true,
+      "hide_get": false,
+      "in_view_layer": true,
+      "visible_get": false,
+      "animated": true
+    },
+    "Cutter_Outlet": {
+      "hide_render": true,
+      "hide_viewport": true,
+      "hide_get": false,
+      "in_view_layer": true,
+      "visible_get": false,
+      "animated": false
+    },
+    "Cutter_Window": {
+      "hide_render": true,
+      "hide_viewport": true,
+      "hide_get": false,
+      "in_view_layer": true,
+      "visible_get": false,
+      "animated": false
+    },
+    "Machine_LightStrip": {
+      "hide_render": true,
+      "hide_viewport": true,
+      "hide_get": false,
+      "in_view_layer": true,
+      "visible_get": false,
+      "animated": true
+    },
+    "Machine_Light_01": {
+      "hide_render": true,
+      "hide_viewport": true,
+      "hide_get": false,
+      "in_view_layer": true,
+      "visible_get": false,
+      "animated": true
+    },
+    "Machine_Light_02": {
+      "hide_render": true,
+      "hide_viewport": true,
+      "hide_get": false,
+      "in_view_layer": true,
+      "visible_get": false,
+      "animated": true
+    },
+    "Machine_Light_03": {
+      "hide_render": true,
+      "hide_viewport": true,
+      "hide_get": false,
+      "in_view_layer": true,
+      "visible_get": false,
+      "animated": true
+    },
+    "P1_ChuteSeat": {
+      "hide_render": true,
+      "hide_viewport": true,
+      "hide_get": false,
+      "in_view_layer": true,
+      "visible_get": false,
+      "animated": false
+    },
+    "Product_Proxy_FitCheck": {
+      "hide_render": true,
+      "hide_viewport": true,
+      "hide_get": false,
+      "in_view_layer": true,
+      "visible_get": false,
+      "animated": false
+    },
+    "Product_Proxy_Large": {
+      "hide_render": true,
+      "hide_viewport": true,
+      "hide_get": false,
+      "in_view_layer": true,
+      "visible_get": false,
+      "animated": false
+    },
+    "Prop_IdeaPedestal": {
+      "hide_render": true,
+      "hide_viewport": true,
+      "hide_get": false,
+      "in_view_layer": true,
+      "visible_get": false,
+      "animated": false
+    }
+  },
+  "snapshot": {
+    "path": "G:\\DSHProject\\BlenderMcp\\versions\\rebuild_t2.blend",
+    "size_bytes": 893046,
+    "byte_identical_to_source": true,
+    "sha256": "6772052bc78bd04c04fc106a6a91725104c33f1b7bcb5330a155c0b4a2e73b5a"
+  },
+  "anim_objects_ok": true,
+  "anim_objects_verified": [
+    "Arm_Finger_L",
+    "Arm_Finger_R",
+    "Idea",
+    "Machine_Body",
+    "Machine_Hopper",
+    "Product"
+  ],
+  "regressions": [],
+  "failures": [],
+  "warnings": [
+    "Arm_Mount is animated in the source but absent from the GLB (hide_get=False, hide_viewport=True) - pre-existing, not introduced by the visibility bake",
+    "Machine_LightStrip is animated in the source but absent from the GLB (hide_get=False, hide_viewport=True) - pre-existing, not introduced by the visibility bake",
+    "Machine_Light_01 is animated in the source but absent from the GLB (hide_get=False, hide_viewport=True) - pre-existing, not introduced by the visibility bake",
+    "Machine_Light_02 is animated in the source but absent from the GLB (hide_get=False, hide_viewport=True) - pre-existing, not introduced by the visibility bake",
+    "Machine_Light_03 is animated in the source but absent from the GLB (hide_get=False, hide_viewport=True) - pre-existing, not introduced by the visibility bake"
+  ],
+  "findings": [
+    "rebuild_v2 vs p19 differs beyond 1e-03 on 6 objects (mesh rebuild changed geometry/pivots, not an export issue): ['Machine_Base', 'Machine_Hopper', 'Machine_WindowCavity', 'Machine_WindowFrame', 'P3d_HopperCollar', 'Product']"
+  ],
+  "notes": "Visibility driven by object-level hide_render/hide_viewport was baked into the scale channel of Product and Idea before export (327 keys each, LINEAR); hidden frames use 1e-4 rather than 0 to avoid a degenerate matrix, which is 5e-5 world units for the 0.5 m reward ball, i.e. sub-pixel. The 5 originally authored scale F-Curves on Product were purged before re-keying, so the authored f300 scale (0.7,0.7,1.0) survives untouched; Idea had no scale channel. hide_render/hide_viewport were cleared on both objects after baking, otherwise the exporter drops any object that is hidden on the current frame - that is exactly what removed Product from the previous GLB entirely. IMPORTANT - the frame examples in the task brief do not match this file. Product is hidden on frames [[1, 231], [327, 327]] (232 of 327 frames), so f120 is a HIDDEN frame for Product, not a visible one. Idea is hidden on frames [[157, 311]] (155 of 327), so f300 is a HIDDEN frame for Idea. The only frame where both lists agree with the brief is f220 (hidden for both) and f300 for Product alone (visible, scale 0.7). The baked result matches the authored hide_render on all 327 frames for both objects, 0 mismatches. Pre-existing defect, NOT introduced here: Machine_Body has hide_get()==True (outliner eye, i.e. hide_set) with hide_render and hide_viewport both False, so it is unselectable and the exporter silently drops it under use_selection=True. The machine's main shell has therefore been missing from hero_v2.glb since before this task, while its five children (V2_NamePlate* and V2_FrontPill) are exported as roots - the GLB has nameplate text without the body. FIXED in T2b: export_glb.py now clears the outliner eye (hide_set(False)) for every mesh whose hide_render and hide_viewport are both False, which restores exactly Machine_Body and nothing else. Machine_Body is now node-parenting its 4 accessories instead of them being exported as roots (+1 node, 57 -> 58). The five deliberately hidden objects (Arm_Mount, Machine_Light_01/02/03, Machine_LightStrip) stay out of the GLB on purpose, per BUILD_NOTES.md:1523-1526; the export still uses use_selection=True and must not switch to use_visible=True. Reproduction gotcha 1: Blender 5.4 removed the legacy action.fcurves accessor; F-Curves live under action.layers[].strips[].channelbags[].fcurves. Reproduction gotcha 2: Blender's glTF importer makes one action active and parks the other 51 clips in MUTED NLA tracks, so re-import validation must unmute them or every object except the first reads as static. With scene.render.fps=60 the imported clip maps 1:1 to frames 1-327, so no 24fps rescaling was needed. rebuild_v2 vs p19 differs beyond tolerance on 6 objects (Machine_Base=0.8080, Machine_Hopper=0.0325, Machine_WindowCavity=0.2023, Machine_WindowFrame=0.2023, P3d_HopperCollar=0.0325, Product=4.4496). That is the T1 mesh rebuild changing geometry and pivots, not an export regression - every object exported here matches rebuild_v2 itself to 1e-06.",
+  "checks_passed": true,
+  "verdict": "PASS",
+  "glb_sha256": "17B0F499A237ABE17854A92146A8950D4BEE54E4C20F9786A62FA475B3C623E4",
+  "machine_body_present": true,
+  "node_count_delta": 1,
+  "outliner_unhide": [
+    "Machine_Body"
+  ],
+  "machine_body_children_count": 25,
+  "machine_body_children": [
+    "Machine_WindowCavity",
+    "Machine_WindowFrame",
+    "Machine_WindowGlass",
+    "Machine_WindowGlow",
+    "P1_BaseBand",
+    "P1_ChuteRail",
+    "P1_OutletCollar",
+    "P1_OutletRailL",
+    "P1_OutletRailR",
+    "P1_ShoulderBay",
+    "P2_OutletBand",
+    "P2_Plasma",
+    "P2_Plasma_Back",
+    "P3c_Button_Mode",
+    "P3c_Button_Power",
+    "P3d_Label",
+    "P3d_RingSeat_Mode",
+    "P3d_RingSeat_Power",
+    "V2_FrontPill",
+    "V2_NamePlate",
+    "V2_NamePlate_Line1",
+    "V2_NamePlate_Line2",
+    "V2_NamePlate_Mark",
+    "V2_SidePanel",
+    "V2_SidePanelSlot"
+  ],
+  "reparented_to_body": {
+    "P1_BaseBand": "Machine_Body",
+    "P1_ChuteRail": "Machine_Body",
+    "V2_FrontPill": "Machine_Body",
+    "V2_NamePlate": "Machine_Body"
+  }
+}
