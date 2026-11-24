@@ -262,3 +262,36 @@ blender.exe -b --python scripts\anim_sheet.py -- 'G:\DSHProject\BlenderMcp\rende
 用还原后的 p19 重跑验证：`verts=8175 tris=16050 faces=7899 quads=7271 quad_share=92.0%`、`VFRAME 136 mismatched=8 worst_delta=0.03248000`（8 条全 Machine_Hopper）——与提交前的数字**逐项一致**。GLB 重导 1,166,580 B、`outliner_unhide=[]`（说明 §10 那条丢壳修复现在只是防御性代码，真正的原因是这笔改动），`validate_glb_vis.py` 仍 `PASS`。
 
 注：`versions\rebuild_t2.blend` 是旧 `rebuild_v2.blend` 的字节副本，与现版在 provenance 上不同（几何与动画一致），保留作为当时的快照记录。
+
+## 11. 方案 2 重建（2026-11-24）—— 参照绝对尺寸 1:1 + 动画重编
+
+**与 §10 的关系**：§10 是路线 B′（原地换 mesh，动画零风险，代价是高瘦）。本轮用户裁决改走**方案 2**：按参照的绝对尺寸重建、动画重编。完整待办见 **`REFERENCE_REBUILD_PLAN.md`**。本节只记已完成的部分。
+
+**裁决依据**（用户原话）："动画其实我只是要那种抖动和表现，其实也不用完全一样，不如我们分步做，先把模型做出来，在做动画"。面数目标："越低越好，大概 3K 左右"。
+
+**为什么不能等比放大**：参照箱体高/宽 = 0.78，v14 = 1.37；参照臂长/箱宽 = 0.57，v14 = 1.67。高宽比与臂身比都相反，是两种设计而非两种尺度。
+
+**产物**
+
+| 文件 | 内容 |
+|---|---|
+| `versions\rebuild_v7_s1.blend` | **Stage-1 基线**（体块与比例，0.13 MB） |
+| `renders\v7_s1\v7_{front,right,top,iso,armclose}.png` | 五视图，workbench / material 色 / cavity BOTH / AA 16 / ortho_scale 1.15 |
+| `reference\v4_rigspec.json` | 建模基准：关节坐标 + 箱体/料斗/滑道实测尺寸 |
+| `reference\parts_20261124.json` | 参照 43 件的逐件 bbox 全表 |
+| `reference\contract_20261124.json` | v14 动画契约全表（36 action / 通道 / 关键帧采样） |
+| `reference\views_20261124\` | 参照的 7 张对照渲染（`ref_*` 与 `arm_*`） |
+
+**Stage-1 实测**（`rebuild_v7_s1.blend`）
+
+| 项 | 参照 | v7 | 差 |
+|---|---|---|---|
+| tris | 2,929（100% 三角面） | **2,352** | −20% |
+| quads | 0 | **920** | — |
+| ngon | 0 | 44（锥/柱端盖） | 待 S2.5 清零 |
+| 对象 | 43 散片 | **39** 命名件 | — |
+| bbox | x −0.501..0.500 / y ±0.231 / z 0..0.754 | x −0.468..0.496 / y −0.235..0.231 / z 0..0.769 | 爪尖高 15 mm |
+
+**中途否决的三版**（`rebuild_v3/v4/v5_s1.blend` 留档）：v3 料斗是实心盘子（`primitive_cone_add` 默认封顶）、臂杆半径 0.03 太细、爪子按 Y 轴展开在前视图叠成一根尖刺；v4 改粗臂改有改善；v5 换三指 120° 爪；v6 料斗改 bmesh 旋转壳但内壁给了 `M_Rubber` 近黑；v7 内壁改 `M_ShellDk` 定稿。
+
+**未圆**（已在计划里排期）：背面散热栅仍是浮片（S2.1）、滑道缺侧壁起伏（S2.2）、爪指偏瘦且 120° 等分角度未校（S2.3）、无 UV（S2.6）、材质为占位色（S2.7）、未导出（S2.8）、动画未开始（Stage-3）。
