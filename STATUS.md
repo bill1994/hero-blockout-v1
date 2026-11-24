@@ -243,3 +243,22 @@ blender.exe -b --python scripts\anim_sheet.py -- 'G:\DSHProject\BlenderMcp\rende
 ```
 
 `build_v2.py` 是幂等的：每次运行都从 p19 重新打开，`-- <stage>` 控制建到第几阶段。`render_compare.py` 的 outdir **必须是绝对路径**，相对路径会静默不写盘。
+### 10.1 源文件更正：p19 工作区那笔未提交改动（11-24）
+
+`hero_animation_v14_p19.blend` 的工作区里压着一笔**本次会话之前**的未提交改动（11-08 另存，877,407 → 886,884 B）。实测差异：
+
+| | HEAD（已提交） | 工作区（未提交） |
+|---|---|---|
+| `Machine_Body` | `hide_get=False`，192 verts | `hide_get=True`（大纲眼睛闭着） |
+| `P1_MintStrip_L` / `_R` | 存在（40 / 16 verts） | **已删除** |
+| `P3f_TopSkin` | 存在（128 verts） | **已删除** |
+| `Cube` | 无 | **新增**，144 verts，1.861 × 1.598 × 2.285，无材质 |
+| actions | 36 | 37 |
+
+即：把真壳藏起来、删掉两条侧薄荷条和顶皮、在壳的位置塞一个裸立方体——用户确认是被放弃的"换壳"试验。
+
+处理：`git checkout -- hero_animation_v14_p19.blend` 还原到 HEAD（88 对象 / 36 动作 / `Machine_Body` 可见）；失败品留存未跟踪副本 `scratch/p19_failed_bodyswap_2026-11-08.blend`。`scripts\build_v2.py` 现在**显式删除** `Cube`、`P1_MintStrip_L/R`、`P3f_TopSkin` 与 16 颗螺钉（它们都已被重建的壳 / `V2_SidePanel` 取代），因此对两种 p19 状态都产出同一个模型。
+
+用还原后的 p19 重跑验证：`verts=8175 tris=16050 faces=7899 quads=7271 quad_share=92.0%`、`VFRAME 136 mismatched=8 worst_delta=0.03248000`（8 条全 Machine_Hopper）——与提交前的数字**逐项一致**。GLB 重导 1,166,580 B、`outliner_unhide=[]`（说明 §10 那条丢壳修复现在只是防御性代码，真正的原因是这笔改动），`validate_glb_vis.py` 仍 `PASS`。
+
+注：`versions\rebuild_t2.blend` 是旧 `rebuild_v2.blend` 的字节副本，与现版在 provenance 上不同（几何与动画一致），保留作为当时的快照记录。

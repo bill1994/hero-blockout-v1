@@ -273,8 +273,18 @@ def delete_objects(names):
 
 
 if STAGE >= 1:
+    # Cube: not part of the asset. In the p19 working file it was a raw
+    # untextured cube (144 verts, 1.861 x 1.598 x 2.285) dropped in at the main
+    # shell's position while Machine_Body itself was hidden in the outliner -
+    # an abandoned body-swap experiment. The committed p19 has no Cube; this
+    # keeps the script idempotent against either state.
     delete_objects(["Cube"])
     delete_objects(["P1_Bolt_%s%d" % (s, i) for s in "BFLR" for i in range(4)])
+    # Superseded by the rebuilt shell: the side mint strips are replaced by
+    # V2_SidePanel and the thin top skin by the beveled body top. Present in
+    # committed p19, absent from the aborted edit - delete either way so both
+    # inputs produce the same model.
+    delete_objects(["P1_MintStrip_L", "P1_MintStrip_R", "P3f_TopSkin"])
 
     # --- main shell -------------------------------------------------------
     # object origin sits at world (0,0,1.49); local frame == world frame
