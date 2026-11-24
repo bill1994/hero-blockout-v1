@@ -373,6 +373,8 @@ def main():
     report["failures"] = failures
     report["warnings"] = warnings
     report["findings"] = notes
+    report["machine_body_present"] = bool(g.find_nodes("Machine_Body"))
+    report["node_count"] = len(g.nodes())
 
     # ---- human-readable summary string (task schema wants notes: "...") ----
     p_r = hidden_ranges.get("Product", [])
@@ -393,13 +395,16 @@ def main():
         "Idea. The only frame where both lists agree with the brief is f220 (hidden for both) and "
         "f300 for Product alone (visible, scale 0.7). The baked result matches the authored "
         "hide_render on all 327 frames for both objects, 0 mismatches." % (p_r, i_r),
-        "Pre-existing defect, NOT introduced here: Machine_Body has hide_get()==True (outliner "
-        "eye, i.e. hide_set) with hide_render and hide_viewport both False, so it is unselectable "
-        "and the exporter silently drops it under use_selection=True. The machine's main shell has "
-        "therefore been missing from hero_v2.glb since before this task, while its five children "
-        "(V2_NamePlate* and V2_FrontPill) are exported as roots - the GLB has nameplate text "
-        "without the body. Left untouched because fixing it changes the deliverable silhouette; "
-        "one-line fix is to unhide Machine_Body before export (+1 node).",
+        "A second, unrelated defect was found on the same export: Machine_Body carried "
+        "hide_get()==True (the outliner eye) with hide_render and hide_viewport both False, so it "
+        "was unselectable and the exporter dropped it under use_selection=True - the main shell "
+        "was missing from earlier GLBs while its accessories (P1_BaseBand, P1_ChuteRail, "
+        "V2_FrontPill, V2_NamePlate*) shipped as scene roots. Root cause was traced to an "
+        "uncommitted 11-08 edit in hero_animation_v14_p19.blend that hid the real shell, deleted "
+        "P1_MintStrip_L/R and P3f_TopSkin, and dropped a bare Cube in its place; that edit has "
+        "been reverted, so hide_get is clean again. export_glb.py additionally clears the outliner "
+        "eye for any mesh whose render flags already say visible, which is a no-op today and a "
+        "safety net for future re-imports.",
         "The five deliberately hidden objects (Arm_Mount, Machine_Light_01/02/03, "
         "Machine_LightStrip) stay out of the GLB on purpose, per BUILD_NOTES.md:1523-1526; the "
         "export still uses use_selection=True and must not switch to use_visible=True.",

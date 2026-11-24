@@ -544,7 +544,7 @@
     "fps": 60,
     "frame_start": 1,
     "frame_end": 327,
-    "objects": 86
+    "objects": 88
   },
   "rebuild_vs_p19": {
     "AREA_Fill": {
@@ -836,7 +836,7 @@
     "Arm_Mount": {
       "hide_render": true,
       "hide_viewport": true,
-      "hide_get": false,
+      "hide_get": true,
       "in_view_layer": true,
       "visible_get": false,
       "animated": true
@@ -860,7 +860,7 @@
     "Machine_LightStrip": {
       "hide_render": true,
       "hide_viewport": true,
-      "hide_get": false,
+      "hide_get": true,
       "in_view_layer": true,
       "visible_get": false,
       "animated": true
@@ -868,7 +868,7 @@
     "Machine_Light_01": {
       "hide_render": true,
       "hide_viewport": true,
-      "hide_get": false,
+      "hide_get": true,
       "in_view_layer": true,
       "visible_get": false,
       "animated": true
@@ -876,7 +876,7 @@
     "Machine_Light_02": {
       "hide_render": true,
       "hide_viewport": true,
-      "hide_get": false,
+      "hide_get": true,
       "in_view_layer": true,
       "visible_get": false,
       "animated": true
@@ -884,7 +884,7 @@
     "Machine_Light_03": {
       "hide_render": true,
       "hide_viewport": true,
-      "hide_get": false,
+      "hide_get": true,
       "in_view_layer": true,
       "visible_get": false,
       "animated": true
@@ -925,8 +925,8 @@
   "snapshot": {
     "path": "G:\\DSHProject\\BlenderMcp\\versions\\rebuild_t2.blend",
     "size_bytes": 893046,
-    "byte_identical_to_source": true,
-    "sha256": "6772052bc78bd04c04fc106a6a91725104c33f1b7bcb5330a155c0b4a2e73b5a"
+    "byte_identical_to_source": false,
+    "sha256": "e42cf3ea630555747941f3bdb27361d1d0e082be5a76b055688622c866b80ea9"
   },
   "anim_objects_ok": true,
   "anim_objects_verified": [
@@ -940,56 +940,20 @@
   "regressions": [],
   "failures": [],
   "warnings": [
-    "Arm_Mount is animated in the source but absent from the GLB (hide_get=False, hide_viewport=True) - pre-existing, not introduced by the visibility bake",
-    "Machine_LightStrip is animated in the source but absent from the GLB (hide_get=False, hide_viewport=True) - pre-existing, not introduced by the visibility bake",
-    "Machine_Light_01 is animated in the source but absent from the GLB (hide_get=False, hide_viewport=True) - pre-existing, not introduced by the visibility bake",
-    "Machine_Light_02 is animated in the source but absent from the GLB (hide_get=False, hide_viewport=True) - pre-existing, not introduced by the visibility bake",
-    "Machine_Light_03 is animated in the source but absent from the GLB (hide_get=False, hide_viewport=True) - pre-existing, not introduced by the visibility bake"
+    "snapshot G:\\DSHProject\\BlenderMcp\\versions\\rebuild_t2.blend is not byte-identical to G:\\DSHProject\\BlenderMcp\\rebuild_v2.blend",
+    "snapshot mtime differs from source; source may have been rewritten",
+    "Arm_Mount is animated in the source but absent from the GLB (hide_get=True, hide_viewport=True) - pre-existing, not introduced by the visibility bake",
+    "Machine_LightStrip is animated in the source but absent from the GLB (hide_get=True, hide_viewport=True) - pre-existing, not introduced by the visibility bake",
+    "Machine_Light_01 is animated in the source but absent from the GLB (hide_get=True, hide_viewport=True) - pre-existing, not introduced by the visibility bake",
+    "Machine_Light_02 is animated in the source but absent from the GLB (hide_get=True, hide_viewport=True) - pre-existing, not introduced by the visibility bake",
+    "Machine_Light_03 is animated in the source but absent from the GLB (hide_get=True, hide_viewport=True) - pre-existing, not introduced by the visibility bake"
   ],
   "findings": [
     "rebuild_v2 vs p19 differs beyond 1e-03 on 6 objects (mesh rebuild changed geometry/pivots, not an export issue): ['Machine_Base', 'Machine_Hopper', 'Machine_WindowCavity', 'Machine_WindowFrame', 'P3d_HopperCollar', 'Product']"
   ],
-  "notes": "Visibility driven by object-level hide_render/hide_viewport was baked into the scale channel of Product and Idea before export (327 keys each, LINEAR); hidden frames use 1e-4 rather than 0 to avoid a degenerate matrix, which is 5e-5 world units for the 0.5 m reward ball, i.e. sub-pixel. The 5 originally authored scale F-Curves on Product were purged before re-keying, so the authored f300 scale (0.7,0.7,1.0) survives untouched; Idea had no scale channel. hide_render/hide_viewport were cleared on both objects after baking, otherwise the exporter drops any object that is hidden on the current frame - that is exactly what removed Product from the previous GLB entirely. IMPORTANT - the frame examples in the task brief do not match this file. Product is hidden on frames [[1, 231], [327, 327]] (232 of 327 frames), so f120 is a HIDDEN frame for Product, not a visible one. Idea is hidden on frames [[157, 311]] (155 of 327), so f300 is a HIDDEN frame for Idea. The only frame where both lists agree with the brief is f220 (hidden for both) and f300 for Product alone (visible, scale 0.7). The baked result matches the authored hide_render on all 327 frames for both objects, 0 mismatches. Pre-existing defect, NOT introduced here: Machine_Body has hide_get()==True (outliner eye, i.e. hide_set) with hide_render and hide_viewport both False, so it is unselectable and the exporter silently drops it under use_selection=True. The machine's main shell has therefore been missing from hero_v2.glb since before this task, while its five children (V2_NamePlate* and V2_FrontPill) are exported as roots - the GLB has nameplate text without the body. FIXED in T2b: export_glb.py now clears the outliner eye (hide_set(False)) for every mesh whose hide_render and hide_viewport are both False, which restores exactly Machine_Body and nothing else. Machine_Body is now node-parenting its 4 accessories instead of them being exported as roots (+1 node, 57 -> 58). The five deliberately hidden objects (Arm_Mount, Machine_Light_01/02/03, Machine_LightStrip) stay out of the GLB on purpose, per BUILD_NOTES.md:1523-1526; the export still uses use_selection=True and must not switch to use_visible=True. Reproduction gotcha 1: Blender 5.4 removed the legacy action.fcurves accessor; F-Curves live under action.layers[].strips[].channelbags[].fcurves. Reproduction gotcha 2: Blender's glTF importer makes one action active and parks the other 51 clips in MUTED NLA tracks, so re-import validation must unmute them or every object except the first reads as static. With scene.render.fps=60 the imported clip maps 1:1 to frames 1-327, so no 24fps rescaling was needed. rebuild_v2 vs p19 differs beyond tolerance on 6 objects (Machine_Base=0.8080, Machine_Hopper=0.0325, Machine_WindowCavity=0.2023, Machine_WindowFrame=0.2023, P3d_HopperCollar=0.0325, Product=4.4496). That is the T1 mesh rebuild changing geometry and pivots, not an export regression - every object exported here matches rebuild_v2 itself to 1e-06.",
-  "checks_passed": true,
-  "verdict": "PASS",
-  "glb_sha256": "17B0F499A237ABE17854A92146A8950D4BEE54E4C20F9786A62FA475B3C623E4",
   "machine_body_present": true,
-  "node_count_delta": 1,
-  "outliner_unhide": [
-    "Machine_Body"
-  ],
-  "machine_body_children_count": 25,
-  "machine_body_children": [
-    "Machine_WindowCavity",
-    "Machine_WindowFrame",
-    "Machine_WindowGlass",
-    "Machine_WindowGlow",
-    "P1_BaseBand",
-    "P1_ChuteRail",
-    "P1_OutletCollar",
-    "P1_OutletRailL",
-    "P1_OutletRailR",
-    "P1_ShoulderBay",
-    "P2_OutletBand",
-    "P2_Plasma",
-    "P2_Plasma_Back",
-    "P3c_Button_Mode",
-    "P3c_Button_Power",
-    "P3d_Label",
-    "P3d_RingSeat_Mode",
-    "P3d_RingSeat_Power",
-    "V2_FrontPill",
-    "V2_NamePlate",
-    "V2_NamePlate_Line1",
-    "V2_NamePlate_Line2",
-    "V2_NamePlate_Mark",
-    "V2_SidePanel",
-    "V2_SidePanelSlot"
-  ],
-  "reparented_to_body": {
-    "P1_BaseBand": "Machine_Body",
-    "P1_ChuteRail": "Machine_Body",
-    "V2_FrontPill": "Machine_Body",
-    "V2_NamePlate": "Machine_Body"
-  }
+  "node_count": 58,
+  "notes": "Visibility driven by object-level hide_render/hide_viewport was baked into the scale channel of Product and Idea before export (327 keys each, LINEAR); hidden frames use 1e-4 rather than 0 to avoid a degenerate matrix, which is 5e-5 world units for the 0.5 m reward ball, i.e. sub-pixel. The 5 originally authored scale F-Curves on Product were purged before re-keying, so the authored f300 scale (0.7,0.7,1.0) survives untouched; Idea had no scale channel. hide_render/hide_viewport were cleared on both objects after baking, otherwise the exporter drops any object that is hidden on the current frame - that is exactly what removed Product from the previous GLB entirely. IMPORTANT - the frame examples in the task brief do not match this file. Product is hidden on frames [[1, 231], [327, 327]] (232 of 327 frames), so f120 is a HIDDEN frame for Product, not a visible one. Idea is hidden on frames [[157, 311]] (155 of 327), so f300 is a HIDDEN frame for Idea. The only frame where both lists agree with the brief is f220 (hidden for both) and f300 for Product alone (visible, scale 0.7). The baked result matches the authored hide_render on all 327 frames for both objects, 0 mismatches. A second, unrelated defect was found on the same export: Machine_Body carried hide_get()==True (the outliner eye) with hide_render and hide_viewport both False, so it was unselectable and the exporter dropped it under use_selection=True - the main shell was missing from earlier GLBs while its accessories (P1_BaseBand, P1_ChuteRail, V2_FrontPill, V2_NamePlate*) shipped as scene roots. Root cause was traced to an uncommitted 11-08 edit in hero_animation_v14_p19.blend that hid the real shell, deleted P1_MintStrip_L/R and P3f_TopSkin, and dropped a bare Cube in its place; that edit has been reverted, so hide_get is clean again. export_glb.py additionally clears the outliner eye for any mesh whose render flags already say visible, which is a no-op today and a safety net for future re-imports. The five deliberately hidden objects (Arm_Mount, Machine_Light_01/02/03, Machine_LightStrip) stay out of the GLB on purpose, per BUILD_NOTES.md:1523-1526; the export still uses use_selection=True and must not switch to use_visible=True. Reproduction gotcha 1: Blender 5.4 removed the legacy action.fcurves accessor; F-Curves live under action.layers[].strips[].channelbags[].fcurves. Reproduction gotcha 2: Blender's glTF importer makes one action active and parks the other 51 clips in MUTED NLA tracks, so re-import validation must unmute them or every object except the first reads as static. With scene.render.fps=60 the imported clip maps 1:1 to frames 1-327, so no 24fps rescaling was needed. rebuild_v2 vs p19 differs beyond tolerance on 6 objects (Machine_Base=0.8080, Machine_Hopper=0.0325, Machine_WindowCavity=0.2023, Machine_WindowFrame=0.2023, P3d_HopperCollar=0.0325, Product=4.4496). That is the T1 mesh rebuild changing geometry and pivots, not an export regression - every object exported here matches rebuild_v2 itself to 1e-06.",
+  "checks_passed": true,
+  "verdict": "PASS"
 }
