@@ -365,3 +365,24 @@ blender.exe -b --python scripts\anim_sheet.py -- 'G:\DSHProject\BlenderMcp\rende
 | IoU front / right / top | 0.8843 / 0.9048 / 0.9081 | **0.8855 / 0.9065 / 0.9177** | — |
 
 **没做到的（记在这里以免下次重新发现）**：front 只涨 0.12 点。逐行比对显示剩余差异不在臂上——z 0.30/0.40 两行我们的箱体右缘到 0.0969，参照只到 0.0714/0.0730（23–26 mm，参照箱体右侧是收进去的）；z 0.60 一行参照在 x −0.1634 还有东西。这两处归 S2.2/S2.4 与箱体形体，S2.3 不动。指簇整体比参照低 12–16 mm，要补应上抬腕链而不是加长手指。
+
+### 11.4 S2.3b 形体补差 + S2.2 滑道（2026-11-25）
+
+链条：`s2d` →（`scripts/s2_3b_body_fingers.py`）→ **`s2e`** →（`scripts/s2_2_chute.py`）→ **`s2f`** = 当前最新。§11.3 末尾那两条"没做到"按用户选的 A 路线补完了。
+
+**两处都先量后改，两次都被"bbox 不等于实体"咬到**
+
+1. **箱体右墙带拔模**。对 `tripo_part_0` 从 x=+0.60 打射线（`scratch/probe_body_profile.py`）：y=±0.15 处墙的 x 是 z 0.04→0.0616/0.0619、z 0.20→0.0701/0.0706、z 0.40→0.0723/0.0738，约 **1.2° 拔模**；我们那面是笔直的 0.0969，**每个高度都宽 23–26 mm**。改法：右侧倒角环**刚性平移 24.5 mm**（`x ≥ 0.0499` 共 48 顶点）。只推平的那张四边形会自交——24.5 mm 超过倒角半径 48 mm 的一半。
+2. **指簇上抬**：四指 +18 mm、`Arm_Gripper` +10 mm。不一起抬 18 mm 的原因：gripper 顶会到 0.755，反超肘球 0.753。
+3. **滑道深度**：`tripo_part_7` 的 bbox 0.2446 是含凸起的外包，从上往下打 y 阶梯测出真实 footprint 只有 **0.232**（`scratch/probe_chute_footprint.py`）。第一次按 bbox 拉到 0.2446，顶视 IoU **掉了 0.0024**；改回实测 0.232 后三视全正。导轨 `P1_OutletLip_L/R` 同时从"骑在滑道外缘"移到参照实测带 y −0.138..−0.117 / +0.059..+0.083。
+4. **S2.4 判定不做**：`Machine_WindowFrame` 对 `tripo_part_6` 差 ≤0.2 mm，凹深 11.5 mm 已在；剩余只是内屏边框 1–2 mm 圆角，627 px/m 下不足 1.5 px。
+
+| 指标 | v7_s1 | s2f |
+|---|---|---|
+| triangles | 2,352 | **2,734** |
+| quads / ngons / objects | 920 / 44 / 39 | **1,154 / 15 / 43** |
+| IoU front | 0.8751 | **0.8919** |
+| IoU right | 0.8903 | **0.9064** |
+| IoU top | 0.9059 | **0.9273** |
+
+产物：`versions/rebuild_v7_s2e.blend`、`versions/rebuild_v7_s2f.blend`、`renders/ab_s2e/`、`renders/ab_s2f/`（各 7 视图）、`scripts/s2_3b_body_fingers.py`、`scripts/s2_2_chute.py`。
