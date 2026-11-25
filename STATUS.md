@@ -386,3 +386,29 @@ blender.exe -b --python scripts\anim_sheet.py -- 'G:\DSHProject\BlenderMcp\rende
 | IoU top | 0.9059 | **0.9273** |
 
 产物：`versions/rebuild_v7_s2e.blend`、`versions/rebuild_v7_s2f.blend`、`renders/ab_s2e/`、`renders/ab_s2f/`（各 7 视图）、`scripts/s2_3b_body_fingers.py`、`scripts/s2_2_chute.py`。
+
+### 11.5 S2.3c 手部重做（2026-11-25，用户否掉 S2.3 的爪子之后）
+
+链条：`s2f` →（`scripts/s2_3c_claw.py`）→ **`s2g`** = 当前最新。
+
+**用户否决**（m01024）：「你看看你把爪子做成了什么玩意」。S2.3 的手确实是方块掌 + 四根 48 mm 细杆，和参照那团粗指节疙瘩不是一个东西。
+
+**先量后改**：`scratch/probe_hand.py` 对 `tripo_part_4/8/9/12/13/21..26` 做 PCA —— 参照指长 ~95 mm、尖端半径仍有 0.012–0.013（几乎不收细）、腕块 rmax 0.045、指节团 0.019/0.017。我们之前"细 + 尖 + 出自方块"，三样全错。
+
+**做法**：腕球 r 0.036（`Arm_Gripper`）+ 两块指节疙瘩 0.0265/0.0255（`Arm_Knuckle_L/R`），方块掌删除；四指各**一个对象、三环带膝关节**（r 0.020/0.0165/0.0125，6 边），root/tip 用 PCA 实测值，y 向 −0.081..+0.026 前后散开。**一指出一个刚体**正好合 v14 的语义，S3.2 直接对指根旋转即可。
+
+**五轮迭代**（每轮都是渲染后看图否掉的，记录在 `REFERENCE_REBUILD_PLAN.md` §4.2e）：细棍 → 掌块吞指 → 钩状并团 → 蜘蛛腿 → 定稿（粗指 + 膝关节 + D 指横向伸出）。
+
+| 指标 | s2f | s2g |
+|---|---|---|
+| triangles | 2,734 | **2,642** |
+| quads / ngons / objects | 1,154 / 15 / 43 | **1,154 / 15 / 41** |
+| IoU front | 0.8919 | **0.8943** |
+| IoU right | 0.9064 | 0.9060 |
+| IoU top | 0.9273 | 0.9273 |
+
+A/B（s2f vs s2g，七视图）：front 3,405 px（0.657%）、armclose 15,667 px（3.022%）、back 3,801 px（0.733%），差异全部落在 z 0.46–0.75 的手部与其投影，机体/料斗/滑道零像素变化。
+
+产物：`versions/rebuild_v7_s2g.blend`、`renders/ab_s2g/view_*.png`（7 视图）、`renders/ab_s2g/cmp_front.png`、`renders/ab_s2g/cmp_armclose.png`（左我们 / 右参照）、`renders/ref_views/`（参照用同一相机契约渲的 7 视图，做 A/B 用）、`scripts/s2_3c_claw.py`、`scratch/probe_hand.py`、`reference/v5_rigspec.json`（已改 `model` = s2g，新增 `hand` 段）。
+
+**没对齐的**：参照的手整体比我们大一圈、指垂得更直；我们的上臂是一块薄板（参照是细锥管），手接上去仍显"板端挂拳头"。属 S2.3 的臂形取舍。
