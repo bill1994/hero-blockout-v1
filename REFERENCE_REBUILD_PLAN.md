@@ -118,12 +118,58 @@
 | S2.2 | 滑道是光滑整板，缺侧壁与端口起伏 | 加 0.010 内壁 + 端帽倒角 + 近端支架小方块 | 正视/俯视轮廓与 `ref_front` / `ref_top` 的 IoU ≥ 0.97；tris +≤120 |
 | S2.3 | 爪指偏瘦（现在 r 0.0135→0.005） | 加粗到根部 0.016，末节 0.007；顺带做 **120° 等分**（`exec/EXECUTION_PLAN.md` 老待办） | 三指根部角度误差 <1°；`v8_armclose` 与 `arm_front` 的指间距差 <0.006 |
 | S2.4 | 正面板凹边是直角台阶 | 给内屏边框加 0.006 倒角（bevel 1 段） | iso 视图能读出 0.010 深的台阶；tris +≤40 |
-| S2.5 | 44 个 ngon（锥/柱端盖） | 端盖改三角扇或 4 段四边面；导出前统一三角化校验一遍 | **ngons = 0**，quad ≥ 85%，tris ≤ 3,000 |
+| S2.5a | 29 个**被遮住**的端盖 ngon | 直接删面（详见 §4.1 分诊表），省面不增面 | 删除后不产生新边界可见面；tris **−242** |
+| S2.5b | 剩下 15 个**可见**平盘 ngon | 生成时改 `end_fill_type='TRIFAN'`，或对已有面 poke | **ngons = 0**，quad ≥ 85%，tris ≤ 3,000（实测 2,140） |
 | S2.6 | 无 UV | 按材质边界拆 6 组，Smart UV Project（angle 66°, margin 0.02）+ 手工拉直外壳四条主边 | 0 重叠、0 反面；texel density 统一 512 px/m（±5%） |
 | S2.7 | 材质是占位色 | 5 套 Principled PBR 定稿（壳 / 深壳 / 金属 / 橡胶 / 自发光），shell 走轻微 clearcoat | AgX 下渲一次正视，主体亮度落在 0.55–0.70；无过曝（§6 老坑：Standard 把奶油打到 #FFF） |
 | S2.8 | 未导出 | 沿用 `scripts/export_glb.py`（**含 outliner 眼睛修复**，见 STATUS §10 第二坑） | `validate_glb_vis.py` PASS；GLB 回导 mesh 数 = 39、材质 6、无 NaN |
 
 **Stage-2 出口判据**：`versions/rebuild_v8_s2.blend` + `export/hero_v3_s2.glb` + `renders/v8_s2/*` 五视图，全部数字写进 `STATUS.md` §11。
+
+### 4.1 S2.5 ↔ S2.6 的顺序问题（原写法是错的，已改）
+
+**先纠正一个前提**：UV **不需要** ngon 清零。Blender 的 `Smart UV Project` / `Cube Projection` 处理 n 边形完全没问题。真正会废掉 UV 的不是 ngon 本身，而是**展开之后再改拓扑**——新增的边不带 UV，会在曲面上拉出条状拉伸。
+
+所以约束不是"S2.5 必须早于 S2.6"，而是**「所有动拓扑的 pass 必须早于 S2.6，且动完就冻结」**。正确顺序：
+
+```
+S2.5a（删隐藏端盖）→ S2.1..S2.4（造型改动，会再造出新 ngon）→ S2.5b（清剩余 ngon）
+  → 【拓扑冻结】写指纹 → S2.6 UV → S2.7 材质 → S2.8 导出
+```
+
+S2.5 拆成两半的原因：S2.1 的散热栅凹槽、S2.2 的滑道侧壁都会**制造新的 ngon**，所以清理必须排在这两项之后；但"删掉被遮住的端盖"跟造型无关，随时可做，先做先省面。
+
+**冻结机制**：不靠纪律，靠可检测的契约。新增 `qa_v3/topo_freeze.py`，在 S2.6 之前把每个对象的指纹写进 `qa_v3/topo_freeze.json`：
+
+```json
+{"Machine_Body": {"verts": 192, "polys": 98, "tris": 188, "ngons": 0,
+                  "coord_hash": "sha1 of round(co,6) in vertex order"}}
+```
+
+S2.6 之后任何一步跑一次 diff，出现漂移立刻报红。这样"UV 是不是废了"不用靠记忆判断。
+
+**万一必须回改拓扑**：不要重做全部 UV。选中受影响的岛 → `Project from View` / `Follow Active Quads` 局部重投，代价是局部的。
+
+**Plan B（不推荐作默认）**：把验收口径从"blend 内 ngons=0"改成"导出后 ngons=0"——glTF 必然三角化，ngon 进不了 GLB。不推荐是因为三角化方向不可控；但本模型 44 个 ngon **全部是平面端盖**（已实测 `max deviation from plane < 1e-4`），实际无害。所以这条随时可以降级。
+
+### 4.2 ngon 分诊实测（`rebuild_v7_s1.blend`）
+
+44 个 ngon，边长分布 `n=8 ×16 / n=10 ×14 / n=12 ×8 / n=14 ×2 / n=16 ×2 / n=20 ×2`，**全部平面**。
+
+| 类 | 含义 | 件 | 数量 | 处理 | tris |
+|---|---|---|---|---|---|
+| A | 端盖被别的几何完全包住 | `Arm_Riser` ×2、`Arm_UpperArm` ×2、`Arm_Forearm` ×2、`Arm_WristCollar` ×2、`Arm_Base` 底、`Arm_Finger_*_s1` ×2×3、`Arm_Finger_*_s2` 根 ×3、`Chute_Foot_0/1` ×2、`Machine_Feet_0..3` 顶 ×4、`Machine_HopperNeck` 底、`P3d_HopperCollar` 顶、`P3d_TopDisc` 底 | **29** | **删面** | **−242** |
+| B | 平盘，朝外可见 | `Arm_Base` 顶、`Arm_Finger_*_s2` 尖 ×3、`Chute_Pad_0/1` ×2、`Machine_Feet_0..3` 底 ×4、`Machine_HopperNeck` 顶（漏斗底）、`P3d_HopperCollar` 底、`P3d_TopDisc` 顶 | **15** | TRIFAN | **+30** |
+| C | 需要四边面 | 无 | 0 | — | — |
+
+**净结果：2,352 → 2,140 tris（−212）**，ngons 0。清 ngon 不但不花钱，还给 S2.1–S2.4 腾出 860 个三角形的余量。
+
+顺带两条：`Arm_Forearm` 远端的盖与 `Arm_WristCollar` 近端的盖**共面重合**（同一点、反向），属于退化重复面，删掉可去掉潜在 z-fighting；`Machine_HopperNeck` 的顶盖本身就是漏斗的底，**必须留**（删了能从斗口直接看进机箱）。
+
+### 4.3 顺带查出的一个真缺陷（并入 S2.1）
+
+`P3d_HopperCollar`（r 0.088，z 0.4594..0.4879）在 z 0.4879 处**穿出漏斗内壁**——该高度内壁半径只有 0.084，领口比它大 0.004。从斗口往下看能看到一圈 4 mm 的环状凸起。修法：领口 r 收到 0.080，或把顶面压到 z ≤ 0.472（内壁半径 0.0705 处）。这条比 ngon 更值得管，因为它是**可见的**几何错误。
+
 
 ---
 
