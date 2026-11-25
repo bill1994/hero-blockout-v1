@@ -33,7 +33,7 @@ def main():
     dir_a = os.path.join(ROOT, dir_a)
     dir_b = os.path.join(ROOT, dir_b)
 
-    views = ["front", "right", "top", "iso", "armclose"]
+    views = ["front", "right", "top", "iso", "armclose", "back", "ventclose"]
     bad = 0
     for v in views:
         pa = os.path.join(dir_a, "%s_%s.png" % (pre_a, v))

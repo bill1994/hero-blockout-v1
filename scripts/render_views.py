@@ -29,6 +29,10 @@ VIEWS = {
     "top": (CENTER + Vector((0.0, 0.0, 3.0)), ORTHO),
     "iso": (CENTER + Vector((-1.7, -1.7, 1.35)), ORTHO),
     "armclose": (Vector((-0.30, -0.04, 0.665)) + Vector((-0.8, -1.1, 0.55)), 0.52),
+    # QA-only views: the IoU contract stays the five above
+    "back": (CENTER + Vector((0.0, 3.0, 0.0)), ORTHO),
+    "ventclose": ((Vector((-0.145, 0.231, 0.150)) + Vector((0.0, 1.4, 0.0))), 0.30,
+                  Vector((-0.145, 0.231, 0.150))),
 }
 
 
@@ -75,9 +79,9 @@ def add_camera():
     return cam
 
 
-def shoot(cam, scene, loc, ortho, path):
+def shoot(cam, scene, loc, ortho, path, look=None):
     cam.location = loc
-    direction = CENTER - loc
+    direction = (look if look is not None else CENTER) - loc
     cam.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
     cam.data.ortho_scale = ortho
     scene.render.filepath = path
@@ -96,9 +100,11 @@ def main():
     scene = setup_scene()
     cam = add_camera()
 
-    for name, (loc, ortho) in VIEWS.items():
+    for name, spec in VIEWS.items():
+        loc, ortho = spec[0], spec[1]
+        look = spec[2] if len(spec) > 2 else None
         path = os.path.join(outdir, "%s_%s.png" % (prefix, name))
-        shoot(cam, scene, loc, ortho, path)
+        shoot(cam, scene, loc, ortho, path, look)
         print("@@RENDER@@ %s %d B" % (path, os.path.getsize(path)))
 
 
