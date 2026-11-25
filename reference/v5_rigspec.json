@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "name": "v5_rigspec",
+  "note": "Frozen joint contract for versions/rebuild_v7_s2d.blend. Derived from reference/v4_rigspec.json with three measured deviations listed below. Stage 3 animates against these numbers, so they must not drift without a new rigspec.",
+  "model": "versions/rebuild_v7_s2d.blend",
+  "units": "metres, world space, front faces -Y",
+  "source": "reference/v4_rigspec.json",
+  "joints": {
+    "base": [-0.3647, -0.0524, 0.4454],
+    "yaw": [-0.3830, -0.0520, 0.5450],
+    "shldr": [-0.4180, -0.0500, 0.6150],
+    "elbow": [-0.2260, -0.0370, 0.7090],
+    "wrist": [-0.1630, -0.0360, 0.7060],
+    "palm": [-0.1500, -0.0340, 0.6980]
+  },
+  "fingers": {
+    "layout": "four 2-segment fingers fanned in the XZ plane below the palm, phi measured from -Z inside that plane",
+    "arc_r": 0.026,
+    "root_r": 0.016,
+    "mid_r": 0.0115,
+    "tip_r": 0.007,
+    "A": {"phi_deg": -45.0, "root": [-0.1684, -0.0460, 0.6796], "tip": [-0.1938, -0.0460, 0.6262]},
+    "B": {"phi_deg": -15.0, "root": [-0.1567, -0.0380, 0.6729], "tip": [-0.1660, -0.0380, 0.6101]},
+    "C": {"phi_deg": 15.0, "root": [-0.1433, -0.0300, 0.6729], "tip": [-0.1340, -0.0300, 0.6101]},
+    "D": {"phi_deg": 45.0, "root": [-0.1316, -0.0220, 0.6796], "tip": [-0.1062, -0.0220, 0.6262]}
+  },
+  "grab_point": [-0.1500, -0.0340, 0.6640],
+  "grab_point_note": "centre of the 4 tip arc, 34 mm below the palm along the finger drop axis",
+  "deviations": [
+    {
+      "field": "joints.elbow",
+      "reference": [-0.226, -0.037, 0.725],
+      "ours": [-0.226, -0.037, 0.709],
+      "delta_m": -0.016,
+      "why": "with r 0.044 at z 0.725 the elbow ball topped out at 0.769; the reference's overall z max is 0.754 (part_4's tube). Dropping the elbow 16 mm puts the ball crown at 0.753 and leaves the wrist at 0.706 so the finger cluster keeps its height."
+    },
+    {
+      "field": "fingers.layout",
+      "reference": "four knuckles clustered in a 0.09 x 0.10 x 0.09 box, arrangement not resolvable from the 900 px views",
+      "ours": "fan of four in the XZ plane at phi -45/-15/+15/+45 deg",
+      "why": "a 90 deg ring about the wrist axis projected to only two prongs in front view, while reference/views_20261124/arm_front.png clearly shows four separated fingers fanning down-left. The XZ fan reproduces the four visible prongs and still closes as a two-sided grip for stage 3."
+    },
+    {
+      "field": "Arm_Riser.profile",
+      "reference": "tripo_part_1, sz 0.1757 x 0.1081 x 0.2405, c (-0.4126, -0.0489, 0.5622)",
+      "ours": "4-ring loft, z 0.4455/0.5200/0.6000/0.6820, left edge -0.4300/-0.4400/-0.4877/-0.5005",
+      "why": "ring heights were fitted to the reference silhouette row by row off ref_front.png (z 0.50 -> -0.4349, 0.55 -> -0.4589, 0.60 -> -0.4877, 0.65 -> -0.4956); a mid-height bulge put 40 mm of extra leg in the silhouette and cost 0.9 points of front IoU"
+    }
+  ],
+  "acceptance": {
+    "xmin": -0.4983,
+    "xmin_target": [-0.5025, -0.4985],
+    "zmax": 0.753,
+    "zmax_target": 0.754,
+    "finger_cluster_x": [-0.2005, -0.0995],
+    "finger_cluster_x_ref": [-0.19, -0.10],
+    "finger_cluster_z": [0.6094, 0.6881],
+    "finger_cluster_z_ref": [0.62, 0.71],
+    "iou_front": 0.8855,
+    "iou_right": 0.9065,
+    "iou_top": 0.9177
+  },
+  "counts": {"tris": 2734, "quads": 1154, "ngons": 15, "objects": 43}
+}

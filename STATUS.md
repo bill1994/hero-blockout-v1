@@ -1,7 +1,7 @@
 # STATUS — hero-blockout / 抓娃娃机资产（main @ `5ae66db`）
 
-**Last updated:** 2026-11-24
-**Branch:** `main` · **Tip:** `5ae66db` "v14 repair pass: outlet, base, screws, claw" (2026-11-04)
+**Last updated:** 2026-11-25（§11 方案 2 重建；v14 侧的台账仍停在 11-24 的状态）
+**Branch:** `main` · v14 线基线 `5ae66db` "v14 repair pass: outlet, base, screws, claw" (2026-11-04)；方案 2 重建线见 §11（产物 `versions/rebuild_v7_*.blend`，与 v14 线互不覆盖）
 **Working tree:** v14 侧原有未提交改动仍在（`M hero_animation_v14_p19.blend` 于 11-08 被另存、若干未跟踪 `.blend`），**本轮未触碰、未提交**。V2 重建的产物见 §10。
 `M hero_animation_v14_p19.blend` · 未跟踪 `hero_animation_v14_p7.blend`、`reconstruct.blend`、`hero_animation_v14_p47_hole_f3.blend`、`zhuazhuaji.blend`、`zhuazhuaji_webfix.blend`、`zhuazhuaji_webfix.glb`、`scratch/*`
 
@@ -342,3 +342,26 @@ blender.exe -b --python scripts\anim_sheet.py -- 'G:\DSHProject\BlenderMcp\rende
 **可见性照旧是测的**：S2.1 加进去的 16 个三角在 front/right/top/iso/armclose 五视图上 **0 px**，只在新增的 `back` 视图（24,580 px）与 `ventclose` 上可见。
 
 **遗留**：`Machine_HopperNeck`（20 polys）现在整只落在新漏斗壳体内、已不可见，留给 S2.5b 用遮挡判定正式删；`P3d_HopperCollar` 仍是实心柱（参照是空心环），但它的内腔在闭合壳体里、任何视角都看不到，不单独处理。
+
+### 11.3 S2.3 机械臂重做：四指 + 臂根 loft + 压肘（2026-11-25）
+
+链条：`rebuild_v7_s2c.blend` →（`scripts/s2_3_arm.py`）→ **`rebuild_v7_s2d.blend`**。关节契约随之升级为 `reference/v5_rigspec.json`（Stage-3 以它为准，不是 v4）。
+
+**三处改动**
+1. **爪 3 → 4 指**。计划原定"绕腕轴 90° 等分"，实测否掉：腕轴 ≈ (0.994, 0.016, −0.110)，绕它的环垂直于前视方向，4 个 90° 投到前视只剩两根；而 `arm_front.png` 里是四根分明。改成 **XZ 面内的扇**（phi −45/−15/+15/+45，根部 0.016 → 中节 0.0115 → 末节 0.007，三角扇封口）。A..D 仍按左→右命名，`Finger_L→A+D`、`Finger_R→B+C` 的语义不变。
+2. **臂根 `Arm_Riser` 重建为 4 环 loft**。第一版直接拉宽到 0.176 读起来像斜插的刀片。改用 `scripts/s2_3_silhouette_rows.py` 把参照前视蒙版逐行换算回世界米，量到左缘 z 0.50→−0.4349、0.55→−0.4589、0.60→−0.4877、0.65→−0.4956（越往上越外），据此定环高 z 0.4455/0.5200/0.6000/0.6820、左缘 −0.4300/−0.4400/−0.4877/−0.5005、bevel 0.014/3 段。
+3. **压肘**：超 15 mm 的是 `Arm_Elbow_Joint` 那团球（r 0.044 @ 0.725 → 0.769），不是上臂管。肘降到 0.709 → 冠顶 0.753；腕留 0.706、前臂盒下移 9.4 mm；`Arm_Gripper` 抬高 10 mm（在 x −0.12 列补上 25 mm 缺口）。
+
+| 指标 | s2c | s2d | 参照 |
+|---|---|---|---|
+| triangles | 2,322 | **2,734** | 2,929 |
+| quads | 984 | **1,154** | — |
+| ngons | 27 | **15** | — |
+| objects | 41 | **43** | 43 |
+| `x_min` | −0.468 | **−0.4983** | −0.5005 |
+| `z_max` | 0.769 | **0.753** | 0.754 |
+| 指簇 x | — | −0.2005..−0.0995 | −0.19..−0.10 |
+| 指簇 z | — | 0.6094..0.6881 | 0.62..0.71 |
+| IoU front / right / top | 0.8843 / 0.9048 / 0.9081 | **0.8855 / 0.9065 / 0.9177** | — |
+
+**没做到的（记在这里以免下次重新发现）**：front 只涨 0.12 点。逐行比对显示剩余差异不在臂上——z 0.30/0.40 两行我们的箱体右缘到 0.0969，参照只到 0.0714/0.0730（23–26 mm，参照箱体右侧是收进去的）；z 0.60 一行参照在 x −0.1634 还有东西。这两处归 S2.2/S2.4 与箱体形体，S2.3 不动。指簇整体比参照低 12–16 mm，要补应上抬腕链而不是加长手指。
