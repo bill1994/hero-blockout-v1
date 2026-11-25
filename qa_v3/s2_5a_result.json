@@ -1,0 +1,202 @@
+{
+ "source": "versions/rebuild_v7_s1.blend",
+ "output": "versions/rebuild_v7_s2a.blend",
+ "before": {
+  "objects": 39,
+  "polys": 1100,
+  "tris": 2352,
+  "quads": 920,
+  "ngons": 44
+ },
+ "after": {
+  "objects": 39,
+  "polys": 1083,
+  "tris": 2178,
+  "quads": 920,
+  "ngons": 27
+ },
+ "deleted": {
+  "Arm_Base": [
+   15
+  ],
+  "Arm_Forearm": [
+   13
+  ],
+  "Arm_Riser": [
+   10,
+   13
+  ],
+  "Arm_UpperArm": [
+   10,
+   13
+  ],
+  "Arm_WristCollar": [
+   10
+  ],
+  "Chute_Foot_0": [
+   9
+  ],
+  "Chute_Foot_1": [
+   9
+  ],
+  "Machine_Feet_0": [
+   8
+  ],
+  "Machine_Feet_1": [
+   8
+  ],
+  "Machine_Feet_2": [
+   8
+  ],
+  "Machine_Feet_3": [
+   8
+  ],
+  "Machine_HopperNeck": [
+   18,
+   21
+  ],
+  "P3d_HopperCollar": [
+   17
+  ],
+  "P3d_TopDisc": [
+   11
+  ]
+ },
+ "kept_visible": [
+  {
+   "object": "Arm_Base",
+   "n": 14,
+   "enclosure": 0.333
+  },
+  {
+   "object": "Arm_Finger_A_s1",
+   "n": 8,
+   "enclosure": 0.444
+  },
+  {
+   "object": "Arm_Finger_A_s1",
+   "n": 8,
+   "enclosure": 0.333
+  },
+  {
+   "object": "Arm_Finger_A_s2",
+   "n": 8,
+   "enclosure": 0.667
+  },
+  {
+   "object": "Arm_Finger_A_s2",
+   "n": 8,
+   "enclosure": 0.444
+  },
+  {
+   "object": "Arm_Finger_B_s1",
+   "n": 8,
+   "enclosure": 0.778
+  },
+  {
+   "object": "Arm_Finger_B_s1",
+   "n": 8,
+   "enclosure": 0.333
+  },
+  {
+   "object": "Arm_Finger_B_s2",
+   "n": 8,
+   "enclosure": 0.667
+  },
+  {
+   "object": "Arm_Finger_B_s2",
+   "n": 8,
+   "enclosure": 0.444
+  },
+  {
+   "object": "Arm_Finger_C_s1",
+   "n": 8,
+   "enclosure": 0.778
+  },
+  {
+   "object": "Arm_Finger_C_s1",
+   "n": 8,
+   "enclosure": 0.444
+  },
+  {
+   "object": "Arm_Finger_C_s2",
+   "n": 8,
+   "enclosure": 0.667
+  },
+  {
+   "object": "Arm_Finger_C_s2",
+   "n": 8,
+   "enclosure": 0.444
+  },
+  {
+   "object": "Arm_Forearm",
+   "n": 12,
+   "enclosure": 0.556
+  },
+  {
+   "object": "Arm_WristCollar",
+   "n": 12,
+   "enclosure": 0.556
+  },
+  {
+   "object": "Chute_Foot_0",
+   "n": 8,
+   "enclosure": 0.889
+  },
+  {
+   "object": "Chute_Foot_1",
+   "n": 8,
+   "enclosure": 0.889
+  },
+  {
+   "object": "Chute_Pad_0",
+   "n": 10,
+   "enclosure": 0.444
+  },
+  {
+   "object": "Chute_Pad_0",
+   "n": 10,
+   "enclosure": 0.0
+  },
+  {
+   "object": "Chute_Pad_1",
+   "n": 10,
+   "enclosure": 0.444
+  },
+  {
+   "object": "Chute_Pad_1",
+   "n": 10,
+   "enclosure": 0.0
+  },
+  {
+   "object": "Machine_Feet_0",
+   "n": 10,
+   "enclosure": 0.0
+  },
+  {
+   "object": "Machine_Feet_1",
+   "n": 10,
+   "enclosure": 0.0
+  },
+  {
+   "object": "Machine_Feet_2",
+   "n": 10,
+   "enclosure": 0.0
+  },
+  {
+   "object": "Machine_Feet_3",
+   "n": 10,
+   "enclosure": 0.0
+  },
+  {
+   "object": "P3d_HopperCollar",
+   "n": 16,
+   "enclosure": 0.889
+  },
+  {
+   "object": "P3d_TopDisc",
+   "n": 10,
+   "enclosure": 0.333
+  }
+ ]
+}

@@ -275,8 +275,12 @@ blender.exe -b --python scripts\anim_sheet.py -- 'G:\DSHProject\BlenderMcp\rende
 
 | 文件 | 内容 |
 |---|---|
-| `versions\rebuild_v7_s1.blend` | **Stage-1 基线**（体块与比例，0.13 MB） |
+| `versions\rebuild_v7_s1.blend` | **Stage-1 基线**（体块与比例，0.13 MB）；自 2026-11-25 起为**冻结输入资产**，sha256 `c9b647bf…` |
+| `versions\rebuild_v7_s2a.blend` | **Stage-2a**（删 17 张真埋端盖），2,178 tris / 27 ngon，131,203 B |
+| `ReferenceModel.blend` | 参照原件（Tripo，43 件 / 2,929 tris），sha256 `b1b11d85…`；2026-11-25 入库（此前一直未进 git） |
+| `qa_v3\topo_freeze.py` | 冻结契约：`init/check` 守输入哈希，`objects/diff` 守拓扑指纹（S2.6 那道门） |
 | `renders\v7_s1\v7_{front,right,top,iso,armclose}.png` | 五视图，workbench / material 色 / cavity BOTH / AA 16 / ortho_scale 1.15 |
+| `renders\ab_v7\` / `renders\ab_s2a\` | S2.5a 的 A/B 五视图（同脚本同相机，用于逐像素证明） |
 | `reference\v4_rigspec.json` | 建模基准：关节坐标 + 箱体/料斗/滑道实测尺寸 |
 | `reference\parts_20261124.json` | 参照 43 件的逐件 bbox 全表 |
 | `reference\contract_20261124.json` | v14 动画契约全表（36 action / 通道 / 关键帧采样） |
@@ -286,12 +290,35 @@ blender.exe -b --python scripts\anim_sheet.py -- 'G:\DSHProject\BlenderMcp\rende
 
 | 项 | 参照 | v7 | 差 |
 |---|---|---|---|
-| tris | 2,929（100% 三角面） | **2,352** | −20% |
+| tris | 2,929（100% 三角面） | **2,352** → 2a 后 **2,178** | −20% → −26% |
 | quads | 0 | **920** | — |
-| ngon | 0 | 44（锥/柱端盖） | 待 S2.5 清零 |
+| ngon | 0 | 44 → **27**（S2.5a 删掉 17 张真埋端盖；余下 27 张是露着的平面端盖，按 Plan B 留到导出时三角化） | 见 §11.1 |
 | 对象 | 43 散片 | **39** 命名件 | — |
-| bbox | x −0.501..0.500 / y ±0.231 / z 0..0.754 | x −0.468..0.496 / y −0.235..0.231 / z 0..0.769 | 爪尖高 15 mm |
+| bbox | x −0.501..0.500 / y ±0.231 / z 0..0.754 | x −0.468..0.496 / y −0.235..0.231 / z 0..0.769 | x_min 短 33 mm（臂根外移，S2.3）；z 高 15 mm 的来源是 `Arm_UpperArm` 管顶 0.768，**不是爪尖**（2026-11-25 更正） |
 
 **中途否决的三版**（`rebuild_v3/v4/v5_s1.blend` 留档）：v3 料斗是实心盘子（`primitive_cone_add` 默认封顶）、臂杆半径 0.03 太细、爪子按 Y 轴展开在前视图叠成一根尖刺；v4 改粗臂改有改善；v5 换三指 120° 爪；v6 料斗改 bmesh 旋转壳但内壁给了 `M_Rubber` 近黑；v7 内壁改 `M_ShellDk` 定稿。
 
 **未圆**（已在计划里排期）：背面散热栅仍是浮片（S2.1）、滑道缺侧壁起伏（S2.2）、爪指偏瘦且 120° 等分角度未校（S2.3）、无 UV（S2.6）、材质为占位色（S2.7）、未导出（S2.8）、动画未开始（Stage-3）。
+
+### 11.1 S2.0 冻结与 S2.5a 执行（2026-11-25）
+
+**三件裁决**（用户原话 m00384：「1按你推荐，2的话入git，3的话对角驱动」）：v7 定为冻结输入资产不补写 builder、`ReferenceModel.blend` 入库、手指按对角映射（`Finger_L`→A+D、`Finger_R`→B+C）。
+
+**冻结哈希**（`qa_v3/topo_freeze.py init` 产出，`check` 已复验）：`ReferenceModel.blend` = `b1b11d856509ad19…`（2,374,068 B）、`versions/rebuild_v7_s1.blend` = `c9b647bf15344eb8…`（131,685 B）。任何重建命令必须先过这道哈希。
+
+**S2.5a 结果**
+
+| 指标 | v7_s1 | v7_s2a |
+|---|---|---|
+| triangles | 2,352 | **2,178** |
+| quads | 920 | 920 |
+| ngons | 44 | **27** |
+| polys | 1,100 | 1,083 |
+
+删的是 17 张 enclosure=1.00 的端盖：`Arm_Riser`×2、`Arm_UpperArm`×2、`Arm_Base`、`Arm_Forearm`、`Arm_WristCollar`、`Chute_Foot_0/1`、`Machine_Feet_0..3` 顶、`Machine_HopperNeck`×2、`P3d_HopperCollar`、`P3d_TopDisc`。
+
+**可见性不是判断是测量**：`scripts/render_views.py` 同契约渲两版五视图，`scripts/ab_diff.py` 逐像素比对 → front/top/iso/armclose **0 px**，right 仅 **5 px**（max 3/255，是开孔后边缘抗锯齿的一丝漏光）。
+
+**判定的实现只有一处**：`scripts/cap_occlusion.py`（面心 + 8 内点 × 9 根 70° 锥射线，全部采样命中才算埋住）。此前两次判定都错：bbox 包含法、以及"面心单点射线"法——后者把 `Arm_Base` 上环（encl 0.33）与 12 张共面指节盖（0.33–0.78）误判成埋住，照单删会删出破口。
+
+**给 S2.1b 留的坑**：沿斗轴射线的实测显示，斗口向下第一层命中的是 `P3d_HopperCollar` 的顶盘（z 0.4878），它正挡在被删掉的颈部双盖之上，所以画面没变。§4.3 把领口收到 r 0.080 / 压到 z ≤ 0.472 时这块盘就没了 → 必须同一次改里显式决定斗底（保持真漏斗开口，或补一张 z 0.462 的底盘），并重跑分诊 + A/B。
