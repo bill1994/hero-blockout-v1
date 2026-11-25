@@ -1,0 +1,16 @@
+{
+ "created": "2026-11-25T11:19:39",
+ "frozen_at": null,
+ "inputs": {
+  "ReferenceModel.blend": {
+   "bytes": 2374068,
+   "sha256": "b1b11d856509ad19ab4b0dfa132d2e023f8b7d7c3226e617a60157eb486e32ca"
+  },
+  "versions/rebuild_v7_s1.blend": {
+   "bytes": 131685,
+   "sha256": "c9b647bf15344eb8c9296e5d6c13ddd3ab16f78c72bb6f72a7c19d364adf6c33"
+  }
+ },
+ "objects": {},
+ "schema": 1
+}
